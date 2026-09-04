@@ -2,7 +2,7 @@
 //
 // Two things come out of this pass:
 //   web/public/img/*.webp   the images themselves
-//   data/images.json        per PDF page: each image's file, size and vertical extent,
+//   tools/images.json       per PDF page: each image's file, size and vertical extent,
 //                           plus the vertical position of every QUESTION / Answer(s) marker
 //
 // The vertical positions matter because a question and its worked answer frequently share
@@ -79,7 +79,6 @@ function imagePlacements(ops, baseTransform) {
 const doc = await getDocument({ data: new Uint8Array(fs.readFileSync(PDF)) }).promise;
 console.log(`PDF: ${doc.numPages} pages`);
 fs.mkdirSync(OUT_DIR, { recursive: true });
-fs.mkdirSync(path.join(ROOT, 'data'), { recursive: true });
 
 // Pass 1 — decode every candidate image, note where it sits, hash it for dedup.
 const perPage = new Map();
@@ -176,7 +175,7 @@ for (const [n, imgs] of [...perPage.entries()].sort((a, b) => a[0] - b[0])) {
 }
 
 fs.writeFileSync(
-  path.join(ROOT, 'data', 'images.json'),
+  path.join(import.meta.dirname, 'images.json'),
   JSON.stringify({ pages: index, marks: anchors }, null, 1),
 );
 console.log(`Wrote ${written.size} images across ${Object.keys(index).length} pages (skipped ${skipped} boilerplate refs).`);

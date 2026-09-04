@@ -1,16 +1,10 @@
-# Keeps `gcloud run deploy --source .` uploads to what the image actually needs: web/ and
-# server/. Note that gcloud uses THIS file instead of .gitignore, which is what makes a
-# deploy from a working copy work at all — the generated question bank under
-# web/public/ is untracked by git but must be uploaded.
-#
-# Leading slashes matter. An unanchored `data/` or `tools/` would match at any depth and
-# silently drop web/public/data/ (the question bank), producing a build that fails the
-# prebuild guard.
+# gcloud uses THIS file, not .gitignore, to decide what to upload.
+# Leading slashes matter: an unanchored pattern matches at any depth, which would
+# silently drop web/public/data/ — the question bank the build needs.
 .git/
 **/node_modules/
 **/dist/
 
 /public/
 /tools/
-/data/
 AZ-104_dump.pdf

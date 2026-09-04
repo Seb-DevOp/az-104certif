@@ -87,7 +87,7 @@ function joinUrls(slice) {
 // between "Answer(s):" and the next "QUESTION:" marker is the worked answer. This matters
 // because a question, its answer key and the next question routinely share one page.
 const { pages: imagePages, marks: pageMarks } = JSON.parse(
-  fs.readFileSync(path.join(ROOT, 'data', 'images.json'), 'utf8'),
+  fs.readFileSync(path.join(import.meta.dirname, 'images.json'), 'utf8'),
 );
 
 const PAGE_SPAN = 10000; // any y on a page is far below this, so page*SPAN+y sorts documents

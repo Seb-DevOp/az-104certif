@@ -1,11 +1,15 @@
+# Patterns are relative to the context root; ** is needed to match at any depth.
+# web/public/ is deliberately NOT excluded — it carries the question bank the build needs.
 **/node_modules
 **/dist
 .git
 .gitignore
+.gcloudignore
+.dockerignore
+cloudbuild.yaml
 /public
 AZ-104_dump.pdf
-tools/
-data/
+tools
 *.md
 .claude
 .github

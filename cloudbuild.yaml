@@ -1,19 +1,14 @@
-# Cloud Build pipeline: restore the question bank, build the image, deploy to Cloud Run.
+# Optional Cloud Build pipeline: build, push, deploy.
 #
-# Why the first step exists. The question bank (web/public/data/questions.json and the 782
-# files in web/public/img/) is generated from AZ-104_dump.pdf. The dump forbids
-# redistribution and this repository is public, so those files are gitignored — which means
-# a GitHub trigger checks out a tree that cannot build. This pipeline restores them from a
-# private Cloud Storage bucket first.
+# You do NOT need this file to deploy. The Cloud Run portal ("deploy from a repository")
+# and `gcloud run deploy --source .` both build the Dockerfile directly and ignore it.
+# It is here for the case where you prefer an explicit Cloud Build trigger, which gives you
+# tagged images in Artifact Registry and a deploy step you control.
 #
-# The restore is skipped when the build context already carries the bank, so the same file
-# works for `gcloud builds submit` from a working copy where `npm run data` has been run.
-#
-# One-time setup is in README.md, section "Intégration continue".
+# To use it, set the trigger's configuration to "Cloud Build configuration file" with the
+# path /cloudbuild.yaml.
 
 substitutions:
-  # Required for GitHub triggers. Example: gs://my-private-bucket/az104
-  _DATA_BUCKET: ''
   _REGION: europe-west1
   _SERVICE: az104-trainer
   _REPO: containers
@@ -22,30 +17,6 @@ options:
   logging: CLOUD_LOGGING_ONLY
 
 steps:
-  - id: restore-question-bank
-    name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
-    entrypoint: bash
-    args:
-      - -c
-      - |
-        set -eu
-        if [ -s web/public/data/questions.json ]; then
-          echo "Question bank present in the build context; skipping restore."
-          exit 0
-        fi
-        if [ -z "${_DATA_BUCKET}" ]; then
-          echo "ERROR: no question bank in the build context and _DATA_BUCKET is not set." >&2
-          echo "" >&2
-          echo "Set the _DATA_BUCKET substitution on the trigger (see README," >&2
-          echo "'Intégration continue'), or run the build from a working copy where" >&2
-          echo "'npm run data' has been run." >&2
-          exit 1
-        fi
-        mkdir -p web/public/data web/public/img
-        gcloud storage cp "${_DATA_BUCKET}/data/questions.json" web/public/data/questions.json
-        gcloud storage rsync --recursive "${_DATA_BUCKET}/img" web/public/img
-        echo "Restored the question bank from ${_DATA_BUCKET}."
-
   - id: build
     name: gcr.io/cloud-builders/docker
     args:
