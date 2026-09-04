@@ -83,6 +83,24 @@ npm run docker:run        # http://localhost:8080
 L'image écoute sur `$PORT` (8080 par défaut), sur `0.0.0.0`, expose `/healthz`, tourne en
 utilisateur non-root et gère `SIGTERM`.
 
+> **Déployez depuis votre copie de travail, pas depuis un clone du dépôt.** La banque de
+> questions n'est pas versionnée : un clone frais ne contient pas de quoi construire
+> l'image, et le build s'arrête sur le garde `prebuild`. Lancez les commandes ci-dessous
+> depuis le répertoire où `npm run data` a été exécuté.
+>
+> C'est `.gcloudignore` — et non `.gitignore` — que `gcloud` utilise pour décider quoi
+> téléverser : les données générées partent donc bien vers Cloud Build, alors même que git
+> les ignore. Pour vérifier avant de déployer :
+>
+> ```bash
+> gcloud meta list-files-for-upload | grep -c 'web.public.img'   # doit afficher 782
+> gcloud meta list-files-for-upload | grep questions.json        # doit sortir une ligne
+> ```
+>
+> **Un déclencheur Cloud Build branché sur GitHub ne peut pas fonctionner en l'état**, pour
+> la même raison : il build le contenu du dépôt, qui n'a pas les données. Voir
+> [Intégration continue](#intégration-continue).
+
 ### Depuis les sources (le plus simple)
 
 ```bash
@@ -123,6 +141,21 @@ L'application est entièrement statique côté serveur : elle tient sans problè
 Remplacez `--allow-unauthenticated` par `--no-allow-unauthenticated` et placez un
 [IAP](https://cloud.google.com/iap/docs/enabling-cloud-run) devant le service, ou accordez
 `roles/run.invoker` aux comptes concernés.
+
+### Intégration continue
+
+Le dépôt étant public et les données extraites non versionnées, un déclencheur Cloud Build
+branché sur GitHub build un arbre sans banque de questions : le garde `prebuild` l'arrête.
+Trois façons d'en sortir, selon ce que vous privilégiez :
+
+| Approche | CI automatique | Le dump reste privé |
+|---|---|---|
+| Déployer depuis la copie de travail (ci-dessus) | non | oui |
+| Passer le dépôt en privé et versionner les données | oui | oui |
+| Dépôt public + données dans un bucket GCS privé, récupérées par une étape `cloudbuild.yaml` avant le `docker build` | oui | oui |
+
+La troisième option est la seule qui garde les deux propriétés ; elle demande un bucket et
+un `cloudbuild.yaml` avec une étape `gsutil cp` en amont du build.
 
 ---
 
