@@ -1,0 +1,266 @@
+{
+ "392": {
+  "text": [
+   "Vous disposez d'un centre de données local et d'un abonnement Azure. Le centre de données contient deux équipements VPN. L'abonnement contient un réseau virtuel Azure nommé VNet1, doté d'un sous-réseau de passerelle. Vous devez créer un VPN de site à site garantissant que la défaillance d'une instance de passerelle VPN Azure, ou celle d'un équipement VPN local, n'entraîne pas d'interruption de plus de deux minutes. Quel est le nombre minimal d'adresses IP publiques, de passerelles de réseau virtuel et de passerelles de réseau local nécessaires dans Azure ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : 4 — deux adresses IP publiques dans le centre de données local et deux dans le réseau virtuel. La configuration la plus fiable combine des passerelles actives-actives des deux côtés.\n\nBox 2 : 2. Chaque passerelle VPN Azure est constituée de deux instances en configuration active-passive, ce qui la protège des interruptions planifiées comme imprévues."
+ },
+
+ "393": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant deux machines virtuelles présentées dans le tableau suivant.",
+   "Vous effectuez depuis VM2 une résolution DNS inverse de 10.0.0.4. Quel nom de domaine complet sera renvoyé ?"
+  ]
+ },
+
+ "394": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'une application nommée App1 installée sur deux machines virtuelles Azure nommées VM1 et VM2. Les connexions à App1 sont gérées par un équilibreur de charge Azure. La configuration de sécurité réseau effective de VM2 est présentée dans la capture suivante.",
+   "Vous constatez que les connexions à App1 depuis 131.107.100.50 sur le port TCP 443 échouent. Vous vérifiez que les règles de l'équilibreur de charge sont correctement configurées. Vous devez faire en sorte que ces connexions aboutissent.",
+   "Solution : vous créez une règle de sécurité entrante qui autorise tout le trafic provenant de la source AzureLoadBalancer, avec un coût de 150. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "395": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant une passerelle de réseau virtuel basée sur des stratégies nommée GW1 et un réseau virtuel nommé VNet1. Vous devez pouvoir configurer une connexion de point à site depuis un ordinateur local vers VNet1. Quelles deux actions devez-vous effectuer ? Chaque bonne réponse constitue une partie de la solution.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "options": {
+   "A": "Ajouter un point de terminaison de service à VNet1",
+   "B": "Réinitialiser GW1",
+   "C": "Créer une passerelle de réseau virtuel basée sur des routes",
+   "D": "Ajouter une connexion à GW1",
+   "E": "Supprimer GW1",
+   "F": "Ajouter un espace d'adressage IP public à VNet1"
+  },
+  "explanation": "C : une passerelle VPN sert à créer une connexion VPN vers votre réseau local. Les équipements VPN basés sur des routes emploient des sélecteurs de trafic « any-to-any » et laissent les tables de routage diriger le trafic vers les différents tunnels IPsec, chaque tunnel étant modélisé comme une interface réseau virtuelle.\n\nE : une passerelle basée sur des stratégies ne prend pas en charge le point à site ; il faut donc supprimer GW1."
+ },
+
+ "396": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les ressources du tableau suivant :",
+   "Dans Azure, vous créez une zone DNS privée nommée adatum.com et définissez VNet2 comme réseau virtuel d'inscription. La zone adatum.com est configurée comme dans la capture suivante :",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Non — Azure DNS inscrit automatiquement les machines virtuelles d'un unique réseau virtuel, celui désigné comme réseau d'inscription de la zone privée. Or VM5 n'appartient pas à ce réseau.\n\nBox 2 : Non — la résolution DNS directe fonctionne sur les réseaux virtuels liés à la zone privée comme réseaux de résolution, ce qui n'est pas le cas ici."
+ },
+
+ "397": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les réseaux virtuels présentés dans le tableau suivant.",
+   "L'abonnement contient les zones DNS privées présentées dans le tableau suivant.",
+   "Vous ajoutez des liens de réseau virtuel à ces zones DNS privées comme indiqué dans le tableau suivant.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ]
+ },
+
+ "398": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous prévoyez d'utiliser un modèle Azure Resource Manager pour déployer un réseau virtuel nommé VNET1 qui utilisera Azure Bastion. Comment devez-vous compléter le modèle ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ]
+ },
+
+ "399": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune.",
+   "Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous gérez un réseau virtuel nommé VNet1 hébergé dans la région Azure West US. VNet1 héberge deux machines virtuelles nommées VM1 et VM2 sous Windows Server. Vous devez inspecter tout le trafic réseau entre VM1 et VM2 pendant trois heures.",
+   "Solution : depuis Azure Network Watcher, vous créez une capture de paquets. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "La capture de paquets variable de Network Watcher permet de créer des sessions de capture pour suivre le trafic entrant et sortant d'une machine virtuelle. Elle aide à diagnostiquer les anomalies réseau, de façon réactive comme préventive, et sert également à recueillir des statistiques réseau, à détecter des intrusions ou à déboguer des communications client-serveur."
+ },
+
+ "400": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous gérez un réseau virtuel nommé VNet1 hébergé dans la région Azure West US. VNet1 héberge deux machines virtuelles nommées VM1 et VM2 sous Windows Server. Vous devez inspecter tout le trafic réseau entre VM1 et VM2 pendant trois heures.",
+   "Solution : depuis Azure Network Watcher, vous créez un moniteur de connexion. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "401": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous gérez un réseau virtuel nommé VNet1 hébergé dans la région Azure West US. VNet1 héberge deux machines virtuelles nommées VM1 et VM2 sous Windows Server. Vous devez inspecter tout le trafic réseau entre VM1 et VM2 pendant trois heures.",
+   "Solution : depuis l'Analyseur de performances, vous créez un ensemble de collecteurs de données. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Il faut utiliser la capture de paquets d'Azure Network Watcher."
+ },
+
+ "402": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "Vous devez répartir les connexions HTTPS entre vm1 et vm2 au moyen de lb1. Quelles trois actions devez-vous effectuer, et dans quel ordre ? Pour répondre, déplacez les actions appropriées de la liste vers la zone de réponse et classez-les dans le bon ordre."
+  ]
+ },
+
+ "403": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous gérez un réseau virtuel nommé VNet1 hébergé dans la région Azure West US. VNet1 héberge deux machines virtuelles nommées VM1 et VM2 sous Windows Server. Vous devez inspecter tout le trafic réseau entre VM1 et VM2 pendant trois heures.",
+   "Solution : depuis Azure Monitor, vous créez une métrique sur Network In et Network Out. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "404": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'une application nommée App1 installée sur deux machines virtuelles Azure nommées VM1 et VM2. Les connexions à App1 sont gérées par un équilibreur de charge Azure. La configuration de sécurité réseau effective de VM2 est présentée dans la capture suivante.",
+   "Vous constatez que les connexions à App1 depuis 131.107.100.50 sur le port TCP 443 échouent. Vous vérifiez que les règles de l'équilibreur de charge sont correctement configurées. Vous devez faire en sorte que ces connexions aboutissent.",
+   "Solution : vous créez une règle de sécurité entrante qui refuse tout le trafic provenant de 131.107.100.50, avec une priorité de 64999. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "405": {
+  "text": [
+   "Vous disposez d'un abonnement Azure et de deux sites locaux nommés site1 et site2. Vous devez les relier au moyen d'un Azure Virtual WAN. Quelles quatre actions devez-vous effectuer, et dans quel ordre ? Pour répondre, déplacez les actions appropriées de la liste vers la zone de réponse et classez-les dans le bon ordre."
+  ]
+ },
+
+ "406": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les réseaux virtuels présentés dans le tableau suivant.",
+   "Vous disposez des machines virtuelles présentées dans le tableau suivant.",
+   "Vous disposez des interfaces réseau virtuelles présentées dans le tableau suivant.",
+   "Server1 est un serveur DNS contenant les ressources présentées dans le tableau suivant.",
+   "Vous disposez d'une zone DNS privée Azure nommée contoso.com, liée à VNET2 et contenant les enregistrements présentés dans le tableau suivant.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ]
+ },
+
+ "407": {
+  "text": [
+   "Vous disposez d'un réseau virtuel nommé VNet1, présenté dans la capture.",
+   "Aucun appareil n'est connecté à VNet1. Vous prévoyez de l'appairer à un autre réseau virtuel nommé VNet2, dont l'espace d'adressage est 10.2.0.0/16. Vous devez créer cet appairage. Que devez-vous faire en premier ?"
+  ],
+  "options": {
+   "A": "Modifier l'espace d'adressage de VNet1.",
+   "B": "Ajouter un sous-réseau de passerelle à VNet1.",
+   "C": "Créer un sous-réseau sur VNet1 et VNet2.",
+   "D": "Configurer un point de terminaison de service sur VNet2."
+  },
+  "explanation": "Les réseaux virtuels appairés doivent avoir des espaces d'adressage IP qui ne se recouvrent pas. La capture indique que VNet1 utilise l'espace 10.2.0.0/16, identique à celui de VNet2 : il faut donc modifier l'espace d'adressage de VNet1."
+ },
+
+ "408": {
+  "text": [
+   "Vous disposez des machines virtuelles Azure présentées dans le tableau suivant.",
+   "VNET1 est lié à une zone DNS privée nommée contoso.com contenant les enregistrements présentés dans le tableau suivant.",
+   "Vous devez envoyer un ping à VM2 depuis VM1. Quels noms DNS pouvez-vous utiliser pour cela ?"
+  ],
+  "options": {
+   "A": "comp2.contoso.com et comp4.contoso.com uniquement",
+   "B": "comp1.contoso.com, comp2.contoso.com, comp3.contoso.com et comp4.contoso.com",
+   "C": "comp2.contoso.com uniquement",
+   "D": "comp1.contoso.com et comp2.contoso.com uniquement",
+   "E": "comp1.contoso.com, comp2.contoso.com et comp4.contoso.com uniquement"
+  }
+ },
+
+ "409": {
+  "text": [
+   "Vous disposez d'un groupe de sécurité réseau nommé NSG1 dont les règles sont présentées dans la capture.",
+   "NSG1 est associé à un sous-réseau nommé Subnet1, qui contient les machines virtuelles présentées dans le tableau suivant.",
+   "Vous devez ajouter une règle à NSG1 pour que VM1 puisse envoyer un ping à VM2, en appliquant le principe du privilège minimum. Comment devez-vous configurer cette règle ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ]
+ },
+
+ "410": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision.",
+   "Vous disposez d'un ordinateur nommé Computer1 doté d'une connexion VPN de point à site vers un réseau virtuel Azure nommé VNet1. Cette connexion utilise un certificat auto-signé. Depuis Azure, vous téléchargez et installez le package de configuration du client VPN sur un ordinateur nommé Computer2. Vous devez pouvoir établir une connexion VPN de point à site vers VNet1 depuis Computer2.",
+   "Solution : sur Computer2, vous réglez le type de démarrage du service Agent de stratégie IPsec sur Automatique. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Tout ordinateur client qui se connecte à un réseau virtuel en point à site doit disposer d'un certificat client installé. Ce certificat est généré à partir du certificat racine auto-signé, puis exporté et installé ; sans lui, l'authentification échoue."
+ },
+
+ "411": {
+  "text": [
+   "Vous disposez de cinq machines virtuelles Azure sous Windows Server 2016, configurées en serveurs web. Un équilibreur de charge Azure nommé LB1 assure la répartition de charge entre ces machines. Vous devez faire en sorte qu'un visiteur soit servi par le même serveur web à chaque requête. Que devez-vous configurer ?"
+  ],
+  "options": {
+   "A": "La persistance de session sur « Client IP and protocol »",
+   "B": "Le protocole sur UDP",
+   "C": "La persistance de session sur « None »",
+   "D": "Floating IP (retour direct au serveur) sur Activé"
+  }
+ },
+
+ "412": {
+  "text": [
+   "Vous disposez d'un abonnement Azure utilisant les adresses IP publiques présentées dans le tableau suivant.",
+   "Vous devez créer un équilibreur de charge Azure public de référence Standard. Quelles adresses IP publiques pouvez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "IP1, IP2 et IP3",
+   "B": "IP2 uniquement",
+   "C": "IP3 uniquement",
+   "D": "IP1 et IP3 uniquement"
+  },
+  "explanation": "Les références de l'équilibreur de charge et des adresses IP publiques doivent correspondre : on ne peut pas mélanger des ressources de référence Basic et des ressources de référence Standard."
+ },
+
+ "413": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous déployez un cluster Azure Kubernetes Service (AKS) qui contiendra plusieurs pods utilisant le réseau kubenet. Vous devez restreindre le trafic réseau entre ces pods. Que devez-vous configurer sur le cluster AKS ?"
+  ],
+  "options": {
+   "A": "la stratégie réseau Azure",
+   "B": "la stratégie réseau Calico",
+   "C": "des stratégies de sécurité de pod",
+   "D": "un groupe de sécurité d'application"
+  }
+ },
+
+ "414": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un réseau virtuel nommé VNet1, doté de l'espace d'adressage 10.0.0.0/16 et contenant la passerelle VPN et les sous-réseaux du tableau suivant :",
+   "Subnet1 contient une appliance virtuelle nommée VM1 qui fait office de routeur. Vous créez une table de routage nommée RT1. Vous devez faire transiter par VM1 tout le trafic entrant venant de la passerelle VPN vers VNet1. Comment devez-vous configurer RT1 ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ]
+ },
+
+ "415": {
+  "text": [
+   "Vous disposez de cinq machines virtuelles Azure sous Windows Server 2016, configurées en serveurs web. Un équilibreur de charge Azure nommé LB1 assure la répartition de charge entre ces machines. Vous devez faire en sorte qu'un visiteur soit servi par le même serveur web à chaque requête. Que devez-vous configurer ?"
+  ],
+  "options": {
+   "A": "Floating IP (retour direct au serveur) sur Activé",
+   "B": "Floating IP (retour direct au serveur) sur Désactivé",
+   "C": "Une sonde d'intégrité",
+   "D": "La persistance de session sur « Client IP and Protocol »"
+  },
+  "explanation": "Avec les sessions persistantes, lorsqu'un client ouvre une session sur l'un de vos serveurs web, cette session reste sur ce serveur précis. Pour configurer un équilibreur de charge Azure en ce sens, réglez la persistance de session sur « Client IP »."
+ },
+
+ "416": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les machines virtuelles présentées dans le tableau suivant :",
+   "VM1 et VM2 utilisent des adresses IP publiques. Depuis Windows Server 2019 sur VM1 et VM2, vous autorisez les connexions Bureau à distance entrantes. Subnet1 et Subnet2 appartiennent à un réseau virtuel nommé VNET1. L'abonnement contient deux groupes de sécurité réseau nommés NSG1 et NSG2. NSG1 n'utilise que les règles par défaut. NSG2 utilise les règles par défaut ainsi que la règle entrante personnalisée suivante : priorité 100 ; nom Rule1 ; port 3389 ; protocole TCP ; source Any ; destination Any ; action Allow. NSG1 est associé à Subnet1, et NSG2 à l'interface réseau de VM2. Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ]
+ },
+
+ "417": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant deux machines virtuelles nommées VM1 et VM2. Vous créez un équilibreur de charge Azure et prévoyez de créer une règle d'équilibrage qui répartira le trafic HTTPS entre VM1 et VM2. Quelles deux ressources supplémentaires devez-vous créer avant de pouvoir créer cette règle ? Chaque bonne réponse constitue une partie de la solution.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "options": {
+   "A": "une adresse IP frontale",
+   "B": "une règle NAT entrante",
+   "C": "un réseau virtuel",
+   "D": "un pool principal",
+   "E": "une sonde d'intégrité"
+  }
+ }
+}
