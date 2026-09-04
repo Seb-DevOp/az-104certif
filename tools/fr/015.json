@@ -1,0 +1,284 @@
+{
+ "365": {
+  "text": [
+   "Vous disposez d'un réseau virtuel Azure nommé VNet1 contenant un sous-réseau nommé Subnet1, lui-même contenant trois machines virtuelles Azure. Chacune possède une adresse IP publique.",
+   "Ces machines hébergent plusieurs applications accessibles sur le port 443 aux internautes. Votre réseau local dispose d'une connexion VPN de site à site vers VNet1. Vous constatez que les machines virtuelles sont accessibles en Bureau à distance (RDP) aussi bien depuis Internet que depuis le réseau local. Vous devez interdire l'accès RDP depuis Internet, sauf lorsque la connexion provient du réseau local, tout en maintenant l'accès des internautes aux applications. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Modifier l'espace d'adressage de la passerelle de réseau local",
+   "B": "Créer une règle de refus dans un groupe de sécurité réseau associé à Subnet1",
+   "C": "Retirer les adresses IP publiques des machines virtuelles",
+   "D": "Modifier l'espace d'adressage de Subnet1"
+  },
+  "explanation": "Un VPN de site à site relie votre réseau local à un réseau virtuel Azure. Les utilisateurs du réseau local se connectent alors en RDP ou SSH à travers ce tunnel : il n'est pas nécessaire d'autoriser l'accès RDP ou SSH direct depuis Internet."
+ },
+
+ "366": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les ressources du tableau suivant.",
+   "Subnet1 est associé à VNet1, et NIC1 rattache VM1 à Subnet1. Vous devez appliquer ASG1 à VM1. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Associer NIC1 à ASG1",
+   "B": "Modifier les propriétés d'ASG1",
+   "C": "Modifier les propriétés de NSG1"
+  },
+  "explanation": "Un groupe de sécurité d'application s'associe aux interfaces réseau."
+ },
+
+ "367": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 contenant un réseau virtuel Azure nommé VNet1, relié à votre réseau local par Azure ExpressRoute. Vous prévoyez de préparer l'environnement à une bascule automatique en cas de défaillance d'ExpressRoute. Vous devez connecter VNet1 au réseau local par un VPN de site à site, en limitant les coûts. Quelles trois actions devez-vous effectuer ? Chaque bonne réponse constitue une partie de la solution.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "options": {
+   "A": "Créer une connexion",
+   "B": "Créer une passerelle VPN de site local",
+   "C": "Créer une passerelle VPN de référence VpnGw1",
+   "D": "Créer un sous-réseau de passerelle",
+   "E": "Créer une passerelle VPN de référence Basic"
+  }
+ },
+
+ "368": {
+  "text": [
+   "Vous disposez d'un appairage configuré comme dans la capture suivante.",
+   "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : vNET6 uniquement — l'état d'appairage avec VNet1 comme avec VNet2 est « déconnecté ».\n\nBox 2 : supprimer peering1. L'appairage vers VNet1 est activé mais déconnecté : il faut mettre à jour ou recréer l'appairage distant pour le ramener à l'état « Initié »."
+ },
+
+ "370": {
+  "text": [
+   "Vous disposez d'une machine virtuelle Azure nommée VM1 connectée à un réseau virtuel nommé VNet1. VM1 présente la configuration suivante : sous-réseau 10.0.0.0/24 ; groupe à haute disponibilité AVSet ; aucun groupe de sécurité réseau ; adresse IP privée 10.0.0.4 (dynamique) ; adresse IP publique 40.90.219.6 (dynamique). Vous déployez un équilibreur de charge de référence Standard exposé sur Internet, nommé slb1. Vous devez le configurer pour permettre la connectivité vers VM1. Quelles modifications devez-vous appliquer à VM1 lors de la configuration de slb1 ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Il faut passer l'adresse IP privée de VM1 en statique et retirer son adresse IP publique.\n\nRemarque : un équilibreur de charge public peut assurer les connexions sortantes des machines virtuelles de votre réseau virtuel, en traduisant leurs adresses IP privées en adresses IP publiques. Les équilibreurs publics servent à répartir le trafic Internet."
+ },
+
+ "371": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "Vous devez créer une interface réseau nommée NIC1. Dans quel emplacement pouvez-vous la créer ?"
+  ],
+  "options": {
+   "A": "East US et North Europe uniquement",
+   "B": "East US uniquement",
+   "C": "East US, West Europe et North Europe",
+   "D": "East US et West Europe uniquement"
+  },
+  "explanation": "Avant de créer une interface réseau, il faut disposer d'un réseau virtuel existant dans le même emplacement et le même abonnement."
+ },
+
+ "372": {
+  "text": [
+   "Vous disposez de machines virtuelles Azure sous Windows Server 2019, configurées comme indiqué dans le tableau suivant.",
+   "Vous créez une zone DNS Azure publique nommée adatum.com et une zone DNS Azure privée nommée contoso.com. Pour contoso.com, vous créez un lien de réseau virtuel nommé link1, présenté dans la capture.",
+   "Vous constatez que VM1 résout les noms de contoso.com mais pas ceux d'adatum.com, alors qu'elle résout d'autres hôtes sur Internet. Vous devez faire en sorte que VM1 résolve les noms d'hôtes d'adatum.com. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Remplacer le suffixe DNS de VM1 par adatum.com",
+   "B": "Configurer les serveurs de noms d'adatum.com chez le bureau d'enregistrement du domaine",
+   "C": "Créer un enregistrement SRV dans la zone contoso.com",
+   "D": "Modifier les paramètres de contrôle d'accès (IAM) de link1"
+  }
+ },
+
+ "373": {
+  "text": [
+   "Vous prévoyez d'utiliser Azure Network Watcher pour effectuer les tâches suivantes : Tâche 1, identifier une règle de sécurité qui empêche un paquet réseau d'atteindre une machine virtuelle Azure ; Tâche 2, valider la connectivité sortante d'une machine virtuelle Azure vers un hôte externe. Quelle fonctionnalité devez-vous utiliser pour chaque tâche ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : la vérification du flux IP. Lorsqu'une machine virtuelle ne parvient plus à communiquer avec d'autres ressources à cause d'une règle de sécurité, cette fonctionnalité permet d'indiquer une adresse IPv4 source et destination, un port, un protocole (TCP ou UDP) et un sens de trafic (entrant ou sortant), puis teste la communication et indique si la connexion aboutit."
+ },
+
+ "374": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les machines virtuelles Azure présentées dans le tableau suivant.",
+   "Vous configurez les interfaces réseau de ces machines avec les paramètres présentés dans le tableau suivant.",
+   "Depuis les paramètres de VNET1, vous configurez les serveurs DNS présentés dans la capture suivante.",
+   "Les machines virtuelles parviennent à joindre le serveur DNS d'adresse 192.168.10.15 ainsi que celui d'adresse 193.77.134.10. Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — les adresses IP des serveurs DNS peuvent être indiquées dans les paramètres du réseau virtuel ; elles s'appliquent alors par défaut à toutes les machines virtuelles du réseau.\n\nBox 2 : Non. Box 3 : Oui — des serveurs DNS peuvent être définis par machine virtuelle ou par service cloud, ce qui remplace les paramètres réseau par défaut."
+ },
+
+ "375": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les groupes de ressources présentés dans le tableau suivant.",
+   "RG1 contient les ressources présentées dans le tableau suivant.",
+   "RG2 contient les ressources présentées dans le tableau suivant.",
+   "Vous devez déterminer quelles ressources peuvent être déplacées de RG1 vers RG2, et lesquelles peuvent l'être de RG2 vers RG1. Que devez-vous retenir ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : IP1 et Storage1. Les adresses IP et les comptes de stockage peuvent être déplacés, contrairement aux réseaux virtuels ; RG1 ne porte aucun verrou.\n\nBox 2 : aucune. RG2 porte un verrou de suppression.\n\nRemarque : un verrou appliqué à une portée parente est hérité par toutes les ressources qu'elle contient, y compris celles ajoutées ensuite ; c'est le verrou le plus restrictif de la chaîne d'héritage qui s'applique."
+ },
+
+ "376": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision.",
+   "Vous disposez d'un abonnement Azure contenant les machines virtuelles présentées dans le tableau suivant.",
+   "Vous déployez un équilibreur de charge ainsi configuré : nom LB1 ; type interne ; référence Standard ; réseau virtuel VNET1. Vous devez pouvoir ajouter VM1 et VM2 au pool principal de LB1.",
+   "Solution : vous créez une adresse IP publique de référence Basic, l'associez à l'interface réseau de VM1, puis démarrez VM1. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Un pool principal configuré par adresse IP n'est pris en charge que par un équilibreur de charge de référence Standard."
+ },
+
+ "377": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un abonnement Azure contenant les machines virtuelles présentées dans le tableau suivant.",
+   "Vous déployez un équilibreur de charge ainsi configuré : nom LB1 ; type interne ; référence Standard ; réseau virtuel VNET1.",
+   "Vous devez pouvoir ajouter VM1 et VM2 au pool principal de LB1.",
+   "Solution : vous créez une adresse IP publique de référence Standard, l'associez à l'interface réseau de VM1, puis arrêtez VM2. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Un pool principal configuré par adresse IP n'est pris en charge que par un équilibreur de charge de référence Standard."
+ },
+
+ "378": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un abonnement Azure contenant les machines virtuelles présentées dans le tableau suivant.",
+   "Vous déployez un équilibreur de charge ainsi configuré : nom LB1 ; type interne ; référence Standard ; réseau virtuel VNET1. Vous devez pouvoir ajouter VM1 et VM2 au pool principal de LB1.",
+   "Solution : vous créez deux adresses IP publiques de référence Standard et en associez une à l'interface réseau de chaque machine virtuelle. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Un pool principal configuré par adresse IP n'est pris en charge que par un équilibreur de charge de référence Standard."
+ },
+
+ "379": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un ordinateur nommé Computer1 doté d'une connexion VPN de point à site vers un réseau virtuel Azure nommé VNet1. Cette connexion utilise un certificat auto-signé. Depuis Azure, vous téléchargez et installez le package de configuration du client VPN sur un ordinateur nommé Computer2. Vous devez pouvoir établir une connexion VPN de point à site vers VNet1 depuis Computer2.",
+   "Solution : vous exportez le certificat client depuis Computer1 et l'installez sur Computer2. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Tout ordinateur client qui se connecte à un réseau virtuel en point à site doit disposer d'un certificat client installé. Ce certificat est généré à partir du certificat racine auto-signé, puis exporté et installé ; sans lui, l'authentification échoue."
+ },
+
+ "380": {
+  "text": [
+   "Vous disposez d'une machine virtuelle Azure nommée VM1, dont l'interface réseau est configurée comme dans la capture.",
+   "Vous déployez un serveur web sur VM1, puis créez un site web sécurisé accessible en HTTPS. VM1 sert uniquement de serveur web. Vous devez faire en sorte que les internautes puissent se connecter à ce site. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Modifier le protocole de Rule4",
+   "B": "Supprimer Rule1",
+   "C": "Pour Rule5, passer l'action à Autoriser et la priorité à 401",
+   "D": "Créer une règle entrante autorisant le protocole TCP 443 avec une priorité de 501."
+  },
+  "explanation": "HTTPS utilise le port 443. Rule2, de priorité 500, refuse le trafic HTTPS. En passant la priorité de Rule5 de 2000 à 401, celle-ci devient prioritaire et autorise le trafic HTTPS.\n\nRemarque : la priorité est un nombre compris entre 100 et 4096. Les règles sont traitées par ordre de priorité, les numéros les plus bas d'abord ; dès qu'un trafic correspond à une règle, le traitement s'arrête."
+ },
+
+ "381": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un abonnement Azure contenant 10 réseaux virtuels, hébergés dans des groupes de ressources distincts. Un autre administrateur prévoit de créer plusieurs groupes de sécurité réseau dans l'abonnement. Vous devez faire en sorte que tout nouveau groupe de sécurité réseau bloque automatiquement le port TCP 8080 entre les réseaux virtuels.",
+   "Solution : depuis le volet Fournisseurs de ressources, vous désinscrivez le fournisseur Microsoft.ClassicNetwork. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Il faut utiliser une définition de stratégie. Les définitions de stratégie de ressources d'Azure Policy permettent d'établir des conventions pour les ressources de votre organisation, en décrivant quand la stratégie s'applique et quel effet elle produit."
+ },
+
+ "382": {
+  "text": [
+   "Vous gérez deux abonnements Azure nommés Subscription1 et Subscription2. Subscription1 comporte les réseaux virtuels suivants :",
+   "Ces réseaux virtuels contiennent les sous-réseaux suivants :",
+   "Subscription2 comporte le réseau virtuel suivant : nom VNETA ; espace d'adressage 10.10.128.0/17 ; emplacement Canada Central. VNETA contient les sous-réseaux suivants :",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — une connexion de réseau virtuel à réseau virtuel permet de relier des réseaux virtuels Azure situés dans des régions différentes.\n\nBox 2 : Oui — Azure prend en charge l'appairage de réseaux virtuels au sein d'une même région, ainsi que l'appairage global entre régions.\n\nBox 3 : Non — les réseaux virtuels appairés doivent avoir des espaces d'adressage qui ne se recouvrent pas."
+ },
+
+ "383": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune.",
+   "Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'une application nommée App1 installée sur deux machines virtuelles Azure nommées VM1 et VM2. Les connexions à App1 sont gérées par un équilibreur de charge Azure. La configuration de sécurité réseau effective de VM2 est présentée dans la capture suivante.",
+   "Vous constatez que les connexions à App1 depuis 131.107.100.50 sur le port TCP 443 échouent. Vous vérifiez que les règles de l'équilibreur de charge sont correctement configurées. Vous devez faire en sorte que ces connexions aboutissent.",
+   "Solution : vous créez une règle de sécurité entrante qui refuse tout le trafic provenant de 131.107.100.50 avec un coût de 64999. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "384": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision.",
+   "Vous disposez d'une application nommée App1 installée sur deux machines virtuelles Azure nommées VM1 et VM2. Les connexions à App1 sont gérées par un équilibreur de charge Azure. La configuration de sécurité réseau effective de VM2 est présentée dans la capture suivante.",
+   "Vous constatez que les connexions à App1 depuis 131.107.100.50 sur le port TCP 443 échouent. Vous vérifiez que les règles de l'équilibreur de charge sont correctement configurées. Vous devez faire en sorte que ces connexions aboutissent.",
+   "Solution : vous supprimez la règle de sécurité entrante BlockAllOther443. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "385": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'une application nommée App1 installée sur deux machines virtuelles Azure nommées VM1 et VM2. Les connexions à App1 sont gérées par un équilibreur de charge Azure. La configuration de sécurité réseau effective de VM2 est présentée dans la capture suivante.",
+   "Vous constatez que les connexions à App1 depuis 131.107.100.50 sur le port TCP 443 échouent. Vous vérifiez que les règles de l'équilibreur de charge sont correctement configurées. Vous devez faire en sorte que ces connexions aboutissent.",
+   "Solution : vous modifiez la priorité de la règle de sécurité entrante Allow_131.107.100.50. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Cette règle porte déjà la priorité la plus élevée."
+ },
+
+ "386": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un abonnement Azure contenant 10 réseaux virtuels, hébergés dans des groupes de ressources distincts. Un autre administrateur prévoit de créer plusieurs groupes de sécurité réseau dans l'abonnement. Vous devez faire en sorte que tout nouveau groupe de sécurité réseau bloque automatiquement le port TCP 8080 entre les réseaux virtuels.",
+   "Solution : vous attribuez une définition de stratégie Azure intégrée à l'abonnement. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Les définitions de stratégie de ressources d'Azure Policy permettent d'établir des conventions pour les ressources de votre organisation, en décrivant quand la stratégie s'applique et quel effet elle produit. Encore faut-il qu'une définition intégrée corresponde exactement au besoin."
+ },
+
+ "387": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous prévoyez de déployer un cluster Azure Kubernetes Service (AKS) pour héberger une application nommée App1. Des clients locaux se connectent à App1 en utilisant l'adresse IP du pod. Vous devez choisir pour ce cluster un type de réseau compatible avec App1. Que devez-vous choisir ?"
+  ],
+  "options": {
+   "A": "kubenet",
+   "B": "Azure Container Networking Interface (CNI)",
+   "C": "des points de terminaison Hybrid Connection",
+   "D": "Azure Private Link"
+  },
+  "explanation": "Avec Azure CNI, chaque pod reçoit une adresse IP prise dans le sous-réseau et devient joignable directement ; ces adresses doivent être uniques dans votre espace réseau.\n\nRéponse incorrecte A : kubenet est la configuration par défaut à la création d'un cluster AKS. Les nœuds y reçoivent une adresse du sous-réseau du réseau virtuel Azure, mais les pods reçoivent la leur d'un espace d'adressage logiquement distinct."
+ },
+
+ "388": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un abonnement Azure contenant les machines virtuelles présentées dans le tableau suivant.",
+   "Vous déployez un équilibreur de charge ainsi configuré : nom LB1 ; type interne ; référence Standard ; réseau virtuel VNET1. Vous devez pouvoir ajouter VM1 et VM2 au pool principal de LB1.",
+   "Solution : vous dissociez l'adresse IP publique de l'interface réseau de VM2. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "389": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un abonnement Azure contenant 10 réseaux virtuels, hébergés dans des groupes de ressources distincts. Un autre administrateur prévoit de créer plusieurs groupes de sécurité réseau dans l'abonnement. Vous devez faire en sorte que tout nouveau groupe de sécurité réseau bloque automatiquement le port TCP 8080 entre les réseaux virtuels.",
+   "Solution : vous configurez une définition de stratégie personnalisée, puis vous l'attribuez à l'abonnement. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Les définitions de stratégie de ressources d'Azure Policy permettent d'établir des conventions pour les ressources de votre organisation, en décrivant quand la stratégie s'applique et quel effet elle produit."
+ },
+
+ "390": {
+  "text": [
+   "Vous disposez de deux réseaux virtuels Azure nommés VNet1 et VNet2. VNet1 contient une machine virtuelle Azure nommée VM1, et VNet2 une machine virtuelle nommée VM2. VM1 héberge une application frontale qui se connecte à VM2 pour récupérer des données. Des utilisateurs signalent que cette application est plus lente que d'habitude. Vous devez consulter le temps d'aller-retour moyen des paquets entre VM1 et VM2. Quelle fonctionnalité d'Azure Network Watcher devez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "la vérification du flux IP",
+   "B": "le dépannage de connexion",
+   "C": "le moniteur de connexion",
+   "D": "les journaux de flux NSG"
+  },
+  "explanation": "Le moniteur de connexion surveille la communication à intervalles réguliers et vous informe de la joignabilité, de la latence et des changements de topologie réseau entre la machine virtuelle et le point de terminaison.\n\nRéponse incorrecte A : la vérification du flux IP permet d'indiquer une adresse IPv4 source et destination, un port, un protocole et un sens de trafic, pour savoir si un paquet est autorisé ou refusé — mais elle ne mesure pas la latence."
+ },
+
+ "391": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les équilibreurs de charge publics présentés dans le tableau suivant.",
+   "Vous prévoyez de créer six machines virtuelles et de répartir les requêtes entre elles, chaque équilibreur de charge en desservant trois. Vous devez créer les machines virtuelles pour cette solution. Comment devez-vous procéder ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : être créées dans le même groupe à haute disponibilité ou le même groupe de machines virtuelles identiques. La référence Basic est très restrictive : un équilibreur de charge y est limité à un seul groupe à haute disponibilité, un seul groupe de machines identiques, ou une seule machine.\n\nBox 2 : être connectées au même réseau virtuel. La référence Standard peut desservir n'importe quelle machine virtuelle d'un même réseau virtuel, y compris un mélange de groupes identiques et de groupes à haute disponibilité."
+ }
+}
