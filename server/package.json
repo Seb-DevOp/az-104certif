@@ -1,0 +1,8 @@
+{
+  "name": "az104-server",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Static file server for the AZ-104 trainer. No dependencies by design.",
+  "main": "index.js"
+}

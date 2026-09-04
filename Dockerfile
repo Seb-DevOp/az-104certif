@@ -25,7 +25,9 @@ ENV NODE_ENV=production
 ENV PORT=8080
 WORKDIR /app
 
-# The server has no dependencies, so there is nothing to install here.
+# The server has no dependencies, so there is nothing to install here. Its package.json is
+# copied along for its "type": "module" — without it Node has to fall back on guessing the
+# module system from the file's syntax, which is version-dependent behaviour.
 COPY server/ ./server/
 COPY --from=build /build/web/dist ./public/
 

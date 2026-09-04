@@ -102,6 +102,28 @@ gcloud run deploy az104-trainer \
   --max-instances 4
 ```
 
+### Avec `gcloud builds submit` (build seul)
+
+Attention : `gcloud builds submit --tag …` **construit et pousse l'image, mais ne déploie
+rien**. Son journal se termine sur `PUSH` puis `DONE`, sans étape `Deploy` : le service
+Cloud Run n'est ni créé ni mis à jour, et continue de servir la révision précédente (ou
+n'existe pas). Il faut enchaîner explicitement :
+
+```bash
+PROJECT=$(gcloud config get-value project)
+IMAGE=gcr.io/$PROJECT/az104_test:latest
+
+gcloud builds submit --tag $IMAGE          # construit et pousse
+gcloud run deploy az104-trainer \          # ...et déploie
+  --image $IMAGE \
+  --region europe-west1 \
+  --allow-unauthenticated \
+  --memory 512Mi
+```
+
+Pour éviter cet oubli, préférez `gcloud run deploy --source .` (qui fait les deux) ou un
+déclencheur configuré sur `cloudbuild.yaml`, dont la dernière étape est justement `deploy`.
+
 ### Via Artifact Registry
 
 ```bash
