@@ -1,0 +1,38 @@
+{
+ "_readme": "Drop-down hot-area questions transcribed by hand from each answer-key screenshot (the key shows the menu expanded with the correct choice highlighted). One entry per question id: [label, [choices in order], index of the correct choice]. Expanded into web/public/data/interactive.json by tools/merge-interactive.mjs.",
+
+ "21": [
+  ["To add a backend pool to LB1:",
+   ["Contributor on LB1", "Network Contributor on LB1", "Network Contributor on RG1", "Owner on LB1"], 1],
+  ["To add a health probe to LB2:",
+   ["Contributor on LB2", "Network Contributor on LB2", "Network Contributor on RG1", "Owner on LB2"], 1]
+ ],
+
+ "53": [
+  ["User1 can [answer choice] LB1.",
+   ["delete", "create a NAT rule for", "assign access to other users for"], 2],
+  ["User1 can [answer choice] the resource group.",
+   ["delete a virtual machine from", "modify the load balancing rules in", "deploy an Azure Kubernetes Service (AKS) cluster to"], 0]
+ ],
+
+ "55": [
+  ["To ensure that users can sign in to virtual machines that are assigned role1, modify the [answer choice] section.",
+   ["actions", "roletype", "notActions", "dataActions", "notDataActions", "assignableScopes"], 1],
+  ["To ensure that role1 can be assigned only to a resource group named RG1, modify the [answer choice] section.",
+   ["actions", "roletype", "notActions", "dataActions", "notDataActions", "assignableScopes"], 5]
+ ],
+
+ "116": [
+  ["User is consuming [answer choice] for Microsoft Intune Suite.",
+   ["one license", "two licenses", "five licenses", "eight licenses"], 2],
+  ["To remove Microsoft Fabric (Free) from the license assignments of User1, you must [answer choice].",
+   ["unassign the license for User1 only", "remove User1 from Group1 only", "unassign the license for User1 and unassign the license for Group1"], 1]
+ ],
+
+ "146": [
+  ["You can create a premium file share in",
+   ["contoso101 only", "contoso104 only", "contoso101 or contoso104 only", "contoso101, contoso102, or contoso104 only", "contoso101, contoso102, contoso103, or contoso104"], 1],
+  ["You can use the Archive access tier in",
+   ["contoso101 only", "contoso101 or contoso103 only", "contoso101, contoso102, and contoso103 only", "contoso101, contoso102, and contoso104 only", "contoso101, contoso102, contoso103, and contoso104"], 2]
+ ]
+}

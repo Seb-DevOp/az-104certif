@@ -105,6 +105,13 @@ const DICT = {
   statements: { fr: 'Affirmations', en: 'Statements' },
   yes: { fr: 'Oui', en: 'Yes' },
   no: { fr: 'Non', en: 'No' },
+
+  // Drop-down answer area
+  dropdownHint: {
+    fr: 'Choisissez la bonne réponse dans chaque menu déroulant.',
+    en: 'Pick the right answer in each drop-down menu.',
+  },
+  choose: { fr: '— Choisir —', en: '— Choose —' },
   reset: { fr: 'Réinitialiser', en: 'Reset' },
 
   // Results

@@ -251,8 +251,23 @@ npm run check:translations      # cohérence fr.json ↔ banque ↔ questions in
 Ce script vérifie que le nombre de paragraphes traduits correspond à la source, que les clés
 d'options existent, et que chaque affirmation d'une grille transcrite est bien traduite.
 
-Pour traduire le reste, il faut une clé API : c'est la seule étape que ce dépôt ne peut pas
-faire tourner sans identifiants.
+### Traduire la totalité
+
+Les 527 questions restantes représentent environ **540 000 caractères** (~150 000 tokens en
+entrée). C'est trop pour une transcription à la main, mais c'est une seule commande :
+
+```bash
+export ANTHROPIC_API_KEY=sk-ant-...
+npm run translate
+```
+
+Comptez quelques minutes et quelques dollars. `--model claude-sonnet-5` divise le coût par
+deux ou trois, au prix d'une traduction un peu moins fine sur les tournures techniques.
+
+Le point important pour un dump d'examen : la traduction part du **texte déjà extrait**, pas
+du PDF. Retraduire le PDF avec un traducteur généraliste abîmerait les noms de rôles RBAC,
+de cmdlets et de ressources — or ce sont exactement les mots sur lesquels porte la question.
+Le prompt de `translate.mjs` les verrouille en anglais et ne traduit que la prose autour.
 
 ---
 
@@ -268,10 +283,29 @@ coexistent donc :
   forme réellement jouable, relevée à la main sur les captures. Elle devient alors corrigée
   automatiquement, et la capture d'origine reste consultable comme corrigé.
 
-État actuel : **28 questions transcrites** — 23 grilles Oui/Non et 5 plateaux de
-glisser-déposer.
+État actuel : **33 questions transcrites** — 23 grilles Oui/Non, 5 séries de menus
+déroulants et 5 plateaux de glisser-déposer. Il reste 151 zones actives affichées en
+capture.
 
-### Ajouter une grille Oui / Non
+### Transcrire automatiquement (recommandé)
+
+La transcription n'a rien de manuel par nature : l'image de corrigé contient à la fois le
+libellé de chaque ligne **et** la réponse surlignée en vert. Un modèle multimodal peut donc
+la reconstruire. C'est ce que fait `tools/transcribe-hotspots.mjs` :
+
+```bash
+export ANTHROPIC_API_KEY=sk-ant-...
+npm run data:transcribe -- --limit 10        # commencez petit, relisez
+npm run check:interactive                    # valide la structure produite
+npm run data:transcribe                      # puis le reste
+```
+
+Le script écrit question par question (donc reprenable), saute celles déjà transcrites, et
+refuse d'inventer : si les captures ne montrent pas clairement à la fois le libellé et la
+réponse, il répond `unclear` et la question reste en mode capture. Une clé de corrigé fausse
+est pire qu'une image — **relisez un échantillon avant de publier**.
+
+### Ajouter une grille Oui / Non à la main
 
 Le corrigé de ces questions montre à la fois les affirmations et la colonne cochée en vert,
 une seule capture suffit donc à les relever. Ajoutez une ligne à `tools/yesno-seed.json`,
@@ -292,6 +326,16 @@ npm run data:interactive
 Le script vérifie que chaque identifiant existe bien dans la banque, que la question est
 bien de format `hotspot`, et refuse les lignes mal formées.
 
+### Ajouter des menus déroulants à la main
+
+Même principe dans `tools/dropdown-seed.json`, au format
+`["libellé", ["choix", …], index de la bonne réponse]` :
+
+```jsonc
+"137": [["You can create a premium file share in",
+         ["contoso101 only", "contoso104 only"], 1]]
+```
+
 ### Ajouter un glisser-déposer
 
 Directement dans `interactive.json` :
@@ -305,9 +349,10 @@ Directement dans `interactive.json` :
 }
 ```
 
-Dans les deux cas, les libellés français se placent dans `fr.json` sous la clé `interactive`
-de la même question (`statements` pour une grille, `items` / `targets` pour un plateau).
-Aucune recompilation n'est nécessaire : les fichiers sont chargés au démarrage.
+Dans tous les cas, les libellés français se placent dans `fr.json` sous la clé `interactive`
+de la même question — `statements` pour une grille, `fields` pour des menus déroulants,
+`items` / `targets` pour un plateau. Aucune recompilation n'est nécessaire : les fichiers
+sont chargés au démarrage de l'application.
 
 ---
 

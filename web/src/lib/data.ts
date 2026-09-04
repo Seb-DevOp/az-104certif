@@ -69,6 +69,17 @@ function localiseSpec(
       statements: spec.statements.map((s) => ({ ...s, text: tr.statements?.[s.id] ?? s.text })),
     };
   }
+  if (spec.kind === 'dropdown') {
+    return {
+      ...spec,
+      prompt,
+      fields: spec.fields.map((f) => ({
+        ...f,
+        label: tr.fields?.[f.id]?.label ?? f.label,
+        options: tr.fields?.[f.id]?.options ?? f.options,
+      })),
+    };
+  }
   return {
     ...spec,
     prompt,

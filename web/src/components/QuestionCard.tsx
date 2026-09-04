@@ -3,12 +3,14 @@ import type { Lang, Question, TranslationMap } from '../types';
 import { localise } from '../lib/data';
 import { makeT, topicLabel } from '../lib/i18n';
 import {
-  decodeDragAnswer, decodeYesNo, encodeDragAnswer, encodeYesNo, gradeDragDrop, gradeYesNo,
-  shuffle, yesNoAnswered,
+  decodeDragAnswer, decodeDropdown, decodeYesNo, dropdownAnswered, encodeDragAnswer,
+  encodeDropdown, encodeYesNo, gradeDragDrop, gradeDropdown, gradeYesNo, shuffle,
+  yesNoAnswered,
 } from '../lib/quiz';
 import { Badge, Exhibit, Explanation } from './ui';
 import { DragDrop } from './DragDrop';
 import { YesNo } from './YesNo';
+import { Dropdown } from './Dropdown';
 
 export interface QuestionCardProps {
   question: Question;
@@ -39,10 +41,12 @@ export function QuestionCard(props: QuestionCardProps) {
     decodeDragAnswer(selected),
   );
   const [yesNoPicks, setYesNoPicks] = useState<Record<string, boolean>>(() => decodeYesNo(selected));
+  const [dropdownPicks, setDropdownPicks] = useState<Record<string, number>>(() => decodeDropdown(selected));
 
   useEffect(() => {
     setDragPlacement(decodeDragAnswer(selected));
     setYesNoPicks(decodeYesNo(selected));
+    setDropdownPicks(decodeDropdown(selected));
   }, [q.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Shuffling is keyed on the question so the order is stable while it is on screen.
@@ -58,6 +62,7 @@ export function QuestionCard(props: QuestionCardProps) {
   const spec = loc.interactive;
   const dragSpec = spec?.kind === 'dragdrop' ? spec : undefined;
   const yesNoSpec = spec?.kind === 'yesno' ? spec : undefined;
+  const dropdownSpec = spec?.kind === 'dropdown' ? spec : undefined;
 
   const toggle = (key: string) => {
     if (locked) return;
@@ -85,7 +90,11 @@ export function QuestionCard(props: QuestionCardProps) {
   const correctSet = new Set(q.answer);
   const dragResult = dragSpec && revealed ? gradeDragDrop(dragSpec, dragPlacement) : undefined;
   const wasCorrect = spec
-    ? (yesNoSpec ? gradeYesNo(yesNoSpec, yesNoPicks) : Boolean(dragResult?.correct))
+    ? yesNoSpec
+      ? gradeYesNo(yesNoSpec, yesNoPicks)
+      : dropdownSpec
+        ? gradeDropdown(dropdownSpec, dropdownPicks)
+        : Boolean(dragResult?.correct)
     : revealed && !isReveal && selected.length === q.answer.length && selected.every((k) => correctSet.has(k));
   // Self-graded questions state their own verdict; everything else gets a banner.
   const showVerdict = revealed && (Boolean(spec) || !isReveal);
@@ -117,7 +126,30 @@ export function QuestionCard(props: QuestionCardProps) {
         </div>
       )}
 
-      {yesNoSpec ? (
+      {dropdownSpec ? (
+        <>
+          <Dropdown
+            spec={dropdownSpec}
+            lang={lang}
+            value={dropdownPicks}
+            revealed={Boolean(locked)}
+            onChange={(picks) => {
+              setDropdownPicks(picks);
+              onSelect(encodeDropdown(picks));
+            }}
+          />
+          {!locked && !readOnly && showFeedback && (
+            <button
+              type="button"
+              className="btn-primary mt-4"
+              disabled={!dropdownAnswered(dropdownSpec, dropdownPicks)}
+              onClick={() => onCheck(gradeDropdown(dropdownSpec, dropdownPicks))}
+            >
+              {t('validate')}
+            </button>
+          )}
+        </>
+      ) : yesNoSpec ? (
         <>
           <YesNo
             spec={yesNoSpec}

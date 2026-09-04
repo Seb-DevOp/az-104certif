@@ -40,6 +40,33 @@
    }
   ]
  },
+ "21": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "To add a backend pool to LB1:",
+    "options": [
+     "Contributor on LB1",
+     "Network Contributor on LB1",
+     "Network Contributor on RG1",
+     "Owner on LB1"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "f2",
+    "label": "To add a health probe to LB2:",
+    "options": [
+     "Contributor on LB2",
+     "Network Contributor on LB2",
+     "Network Contributor on RG1",
+     "Owner on LB2"
+    ],
+    "answer": 1
+   }
+  ]
+ },
  "38": {
   "kind": "yesno",
   "statements": [
@@ -97,6 +124,62 @@
     "id": "s3",
     "text": "VNET1 has the Tag2: IT and Tag3: value2 tags assigned only.",
     "answer": false
+   }
+  ]
+ },
+ "53": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "User1 can [answer choice] LB1.",
+    "options": [
+     "delete",
+     "create a NAT rule for",
+     "assign access to other users for"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "User1 can [answer choice] the resource group.",
+    "options": [
+     "delete a virtual machine from",
+     "modify the load balancing rules in",
+     "deploy an Azure Kubernetes Service (AKS) cluster to"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "55": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "To ensure that users can sign in to virtual machines that are assigned role1, modify the [answer choice] section.",
+    "options": [
+     "actions",
+     "roletype",
+     "notActions",
+     "dataActions",
+     "notDataActions",
+     "assignableScopes"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "f2",
+    "label": "To ensure that role1 can be assigned only to a resource group named RG1, modify the [answer choice] section.",
+    "options": [
+     "actions",
+     "roletype",
+     "notActions",
+     "dataActions",
+     "notDataActions",
+     "assignableScopes"
+    ],
+    "answer": 5
    }
   ]
  },
@@ -302,6 +385,32 @@
    }
   ]
  },
+ "116": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "User is consuming [answer choice] for Microsoft Intune Suite.",
+    "options": [
+     "one license",
+     "two licenses",
+     "five licenses",
+     "eight licenses"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "To remove Microsoft Fabric (Free) from the license assignments of User1, you must [answer choice].",
+    "options": [
+     "unassign the license for User1 only",
+     "remove User1 from Group1 only",
+     "unassign the license for User1 and unassign the license for Group1"
+    ],
+    "answer": 1
+   }
+  ]
+ },
  "122": {
   "kind": "yesno",
   "statements": [
@@ -417,6 +526,35 @@
     "id": "s3",
     "text": "You can add data3 as an additional server endpoint for Sync1.",
     "answer": false
+   }
+  ]
+ },
+ "146": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "You can create a premium file share in",
+    "options": [
+     "contoso101 only",
+     "contoso104 only",
+     "contoso101 or contoso104 only",
+     "contoso101, contoso102, or contoso104 only",
+     "contoso101, contoso102, contoso103, or contoso104"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "f2",
+    "label": "You can use the Archive access tier in",
+    "options": [
+     "contoso101 only",
+     "contoso101 or contoso103 only",
+     "contoso101, contoso102, and contoso103 only",
+     "contoso101, contoso102, and contoso104 only",
+     "contoso101, contoso102, contoso103, and contoso104"
+    ],
+    "answer": 2
    }
   ]
  },

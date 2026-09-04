@@ -20,6 +20,8 @@
     "docker:build": "docker build -t az104-trainer .",
     "docker:run": "docker run --rm -p 8080:8080 az104-trainer",
     "data:interactive": "node tools/merge-interactive.mjs",
-    "check:translations": "node tools/check-translations.mjs"
+    "check:translations": "node tools/check-translations.mjs",
+    "data:transcribe": "node tools/transcribe-hotspots.mjs",
+    "check:interactive": "node tools/check-interactive.mjs"
   }
 }

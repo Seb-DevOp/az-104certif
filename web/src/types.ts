@@ -36,7 +36,7 @@ export interface Question {
  * A question the dump only carries as a screenshot, transcribed into something the learner
  * can actually answer. Authored in web/public/data/interactive.json, keyed by question id.
  */
-export type InteractiveSpec = DragDropSpec | YesNoSpec;
+export type InteractiveSpec = DragDropSpec | YesNoSpec | DropdownSpec;
 
 /** An exam-style "drag the item onto the target" question. */
 export interface DragDropSpec {
@@ -62,6 +62,16 @@ export interface YesNoSpec {
   statements: { id: string; text: string; answer: boolean }[];
 }
 
+/**
+ * The exam's other hot-area shape: an answer area of labelled drop-down menus, each with its
+ * own list of choices. `answer` is the index into `options`.
+ */
+export interface DropdownSpec {
+  kind: 'dropdown';
+  prompt?: string;
+  fields: { id: string; label: string; options: string[]; answer: number }[];
+}
+
 export type Lang = 'fr' | 'en';
 
 /** Per-question French text, keyed by question id. Missing entries fall back to English. */
@@ -69,12 +79,14 @@ export interface Translation {
   text?: string[];
   options?: Record<string, string>;
   explanation?: string;
-  /** French labels for a hand-authored interactive question, keyed by element id. */
+  /** French labels for an interactive question, keyed by element id. */
   interactive?: {
     prompt?: string;
     items?: Record<string, string>;
     targets?: Record<string, string>;
     statements?: Record<string, string>;
+    /** A drop-down's label and its choices, which must stay in the source order. */
+    fields?: Record<string, { label?: string; options?: string[] }>;
   };
 }
 

@@ -1,6 +1,6 @@
 import type {
   AnswerRecord, DragDropSpec, ExamConfig, InteractiveSpec, Mode, Progress, Question,
-  SessionState, Topic, YesNoSpec,
+  DropdownSpec, SessionState, Topic, YesNoSpec,
 } from '../types';
 
 /** Fisher-Yates, seeded off Math.random — good enough for shuffling a quiz. */
@@ -169,11 +169,32 @@ export function decodeYesNo(encoded: readonly string[]): Record<string, boolean>
   return out;
 }
 
+export function gradeDropdown(spec: DropdownSpec, picks: Record<string, number>): boolean {
+  return spec.fields.every((f) => picks[f.id] === f.answer);
+}
+
+export const dropdownAnswered = (spec: DropdownSpec, picks: Record<string, number>) =>
+  spec.fields.every((f) => picks[f.id] !== undefined);
+
+export const encodeDropdown = (picks: Record<string, number>): string[] =>
+  Object.entries(picks).map(([id, i]) => `${id}:${i}`);
+
+export function decodeDropdown(encoded: readonly string[]): Record<string, number> {
+  const out: Record<string, number> = {};
+  for (const entry of encoded) {
+    const sep = entry.indexOf(':');
+    if (sep < 0) continue;
+    const n = Number(entry.slice(sep + 1));
+    if (Number.isInteger(n)) out[entry.slice(0, sep)] = n;
+  }
+  return out;
+}
+
 /** Machine-graded interactive questions, whatever their shape. */
 export function gradeInteractive(spec: InteractiveSpec, selected: readonly string[]): boolean {
-  return spec.kind === 'yesno'
-    ? gradeYesNo(spec, decodeYesNo(selected))
-    : gradeDragDrop(spec, decodeDragAnswer(selected)).correct;
+  if (spec.kind === 'yesno') return gradeYesNo(spec, decodeYesNo(selected));
+  if (spec.kind === 'dropdown') return gradeDropdown(spec, decodeDropdown(selected));
+  return gradeDragDrop(spec, decodeDragAnswer(selected)).correct;
 }
 
 /**
