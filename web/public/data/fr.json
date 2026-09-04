@@ -1,0 +1,71 @@
+{
+ "3": {
+  "text": [
+   "Votre entreprise dispose d'un abonnement Azure qui contient plusieurs machines virtuelles Azure, toutes rattachées au même réseau virtuel. Elle possède également un serveur Hyper-V local qui héberge une machine virtuelle nommée VM1, laquelle doit être répliquée vers Azure. Quels objets devez-vous créer pour atteindre cet objectif ? Répondez en faisant glisser les bonnes options de la liste vers la zone de réponse."
+  ],
+  "interactive": {
+   "prompt": "Faites glisser vers la zone de réponse chaque objet qui doit être créé. Les intrus restent dans la liste.",
+   "items": {
+    "hyperv-site": "Hyper-V site",
+    "storage-account": "Storage account",
+    "recovery-vault": "Azure Recovery Services Vault",
+    "traffic-manager": "Azure Traffic Manager instance",
+    "replication-policy": "Replication policy",
+    "endpoint": "Endpoint"
+   },
+   "targets": { "answer": "Zone de réponse" }
+  }
+ },
+
+ "68": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Sub1 qui contient deux utilisateurs nommés User1 et User2. Vous devez attribuer des rôles RBAC (contrôle d'accès en fonction du rôle) à User1 et User2. Les utilisateurs doivent pouvoir effectuer les tâches suivantes dans Sub1 : • User1 doit pouvoir consulter les données de n'importe quel compte de stockage. • User2 doit pouvoir attribuer aux utilisateurs le rôle Contributor sur les comptes de stockage. La solution doit appliquer le principe du privilège minimum. Quel rôle RBAC devez-vous attribuer à chaque utilisateur ? Pour répondre, faites glisser les rôles appropriés vers les bons utilisateurs. Chaque rôle peut être utilisé une fois, plusieurs fois, ou pas du tout.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Reader and Data Access — User1 doit pouvoir consulter les données de n'importe quel compte de stockage. Le rôle Reader and Data Access permet de tout consulter, mais pas de supprimer ni de créer un compte de stockage ou une ressource qu'il contient. Il donne également un accès en lecture/écriture à toutes les données du compte de stockage, via l'accès aux clés du compte.\n\nBox 2 : Owner — User2 doit pouvoir attribuer aux utilisateurs le rôle Contributor sur les comptes de stockage. Owner accorde un accès complet à la gestion de toutes les ressources, y compris la capacité d'attribuer des rôles dans Azure RBAC.\n\nRéponses incorrectes : Contributor accorde un accès complet à la gestion des ressources, mais ne permet pas d'attribuer des rôles Azure RBAC, de gérer des affectations dans Azure Blueprints, ni de partager des galeries d'images. Storage Account Contributor permet la gestion des comptes de stockage et donne accès à la clé du compte, utilisable pour accéder aux données via l'autorisation par clé partagée.",
+  "interactive": {
+   "prompt": "Faites glisser sur chaque utilisateur le rôle RBAC le moins privilégié qui convient.",
+   "targets": { "user1": "User1", "user2": "User2" }
+  }
+ },
+
+ "143": {
+  "text": [
+   "Vous disposez d'un abonnement Azure qui contient un partage de fichiers Azure. Vous avez un serveur local nommé Server1 qui exécute Windows Server 2016. Vous prévoyez de mettre en place Azure File Sync entre Server1 et le partage de fichiers Azure. Vous devez préparer l'abonnement pour cette synchronisation. Quelles deux actions devez-vous effectuer dans l'abonnement Azure ? Pour répondre, faites glisser les actions appropriées vers les bonnes cibles. Chaque action peut être utilisée une fois, plusieurs fois, ou pas du tout.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Première action : Create a Storage Sync Service — le déploiement d'Azure File Sync commence par le placement d'une ressource Storage Sync Service dans un groupe de ressources de l'abonnement choisi.\n\nDeuxième action : Install the Azure File Sync agent — l'agent Azure File Sync est un package téléchargeable qui permet à Windows Server d'être synchronisé avec un partage de fichiers Azure.",
+  "interactive": {
+   "prompt": "Faites glisser dans l'ordre les deux actions à effectuer vers la zone de réponse.",
+   "targets": { "first": "Première action", "second": "Deuxième action" }
+  }
+ },
+
+ "507": {
+  "text": [
+   "Vous disposez d'un abonnement Azure qui contient une machine virtuelle nommée VM1. VM1 possède un disque de système d'exploitation nommé Disk1 et un disque de données nommé Disk2. Vous devez sauvegarder Disk2 à l'aide d'Azure Backup. Quelles trois actions devez-vous effectuer, et dans quel ordre ? Pour répondre, déplacez les actions appropriées de la liste vers la zone de réponse et classez-les dans le bon ordre."
+  ],
+  "interactive": {
+   "prompt": "Faites glisser les trois actions vers la zone de réponse, dans le bon ordre.",
+   "targets": { "step1": "Étape 1", "step2": "Étape 2", "step3": "Étape 3" }
+  }
+ },
+
+ "540": {
+  "text": [
+   "Vous devez configurer les alertes pour VM1 et VM2 afin de répondre aux exigences techniques. Quelles trois actions devez-vous effectuer, et dans quel ordre ? Pour répondre, déplacez toutes les actions de la liste vers la zone de réponse et classez-les dans le bon ordre."
+  ],
+  "explanation": "Scénario, exigences techniques : déclencher une alerte si VM1 ou VM2 dispose de moins de 20 Go d'espace libre sur le volume C.\n\nÉtape 1 : créer un espace de travail Log Analytics.\n\nÉtape 2 : collecter les compteurs de performance Windows depuis les agents Log Analytics. Configurez les compteurs de performance depuis le menu de gestion des agents hérités de l'espace de travail Log Analytics. Lors de la première configuration des compteurs Windows ou Linux pour un nouvel espace de travail, plusieurs compteurs courants vous sont proposés ; cochez ceux à créer puis validez.\n\nÉtape 3 : créer une règle d'alerte.\n\nRemarque : les compteurs de performance Windows et Linux renseignent sur les performances des composants matériels, des systèmes d'exploitation et des applications. Azure Monitor peut les collecter à intervalles rapprochés pour une analyse quasi en temps réel, et les agréger pour l'analyse et le reporting sur le long terme.",
+  "interactive": {
+   "prompt": "Faites glisser les trois actions vers la zone de réponse, dans le bon ordre.",
+   "items": {
+    "workspace": "Create a Log Analytics workspace.",
+    "diagnostic": "Configure the Diagnostic settings.",
+    "alert-rule": "Create an alert rule.",
+    "perf-counters": "Collect Windows performance counters from the Log Analytics agents.",
+    "sql": "Create an Azure SQL database."
+   },
+   "targets": { "step1": "Étape 1", "step2": "Étape 2", "step3": "Étape 3" }
+  }
+ }
+}

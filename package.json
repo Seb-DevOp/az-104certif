@@ -1,0 +1,21 @@
+{
+  "name": "az104-trainer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AZ-104 certification trainer, containerised for Google Cloud Run",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "extract": "node tools/extract-images.mjs",
+    "parse": "node tools/parse-dump.mjs",
+    "data": "npm run extract && npm run parse",
+    "translate": "node tools/translate.mjs",
+    "dev": "npm --prefix web run dev",
+    "build": "npm --prefix web run build",
+    "typecheck": "npm --prefix web run typecheck",
+    "start": "node server/index.js",
+    "serve": "npm run build && node -e \"require('fs').cpSync('web/dist','public',{recursive:true})\" && node server/index.js",
+    "docker:build": "docker build -t az104-trainer .",
+    "docker:run": "docker run --rm -p 8080:8080 az104-trainer"
+  }
+}

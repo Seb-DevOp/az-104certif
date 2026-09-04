@@ -1,0 +1,11 @@
+**/node_modules
+**/dist
+.git
+.gitignore
+/public
+AZ-104_dump.pdf
+tools/
+data/
+*.md
+.claude
+.github

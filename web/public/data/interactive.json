@@ -1,0 +1,88 @@
+{
+  "_readme": "Hand-authored playable versions of DRAG DROP questions whose answer key exists in the PDF only as a screenshot. Transcribed from the exhibit and answer images of the matching question id. Adding an entry here turns that question from 'reveal and self-grade' into a machine-graded drag-and-drop; the original screenshots stay available as the answer key. French labels live in fr.json under the same id.",
+
+  "3": {
+    "kind": "dragdrop",
+    "prompt": "Drag every object that must be created onto the answer area. Distractors stay in the list.",
+    "items": [
+      { "id": "hyperv-site", "label": "Hyper-V site" },
+      { "id": "storage-account", "label": "Storage account" },
+      { "id": "recovery-vault", "label": "Azure Recovery Services Vault" },
+      { "id": "traffic-manager", "label": "Azure Traffic Manager instance" },
+      { "id": "replication-policy", "label": "Replication policy" },
+      { "id": "endpoint", "label": "Endpoint" }
+    ],
+    "targets": [
+      {
+        "id": "answer",
+        "label": "Answer area",
+        "accepts": ["hyperv-site", "recovery-vault", "replication-policy"]
+      }
+    ]
+  },
+
+  "68": {
+    "kind": "dragdrop",
+    "prompt": "Drag the least-privileged RBAC role onto each user.",
+    "items": [
+      { "id": "owner", "label": "Owner" },
+      { "id": "contributor", "label": "Contributor" },
+      { "id": "reader-data-access", "label": "Reader and Data Access" },
+      { "id": "storage-account-contributor", "label": "Storage Account Contributor" },
+      { "id": "user-access-admin", "label": "User Access Administrator" }
+    ],
+    "targets": [
+      { "id": "user1", "label": "User1", "accepts": ["reader-data-access"] },
+      { "id": "user2", "label": "User2", "accepts": ["owner"] }
+    ]
+  },
+
+  "143": {
+    "kind": "dragdrop",
+    "prompt": "Drag the two actions to perform, in order, onto the answer area.",
+    "items": [
+      { "id": "sync-service", "label": "Create a Storage Sync Service" },
+      { "id": "sync-agent", "label": "Install the Azure File Sync agent" },
+      { "id": "sync-group", "label": "Create a sync group" },
+      { "id": "server-registration", "label": "Run Server Registration" }
+    ],
+    "targets": [
+      { "id": "first", "label": "First action", "accepts": ["sync-service"] },
+      { "id": "second", "label": "Second action", "accepts": ["sync-agent"] }
+    ]
+  },
+
+  "507": {
+    "kind": "dragdrop",
+    "prompt": "Drag the three actions onto the answer area in the correct order.",
+    "items": [
+      { "id": "managed-identity", "label": "Configure a managed identity" },
+      { "id": "backup-vault", "label": "Create an Azure Backup vault" },
+      { "id": "recovery-vault", "label": "Create a Recovery Services vault" },
+      { "id": "delegate", "label": "Delegate permissions for the vault" },
+      { "id": "backup-policy", "label": "Create a backup policy and configure the backup" }
+    ],
+    "targets": [
+      { "id": "step1", "label": "Step 1", "accepts": ["backup-vault"] },
+      { "id": "step2", "label": "Step 2", "accepts": ["managed-identity"] },
+      { "id": "step3", "label": "Step 3", "accepts": ["backup-policy"] }
+    ]
+  },
+
+  "540": {
+    "kind": "dragdrop",
+    "prompt": "Drag the three actions onto the answer area in the correct order.",
+    "items": [
+      { "id": "workspace", "label": "Create a Log Analytics workspace." },
+      { "id": "diagnostic", "label": "Configure the Diagnostic settings." },
+      { "id": "alert-rule", "label": "Create an alert rule." },
+      { "id": "perf-counters", "label": "Collect Windows performance counters from the Log Analytics agents." },
+      { "id": "sql", "label": "Create an Azure SQL database." }
+    ],
+    "targets": [
+      { "id": "step1", "label": "Step 1", "accepts": ["workspace"] },
+      { "id": "step2", "label": "Step 2", "accepts": ["perf-counters"] },
+      { "id": "step3", "label": "Step 3", "accepts": ["alert-rule"] }
+    ]
+  }
+}

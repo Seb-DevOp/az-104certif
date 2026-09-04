@@ -1,0 +1,11 @@
+{
+  "name": "az104-tools",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.123.0",
+    "@napi-rs/canvas": "^0.1.65",
+    "pdfjs-dist": "^4.10.38"
+  }
+}

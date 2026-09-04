@@ -1,0 +1,22 @@
+node_modules/
+web/dist/
+web/tsconfig.tsbuildinfo
+
+# Local production preview only (`npm run serve` copies web/dist here).
+# Anchored with a leading slash: web/public/ holds tracked source files too.
+/public/
+
+# --- Content derived from the exam dump -------------------------------------
+# This repository is public, and the dump is licensed "no reproduction or
+# distribution". The source PDF and everything extracted from it therefore stay
+# local. Put your own copy of AZ-104_dump.pdf at the repo root and run
+# `npm run data` to regenerate all of this before building.
+AZ-104_dump.pdf
+web/public/img/
+web/public/data/questions.json
+data/images.json
+tools/.dump.txt
+
+.env
+.env.local
+*.log

@@ -1,0 +1,9 @@
+# Keeps `gcloud run deploy --source .` uploads small. The container only needs web/ and
+# server/; the source PDF and the extraction tooling are build-time inputs kept in git.
+.git/
+**/node_modules/
+**/dist/
+/public/
+AZ-104_dump.pdf
+tools/
+data/
