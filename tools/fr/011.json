@@ -1,0 +1,269 @@
+{
+ "260": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant une machine virtuelle Azure nommée VM1. VM1 exécute une application de reporting financier nommée App1, qui ne prend pas en charge plusieurs instances actives. À la fin de chaque mois, l'utilisation du processeur de VM1 atteint un pic lorsque App1 s'exécute. Vous devez créer un runbook planifié qui augmente les performances processeur de VM1 en fin de mois. Quelle tâche devez-vous inclure dans ce runbook ?"
+  ],
+  "options": {
+   "A": "Ajouter l'agent Azure Performance Diagnostics à VM1.",
+   "B": "Modifier la propriété de taille de VM1.",
+   "C": "Ajouter VM1 à un groupe de machines virtuelles identiques.",
+   "D": "Augmenter le quota de vCPU de l'abonnement.",
+   "E": "Ajouter une extension Desired State Configuration (DSC) à VM1."
+  }
+ },
+
+ "261": {
+  "text": [
+   "Vous prévoyez de déployer plusieurs machines virtuelles Azure sous Windows Server 2019 dans un groupe de machines virtuelles identiques, au moyen d'un modèle Azure Resource Manager. Vous devez faire en sorte que NGINX soit disponible sur toutes ces machines une fois déployées. Que devez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "le centre de déploiement d'Azure App Service",
+   "B": "une extension Desired State Configuration (DSC)",
+   "C": "la cmdlet New-AzConfigurationAssignment",
+   "D": "un profil de configuration d'appareil Microsoft Intune"
+  },
+  "explanation": "Deux réponses sont correctes pour cette question : une extension Desired State Configuration (DSC) et l'extension Azure Custom Script."
+ },
+
+ "262": {
+  "text": [
+   "Vous déployez un cluster Azure Kubernetes Service (AKS) dont le profil réseau est présenté dans la capture suivante.",
+   "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : 10.244.0.0/16, la plage CIDR des pods.\n\nRemarque : le paramètre --pod-cidr doit désigner un large espace d'adressage inutilisé ailleurs dans votre environnement réseau, y compris vos plages locales si vous connectez — ou prévoyez de connecter — vos réseaux virtuels Azure via ExpressRoute ou un VPN de site à site. Cette plage doit être assez grande pour absorber le nombre de nœuds que vous comptez atteindre."
+ },
+
+ "263": {
+  "text": [
+   "Vous disposez du plan App Service présenté dans la capture suivante.",
+   "Les paramètres de réduction d'échelle de ce plan sont configurés comme dans la capture suivante.",
+   "La règle d'augmentation d'échelle utilise la même durée et le même délai de récupération que la règle de réduction. Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : 5. Le maximum de 5 instances est conservé tant que l'utilisation du processeur reste supérieure ou égale à 30 %.\n\nBox 2 : 3. Dès que l'utilisation moyenne du processeur passe sous 30 %, le nombre d'instances diminue de 1 ; après les 5 minutes du délai de récupération, il diminue encore de 1, pour atteindre 3."
+ },
+
+ "264": {
+  "text": [
+   "Vous disposez d'une machine virtuelle Azure nommée VM1 sous Windows Server 2019, déployée avec les paramètres de disques par défaut. Vous vous connectez à VM1 en tant qu'utilisateur nommé User1 et effectuez les actions suivantes : créer des fichiers sur le lecteur C, créer des fichiers sur le lecteur D, modifier le délai de l'écran de veille, changer le fond d'écran. Vous prévoyez de redéployer VM1. Quelles modifications seront perdues après le redéploiement ?"
+  ],
+  "options": {
+   "A": "le délai d'écran de veille modifié",
+   "B": "le nouveau fond d'écran",
+   "C": "les nouveaux fichiers du lecteur D",
+   "D": "les nouveaux fichiers du lecteur C"
+  }
+ },
+
+ "265": {
+  "text": [
+   "Vous disposez d'un abonnement Azure et d'une machine virtuelle locale nommée VM1, dont les paramètres sont présentés dans la capture.",
+   "Vous devez faire en sorte de pouvoir utiliser les disques attachés à VM1 comme modèle pour des machines virtuelles Azure. Que devez-vous modifier sur VM1 ?"
+  ],
+  "options": {
+   "A": "la mémoire",
+   "B": "les cartes réseau",
+   "C": "le disque dur",
+   "D": "le processeur",
+   "E": "les services d'intégration"
+  },
+  "explanation": "La capture montre que le disque est au format VHDX. Avant de téléverser une machine virtuelle Windows locale vers Microsoft Azure, il faut préparer le disque dur virtuel : Azure ne prend en charge que les machines de génération 1 au format VHD, avec un disque de taille fixe et une taille maximale de 1 023 Go. Une machine de génération 1 peut être convertie du format VHDX vers VHD."
+ },
+
+ "266": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un groupe de machines virtuelles identiques comptant quatre instances ainsi configurées : système d'exploitation Windows Server 2016, taille Standard_D1_v2. Vous exécutez la cmdlet get-azvmss comme dans la capture suivante :",
+   "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "La cmdlet Get-AzVmssVM renvoie la vue de modèle et la vue d'instance d'une machine virtuelle d'un groupe identique.\n\nBox 1 : 0. Le paramètre enableAutomaticUpdates est réglé sur false : pour mettre à jour les machines existantes, il faut procéder manuellement, machine par machine.\n\nBox 2 : 4. Activer la mise à niveau automatique des images du système d'exploitation facilite la gestion des mises à jour en actualisant sûrement et automatiquement le disque système de toutes les instances du groupe."
+ },
+
+ "267": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1, utilisé par plusieurs services de votre entreprise. Subscription1 contient les ressources du tableau suivant :",
+   "Un autre administrateur déploie une machine virtuelle nommée VM1 et un compte de stockage Azure nommé storage2 au moyen d'un seul modèle Azure Resource Manager. Vous devez consulter le modèle utilisé pour ce déploiement. Depuis quel volet pouvez-vous le faire ?"
+  ],
+  "explanation": "Pour consulter un modèle depuis l'historique de déploiement, ouvrez le groupe de ressources concerné : le portail affiche le résultat du dernier déploiement. En suivant ce lien, vous accédez à l'historique des déploiements du groupe, puis au récapitulatif d'un déploiement donné, qui comprend son état et ses opérations."
+ },
+
+ "268": {
+  "text": [
+   "Vous disposez d'une application web Azure nommée App1, dont les emplacements de déploiement sont présentés dans le tableau suivant :",
+   "Dans webapp1-test, vous testez plusieurs modifications d'App1, puis vous sauvegardez App1. Vous permutez webapp1-test avec webapp1-prod et constatez qu'App1 présente des problèmes de performance. Vous devez revenir à la version précédente d'App1 le plus rapidement possible. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Redéployer App1",
+   "B": "Permuter les emplacements",
+   "C": "Cloner App1",
+   "D": "Restaurer la sauvegarde d'App1"
+  },
+  "explanation": "Lors de la permutation d'emplacements de déploiement, Azure échange les adresses IP virtuelles de l'emplacement source et de l'emplacement cible, et donc leurs URL. Il suffit de permuter à nouveau pour annuler le déploiement."
+ },
+
+ "269": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 contenant deux machines virtuelles Azure, VM1 et VM2, sous Windows Server. VM1 est sauvegardée quotidiennement par Azure Backup, sans l'agent Azure Backup. VM1 est touchée par un rançongiciel qui chiffre les données et vous devez restaurer sa dernière sauvegarde. Vers quel emplacement pouvez-vous la restaurer ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Remarque : la nouvelle machine virtuelle doit se trouver dans la même région."
+ },
+
+ "270": {
+  "text": [
+   "Vous prévoyez de sauvegarder une machine virtuelle Azure nommée VM1. Vous constatez que la vérification préalable à la sauvegarde affiche l'état « Avertissement ». Quelle en est une cause possible ?"
+  ],
+  "options": {
+   "A": "VM1 est arrêtée.",
+   "B": "VM1 ne dispose pas de la dernière version de l'agent de machine virtuelle Azure (WaAppAgent.exe).",
+   "C": "VM1 possède un disque non managé.",
+   "D": "Un coffre Recovery Services est indisponible."
+  },
+  "explanation": "L'état Avertissement signale un ou plusieurs problèmes de configuration de la machine virtuelle susceptibles de faire échouer les sauvegardes, et propose les mesures correctives. L'absence de la dernière version de l'agent, par exemple, peut provoquer des échecs intermittents et relève de cette catégorie."
+ },
+
+ "271": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'une machine virtuelle Azure nommée VM1, déployée au moyen d'un modèle Azure Resource Manager personnalisé nommé ARM1.json. Vous recevez une notification indiquant que VM1 sera affectée par une opération de maintenance. Vous devez la déplacer immédiatement vers un autre hôte.",
+   "Solution : depuis le volet Vue d'ensemble, vous déplacez la machine virtuelle vers un autre groupe de ressources. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Il faudrait redéployer la machine virtuelle."
+ },
+
+ "272": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous prévoyez d'utiliser des modèles Azure Resource Manager pour déployer 50 machines virtuelles Azure appartenant au même groupe à haute disponibilité. Vous devez faire en sorte que le plus grand nombre possible de machines restent disponibles en cas de défaillance de l'infrastructure ou pendant la maintenance. Comment devez-vous configurer le modèle ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : 2. Utilisez deux domaines d'erreur — le maximum est de 2 ou 3 selon la région.\n\nBox 2 : 20. Utilisez 20 pour platformUpdateDomainCount. Augmenter le nombre de domaines de mise à jour aide à planifier capacité et disponibilité lorsque la plateforme redémarre des nœuds : plus ce nombre est élevé (20 au maximum), moins il y a de nœuds redémarrés simultanément dans un même groupe à haute disponibilité."
+ },
+
+ "273": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision.",
+   "Vous disposez d'une machine virtuelle Azure nommée VM1 sous Windows Server 2016. Vous devez créer une alerte dans Azure lorsque plus de deux événements d'erreur sont consignés dans le journal Système de VM1 en l'espace d'une heure.",
+   "Solution : vous créez un espace de travail Azure Log Analytics et configurez les paramètres de l'agent. Vous installez Microsoft Monitoring Agent sur VM1. Vous créez une alerte dans Azure Monitor en indiquant l'espace de travail Log Analytics comme source. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Les alertes d'Azure Monitor permettent d'identifier des informations importantes dans votre référentiel Log Analytics. Elles reposent sur des règles qui exécutent automatiquement des recherches dans les journaux à intervalles réguliers ; si les résultats correspondent à certains critères, un enregistrement d'alerte est créé et peut déclencher une réponse automatisée. L'agent Log Analytics collecte les données de supervision du système d'exploitation invité et des charges de travail."
+ },
+
+ "274": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous déployez un groupe de machines virtuelles identiques configuré comme dans la capture suivante.",
+   "Utilisez les menus déroulants pour choisir la réponse à chaque question à partir des informations présentées dans le graphique.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ]
+ },
+
+ "275": {
+  "text": [
+   "Vous disposez d'applications web dans les régions Azure West US, Central US et East US, ainsi que des plans App Service présentés dans le tableau suivant.",
+   "Vous prévoyez de créer un plan App Service supplémentaire nommé ASP5 qui utilisera le système d'exploitation Linux. Vous devez déterminer dans lesquels des emplacements actuellement utilisés vous pouvez déployer ASP5. Que devez-vous recommander ?"
+  ],
+  "options": {
+   "A": "West US, Central US ou East US",
+   "B": "Central US uniquement",
+   "C": "East US uniquement",
+   "D": "West US uniquement"
+  }
+ },
+
+ "276": {
+  "text": [
+   "Vous prévoyez de déployer plusieurs machines virtuelles Azure sous Windows Server 2019 dans un groupe de machines virtuelles identiques, au moyen d'un modèle Azure Resource Manager. Vous devez faire en sorte que NGINX soit disponible sur toutes ces machines une fois déployées. Que devez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "la cmdlet New-AzConfigurationAssignment",
+   "B": "une extension Desired State Configuration (DSC)",
+   "C": "Microsoft Entra Application Proxy",
+   "D": "Azure Application Insights"
+  },
+  "explanation": "Deux réponses sont correctes pour cette question : une extension Desired State Configuration (DSC) et l'extension Azure Custom Script."
+ },
+
+ "277": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "Dans Azure Cloud Shell, vous devez créer une machine virtuelle au moyen d'un modèle Azure Resource Manager (ARM). Comment devez-vous compléter la commande ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ]
+ },
+
+ "278": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous déployez un cluster Azure Kubernetes Service (AKS) nommé AKS1. Vous devez y déployer un fichier YAML.",
+   "Solution : depuis Azure Cloud Shell, vous exécutez az aks. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Pour déployer un fichier YAML, la commande est : kubectl apply -f <nom_du_fichier>.yaml"
+ },
+
+ "279": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'une machine virtuelle Azure nommée VM1 sous Windows Server 2016. Vous devez créer une alerte dans Azure lorsque plus de deux événements d'erreur sont consignés dans le journal Système de VM1 en l'espace d'une heure.",
+   "Solution : vous créez un espace de travail Azure Log Analytics et configurez les paramètres de données. Vous ajoutez l'extension de machine virtuelle Microsoft Monitoring Agent à VM1. Vous créez une alerte dans Azure Monitor en indiquant l'espace de travail Log Analytics comme source. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Il faut installer Microsoft Monitoring Agent sur VM1, et non l'extension de machine virtuelle Microsoft Monitoring Agent."
+ },
+
+ "280": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'une machine virtuelle Azure nommée VM1 sous Windows Server 2016. Vous devez créer une alerte dans Azure lorsque plus de deux événements d'erreur sont consignés dans le journal Système de VM1 en l'espace d'une heure.",
+   "Solution : vous créez un espace de travail Azure Log Analytics et configurez les paramètres de données. Vous installez Microsoft Monitoring Agent sur VM1. Vous créez une alerte dans Azure Monitor en indiquant l'espace de travail Log Analytics comme source. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Les alertes d'Azure Monitor permettent d'identifier des informations importantes dans votre référentiel Log Analytics. Elles reposent sur des règles qui exécutent automatiquement des recherches dans les journaux à intervalles réguliers ; si les résultats correspondent à certains critères, un enregistrement d'alerte est créé et peut déclencher une réponse automatisée. L'agent Log Analytics collecte les données de supervision du système d'exploitation invité et des charges de travail."
+ },
+
+ "281": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "Toutes les machines virtuelles exécutent Windows Server 2016. Sur VM1, vous sauvegardez un dossier nommé Folder1 comme dans la capture suivante.",
+   "Vous prévoyez de restaurer cette sauvegarde sur une autre machine virtuelle, VM2. Que devez-vous faire en premier ?"
+  ],
+  "options": {
+   "A": "Depuis VM1, installer la fonctionnalité Sauvegarde Windows Server.",
+   "B": "Depuis VM2, installer l'agent Microsoft Azure Recovery Services.",
+   "C": "Depuis VM1, installer l'agent Microsoft Azure Recovery Services.",
+   "D": "Depuis VM2, installer la fonctionnalité Sauvegarde Windows Server."
+  }
+ },
+
+ "282": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous devez utiliser un modèle Azure Resource Manager (ARM) pour créer une machine virtuelle dotée de plusieurs disques de données. Comment devez-vous compléter le modèle ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ]
+ },
+
+ "283": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un abonnement Azure nommé Subscription1 contenant les ressources présentées dans le tableau suivant.",
+   "Subscription1 comprend également un réseau virtuel nommé VNET2. VM1 se connecte à VNET2 au moyen d'une interface réseau nommée NIC1. Vous devez créer une nouvelle interface réseau nommée NIC2 pour VM1. Solution : vous créez NIC2 dans RG1 et dans West US. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "La machine virtuelle à laquelle vous attachez une interface réseau et le réseau virtuel auquel vous la connectez doivent se trouver au même emplacement — ici West US, c'est-à-dire la même région."
+ },
+
+ "284": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un abonnement Azure nommé Subscription1 contenant les ressources présentées dans le tableau suivant.",
+   "Subscription1 comprend également un réseau virtuel nommé VNET2. VM1 se connecte à VNET2 au moyen d'une interface réseau nommée NIC1. Vous devez créer une nouvelle interface réseau nommée NIC2 pour VM1. Solution : vous créez NIC2 dans RG2 et dans Central US. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "La machine virtuelle à laquelle vous attachez une interface réseau et le réseau virtuel auquel vous la connectez doivent se trouver au même emplacement — ici West US, c'est-à-dire la même région."
+ },
+
+ "285": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un abonnement Azure nommé Subscription1 contenant les ressources présentées dans le tableau suivant.",
+   "Subscription1 comprend également un réseau virtuel nommé VNET2. VM1 se connecte à VNET2 au moyen d'une interface réseau nommée NIC1. Vous devez créer une nouvelle interface réseau nommée NIC2 pour VM1. Solution : vous créez NIC2 dans RG2 et dans West US. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "La machine virtuelle à laquelle vous attachez une interface réseau et le réseau virtuel auquel vous la connectez doivent se trouver au même emplacement — ici West US, c'est-à-dire la même région."
+ }
+}

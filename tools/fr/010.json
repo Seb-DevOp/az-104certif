@@ -1,0 +1,293 @@
+{
+ "234": {
+  "text": [
+   "Vous déployez un cluster Azure Kubernetes Service (AKS) nommé Cluster1 qui utilise les adresses IP présentées dans le tableau suivant.",
+   "Vous devez donner aux internautes accès aux applications qui s'exécutent dans Cluster1. Quelle adresse IP devez-vous inscrire dans l'enregistrement DNS de Cluster1 ?"
+  ]
+ },
+
+ "235": {
+  "text": [
+   "Vous disposez d'un modèle de déploiement nommé Template1 servant à déployer 10 applications web Azure. Vous devez déterminer ce qu'il faut déployer avant Template1, en limitant les coûts Azure. Que devez-vous retenir ?"
+  ],
+  "options": {
+   "A": "cinq passerelles Azure Application Gateway",
+   "B": "un plan App Service",
+   "C": "10 plans App Service",
+   "D": "un Azure Traffic Manager",
+   "E": "une passerelle Azure Application Gateway"
+  },
+  "explanation": "Les applications web Azure se créent au sein d'un plan App Service."
+ },
+
+ "236": {
+  "text": [
+   "Vous prévoyez de déployer une instance de conteneur Azure au moyen du modèle Azure Resource Manager suivant.",
+   "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le modèle.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ]
+ },
+
+ "237": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant une machine virtuelle nommée VM1, qui héberge une application métier disponible 24 heures sur 24. VM1 possède une interface réseau et un disque managé, et utilise la taille D4s v3. Vous prévoyez d'y apporter les modifications suivantes : passer à la taille D8s v3, ajouter un disque managé de 500 Go, ajouter l'extension Puppet Agent, et activer la gestion Desired State Configuration. Laquelle de ces modifications entraînera une interruption de service pour VM1 ?"
+  ],
+  "options": {
+   "A": "Activer la gestion Desired State Configuration",
+   "B": "Ajouter un disque managé de 500 Go",
+   "C": "Passer à la taille D8s v3",
+   "D": "Ajouter l'extension Puppet Agent"
+  },
+  "explanation": "Le redimensionnement d'une machine virtuelle impose qu'elle soit à l'arrêt."
+ },
+
+ "238": {
+  "text": [
+   "Vous disposez d'une application nommée App1 qui s'exécute sur une application web Azure nommée webapp1. Les développeurs de votre entreprise téléversent une mise à jour d'App1 vers un dépôt Git nommé Git1. Webapp1 possède les emplacements de déploiement présentés dans le tableau suivant.",
+   "Vous devez faire en sorte que la mise à jour d'App1 soit testée avant d'être mise à disposition des utilisateurs. Quelles deux actions devez-vous effectuer ? Chaque bonne réponse constitue une partie de la solution.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "options": {
+   "A": "Permuter les emplacements",
+   "B": "Déployer la mise à jour d'App1 sur webapp1-prod, puis la tester",
+   "C": "Arrêter webapp1-prod",
+   "D": "Déployer la mise à jour d'App1 sur webapp1-test, puis la tester",
+   "E": "Arrêter webapp1-test"
+  }
+ },
+
+ "239": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 dont les fournisseurs suivants sont inscrits : Authorization, Automation, Resources, Compute, KeyVault, Network, Storage, Billing et Web. Subscription1 contient une machine virtuelle Azure nommée VM1 ainsi configurée : adresse IP privée 10.0.0.4 (dynamique) ; groupe de sécurité réseau NSG1 ; aucune adresse IP publique ; groupe à haute disponibilité AVSet ; sous-réseau 10.0.0.0/24 ; disques managés : non ; emplacement East US. Vous devez enregistrer toutes les tentatives de connexion à VM1, réussies comme échouées. Quelles trois actions devez-vous effectuer ? Chaque bonne réponse constitue une partie de la solution.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "options": {
+   "A": "Activer Azure Network Watcher dans la région Azure East US.",
+   "B": "Ajouter un moniteur de connexion Azure Network Watcher.",
+   "C": "Inscrire le fournisseur MicrosoftLogAnalytics.",
+   "D": "Créer un compte de stockage Azure.",
+   "E": "Inscrire le fournisseur de ressources Microsoft.Insights.",
+   "F": "Activer les journaux de flux d'Azure Network Watcher."
+  },
+  "explanation": "La fonctionnalité de journaux de flux NSG de Network Watcher permet d'enregistrer le trafic réseau traversant un groupe de sécurité réseau. Dans le portail Azure, activez Network Watcher, inscrivez le fournisseur Insights — les journaux de flux NSG exigent le fournisseur Microsoft.Insights — puis activez le journal de flux. Les données sont écrites dans un compte de stockage Azure."
+ },
+
+ "240": {
+  "text": [
+   "Vous devez déployer un groupe de machines virtuelles identiques Azure comportant cinq instances, le plus rapidement possible. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Déployer cinq machines virtuelles et modifier les paramètres de zones de disponibilité de chacune.",
+   "B": "Déployer cinq machines virtuelles et modifier la taille de chacune.",
+   "C": "Déployer un groupe de machines virtuelles identiques en mode d'orchestration VM (machines virtuelles).",
+   "D": "Déployer un groupe de machines virtuelles identiques en mode d'orchestration ScaleSetVM."
+  }
+ },
+
+ "241": {
+  "text": [
+   "Vous prévoyez de créer les applications web Azure présentées dans le tableau suivant.",
+   "Quel est le nombre minimal de plans App Service à créer pour ces applications web ?"
+  ]
+ },
+
+ "242": {
+  "text": [
+   "Vous disposez d'un abonnement Azure au paiement à l'utilisation contenant les machines virtuelles présentées dans le tableau suivant.",
+   "Vous créez le budget présenté dans la capture suivante.",
+   "Le groupe d'actions AG1 ne contient qu'un utilisateur, admin@contoso.com. Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique."
+  ],
+  "explanation": "Box 1 : VM1 et VM2 continuent de fonctionner. Les alertes de budget portent sur le groupe de ressources RG1, qui contient VM1 mais pas VM2. Surtout, le dépassement d'un seuil de budget ne déclenche que des notifications : aucune ressource n'est affectée et la consommation n'est pas interrompue.\n\nBox 2 : une notification par e-mail sera envoyée chaque mois."
+ },
+
+ "243": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un abonnement Azure nommé Subscription1 contenant un groupe de ressources nommé RG1, lui-même contenant des ressources déployées au moyen de modèles. Vous devez consulter la date et l'heure de création de ces ressources.",
+   "Solution : depuis le volet Abonnements, vous sélectionnez l'abonnement puis cliquez sur « Déploiement par programmation ». Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Il faut ouvrir le volet de RG1 et cliquer sur Déploiements : l'historique des déploiements du groupe de ressources s'y affiche."
+ },
+
+ "244": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision.",
+   "Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "VM1 est connectée à VNET1. Vous devez la connecter à VNET2.",
+   "Solution : vous créez une nouvelle interface réseau et l'ajoutez à VM1. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Il faut supprimer VM1, la recréer, puis lui ajouter l'interface réseau.\n\nRemarque : à la création d'une machine virtuelle Azure, vous devez créer un réseau virtuel ou en utiliser un existant. Le sous-réseau auquel une machine est connectée peut être changé après coup, mais pas le réseau virtuel."
+ },
+
+ "245": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra nommé adatum.com contenant les utilisateurs présentés dans le tableau suivant.",
+   "Adatum.com est configuré ainsi : « Les utilisateurs peuvent joindre des appareils à Microsoft Entra » est réglé sur User1.",
+   "« Administrateurs locaux supplémentaires sur les appareils joints à Microsoft Entra » est réglé sur Aucun. Vous déployez Windows 10 sur un ordinateur nommé Computer1, que User1 joint à adatum.com. Vous devez déterminer la composition du groupe Administrateurs local de Computer1. Quels utilisateurs en sont membres ?"
+  ],
+  "options": {
+   "A": "User1 uniquement",
+   "B": "User2 uniquement",
+   "C": "User1 et User2 uniquement",
+   "D": "User1, User2 et User3 uniquement",
+   "E": "User1, User2, User3 et User4"
+  },
+  "explanation": "Le paramètre « Les utilisateurs peuvent joindre des appareils à Microsoft Entra ID » désigne les utilisateurs autorisés à inscrire leurs appareils comme appareils joints à Microsoft Entra ; sa valeur par défaut est « Tous ». Le paramètre « Administrateurs locaux supplémentaires sur les appareils joints » désigne les utilisateurs qui reçoivent les droits d'administrateur local sur un appareil ; ils sont ajoutés au rôle Device Administrators de Microsoft Entra ID."
+ },
+
+ "246": {
+  "text": [
+   "Vous disposez de deux abonnements Azure nommés Subscription1 et Subscription2. Subscription1 comporte les groupes de ressources suivants :",
+   "RG1 contient une application web nommée App1 située en Europe de l'Ouest. Subscription2 comporte les groupes de ressources suivants :",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Non — RG2 est en lecture seule. Le verrou ReadOnly autorise les utilisateurs habilités à lire une ressource, mais pas à la supprimer ni à la modifier.\n\nBox 2 : Oui. Box 3 : Oui.\n\nRemarque : les ressources App Service sont propres à une région et ne peuvent pas être déplacées directement d'une région à l'autre. Il faut créer une copie de la ressource dans la région cible, y transférer le contenu, puis supprimer l'originale."
+ },
+
+ "247": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 contenant le groupe de ressources suivant : nom RG1 ; région West US ; étiquette « tag1 » : « value1 ». Vous attribuez à Subscription1 une stratégie Azure nommée Policy1 avec la configuration suivante : aucune exclusion ; définition « Append a tag and its value to resources » ; nom d'attribution Policy1 ; paramètres — nom d'étiquette tag2, valeur value2. Après l'attribution de Policy1, vous créez un compte de stockage ainsi configuré : nom storage1 ; emplacement West US ; groupe de ressources RG1 ; étiquettes « tag3 » : « value3 ». Vous devez déterminer quelles étiquettes sont affectées à chaque ressource. Que devez-vous retenir ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : « tag1 » : « value1 » uniquement. Box 2 : « tag2 » : « value2 » et « tag3 » : « value3 » uniquement. Les étiquettes appliquées à un groupe de ressources ne sont pas héritées par les ressources qu'il contient."
+ },
+
+ "248": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1. Vous y créez une règle d'alerte nommée Alert1, dont le groupe d'actions est configuré comme dans la capture suivante.",
+   "Les critères d'Alert1 se déclenchent chaque minute. Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : 60. Une alerte par minute déclenche un e-mail par minute.\n\nBox 2 : 12. Il ne peut être envoyé plus d'un SMS toutes les 5 minutes, soit 12 par heure.\n\nRemarque : la limitation de débit suspend les notifications lorsqu'un même numéro, une même adresse e-mail ou un même appareil en reçoit trop. Elle garantit que les alertes restent exploitables. Le seuil pour les SMS est d'un message toutes les 5 minutes."
+ },
+
+ "249": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 contenant les ressources présentées dans le tableau suivant.",
+   "Vous créez dans Subscription1 les machines virtuelles présentées dans le tableau suivant.",
+   "Vous prévoyez d'utiliser Vault1 pour sauvegarder le plus grand nombre possible de machines virtuelles. Lesquelles peuvent être sauvegardées vers Vault1 ?"
+  ],
+  "options": {
+   "A": "VM1 uniquement",
+   "B": "VM3 et VMC uniquement",
+   "C": "VM1, VM2, VM3, VMA, VMB et VMC",
+   "D": "VM1, VM3, VMA et VMC uniquement",
+   "E": "VM1 et VM3 uniquement"
+  },
+  "explanation": "Pour protéger des machines virtuelles, le coffre doit se trouver dans la même région qu'elles. Si vos machines sont réparties sur plusieurs régions, créez un coffre Recovery Services dans chacune."
+ },
+
+ "250": {
+  "text": [
+   "Vous disposez d'un cluster Azure Kubernetes Service (AKS) nommé AKS1. Vous devez y configurer l'autoscaler de cluster. Quels deux outils devez-vous utiliser ? Chaque bonne réponse constitue une solution complète.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "options": {
+   "A": "la commande kubectl",
+   "B": "la commande az aks",
+   "C": "la cmdlet Set-AzVm",
+   "D": "le portail Azure",
+   "E": "la cmdlet Set-AzAks"
+  }
+ },
+
+ "251": {
+  "text": [
+   "Vous créez dans un abonnement Azure les ressources suivantes :",
+   "une instance Azure Container Registry nommée Registry1 et un cluster Azure Kubernetes Service (AKS) nommé Cluster1. Vous créez une image de conteneur nommée App1 sur votre poste d'administration. Vous devez déployer App1 sur Cluster1. Que devez-vous faire en premier ?"
+  ],
+  "options": {
+   "A": "Exécuter la commande docker push.",
+   "B": "Créer un plan App Service.",
+   "C": "Exécuter la commande az acr build.",
+   "D": "Exécuter la commande az aks create."
+  }
+ },
+
+ "252": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "Vous devez configurer un groupe de placement de proximité pour VMSS1. Quels groupes de placement de proximité devez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "Proximity2 uniquement",
+   "B": "Proximity1, Proximity2 et Proximity3",
+   "C": "Proximity1 uniquement",
+   "D": "Proximity1 et Proximity3 uniquement"
+  },
+  "explanation": "L'emplacement du groupe de ressources de VMSS1 est celui de RG2, à savoir West US. Seul Proximity2, qui se trouve également dans RG2, est situé dans West US.\n\nRemarque : lorsque des machines virtuelles sont affectées à un groupe de placement de proximité, elles sont placées dans le même centre de données, ce qui réduit la latence et la rend déterministe."
+ },
+
+ "253": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un abonnement Azure nommé Subscription1 contenant un groupe de ressources nommé RG1, lui-même contenant des ressources déployées au moyen de modèles. Vous devez consulter la date et l'heure de création de ces ressources.",
+   "Solution : depuis le volet Abonnements, vous sélectionnez l'abonnement puis cliquez sur « Fournisseurs de ressources ». Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "254": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un abonnement Azure nommé Subscription1 contenant un groupe de ressources nommé RG1, lui-même contenant des ressources déployées au moyen de modèles. Vous devez consulter la date et l'heure de création de ces ressources. Solution : depuis le volet de RG1, vous cliquez sur « Script d'automatisation ». Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Il faut ouvrir le volet de RG1 et cliquer sur Déploiements : l'historique des déploiements du groupe de ressources s'y affiche."
+ },
+
+ "255": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un abonnement Azure nommé Subscription1 contenant un groupe de ressources nommé RG1, lui-même contenant des ressources déployées au moyen de modèles. Vous devez consulter la date et l'heure de création de ces ressources. Solution : depuis le volet de RG1, vous cliquez sur Déploiements. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Depuis le volet de RG1, cliquez sur Déploiements : l'historique des déploiements du groupe de ressources s'y affiche."
+ },
+
+ "256": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1. Vous y déployez une machine virtuelle Linux nommée VM1. Vous devez superviser les métriques et les journaux de VM1. Que devez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "Azure HDInsight",
+   "B": "Linux Diagnostic Extension (LAD) 3.0",
+   "C": "l'extension AzurePerformanceDiagnostics",
+   "D": "Azure Analysis Services"
+  },
+  "explanation": "C'est l'extension Linux Diagnostic Extension qu'il faut utiliser : elle installe l'agent de diagnostic (LAD) sur le serveur Linux."
+ },
+
+ "257": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 contenant une machine virtuelle nommée VM1. Vous installez et configurez un serveur web et un serveur DNS sur VM1. Les règles de sécurité réseau effectives de VM1 sont présentées dans la capture suivante :",
+   "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Rule2 bloque les ports 50 à 60, dont le port 53 utilisé par le DNS. Les internautes peuvent en revanche joindre le serveur web, qui utilise le port 80.\n\nBox 2 : si Rule2 est supprimée, les internautes peuvent également joindre le serveur DNS.\n\nRemarque : les règles sont traitées par ordre de priorité, les numéros les plus bas étant prioritaires. Dès qu'un trafic correspond à une règle, le traitement s'arrête."
+ },
+
+ "258": {
+  "text": [
+   "Vous prévoyez de déployer trois machines virtuelles Azure nommées VM1, VM2 et VM3, qui hébergeront une application web nommée App1. Vous devez faire en sorte qu'au moins deux machines restent disponibles si un centre de données Azure devient indisponible. Que devez-vous déployer ?"
+  ],
+  "options": {
+   "A": "les trois machines virtuelles dans une seule zone de disponibilité",
+   "B": "toutes les machines virtuelles dans un seul groupe à haute disponibilité",
+   "C": "chaque machine virtuelle dans une zone de disponibilité distincte",
+   "D": "chaque machine virtuelle dans un groupe à haute disponibilité distinct"
+  },
+  "explanation": "Les zones de disponibilité protègent des défaillances au niveau d'un centre de données."
+ },
+
+ "259": {
+  "text": [
+   "Vous disposez d'une machine virtuelle Azure nommée VM1 sous Windows Server 2019. Vous enregistrez VM1 comme modèle nommé Template1 dans la bibliothèque Azure Resource Manager. Vous prévoyez de déployer une machine virtuelle nommée VM2 à partir de Template1. Que pouvez-vous configurer lors du déploiement de VM2 ?"
+  ],
+  "options": {
+   "A": "le système d'exploitation",
+   "B": "le nom d'utilisateur administrateur",
+   "C": "la taille de la machine virtuelle",
+   "D": "le groupe de ressources"
+  }
+ }
+}
