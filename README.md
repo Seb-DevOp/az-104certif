@@ -39,19 +39,10 @@ Par type : 325 à réponse unique, 23 à réponses multiples, 194 auto-évaluée
 
 ## Démarrage rapide
 
-> **À faire après un clone.** Ce dépôt est public : ni `AZ-104_dump.pdf`, ni les questions
-> extraites, ni les 782 captures n'y sont versionnés — le dump interdit explicitement sa
-> redistribution. Seuls le code et la chaîne d'extraction le sont. Il faut donc régénérer
-> les données une fois, à partir de votre propre copie du PDF :
->
-> ```bash
-> cp /chemin/vers/AZ-104_dump.pdf .   # à la racine du dépôt
-> npm install --prefix tools
-> npm run data                        # ~3 min : images puis questions
-> ```
->
-> `pdftotext` (paquet *poppler*) doit être présent dans le `PATH`. Sans cette étape, le
-> build s'arrête avec un message explicite plutôt que de produire une application vide.
+La banque de questions générée (`web/public/data/questions.json` et les 782 captures de
+`web/public/img/`) est versionnée : un clone se lance, se construit et se déploie tel quel,
+sans étape préalable. Seul `AZ-104_dump.pdf` reste hors du dépôt — 17 Mo, et il ne sert
+qu'à régénérer la banque (voir [Régénérer les données](#régénérer-les-données-depuis-le-pdf)).
 
 ```bash
 # Développement (Vite, rechargement à chaud sur http://localhost:5173)
@@ -83,25 +74,21 @@ npm run docker:run        # http://localhost:8080
 L'image écoute sur `$PORT` (8080 par défaut), sur `0.0.0.0`, expose `/healthz`, tourne en
 utilisateur non-root et gère `SIGTERM`.
 
-> **Déployez depuis votre copie de travail, pas depuis un clone du dépôt.** La banque de
-> questions n'est pas versionnée : un clone frais ne contient pas de quoi construire
-> l'image, et le build s'arrête sur le garde `prebuild`. Lancez les commandes ci-dessous
-> depuis le répertoire où `npm run data` a été exécuté.
->
-> C'est `.gcloudignore` — et non `.gitignore` — que `gcloud` utilise pour décider quoi
-> téléverser : les données générées partent donc bien vers Cloud Build, alors même que git
-> les ignore. Pour vérifier avant de déployer :
->
-> ```bash
-> gcloud meta list-files-for-upload | grep -c 'web.public.img'   # doit afficher 782
-> gcloud meta list-files-for-upload | grep questions.json        # doit sortir une ligne
-> ```
->
-> **Un déclencheur Cloud Build branché sur GitHub ne peut pas fonctionner en l'état**, pour
-> la même raison : il build le contenu du dépôt, qui n'a pas les données. Voir
-> [Intégration continue](#intégration-continue).
+La banque de questions étant versionnée, les trois méthodes de déploiement fonctionnent sans
+préparation particulière :
 
-### Depuis les sources (le plus simple)
+| Méthode | Ce qu'elle construit | Lit `cloudbuild.yaml` |
+|---|---|---|
+| Portail Cloud Run, « déployer depuis un dépôt » | clone le dépôt, build le `Dockerfile` | non |
+| Déclencheur Cloud Build (console GCP) | ce que dit sa configuration | oui, si le déclencheur pointe dessus |
+| `gcloud run deploy --source .` | votre dossier local | non |
+
+### Depuis le portail Cloud Run
+
+Connectez le dépôt GitHub, laissez le type de build sur **Dockerfile**, chemin `/Dockerfile`.
+Rien d'autre à configurer.
+
+### Depuis les sources (le plus simple en ligne de commande)
 
 ```bash
 gcloud run deploy az104-trainer \
@@ -144,75 +131,21 @@ Remplacez `--allow-unauthenticated` par `--no-allow-unauthenticated` et placez u
 
 ### Intégration continue
 
-Le dépôt étant public et les données extraites non versionnées, un déclencheur Cloud Build
-branché sur GitHub récupère un arbre sans banque de questions : le garde `prebuild`
-l'arrête, volontairement. `cloudbuild.yaml` résout ce point en restaurant la banque depuis
-un bucket Cloud Storage privé avant le `docker build` — le dépôt reste public, le dump
-reste privé, et la CI fonctionne.
+Le portail Cloud Run suffit pour redéployer à chaque push : il clone le dépôt et construit
+le `Dockerfile`, ce qui fonctionne puisque la banque de questions est versionnée.
 
-Le pipeline enchaîne `restore-question-bank` → `build` → `push` → `deploy`. L'étape de
-restauration se saute d'elle-même quand la banque est déjà dans le contexte, si bien que le
-même fichier sert aussi aux `gcloud builds submit` lancés depuis une copie de travail.
-
-#### Configuration, une seule fois
+`cloudbuild.yaml` est **facultatif**. Il n'est lu que par un déclencheur Cloud Build dont la
+configuration pointe explicitement dessus (« Fichier de configuration Cloud Build », chemin
+`/cloudbuild.yaml`) — le portail, lui, ne le lit jamais. Il apporte des images taguées dans
+Artifact Registry et une étape de déploiement paramétrable :
 
 ```bash
-PROJECT=$(gcloud config get-value project)
-BUCKET=gs://$PROJECT-az104-data
-REGION=europe-west1
-
-# 1. Un bucket privé (accès uniforme, aucun accès public)
-gcloud storage buckets create $BUCKET --location=$REGION --uniform-bucket-level-access
-
-# 2. Y déposer la banque générée localement par `npm run data`
-gcloud storage cp web/public/data/questions.json $BUCKET/az104/data/questions.json
-gcloud storage rsync --recursive web/public/img $BUCKET/az104/img
-
-# 3. Autoriser Cloud Build à la lire
-PROJECT_NUMBER=$(gcloud projects describe $PROJECT --format='value(projectNumber)')
-gcloud storage buckets add-iam-policy-binding $BUCKET \
-  --member=serviceAccount:$PROJECT_NUMBER@cloudbuild.gserviceaccount.com \
-  --role=roles/storage.objectViewer
-
-# 4. Un dépôt d'images
 gcloud artifacts repositories create containers \
-  --repository-format=docker --location=$REGION
+  --repository-format=docker --location=europe-west1
 ```
 
-Le compte de service Cloud Build a aussi besoin de `roles/run.admin` et de
+Le compte de service Cloud Build a alors besoin de `roles/run.admin` et de
 `roles/iam.serviceAccountUser` pour l'étape `deploy`.
-
-#### Configuration du déclencheur
-
-Deux réglages à changer sur le déclencheur existant — sans quoi l'ajout de
-`cloudbuild.yaml` ne produit aucun effet, puisqu'il continue de construire le Dockerfile
-directement :
-
-1. **Configuration** : passer de « Dockerfile » à « Fichier de configuration Cloud Build »,
-   avec pour chemin `/cloudbuild.yaml`.
-2. **Variables de substitution** : ajouter `_DATA_BUCKET` = `gs://VOTRE-BUCKET/az104`
-   (le préfixe utilisé à l'étape 2 ci-dessus, sans barre oblique finale).
-
-Si `_DATA_BUCKET` est laissé vide, la première étape s'arrête avec un message qui explique
-précisément ce qui manque, plutôt que de laisser passer une image incomplète.
-
-#### Après chaque régénération des données
-
-`npm run data` régénère la banque ; il faut la renvoyer vers le bucket :
-
-```bash
-gcloud storage cp web/public/data/questions.json $BUCKET/az104/data/questions.json
-gcloud storage rsync --recursive --delete-unmatched-destination-objects \
-  web/public/img $BUCKET/az104/img
-```
-
-#### Les autres options
-
-| Approche | CI automatique | Dump non redistribué |
-|---|---|---|
-| `cloudbuild.yaml` + bucket privé (ci-dessus) | oui | oui |
-| Déployer depuis la copie de travail | non | oui |
-| Dépôt privé, données versionnées | oui | oui |
 
 ---
 
@@ -223,12 +156,15 @@ AZ-104_dump.pdf          source ; non versionnée, non embarquée dans l'image
 tools/
   extract-images.mjs     extrait les captures du PDF (pdfjs) → web/public/img/*.webp
   parse-dump.mjs         extrait les questions (pdftotext)   → web/public/data/questions.json
+  images.json            métadonnées de l'extraction (positions, pages)
   translate.mjs          traduction FR via l'API Claude      → web/public/data/fr.json
 web/                     application React + TypeScript + Tailwind (Vite)
   public/data/           banque de questions, traductions, questions interactives
   public/img/            782 captures d'écran (15 Mo)
+  scripts/check-data.mjs garde de build : refuse de construire une app sans questions
 server/index.js          serveur de fichiers statiques, sans dépendance
 Dockerfile               build multi-étapes → image d'exécution node:22-alpine
+cloudbuild.yaml          pipeline Cloud Build facultatif (build, push, deploy)
 ```
 
 Il n'y a pas d'API : le front récupère `questions.json` une fois puis fonctionne
@@ -315,8 +251,8 @@ chargé au démarrage de l'application.
 * Les scores utilisent le seuil officiel de l'AZ-104, 700/1000, soit 70 %.
 * La progression est stockée dans le navigateur (`localStorage`) : elle est propre à chaque
   appareil et n'est jamais transmise au serveur.
-* `AZ-104_dump.pdf` n'est ni versionné ni inclus dans l'image Docker. L'image ne contient
-  que les données déjà extraites localement par `npm run data`.
-* Le dump est un document commercial dont la redistribution est interdite. Ne versionnez ni
-  le PDF ni son contenu extrait sur un dépôt public : `.gitignore` s'en charge, ne l'assouplissez
-  pas.
+* `AZ-104_dump.pdf` n'est ni versionné ni inclus dans l'image : seules les données extraites
+  le sont, ce qui suffit à construire et déployer.
+* Le dump d'origine est un document commercial dont la licence interdit la redistribution.
+  La banque extraite étant publiée ici, gardez ce point en tête si vous diffusez le dépôt ou
+  le service au-delà d'un usage de révision personnelle.
