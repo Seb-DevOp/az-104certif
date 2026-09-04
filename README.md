@@ -14,7 +14,7 @@ extraites automatiquement de `AZ-104_dump.pdf`.
 |---|---|
 | **Mode entraînement** | Une question à la fois, correction et explication immédiates, longueur de session réglable (5 à 200 questions). |
 | **Mode examen** | 25 / 50 / 100 questions chronométrées (75 min pour 50), aucune correction avant la fin, navigation libre, palette de questions, marquage pour relecture. |
-| **Bilingue FR / EN** | Interface entièrement traduite. Le contenu des questions dispose d'une couche de traduction séparée (voir [Traduction](#traduction)) ; les questions non encore traduites s'affichent en anglais avec un badge `EN`. |
+| **Bilingue FR / EN** | Interface **et** 542 questions entièrement traduites — énoncés, options, explications. Bascule instantanée, les noms Azure restant en anglais (voir [Traduction](#traduction)). |
 | **Grilles Oui / Non** | Les questions « choisissez Oui si l'affirmation est vraie » sont de vraies grilles cliquables, corrigées ligne par ligne. |
 | **Glisser-déposer** | Vrai drag & drop (souris, tactile et clavier) sur les questions converties en format interactif ; correction automatique par zone. |
 | **Zones actives / Hot area** | Les questions interactives non encore transcrites sont présentées avec leur capture d'énoncé, puis le corrigé et une auto-évaluation. |
@@ -180,7 +180,8 @@ tools/
   extract-images.mjs     extrait les captures du PDF (pdfjs) → web/public/img/*.webp
   parse-dump.mjs         extrait les questions (pdftotext)   → web/public/data/questions.json
   images.json            métadonnées de l'extraction (positions, pages)
-  translate.mjs          traduction FR via l'API Claude      → web/public/data/fr.json
+  translate.mjs          traduction par API (optionnelle)    → web/public/data/<lang>.json
+  fr/NNN.json            traductions écrites à la main, un fichier par lot
 web/                     application React + TypeScript + Tailwind (Vite)
   public/data/           banque de questions, traductions, questions interactives
   public/img/            782 captures d'écran (15 Mo)
@@ -217,57 +218,58 @@ correctement séparées.
 
 ## Traduction
 
-L'interface est bilingue dès l'installation. Le **contenu** des questions se traduit
-séparément, question par question, dans `web/public/data/fr.json` :
-
-```bash
-export ANTHROPIC_API_KEY=sk-ant-...
-npm run translate                       # tout ce qui reste à traduire
-npm run translate -- --limit 50         # par lots, pour tester
-npm run translate -- --model claude-sonnet-5   # moins cher, un peu moins fin
-```
-
-Le script est **reprenable** : le fichier est réécrit après chaque lot, les questions déjà
-traduites sont ignorées, et une interruption ne perd rien. Un fichier partiel est un état
-valide — les questions absentes s'affichent en anglais avec un badge `EN`.
-
-Le prompt impose de laisser en anglais les noms de produits, de rôles RBAC, de cmdlets et
-les identifiants de ressources, qui sont ceux affichés par le portail Azure et par l'examen.
+L'interface est bilingue, et le **contenu** des questions se traduit séparément, question par
+question, dans `web/public/data/<lang>.json`. Le français est complet ; l'anglais est la
+source et n'a pas de fichier.
 
 ### État de la traduction
 
-`fr.json` est livré avec **15 questions entièrement traduites** (énoncé, affirmations,
-explication) et **13 partiellement** (affirmations des grilles Oui/Non traduites, énoncé
-encore en anglais). Les 527 autres s'affichent en anglais.
+**Les 542 questions sont traduites** — énoncé, options, explication, et les libellés des
+questions interactives. Aucun badge `EN` ne subsiste en mode français.
 
-Une traduction partielle est un état valide et volontairement visible : le badge `EN` sur la
-carte suit l'**énoncé**, ce que l'apprenant lit en premier. Une question dont seules les
-affirmations sont traduites porte donc encore le badge.
+Les noms de produits, de rôles RBAC, de cmdlets et les identifiants de ressources restent en
+anglais : ce sont ceux qu'affichent le portail Azure et l'examen, et souvent ceux sur
+lesquels porte la question. Traduire « Storage File Data SMB Share Elevated Contributor » ou
+`assignableScopes` rendrait la question fausse.
 
 ```bash
 npm run check:translations      # cohérence fr.json ↔ banque ↔ questions interactives
 ```
 
 Ce script vérifie que le nombre de paragraphes traduits correspond à la source, que les clés
-d'options existent, et que chaque affirmation d'une grille transcrite est bien traduite.
+d'options existent, que chaque affirmation d'une grille transcrite est traduite, et qu'une
+liste de choix traduite garde la longueur de la source — la réponse étant un index dedans.
 
-### Traduire la totalité
+### Comment la traduction est organisée
 
-Les 527 questions restantes représentent environ **540 000 caractères** (~150 000 tokens en
-entrée). C'est trop pour une transcription à la main, mais c'est une seule commande :
+`fr.json` n'est pas écrit à la main : il est assemblé depuis `tools/fr/NNN.json`, un fichier
+par lot d'une vingtaine de questions.
+
+```bash
+npm run data:translations       # tools/fr/*.json → web/public/data/fr.json
+```
+
+Le script fusionne clé par clé, si bien qu'un lot ajoutant un énoncé n'efface pas les
+libellés interactifs écrits par un lot antérieur, et il signale les conflits réels — deux lots
+qui définiraient la même clé pour la même question.
+
+Pour ajouter une langue, créez `tools/<lang>/` et lancez `npm run data:translations -- <lang>`.
+Le sélecteur de langue de l'interface, lui, se complète dans `web/src/lib/i18n.ts`.
+
+### Retraduire par API
+
+`tools/translate.mjs` fait le même travail automatiquement, si vous régénérez la banque ou
+ajoutez une langue :
 
 ```bash
 export ANTHROPIC_API_KEY=sk-ant-...
-npm run translate
+npm run translate -- --lang es
 ```
 
-Comptez quelques minutes et quelques dollars. `--model claude-sonnet-5` divise le coût par
-deux ou trois, au prix d'une traduction un peu moins fine sur les tournures techniques.
-
 Le point important pour un dump d'examen : la traduction part du **texte déjà extrait**, pas
-du PDF. Retraduire le PDF avec un traducteur généraliste abîmerait les noms de rôles RBAC,
-de cmdlets et de ressources — or ce sont exactement les mots sur lesquels porte la question.
-Le prompt de `translate.mjs` les verrouille en anglais et ne traduit que la prose autour.
+du PDF. Retraduire le PDF avec un traducteur généraliste abîmerait les noms de rôles RBAC, de
+cmdlets et de ressources. Le prompt de `translate.mjs` les verrouille en anglais et ne traduit
+que la prose autour.
 
 ---
 

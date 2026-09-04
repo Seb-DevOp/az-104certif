@@ -1,0 +1,219 @@
+{
+ "522": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant des machines virtuelles connectées à un réseau virtuel nommé VNet1. Vous prévoyez de configurer Azure Monitor pour VM Insights et devez faire en sorte que toutes ces machines ne communiquent avec Azure Monitor qu'à travers VNet1. Que devez-vous créer en premier ?"
+  ],
+  "options": {
+   "A": "une règle de collecte de données (DCR)",
+   "B": "un espace de travail Log Analytics",
+   "C": "une étendue Azure Monitor Private Link Scope (AMPLS)",
+   "D": "un point de terminaison privé"
+  },
+  "explanation": "Azure Private Link permet de relier de façon sécurisée des ressources PaaS Azure à votre réseau virtuel au moyen de points de terminaison privés. Azure Monitor étant un ensemble de services interconnectés, il s'appuie sur une étendue Private Link dédiée plutôt que sur une liaison privée par ressource."
+ },
+
+ "523": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les coffres présentés dans le tableau suivant.",
+   "Vous créez un compte de stockage contenant les ressources présentées dans le tableau suivant.",
+   "Vers quel coffre pouvez-vous sauvegarder cont1 et share1 ?",
+   "REMARQUE : chaque bonne réponse vaut un point."
+  ],
+  "explanation": "Box 1 : Backup1 uniquement, cont1 étant un conteneur d'objets blob.\n\nRemarque : le coffre Backup est un produit plus léger que le coffre Recovery Services, avec un ensemble de charges de travail plus restreint. Il ne protège que certaines ressources Azure : disques de machines virtuelles Azure, stockage Blob Azure des comptes d'usage général, et Azure Database for PostgreSQL."
+ },
+
+ "524": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un travail Azure Stream Analytics nommé Job1. Vous devez surveiller les événements d'entrée de Job1 pour connaître le nombre d'événements NON traités. Quelle métrique devez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "Out-of-Order Events",
+   "B": "Output Events",
+   "C": "Late Input Events",
+   "D": "Backlogged Input Events"
+  },
+  "explanation": "Azure Stream Analytics propose plusieurs métriques pour surveiller l'état d'un travail. Backlogged Input Events indique le nombre d'événements d'entrée en attente : une valeur non nulle signifie que le travail ne parvient pas à suivre le rythme des événements entrants, surtout si elle augmente régulièrement."
+ },
+
+ "525": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant une base de données Azure SQL nommée DB1. Vous prévoyez d'utiliser Azure Monitor pour en superviser les performances et devez pouvoir exécuter des requêtes pour analyser les données de journaux. Quelle destination devez-vous configurer dans les paramètres de diagnostic de DB1 ?"
+  ],
+  "options": {
+   "A": "Envoyer vers un espace de travail Log Analytics.",
+   "B": "Archiver dans un compte de stockage.",
+   "C": "Diffuser vers un hub d'événements Azure."
+  },
+  "explanation": "Log Analytics est l'outil du portail Azure permettant d'écrire et d'exécuter des requêtes sur les données collectées par les journaux d'Azure Monitor, puis d'en analyser interactivement les résultats. Ces requêtes servent à retrouver des enregistrements répondant à des critères précis, à repérer des tendances et à analyser des motifs."
+ },
+
+ "526": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant des machines virtuelles sous Windows Server, ainsi qu'une règle de collecte de données nommée Rule1. Vous prévoyez d'utiliser l'agent Azure Monitor pour collecter des événements des journaux Système de Windows, mais vous ne devez collecter que les événements système dont l'identifiant est 1001. Quel type de requête devez-vous utiliser pour la source de données de Rule1 ?"
+  ],
+  "options": {
+   "A": "SQL",
+   "B": "XPath",
+   "C": "KQL"
+  },
+  "explanation": "Toute donnée collectée dans un espace de travail Log Analytics étant facturée, mieux vaut ne collecter que les événements nécessaires. La configuration de base du portail Azure n'offre que des possibilités de filtrage limitées : pour aller plus loin, utilisez une configuration personnalisée et une expression XPath qui filtre les événements."
+ },
+
+ "527": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant une machine virtuelle nommée VM1, et d'un centre de données local abritant un contrôleur de domaine nommé DC1. ExpressRoute relie ce centre de données à Azure. Vous devez utiliser Connection Monitor pour mesurer la latence réseau entre VM1 et DC1. Que devez-vous installer sur DC1 ?"
+  ],
+  "options": {
+   "A": "l'agent Azure Connected Machine pour les serveurs Azure Arc",
+   "B": "l'extension de machine virtuelle Azure Network Watcher Agent",
+   "C": "l'agent Log Analytics",
+   "D": "une extension de l'agent Azure Monitor"
+  },
+  "explanation": "La configuration de Connection Monitor pour ExpressRoute suppose l'installation d'agents de surveillance sur plusieurs serveurs, aussi bien locaux que dans Azure. Ces agents communiquent entre eux par des paquets de négociation TCP, ce qui permet à Azure de cartographier la topologie réseau et le chemin emprunté par le trafic."
+ },
+
+ "528": {
+  "text": [
+   "Vous disposez d'un abonnement Azure sur lequel Traffic Analytics est configuré. Vous déployez une nouvelle machine virtuelle nommée VM1 avec les paramètres suivants : région East US ; réseau virtuel VNet1 ; groupe de sécurité réseau de la carte réseau NSG1. Vous devez surveiller le trafic de VM1 au moyen de Traffic Analytics. Quels paramètres devez-vous configurer ?"
+  ],
+  "options": {
+   "A": "Les paramètres de diagnostic de VM1",
+   "B": "Les journaux de flux NSG de NSG1",
+   "C": "Les paramètres de diagnostic de NSG1",
+   "D": "Insights pour VM1"
+  },
+  "explanation": "Traffic Analytics suppose : un abonnement sur lequel Network Watcher est activé, les journaux de flux NSG activés pour les groupes de sécurité réseau à surveiller, et un espace de travail Azure Log Analytics accessible en lecture et en écriture."
+ },
+
+ "530": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant plusieurs machines virtuelles dans la région Azure West US. Vous devez utiliser Traffic Analytics dans Azure Network Watcher pour surveiller le trafic de ces machines. Quelles deux ressources devez-vous créer ? Chaque bonne réponse constitue une partie de la solution.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "options": {
+   "A": "un espace de travail Log Analytics",
+   "B": "un classeur Azure Monitor",
+   "C": "un compte de stockage",
+   "D": "un espace de travail Microsoft Sentinel",
+   "E": "une règle de collecte de données (DCR) dans Azure Monitor"
+  },
+  "explanation": "Traffic Analytics repose sur plusieurs composants : Network Watcher, service régional qui permet de surveiller et diagnostiquer les conditions réseau dans Azure et d'activer ou désactiver les journaux de flux NSG ; et Log Analytics, l'outil du portail Azure permettant d'exploiter les données des journaux d'Azure Monitor."
+ },
+
+ "531": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant une machine virtuelle nommée VM1. Vous prévoyez de déployer une règle d'alerte Azure Monitor qui se déclenchera lorsque l'utilisation du processeur de VM1 dépassera 80 %. Vous devez faire en sorte que cette règle envoie un e-mail à deux utilisateurs nommés User1 et User2. Que devez-vous créer pour Azure Monitor ?"
+  ],
+  "options": {
+   "A": "un groupe d'actions",
+   "B": "un groupe de sécurité à extension messagerie",
+   "C": "un groupe de distribution",
+   "D": "un groupe Microsoft 365"
+  },
+  "explanation": "Les alertes d'Azure Monitor s'appuient sur des groupes d'actions, qui déclenchent des notifications ou un flux de travail automatisé pour signaler qu'une alerte s'est déclenchée. Un groupe d'actions peut comporter des méthodes de notification — e-mail, SMS, notifications push — ainsi que des runbooks d'automatisation, des fonctions Azure, des incidents ITSM, des applications logiques ou des webhooks sécurisés."
+ },
+
+ "532": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un coffre Azure Backup nommé Backup1, un coffre Recovery Services nommé Recovery1 et les ressources présentées dans le tableau suivant.",
+   "Vous prévoyez de sauvegarder ces ressources. Laquelle peut être sauvegardée vers Backup1, et laquelle vers Recovery1 ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Disk1 vers Backup1, le coffre Azure Backup. Box 2 : VM1 vers Recovery1, le coffre Recovery Services.\n\nRemarque : lors de la création d'un coffre dans Azure Backup Center, un écran présente les sources de données prises en charge par chaque type de coffre."
+ },
+
+ "533": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant deux groupes de ressources nommés RG1 et RG2. RG1 contient les ressources présentées dans le tableau suivant.",
+   "Vous déplacez VM1 vers RG2. Quelles ressources se trouvent dans RG2 après ce déplacement ?"
+  ],
+  "options": {
+   "A": "VM1 uniquement",
+   "B": "VM1 et Disk1 uniquement",
+   "C": "VM1, NIC1 et Disk1 uniquement",
+   "D": "VM1, VNet1, NIC1 et Disk1"
+  }
+ },
+
+ "534": {
+  "text": [
+   "Vous créez un plan App Service nommé Plan1 et une application web Azure nommée webapp1. Vous constatez que l'option de création d'un emplacement de préproduction n'est pas disponible. Vous devez créer un tel emplacement pour Plan1. Que devez-vous faire en premier ?"
+  ],
+  "options": {
+   "A": "Depuis Plan1, faire monter le plan App Service en gamme.",
+   "B": "Depuis webapp1, ajouter un domaine personnalisé.",
+   "C": "Depuis Plan1, faire monter le plan App Service en charge.",
+   "D": "Depuis webapp1, modifier les paramètres d'application."
+  }
+ },
+
+ "535": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant 10 machines virtuelles sous Windows Server. Chacune héberge un site web dans IIS et dispose de l'agent Azure Monitor. Vous devez collecter les journaux IIS de chaque machine et les stocker dans un espace de travail Log Analytics. Que devez-vous configurer en premier ?"
+  ],
+  "options": {
+   "A": "un point de terminaison privé",
+   "B": "VM insights",
+   "C": "un point de terminaison de collecte de données",
+   "D": "les paramètres de diagnostic",
+   "E": "une étendue Azure Monitor Private Link Scope (AMPLS)"
+  },
+  "explanation": "Azure Private Link permet de relier de façon sécurisée des ressources PaaS Azure à votre réseau virtuel au moyen de points de terminaison privés. Les liaisons privées d'Azure Monitor sont structurées différemment de celles des autres services : plutôt qu'une liaison par ressource, Azure Monitor s'appuie sur une étendue unique."
+ },
+
+ "536": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un réseau virtuel nommé VNet1, qui utilise deux circuits ExpressRoute reliés à deux centres de données locaux distincts. Vous devez créer un tableau de bord affichant des métriques détaillées et une représentation visuelle de la topologie réseau. Que devez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "Log Analytics",
+   "B": "Azure Virtual Network Watcher",
+   "C": "une règle de collecte de données (DCR)",
+   "D": "Azure Monitor Network Insights"
+  },
+  "explanation": "Pour superviser des sites locaux reliés à Azure par des réseaux virtuels et des circuits ExpressRoute, appuyez-vous sur Azure Monitor et Network Insights. Vous y consultez les métriques clés — utilisation de la bande passante, latence, perte de paquets — et visualisez la topologie réseau, ce qui aide à comprendre la connectivité et à repérer les problèmes potentiels."
+ },
+
+ "537": {
+  "text": [
+   "Vous devez mettre en œuvre Role1. Quelle commande devez-vous exécuter avant de créer Role1 ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ]
+ },
+
+ "538": {
+  "text": [
+   "Vous devez recommander une solution pour automatiser la configuration des utilisateurs du service financier, en respectant les exigences techniques. Que devez-vous inclure dans la recommandation ?"
+  ],
+  "options": {
+   "A": "Azure AD B2C",
+   "B": "des groupes dynamiques et des stratégies d'accès conditionnel",
+   "C": "Microsoft Entra Identity Protection",
+   "D": "une application logique Azure et le client Microsoft Identity Management (MIM)"
+  },
+  "explanation": "Scénario : imposer l'authentification multifacteur Azure aux seuls utilisateurs du service financier. La recommandation consiste à utiliser des stratégies d'accès conditionnel, que l'on peut cibler sur des groupes d'utilisateurs, des applications précises ou d'autres conditions."
+ },
+
+ "539": {
+  "text": [
+   "Vous devez configurer Azure Backup pour sauvegarder les partages de fichiers et les machines virtuelles. Quel est le nombre minimal de coffres Recovery Services et de stratégies de sauvegarde à créer ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : 3. Lorsque les sources de données se répartissent sur plusieurs régions, il faut un coffre Recovery Services par région ; les partages de fichiers et les machines virtuelles se trouvent ici dans trois régions : West US, East US et Central US.\n\nBox 2 : 6. Une stratégie de sauvegarde est propre à un coffre : pour chaque coffre, il faut une stratégie pour les partages de fichiers et une pour les machines virtuelles."
+ },
+
+ "541": {
+  "text": [
+   "Vous devez configurer Azure Backup pour répondre aux exigences techniques concernant cont1 et share1. Sur quelle fréquence devez-vous régler la sauvegarde de chaque ressource ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : toutes les 12 heures pour cont1.\n\nScénario : cont1 est un conteneur et share1 un partage de fichiers ; Azure Backup doit les sauvegarder aussi fréquemment que possible.\n\nRemarque sur la matrice de prise en charge d'Azure Backup : pour les machines Windows locales ou les machines virtuelles Azure utilisant l'agent MARS, la fréquence maximale de sauvegarde vers le coffre est de trois par jour."
+ },
+
+ "542": {
+  "text": [
+   "Vous devez mettre en œuvre les changements prévus pour DCR1. Quel type de requête devez-vous utiliser ?"
+  ],
+  "explanation": "Les événements Windows constituent l'une des sources de données d'une règle de collecte de données (DCR). Lors de l'étape de collecte et de remise de la règle, sélectionnez « Windows Event Logs » comme type de source de données ; le filtrage fin des événements s'exprime alors en XPath."
+ }
+}
