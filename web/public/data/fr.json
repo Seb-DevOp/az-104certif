@@ -440,7 +440,23 @@
   "text": [
    "Vous disposez d'un locataire Microsoft Entra dont le nom de domaine est contoso.onmicrosoft.com. Vous avez par ailleurs un nom de domaine contoso.com enregistré auprès d'un bureau d'enregistrement tiers. Vous devez pouvoir créer des utilisateurs Microsoft Entra dont le nom porte le suffixe @contoso.com. Quelles trois actions devez-vous effectuer, et dans quel ordre ? Pour répondre, déplacez les actions appropriées de la liste vers la zone de réponse et classez-les dans le bon ordre."
   ],
-  "explanation": "1. Ajouter le nom de domaine personnalisé à votre annuaire. 2. Ajouter une entrée DNS pour ce nom de domaine chez le bureau d'enregistrement. 3. Vérifier le nom de domaine personnalisé dans Microsoft Entra ID."
+  "explanation": "1. Ajouter le nom de domaine personnalisé à votre annuaire. 2. Ajouter une entrée DNS pour ce nom de domaine chez le bureau d'enregistrement. 3. Vérifier le nom de domaine personnalisé dans Microsoft Entra ID.",
+  "interactive": {
+   "prompt": "Faites glisser les trois actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+   "items": {
+    "i1": "Ajouter un enregistrement à la zone DNS publique contoso.com",
+    "i2": "Ajouter un locataire Microsoft Entra",
+    "i3": "Configurer l'identité visuelle de l'entreprise",
+    "i4": "Créer une zone DNS Azure",
+    "i5": "Ajouter un nom de domaine personnalisé",
+    "i6": "Vérifier le domaine"
+   },
+   "targets": {
+    "step1": "Étape 1",
+    "step2": "Étape 2",
+    "step3": "Étape 3"
+   }
+  }
  },
  "43": {
   "text": [
@@ -1230,7 +1246,24 @@
    "Vous disposez d'un locataire Microsoft Entra.",
    "Vous devez faire en sorte que le nom de tout nouveau groupe Microsoft 365 soit automatiquement mis en forme ainsi : <Service><Nom du groupe>. Quelles trois actions devez-vous effectuer, et dans quel ordre, dans le centre d'administration Microsoft Entra ? Pour répondre, déplacez les actions appropriées de la liste vers la zone de réponse et classez-les dans le bon ordre."
   ],
-  "explanation": "Étape 1 : créer une stratégie de nommage de groupe. Pour imposer des conventions de nommage cohérentes aux groupes Microsoft 365 créés ou modifiés par vos utilisateurs, définissez une stratégie de nommage dans Microsoft Entra ID : connectez-vous au centre d'administration avec au moins le rôle Group Administrator, ouvrez Microsoft Entra ID, puis Tous les groupes > Groupes > Stratégie de nommage.\n\nÉtape 2 : définir le préfixe sur Attribut, dans la stratégie de nommage préfixe-suffixe."
+  "explanation": "Étape 1 : créer une stratégie de nommage de groupe. Pour imposer des conventions de nommage cohérentes aux groupes Microsoft 365 créés ou modifiés par vos utilisateurs, définissez une stratégie de nommage dans Microsoft Entra ID : connectez-vous au centre d'administration avec au moins le rôle Group Administrator, ouvrez Microsoft Entra ID, puis Tous les groupes > Groupes > Stratégie de nommage.\n\nÉtape 2 : définir le préfixe sur Attribut, dans la stratégie de nommage préfixe-suffixe.",
+  "interactive": {
+   "prompt": "Faites glisser les trois actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+   "items": {
+    "i1": "Définir Ajouter un suffixe sur Attribut.",
+    "i2": "Créer une stratégie de nommage de groupes.",
+    "i3": "Définir Ajouter un préfixe sur Attribut.",
+    "i4": "Définir Ajouter un suffixe sur Chaîne.",
+    "i5": "Définir Ajouter un préfixe sur Chaîne.",
+    "i6": "Définir Sélectionner le type sur Service (Department).",
+    "i7": "Personnaliser l'identité visuelle de l'entreprise."
+   },
+   "targets": {
+    "step1": "Étape 1",
+    "step2": "Étape 2",
+    "step3": "Étape 3"
+   }
+  }
  },
  "109": {
   "text": [
@@ -1813,7 +1846,30 @@
    "Que devez-vous retenir pour chaque compte ? Pour répondre, faites glisser les méthodes d'authentification appropriées vers les bons comptes. Chaque méthode peut être utilisée une fois, plusieurs fois, ou pas du tout.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : un jeton de signature d'accès partagé (SAS). Les identifiants d'autorisation peuvent être fournis via Microsoft Entra ID ou via un jeton SAS ; pour le stockage Blob, les deux sont possibles. Mais dans la version actuelle, une copie d'objets blob entre comptes de stockage impose d'ajouter un jeton SAS à chaque URL source — seule l'URL de destination peut s'en passer.\n\nBox 2 : un jeton SAS également, car le stockage Fichier n'accepte que cette méthode."
+  "explanation": "Box 1 : un jeton de signature d'accès partagé (SAS). Les identifiants d'autorisation peuvent être fournis via Microsoft Entra ID ou via un jeton SAS ; pour le stockage Blob, les deux sont possibles. Mais dans la version actuelle, une copie d'objets blob entre comptes de stockage impose d'ajouter un jeton SAS à chaque URL source — seule l'URL de destination peut s'en passer.\n\nBox 2 : un jeton SAS également, car le stockage Fichier n'accepte que cette méthode.",
+  "interactive": {
+   "prompt": "Choisissez la méthode d'authentification qu'AzCopy doit utiliser pour chaque compte.",
+   "fields": {
+    "f1": {
+     "label": "storage1 (source, container1) :",
+     "options": [
+      "Anonyme",
+      "OAuth",
+      "un jeton de signature d'accès partagé (SAS)",
+      "une clé d'accès au compte de stockage"
+     ]
+    },
+    "f2": {
+     "label": "storage2 (destination, share1) :",
+     "options": [
+      "Anonyme",
+      "OAuth",
+      "un jeton de signature d'accès partagé (SAS)",
+      "une clé d'accès au compte de stockage"
+     ]
+    }
+   }
+  }
  },
  "162": {
   "text": [
@@ -1861,7 +1917,22 @@
   "text": [
    "Vous disposez d'un abonnement Azure contenant une machine virtuelle nommée VM1. Vous devez la sauvegarder de sorte que les sauvegardes soient réparties sur trois zones de disponibilité de la région primaire. Quelles trois actions devez-vous effectuer, et dans quel ordre ? Pour répondre, déplacez les actions appropriées de la liste vers la zone de réponse et classez-les dans le bon ordre."
   ],
-  "explanation": "Étape 1 : créer un coffre Recovery Services, qui stockera les sauvegardes et les points de récupération. Azure Backup gère automatiquement le stockage du coffre, mais vous devez préciser son mode de réplication.\n\nÉtape 2 : régler la réplication sur le stockage redondant interzone (ZRS). Pensez à modifier le type de réplication du stockage avant la première sauvegarde."
+  "explanation": "Étape 1 : créer un coffre Recovery Services, qui stockera les sauvegardes et les points de récupération. Azure Backup gère automatiquement le stockage du coffre, mais vous devez préciser son mode de réplication.\n\nÉtape 2 : régler la réplication sur le stockage redondant interzone (ZRS). Pensez à modifier le type de réplication du stockage avant la première sauvegarde.",
+  "interactive": {
+   "prompt": "Faites glisser les trois actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+   "items": {
+    "i1": "Configurer une stratégie de réplication.",
+    "i2": "Définir Réplication sur stockage redondant interzone (ZRS).",
+    "i3": "Pour VM1, créer une stratégie de sauvegarde et configurer la sauvegarde.",
+    "i4": "Définir Réplication sur stockage localement redondant (LRS).",
+    "i5": "Créer un coffre Recovery Services."
+   },
+   "targets": {
+    "step1": "Étape 1",
+    "step2": "Étape 2",
+    "step3": "Étape 3"
+   }
+  }
  },
  "168": {
   "text": [
@@ -4314,7 +4385,22 @@
   "text": [
    "Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
    "Vous devez répartir les connexions HTTPS entre vm1 et vm2 au moyen de lb1. Quelles trois actions devez-vous effectuer, et dans quel ordre ? Pour répondre, déplacez les actions appropriées de la liste vers la zone de réponse et classez-les dans le bon ordre."
-  ]
+  ],
+  "interactive": {
+   "prompt": "Faites glisser les trois actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+   "items": {
+    "i1": "Supprimer nsg1.",
+    "i2": "Supprimer les adresses IP publiques de vm1 et vm2.",
+    "i3": "Créer une sonde d'intégrité et un pool principal sur lb1.",
+    "i4": "Créer un groupe à haute disponibilité.",
+    "i5": "Créer une règle d'équilibrage de charge sur lb1."
+   },
+   "targets": {
+    "step1": "Étape 1",
+    "step2": "Étape 2",
+    "step3": "Étape 3"
+   }
+  }
  },
  "403": {
   "text": [
@@ -4340,7 +4426,23 @@
  "405": {
   "text": [
    "Vous disposez d'un abonnement Azure et de deux sites locaux nommés site1 et site2. Vous devez les relier au moyen d'un Azure Virtual WAN. Quelles quatre actions devez-vous effectuer, et dans quel ordre ? Pour répondre, déplacez les actions appropriées de la liste vers la zone de réponse et classez-les dans le bon ordre."
-  ]
+  ],
+  "interactive": {
+   "prompt": "Faites glisser les quatre actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+   "items": {
+    "i1": "Créer un hub virtuel.",
+    "i2": "Créer des sites VPN.",
+    "i3": "Connecter les réseaux virtuels au hub.",
+    "i4": "Créer une ressource Virtual WAN.",
+    "i5": "Connecter les sites VPN au hub."
+   },
+   "targets": {
+    "step1": "Étape 1",
+    "step2": "Étape 2",
+    "step3": "Étape 3",
+    "step4": "Étape 4"
+   }
+  }
  },
  "406": {
   "text": [
@@ -4710,7 +4812,23 @@
    "Vous disposez d'un appareil Windows 11 nommé Device1 et d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
    "Azure PowerShell et Azure CLI sont installés sur Device1. Depuis Device1, vous devez établir une connexion Bureau à distance vers VM1. Quelles trois actions devez-vous effectuer, et dans quel ordre ? Pour répondre, déplacez les actions appropriées de la liste vers la zone de réponse et classez-les dans le bon ordre."
   ],
-  "explanation": "Étape 1 : faire évoluer Bastion1 vers la référence Standard. Pour établir une connexion RDP vers une machine virtuelle Windows au moyen d'Azure Bastion en configurant des ports personnalisés, la référence Standard est indispensable.\n\nÉtape 2 : depuis Bastion1, activer la prise en charge du client natif."
+  "explanation": "Étape 1 : faire évoluer Bastion1 vers la référence Standard. Pour établir une connexion RDP vers une machine virtuelle Windows au moyen d'Azure Bastion en configurant des ports personnalisés, la référence Standard est indispensable.\n\nÉtape 2 : depuis Bastion1, activer la prise en charge du client natif.",
+  "interactive": {
+   "prompt": "Faites glisser les trois actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+   "items": {
+    "i1": "Depuis Azure CLI sur Device1, exécuter az network bastion rdp.",
+    "i2": "Depuis Bastion1, activer l'authentification Kerberos.",
+    "i3": "Depuis VM1, activer l'accès juste-à-temps (JIT) à la machine virtuelle.",
+    "i4": "Depuis Bastion1, sélectionner Native Client Support.",
+    "i5": "Sur Device1, exécuter mstsc.exe.",
+    "i6": "Faire passer Bastion1 en référence (SKU) Standard."
+   },
+   "targets": {
+    "step1": "Étape 1",
+    "step2": "Étape 2",
+    "step3": "Étape 3"
+   }
+  }
  },
  "441": {
   "text": [
@@ -4923,7 +5041,22 @@
   "text": [
    "Vous disposez d'un abonnement Azure contenant un groupe de ressources nommé RG1. Vous prévoyez de créer un modèle Azure Resource Manager (ARM) pour déployer une nouvelle machine virtuelle nommée VM1, qui devra permettre la capture de données de performance. Vous devez indiquer les dépendances entre ressources dans ce modèle. Dans quel ordre devez-vous déployer les ressources ? Pour répondre, déplacez toutes les ressources de la liste vers la zone de réponse et classez-les dans le bon ordre."
   ],
-  "explanation": "Étape 1 : le réseau virtuel.\n\nÉtape 2 : l'interface réseau (Microsoft.Network/networkInterfaces), qui dépend de deux autres ressources : Microsoft.Network/publicIPAddresses et Microsoft.Network/virtualNetworks."
+  "explanation": "Étape 1 : le réseau virtuel.\n\nÉtape 2 : l'interface réseau (Microsoft.Network/networkInterfaces), qui dépend de deux autres ressources : Microsoft.Network/publicIPAddresses et Microsoft.Network/virtualNetworks.",
+  "interactive": {
+   "prompt": "Faites glisser les quatre ressources dans la zone de réponse, dans l'ordre où elles doivent être déclarées pour que chacune existe avant d'être référencée.",
+   "items": {
+    "i1": "machine virtuelle",
+    "i2": "extension Azure Monitor",
+    "i3": "interface réseau",
+    "i4": "réseau virtuel"
+   },
+   "targets": {
+    "step1": "Étape 1",
+    "step2": "Étape 2",
+    "step3": "Étape 3",
+    "step4": "Étape 4"
+   }
+  }
  },
  "461": {
   "text": [
@@ -5122,7 +5255,23 @@
   "text": [
    "Vous disposez d'un abonnement Azure contenant un réseau virtuel nommé VNet1, qui héberge des machines virtuelles sur lesquelles le Bureau à distance est activé. Plusieurs utilisateurs prévoient de travailler à distance et de s'y connecter depuis leur domicile. Vous devez configurer la connectivité vers ces machines pour prendre en charge une connexion VPN de point à site pour chaque utilisateur. Quelles trois actions devez-vous effectuer, et dans quel ordre ? Pour répondre, déplacez les actions appropriées de la liste vers la zone de réponse et classez-les dans le bon ordre."
   ],
-  "explanation": "Une connexion de passerelle VPN de point à site permet d'établir une connexion sécurisée vers votre réseau virtuel depuis un poste client isolé ; elle est initiée depuis ce poste.\n\nÉtape 1 : créer un nouveau sous-réseau dans VNet1. Un sous-réseau de passerelle est indispensable : il contient les adresses IP utilisées par la passerelle de réseau virtuel."
+  "explanation": "Une connexion de passerelle VPN de point à site permet d'établir une connexion sécurisée vers votre réseau virtuel depuis un poste client isolé ; elle est initiée depuis ce poste.\n\nÉtape 1 : créer un nouveau sous-réseau dans VNet1. Un sous-réseau de passerelle est indispensable : il contient les adresses IP utilisées par la passerelle de réseau virtuel.",
+  "interactive": {
+   "prompt": "Faites glisser les trois actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+   "items": {
+    "i1": "Créer un nouveau sous-réseau dans VNet1.",
+    "i2": "Ajouter une adresse IP publique à chaque machine virtuelle.",
+    "i3": "Déployer un équilibreur de charge dans VNet1.",
+    "i4": "Ajouter un pool d'adresses IP.",
+    "i5": "Créer une passerelle de réseau local.",
+    "i6": "Créer une passerelle VPN."
+   },
+   "targets": {
+    "step1": "Étape 1",
+    "step2": "Étape 2",
+    "step3": "Étape 3"
+   }
+  }
  },
  "480": {
   "text": [

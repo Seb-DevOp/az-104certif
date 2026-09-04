@@ -16,8 +16,8 @@ extraites automatiquement de `AZ-104_dump.pdf`.
 | **Mode examen** | 25 / 50 / 100 questions chronométrées (75 min pour 50), aucune correction avant la fin, navigation libre, palette de questions, marquage pour relecture. |
 | **Bilingue FR / EN** | Interface **et** 542 questions entièrement traduites — énoncés, options, explications. Bascule instantanée, les noms Azure restant en anglais (voir [Traduction](#traduction)). |
 | **Grilles Oui / Non** | Les questions « choisissez Oui si l'affirmation est vraie » sont de vraies grilles cliquables, corrigées ligne par ligne. |
-| **Glisser-déposer** | Vrai drag & drop (souris, tactile et clavier) sur les questions converties en format interactif ; correction automatique par zone. |
-| **Zones actives / Hot area** | Les questions interactives non encore transcrites sont présentées avec leur capture d'énoncé, puis le corrigé et une auto-évaluation. |
+| **Glisser-déposer** | Vrai drag & drop (souris, tactile et clavier) sur **les 14 questions** de ce format ; correction automatique par zone. |
+| **Zones actives / Hot area** | Les 151 questions à zones actives non encore transcrites sont présentées avec leur capture d'énoncé, puis le corrigé et une auto-évaluation. |
 | **Progression** | Statistiques par question et par domaine, révision des erreurs, questions mises de côté, historique des examens — le tout en `localStorage`, aucun compte ni serveur d'état. |
 | **Confort** | Thème clair / sombre, raccourcis clavier (`1`-`6`, `Entrée`), reprise de session, agrandissement des captures. |
 
@@ -285,9 +285,16 @@ coexistent donc :
   forme réellement jouable, relevée à la main sur les captures. Elle devient alors corrigée
   automatiquement, et la capture d'origine reste consultable comme corrigé.
 
-État actuel : **33 questions transcrites** — 23 grilles Oui/Non, 5 séries de menus
-déroulants et 5 plateaux de glisser-déposer. Il reste 151 zones actives affichées en
-capture.
+État actuel : **42 questions transcrites** — 23 grilles Oui/Non, 6 séries de menus
+déroulants et 13 plateaux de glisser-déposer. **Les 14 questions de format glisser-déposer
+sont toutes jouables**, plus aucune n'est laissée en capture. Il reste 151 zones actives
+affichées en capture.
+
+Une remarque de modélisation : le plateau *déplace* les pions, il ne les copie pas, donc un
+même élément ne peut pas occuper deux cibles à la fois. Les questions du dump qui autorisent
+« once, more than once, or not at all » et réutilisent effectivement la même réponse se
+transcrivent en menus déroulants — c'est le cas de la question 161. `check-interactive.mjs`
+refuse un plateau où un élément est réclamé par deux cibles.
 
 ### Transcrire automatiquement (recommandé)
 
@@ -343,11 +350,11 @@ Même principe dans `tools/dropdown-seed.json`, au format
 Directement dans `interactive.json` :
 
 ```jsonc
-"460": {
+"167": {
   "kind": "dragdrop",
-  "prompt": "Drag the three actions into the answer area in the correct order.",
-  "items":   [{ "id": "a", "label": "Create a Recovery Services vault" }],
-  "targets": [{ "id": "step1", "label": "Step 1", "accepts": ["a"] }]
+  "prompt": "Drag the three actions into the answer area, in the order they must be performed.",
+  "items":   [{ "id": "i1", "label": "Create a Recovery Services vault." }],
+  "targets": [{ "id": "step1", "label": "Step 1", "accepts": ["i1"] }]
 }
 ```
 

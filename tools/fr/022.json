@@ -1,0 +1,145 @@
+{
+  "_note": "Libellés français des 9 plateaux de glisser-déposer rendus jouables (42, 108, 167, 402, 405, 440, 460, 479) et de la question 161, transformée en menus déroulants. Les énoncés et explications de ces questions sont déjà traduits dans les lots précédents.",
+
+  "42": {
+    "interactive": {
+      "prompt": "Faites glisser les trois actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+      "items": {
+        "i1": "Ajouter un enregistrement à la zone DNS publique contoso.com",
+        "i2": "Ajouter un locataire Microsoft Entra",
+        "i3": "Configurer l'identité visuelle de l'entreprise",
+        "i4": "Créer une zone DNS Azure",
+        "i5": "Ajouter un nom de domaine personnalisé",
+        "i6": "Vérifier le domaine"
+      },
+      "targets": { "step1": "Étape 1", "step2": "Étape 2", "step3": "Étape 3" }
+    }
+  },
+
+  "108": {
+    "interactive": {
+      "prompt": "Faites glisser les trois actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+      "items": {
+        "i1": "Définir Ajouter un suffixe sur Attribut.",
+        "i2": "Créer une stratégie de nommage de groupes.",
+        "i3": "Définir Ajouter un préfixe sur Attribut.",
+        "i4": "Définir Ajouter un suffixe sur Chaîne.",
+        "i5": "Définir Ajouter un préfixe sur Chaîne.",
+        "i6": "Définir Sélectionner le type sur Service (Department).",
+        "i7": "Personnaliser l'identité visuelle de l'entreprise."
+      },
+      "targets": { "step1": "Étape 1", "step2": "Étape 2", "step3": "Étape 3" }
+    }
+  },
+
+  "161": {
+    "interactive": {
+      "prompt": "Choisissez la méthode d'authentification qu'AzCopy doit utiliser pour chaque compte.",
+      "fields": {
+        "f1": {
+          "label": "storage1 (source, container1) :",
+          "options": [
+            "Anonyme",
+            "OAuth",
+            "un jeton de signature d'accès partagé (SAS)",
+            "une clé d'accès au compte de stockage"
+          ]
+        },
+        "f2": {
+          "label": "storage2 (destination, share1) :",
+          "options": [
+            "Anonyme",
+            "OAuth",
+            "un jeton de signature d'accès partagé (SAS)",
+            "une clé d'accès au compte de stockage"
+          ]
+        }
+      }
+    }
+  },
+
+  "167": {
+    "interactive": {
+      "prompt": "Faites glisser les trois actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+      "items": {
+        "i1": "Configurer une stratégie de réplication.",
+        "i2": "Définir Réplication sur stockage redondant interzone (ZRS).",
+        "i3": "Pour VM1, créer une stratégie de sauvegarde et configurer la sauvegarde.",
+        "i4": "Définir Réplication sur stockage localement redondant (LRS).",
+        "i5": "Créer un coffre Recovery Services."
+      },
+      "targets": { "step1": "Étape 1", "step2": "Étape 2", "step3": "Étape 3" }
+    }
+  },
+
+  "402": {
+    "interactive": {
+      "prompt": "Faites glisser les trois actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+      "items": {
+        "i1": "Supprimer nsg1.",
+        "i2": "Supprimer les adresses IP publiques de vm1 et vm2.",
+        "i3": "Créer une sonde d'intégrité et un pool principal sur lb1.",
+        "i4": "Créer un groupe à haute disponibilité.",
+        "i5": "Créer une règle d'équilibrage de charge sur lb1."
+      },
+      "targets": { "step1": "Étape 1", "step2": "Étape 2", "step3": "Étape 3" }
+    }
+  },
+
+  "405": {
+    "interactive": {
+      "prompt": "Faites glisser les quatre actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+      "items": {
+        "i1": "Créer un hub virtuel.",
+        "i2": "Créer des sites VPN.",
+        "i3": "Connecter les réseaux virtuels au hub.",
+        "i4": "Créer une ressource Virtual WAN.",
+        "i5": "Connecter les sites VPN au hub."
+      },
+      "targets": { "step1": "Étape 1", "step2": "Étape 2", "step3": "Étape 3", "step4": "Étape 4" }
+    }
+  },
+
+  "440": {
+    "interactive": {
+      "prompt": "Faites glisser les trois actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+      "items": {
+        "i1": "Depuis Azure CLI sur Device1, exécuter az network bastion rdp.",
+        "i2": "Depuis Bastion1, activer l'authentification Kerberos.",
+        "i3": "Depuis VM1, activer l'accès juste-à-temps (JIT) à la machine virtuelle.",
+        "i4": "Depuis Bastion1, sélectionner Native Client Support.",
+        "i5": "Sur Device1, exécuter mstsc.exe.",
+        "i6": "Faire passer Bastion1 en référence (SKU) Standard."
+      },
+      "targets": { "step1": "Étape 1", "step2": "Étape 2", "step3": "Étape 3" }
+    }
+  },
+
+  "460": {
+    "interactive": {
+      "prompt": "Faites glisser les quatre ressources dans la zone de réponse, dans l'ordre où elles doivent être déclarées pour que chacune existe avant d'être référencée.",
+      "items": {
+        "i1": "machine virtuelle",
+        "i2": "extension Azure Monitor",
+        "i3": "interface réseau",
+        "i4": "réseau virtuel"
+      },
+      "targets": { "step1": "Étape 1", "step2": "Étape 2", "step3": "Étape 3", "step4": "Étape 4" }
+    }
+  },
+
+  "479": {
+    "interactive": {
+      "prompt": "Faites glisser les trois actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+      "items": {
+        "i1": "Créer un nouveau sous-réseau dans VNet1.",
+        "i2": "Ajouter une adresse IP publique à chaque machine virtuelle.",
+        "i3": "Déployer un équilibreur de charge dans VNet1.",
+        "i4": "Ajouter un pool d'adresses IP.",
+        "i5": "Créer une passerelle de réseau local.",
+        "i6": "Créer une passerelle VPN."
+      },
+      "targets": { "step1": "Étape 1", "step2": "Étape 2", "step3": "Étape 3" }
+    }
+  }
+}

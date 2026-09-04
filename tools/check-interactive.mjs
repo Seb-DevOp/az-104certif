@@ -60,22 +60,33 @@ for (const [id, spec] of Object.entries(specs)) {
       }
       if (!tgt.accepts?.length) problems.push(`Q${id}/${tgt.id}: accepts nothing`);
     }
-    // Every item accepted somewhere would make the pool answer itself; distractors are fine,
-    // but a target accepting an item no other target can hold is the usual authoring slip.
-    const accepted = new Set((spec.targets ?? []).flatMap((tgt) => tgt.accepts ?? []));
-    if (accepted.size === itemIds.size && itemIds.size > accepted.size) {
-      problems.push(`Q${id}: every item is accepted, so the question cannot be got wrong`);
+    // The board moves items rather than copying them, so an item wanted by two targets
+    // can never sit in both. Such a question has to be modelled as dropdowns instead.
+    const claimed = new Map();
+    for (const tgt of spec.targets ?? []) {
+      for (const a of tgt.accepts ?? []) claimed.set(a, (claimed.get(a) ?? 0) + 1);
+    }
+    for (const [a, n] of claimed) {
+      if (n > 1) problems.push(`Q${id}: item "${a}" is required by ${n} targets, but an item can only be dropped once`);
     }
   } else {
     problems.push(`Q${id}: unknown kind "${spec.kind}"`);
   }
 }
 
-const hotspots = questions.filter((q) => q.format === 'hotspot').length;
-const covered = Object.keys(specs).filter((k) => !k.startsWith('_')).length;
+// Count what is still a screenshot by format, not by kind: a hot-area question is
+// sometimes modelled as dropdowns, and a drag-and-drop one occasionally is too.
+const ids = new Set(Object.keys(specs).filter((k) => !k.startsWith('_')));
+const remaining = questions.reduce((acc, q) => {
+  if ((q.format === 'hotspot' || q.format === 'dragdrop') && !ids.has(String(q.id))) {
+    acc[q.format] = (acc[q.format] ?? 0) + 1;
+  }
+  return acc;
+}, {});
+const covered = ids.size;
 console.log(`interactive.json: ${covered} questions`);
 console.log('  by kind:', counts);
-console.log(`  hot-area questions still shown as a screenshot: ${hotspots - (counts.yesno ?? 0) - (counts.dropdown ?? 0)}`);
+console.log('  still shown as a screenshot:', remaining);
 if (problems.length) {
   console.log(`\n${problems.length} problems:\n  ` + problems.join('\n  '));
   process.exitCode = 1;

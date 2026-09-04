@@ -87,6 +87,59 @@
    }
   ]
  },
+ "42": {
+  "kind": "dragdrop",
+  "prompt": "Drag the three actions into the answer area, in the order they must be performed.",
+  "items": [
+   {
+    "id": "i1",
+    "label": "Add a record to the public contoso.com DNS zone"
+   },
+   {
+    "id": "i2",
+    "label": "Add a Microsoft Entra tenant"
+   },
+   {
+    "id": "i3",
+    "label": "Configure company branding"
+   },
+   {
+    "id": "i4",
+    "label": "Create an Azure DNS zone"
+   },
+   {
+    "id": "i5",
+    "label": "Add a custom domain name"
+   },
+   {
+    "id": "i6",
+    "label": "Verify the domain"
+   }
+  ],
+  "targets": [
+   {
+    "id": "step1",
+    "label": "Step 1",
+    "accepts": [
+     "i5"
+    ]
+   },
+   {
+    "id": "step2",
+    "label": "Step 2",
+    "accepts": [
+     "i1"
+    ]
+   },
+   {
+    "id": "step3",
+    "label": "Step 3",
+    "accepts": [
+     "i6"
+    ]
+   }
+  ]
+ },
  "45": {
   "kind": "yesno",
   "statements": [
@@ -385,6 +438,63 @@
    }
   ]
  },
+ "108": {
+  "kind": "dragdrop",
+  "prompt": "Drag the three actions into the answer area, in the order they must be performed.",
+  "items": [
+   {
+    "id": "i1",
+    "label": "Set Add suffix to Attribute."
+   },
+   {
+    "id": "i2",
+    "label": "Create a group naming policy."
+   },
+   {
+    "id": "i3",
+    "label": "Set Add prefix to Attribute."
+   },
+   {
+    "id": "i4",
+    "label": "Set Add suffix to String."
+   },
+   {
+    "id": "i5",
+    "label": "Set Add prefix to String."
+   },
+   {
+    "id": "i6",
+    "label": "Set Select type to Department."
+   },
+   {
+    "id": "i7",
+    "label": "Customize the company branding."
+   }
+  ],
+  "targets": [
+   {
+    "id": "step1",
+    "label": "Step 1",
+    "accepts": [
+     "i2"
+    ]
+   },
+   {
+    "id": "step2",
+    "label": "Step 2",
+    "accepts": [
+     "i3"
+    ]
+   },
+   {
+    "id": "step3",
+    "label": "Step 3",
+    "accepts": [
+     "i6"
+    ]
+   }
+  ]
+ },
  "116": {
   "kind": "dropdown",
   "fields": [
@@ -578,6 +688,83 @@
    }
   ]
  },
+ "161": {
+  "kind": "dropdown",
+  "prompt": "Pick the authentication method AzCopy must use for each account.",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "storage1 (source, container1):",
+    "options": [
+     "Anonymous",
+     "OAuth",
+     "A shared access signature (SAS) token",
+     "A storage account access key"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "storage2 (destination, share1):",
+    "options": [
+     "Anonymous",
+     "OAuth",
+     "A shared access signature (SAS) token",
+     "A storage account access key"
+    ],
+    "answer": 2
+   }
+  ]
+ },
+ "167": {
+  "kind": "dragdrop",
+  "prompt": "Drag the three actions into the answer area, in the order they must be performed.",
+  "items": [
+   {
+    "id": "i1",
+    "label": "Configure a replication policy."
+   },
+   {
+    "id": "i2",
+    "label": "Set Replication to Zone-redundant storage (ZRS)."
+   },
+   {
+    "id": "i3",
+    "label": "For VM1, create a backup policy and configure the backup."
+   },
+   {
+    "id": "i4",
+    "label": "Set Replication to Locally-redundant storage (LRS)."
+   },
+   {
+    "id": "i5",
+    "label": "Create a Recovery Services vault."
+   }
+  ],
+  "targets": [
+   {
+    "id": "step1",
+    "label": "Step 1",
+    "accepts": [
+     "i5"
+    ]
+   },
+   {
+    "id": "step2",
+    "label": "Step 2",
+    "accepts": [
+     "i2"
+    ]
+   },
+   {
+    "id": "step3",
+    "label": "Step 3",
+    "accepts": [
+     "i3"
+    ]
+   }
+  ]
+ },
  "199": {
   "kind": "yesno",
   "statements": [
@@ -675,6 +862,269 @@
     "id": "s3",
     "text": "If you delete Rule1, LB1 will balance all the requests between VM1 and VM2 for all the ports.",
     "answer": false
+   }
+  ]
+ },
+ "402": {
+  "kind": "dragdrop",
+  "prompt": "Drag the three actions into the answer area, in the order they must be performed.",
+  "items": [
+   {
+    "id": "i1",
+    "label": "Remove nsg1."
+   },
+   {
+    "id": "i2",
+    "label": "Remove the public IP addresses from vm1 and vm2."
+   },
+   {
+    "id": "i3",
+    "label": "Create a health probe and backend pool on lb1."
+   },
+   {
+    "id": "i4",
+    "label": "Create an availability set."
+   },
+   {
+    "id": "i5",
+    "label": "Create a load balancing rule on lb1."
+   }
+  ],
+  "targets": [
+   {
+    "id": "step1",
+    "label": "Step 1",
+    "accepts": [
+     "i2"
+    ]
+   },
+   {
+    "id": "step2",
+    "label": "Step 2",
+    "accepts": [
+     "i3"
+    ]
+   },
+   {
+    "id": "step3",
+    "label": "Step 3",
+    "accepts": [
+     "i5"
+    ]
+   }
+  ]
+ },
+ "405": {
+  "kind": "dragdrop",
+  "prompt": "Drag the four actions into the answer area, in the order they must be performed.",
+  "items": [
+   {
+    "id": "i1",
+    "label": "Create a virtual hub."
+   },
+   {
+    "id": "i2",
+    "label": "Create VPN sites."
+   },
+   {
+    "id": "i3",
+    "label": "Connect the virtual networks to the hub."
+   },
+   {
+    "id": "i4",
+    "label": "Create a Virtual WAN resource."
+   },
+   {
+    "id": "i5",
+    "label": "Connect the VPN sites to the hub."
+   }
+  ],
+  "targets": [
+   {
+    "id": "step1",
+    "label": "Step 1",
+    "accepts": [
+     "i4"
+    ]
+   },
+   {
+    "id": "step2",
+    "label": "Step 2",
+    "accepts": [
+     "i1"
+    ]
+   },
+   {
+    "id": "step3",
+    "label": "Step 3",
+    "accepts": [
+     "i2"
+    ]
+   },
+   {
+    "id": "step4",
+    "label": "Step 4",
+    "accepts": [
+     "i5"
+    ]
+   }
+  ]
+ },
+ "440": {
+  "kind": "dragdrop",
+  "prompt": "Drag the three actions into the answer area, in the order they must be performed.",
+  "items": [
+   {
+    "id": "i1",
+    "label": "From Azure CLI on Device1, run az network bastion rdp."
+   },
+   {
+    "id": "i2",
+    "label": "From Bastion1, enable Kerberos authentication."
+   },
+   {
+    "id": "i3",
+    "label": "From VM1, enable just-in-time (JIT) VM access."
+   },
+   {
+    "id": "i4",
+    "label": "From Bastion1, select Native Client Support."
+   },
+   {
+    "id": "i5",
+    "label": "On Device1, run mstsc.exe."
+   },
+   {
+    "id": "i6",
+    "label": "Upgrade Bastion1 to the Standard SKU."
+   }
+  ],
+  "targets": [
+   {
+    "id": "step1",
+    "label": "Step 1",
+    "accepts": [
+     "i6"
+    ]
+   },
+   {
+    "id": "step2",
+    "label": "Step 2",
+    "accepts": [
+     "i4"
+    ]
+   },
+   {
+    "id": "step3",
+    "label": "Step 3",
+    "accepts": [
+     "i1"
+    ]
+   }
+  ]
+ },
+ "460": {
+  "kind": "dragdrop",
+  "prompt": "Drag the four resources into the answer area, in the order they must be declared so that each one exists before it is referenced.",
+  "items": [
+   {
+    "id": "i1",
+    "label": "virtual machine"
+   },
+   {
+    "id": "i2",
+    "label": "Azure Monitor extension"
+   },
+   {
+    "id": "i3",
+    "label": "network interface"
+   },
+   {
+    "id": "i4",
+    "label": "virtual network"
+   }
+  ],
+  "targets": [
+   {
+    "id": "step1",
+    "label": "Step 1",
+    "accepts": [
+     "i4"
+    ]
+   },
+   {
+    "id": "step2",
+    "label": "Step 2",
+    "accepts": [
+     "i3"
+    ]
+   },
+   {
+    "id": "step3",
+    "label": "Step 3",
+    "accepts": [
+     "i1"
+    ]
+   },
+   {
+    "id": "step4",
+    "label": "Step 4",
+    "accepts": [
+     "i2"
+    ]
+   }
+  ]
+ },
+ "479": {
+  "kind": "dragdrop",
+  "prompt": "Drag the three actions into the answer area, in the order they must be performed.",
+  "items": [
+   {
+    "id": "i1",
+    "label": "Create a new subnet in VNet1."
+   },
+   {
+    "id": "i2",
+    "label": "Add a public IP address to each virtual machine."
+   },
+   {
+    "id": "i3",
+    "label": "Deploy a load balancer to VNet1."
+   },
+   {
+    "id": "i4",
+    "label": "Add an IP address pool."
+   },
+   {
+    "id": "i5",
+    "label": "Create a local network gateway."
+   },
+   {
+    "id": "i6",
+    "label": "Create a VPN gateway."
+   }
+  ],
+  "targets": [
+   {
+    "id": "step1",
+    "label": "Step 1",
+    "accepts": [
+     "i1"
+    ]
+   },
+   {
+    "id": "step2",
+    "label": "Step 2",
+    "accepts": [
+     "i4"
+    ]
+   },
+   {
+    "id": "step3",
+    "label": "Step 3",
+    "accepts": [
+     "i6"
+    ]
    }
   ]
  },
@@ -815,6 +1265,5 @@
     ]
    }
   ]
- },
- "_readme": "Hand-authored playable versions of DRAG DROP questions whose answer key exists in the PDF only as a screenshot. Transcribed from the exhibit and answer images of the matching question id. Adding an entry here turns that question from 'reveal and self-grade' into a machine-graded drag-and-drop; the original screenshots stay available as the answer key. French labels live in fr.json under the same id."
+ }
 }

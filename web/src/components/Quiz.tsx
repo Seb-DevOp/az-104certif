@@ -32,11 +32,19 @@ export function Quiz({
   const [revealed, setRevealed] = useState(false);
   const [showPalette, setShowPalette] = useState(false);
 
-  useEffect(() => {
+  // Swap the draft during render, not in an effect. <DragDrop> seeds its board from the
+  // draft the first time it mounts for a question, and an effect only runs after that
+  // mount — which handed each drag-and-drop question the previous one's chips.
+  const [shownId, setShownId] = useState(id);
+  if (shownId !== id) {
+    setShownId(id);
     setDraft(session.answers[id]?.selected ?? []);
     setRevealed(false);
+  }
+
+  useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [id]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [id]);
 
   // A question upgraded to a playable drag-and-drop is machine-graded even though the
   // source dump classes it as a self-graded 'reveal'.

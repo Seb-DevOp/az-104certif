@@ -43,11 +43,16 @@ export function QuestionCard(props: QuestionCardProps) {
   const [yesNoPicks, setYesNoPicks] = useState<Record<string, boolean>>(() => decodeYesNo(selected));
   const [dropdownPicks, setDropdownPicks] = useState<Record<string, number>>(() => decodeDropdown(selected));
 
-  useEffect(() => {
+  // Reset the interactive answers during render, not in an effect: <DragDrop> is remounted
+  // by its key and seeds itself from `initialPlaced`, so an effect running after the render
+  // would hand the new question the previous one's board.
+  const [shownId, setShownId] = useState(q.id);
+  if (shownId !== q.id) {
+    setShownId(q.id);
     setDragPlacement(decodeDragAnswer(selected));
     setYesNoPicks(decodeYesNo(selected));
     setDropdownPicks(decodeDropdown(selected));
-  }, [q.id]); // eslint-disable-line react-hooks/exhaustive-deps
+  }
 
   // Shuffling is keyed on the question so the order is stable while it is on screen.
   const options = useMemo(
