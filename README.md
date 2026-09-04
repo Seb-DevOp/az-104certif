@@ -145,17 +145,74 @@ Remplacez `--allow-unauthenticated` par `--no-allow-unauthenticated` et placez u
 ### Intégration continue
 
 Le dépôt étant public et les données extraites non versionnées, un déclencheur Cloud Build
-branché sur GitHub build un arbre sans banque de questions : le garde `prebuild` l'arrête.
-Trois façons d'en sortir, selon ce que vous privilégiez :
+branché sur GitHub récupère un arbre sans banque de questions : le garde `prebuild`
+l'arrête, volontairement. `cloudbuild.yaml` résout ce point en restaurant la banque depuis
+un bucket Cloud Storage privé avant le `docker build` — le dépôt reste public, le dump
+reste privé, et la CI fonctionne.
 
-| Approche | CI automatique | Le dump reste privé |
+Le pipeline enchaîne `restore-question-bank` → `build` → `push` → `deploy`. L'étape de
+restauration se saute d'elle-même quand la banque est déjà dans le contexte, si bien que le
+même fichier sert aussi aux `gcloud builds submit` lancés depuis une copie de travail.
+
+#### Configuration, une seule fois
+
+```bash
+PROJECT=$(gcloud config get-value project)
+BUCKET=gs://$PROJECT-az104-data
+REGION=europe-west1
+
+# 1. Un bucket privé (accès uniforme, aucun accès public)
+gcloud storage buckets create $BUCKET --location=$REGION --uniform-bucket-level-access
+
+# 2. Y déposer la banque générée localement par `npm run data`
+gcloud storage cp web/public/data/questions.json $BUCKET/az104/data/questions.json
+gcloud storage rsync --recursive web/public/img $BUCKET/az104/img
+
+# 3. Autoriser Cloud Build à la lire
+PROJECT_NUMBER=$(gcloud projects describe $PROJECT --format='value(projectNumber)')
+gcloud storage buckets add-iam-policy-binding $BUCKET \
+  --member=serviceAccount:$PROJECT_NUMBER@cloudbuild.gserviceaccount.com \
+  --role=roles/storage.objectViewer
+
+# 4. Un dépôt d'images
+gcloud artifacts repositories create containers \
+  --repository-format=docker --location=$REGION
+```
+
+Le compte de service Cloud Build a aussi besoin de `roles/run.admin` et de
+`roles/iam.serviceAccountUser` pour l'étape `deploy`.
+
+#### Configuration du déclencheur
+
+Deux réglages à changer sur le déclencheur existant — sans quoi l'ajout de
+`cloudbuild.yaml` ne produit aucun effet, puisqu'il continue de construire le Dockerfile
+directement :
+
+1. **Configuration** : passer de « Dockerfile » à « Fichier de configuration Cloud Build »,
+   avec pour chemin `/cloudbuild.yaml`.
+2. **Variables de substitution** : ajouter `_DATA_BUCKET` = `gs://VOTRE-BUCKET/az104`
+   (le préfixe utilisé à l'étape 2 ci-dessus, sans barre oblique finale).
+
+Si `_DATA_BUCKET` est laissé vide, la première étape s'arrête avec un message qui explique
+précisément ce qui manque, plutôt que de laisser passer une image incomplète.
+
+#### Après chaque régénération des données
+
+`npm run data` régénère la banque ; il faut la renvoyer vers le bucket :
+
+```bash
+gcloud storage cp web/public/data/questions.json $BUCKET/az104/data/questions.json
+gcloud storage rsync --recursive --delete-unmatched-destination-objects \
+  web/public/img $BUCKET/az104/img
+```
+
+#### Les autres options
+
+| Approche | CI automatique | Dump non redistribué |
 |---|---|---|
-| Déployer depuis la copie de travail (ci-dessus) | non | oui |
-| Passer le dépôt en privé et versionner les données | oui | oui |
-| Dépôt public + données dans un bucket GCS privé, récupérées par une étape `cloudbuild.yaml` avant le `docker build` | oui | oui |
-
-La troisième option est la seule qui garde les deux propriétés ; elle demande un bucket et
-un `cloudbuild.yaml` avec une étape `gsutil cp` en amont du build.
+| `cloudbuild.yaml` + bucket privé (ci-dessus) | oui | oui |
+| Déployer depuis la copie de travail | non | oui |
+| Dépôt privé, données versionnées | oui | oui |
 
 ---
 
