@@ -1,0 +1,247 @@
+{
+ "286": {
+  "text": [
+   "Vous développez le modèle Azure Resource Manager (ARM) suivant pour créer un groupe de ressources et y déployer un compte de stockage Azure.",
+   "Quelle cmdlet devez-vous exécuter pour déployer ce modèle ?"
+  ]
+ },
+
+ "287": {
+  "text": [
+   "Vous disposez d'une application Azure App Service nommée WebApp1 contenant deux dossiers nommés Folder1 et Folder2. Vous devez configurer une sauvegarde quotidienne de WebApp1, en excluant Folder2. Que devez-vous créer en premier, et qu'utilisez-vous pour exclure Folder2 ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : un compte de stockage Azure. App Service peut sauvegarder vers un compte de stockage et un conteneur Azure configurés pour l'application : la configuration de l'application, le contenu des fichiers et la base de données qui lui est associée.\n\nChoisissez la destination de la sauvegarde en sélectionnant un compte de stockage et un conteneur ; ce compte doit appartenir au même abonnement que l'application à sauvegarder."
+ },
+
+ "288": {
+  "text": [
+   "Vous prévoyez de déployer plusieurs machines virtuelles Azure sous Windows Server 2019 dans un groupe de machines virtuelles identiques, au moyen d'un modèle Azure Resource Manager. Vous devez faire en sorte que NGINX soit disponible sur toutes ces machines une fois déployées. Que devez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "la cmdlet Publish-AzVMDscConfiguration",
+   "B": "Azure Application Insights",
+   "C": "l'extension Azure Custom Script",
+   "D": "un profil de configuration d'appareil Microsoft Endpoint Manager"
+  },
+  "explanation": "Deux réponses sont correctes pour cette question : une extension Desired State Configuration (DSC) et l'extension Azure Custom Script."
+ },
+
+ "289": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant une machine virtuelle sous Windows 10. Vous devez joindre cette machine à un domaine Active Directory. Comment devez-vous compléter le modèle Azure Resource Manager (ARM) ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : \"Microsoft.Compute/virtualMachines/extensions\". Ce type de ressource permet d'installer l'extension de jointure de domaine Active Directory, avec des paramètres fournis au moment du déploiement ; une fois l'extension déployée, la machine est jointe au domaine managé indiqué.\n\nBox 2 : \"protectedSettings\", qui héberge les valeurs sensibles telles que le mot de passe du compte de jointure."
+ },
+
+ "290": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous devez déployer une machine virtuelle au moyen d'un modèle Azure Resource Manager (ARM). Comment devez-vous compléter le modèle ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : resourceId. Exemple : \"dependsOn\": [ \"[resourceId('Microsoft.Network/networkInterfaces', concat(variables('nicPrefix'), '-', copyIndex()))]\" ].\n\nBox 2 : imageReference, à l'intérieur de storageProfile, qui désigne l'éditeur, l'offre et la référence de l'image système."
+ },
+
+ "291": {
+  "text": [
+   "Vous créez un cluster Azure Kubernetes Service (AKS) comme présenté dans la capture suivante.",
+   "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : modifier le paramètre de configuration réseau. La capture indique « Network policy : None ». Or, pour qu'un cluster AKS prenne en charge des pools de nœuds destinés aux conteneurs Windows Server, il doit utiliser une stratégie réseau reposant sur le plug-in Azure CNI (advanced)."
+ },
+
+ "292": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un cluster Azure Kubernetes Service (AKS) nommé Cluster1, qui héberge un pool de nœuds nommé Pool1 comptant quatre nœuds. Vous devez effectuer une mise à niveau coordonnée de Cluster1 en respectant les exigences suivantes : déployer deux nouveaux nœuds pour réaliser la mise à niveau, et limiter les coûts. Comment devez-vous compléter la commande ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : add. La commande az aks nodepool add ajoute un pool de nœuds au cluster Kubernetes managé.\n\nBox 2 : --max-surge 2. Ce paramètre désigne les nœuds supplémentaires utilisés pour accélérer la mise à niveau, exprimés en nombre ou en pourcentage.\n\nRéponse incorrecte : --max-count fixe le nombre maximal de nœuds pour l'autoscaler, et ne s'applique qu'avec --enable-cluster-autoscaler."
+ },
+
+ "293": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous créez le fichier suivant, nommé Deploy.json.",
+   "Vous vous connectez à l'abonnement et exécutez les commandes suivantes.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui. La cmdlet New-AzResourceGroup crée un groupe de ressources Azure, et New-AzResourceGroupDeployment créera 3 ressources puisque le compteur de copie est réglé sur 3.\n\nRemarque sur l'élément copy : pour créer plusieurs instances d'une ressource au moyen d'un modèle imbriqué, ajoutez l'élément copy au niveau de la ressource Microsoft.Resources/deployments ; si la portée est interne, il peut être placé dans le modèle imbriqué lui-même."
+ },
+
+ "294": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous déployez un cluster Azure Kubernetes Service (AKS) nommé AKS1. Vous devez y déployer un fichier YAML.",
+   "Solution : depuis l'interface Azure CLI, vous exécutez az aks. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "295": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous déployez un cluster Azure Kubernetes Service (AKS) nommé AKS1. Vous devez y déployer un fichier YAML.",
+   "Solution : depuis l'interface Azure CLI, vous exécutez le client kubectl. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "296": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous déployez un cluster Azure Kubernetes Service (AKS) nommé AKS1. Vous devez y déployer un fichier YAML.",
+   "Solution : depuis l'interface Azure CLI, vous exécutez azcopy. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "297": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'une machine virtuelle Azure nommée VM1 sous Windows Server 2016. Vous devez créer une alerte dans Azure lorsque plus de deux événements d'erreur sont consignés dans le journal Système de VM1 en l'espace d'une heure.",
+   "Solution : vous créez un compte de stockage Azure et configurez des signatures d'accès partagé (SAS). Vous installez Microsoft Monitoring Agent sur VM1. Vous créez une alerte dans Azure Monitor en indiquant le compte de stockage comme source. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Il faut plutôt créer un espace de travail Azure Log Analytics, en configurer les paramètres de données, installer Microsoft Monitoring Agent sur VM1, puis créer l'alerte dans Azure Monitor en indiquant l'espace de travail Log Analytics comme source."
+ },
+
+ "298": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 contenant les ressources du tableau suivant.",
+   "VNet1 se trouve dans RG1 et VNet2 dans RG2 ; il n'existe aucune connectivité entre les deux. Un administrateur nommé Admin1 crée dans RG1 une machine virtuelle Azure nommée VM1, qui utilise un disque nommé Disk1 et se connecte à VNet1. Admin1 installe ensuite une application personnalisée sur VM1. Vous devez rendre cette application accessible sur VNet2, en limitant l'effort d'administration. Quelles deux actions devez-vous effectuer ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Une machine virtuelle ne peut pas simplement être déplacée d'un réseau à un autre. Il faut identifier le disque qu'elle utilise, supprimer la machine tout en conservant le disque, recréer la machine dans le réseau virtuel cible, puis y rattacher le disque d'origine."
+ },
+
+ "299": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un groupe de ressources nommé RG1. Vous prévoyez d'utiliser un modèle Azure Resource Manager (ARM) nommé template1 pour déployer des ressources, en respectant les exigences suivantes : déployer les nouvelles ressources dans RG1, et supprimer toutes les ressources existantes de RG1 au préalable. Comment devez-vous compléter la commande ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : -ResourceGroupName. La cmdlet New-AzResourceGroupDeployment ajoute un déploiement à un groupe de ressources existant, et ce paramètre en indique le nom.\n\nBox 2 : Complete. Le paramètre -Mode définit le mode de déploiement ; le mode Complete supprime les ressources existantes du groupe qui ne figurent pas dans le modèle."
+ },
+
+ "300": {
+  "text": [
+   "Vous disposez d'une application web Azure App Service nommée app1. Vous configurez la mise à l'échelle automatique comme dans la capture suivante.",
+   "Vous configurez les critères de la règle de mise à l'échelle comme dans la capture suivante.",
+   "Utilisez les menus déroulants pour choisir la réponse à chaque question à partir des informations présentées dans le graphique.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : 2 instances. La première capture indique un nombre d'instances par défaut de 1 ; la seconde montre que si l'utilisation du processeur dépasse 70 % pendant 10 minutes, le nombre d'instances augmente de 1. Le délai de récupération est de 5 minutes.\n\nBox 2 : 15 minutes. Le délai de récupération est de 5 minutes, auxquelles s'ajoutent les 10 minutes nécessaires pour déclencher une deuxième mise à l'échelle."
+ },
+
+ "301": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous prévoyez de déployer les instances de conteneur Azure présentées dans le tableau suivant.",
+   "Quelles instances pouvez-vous déployer dans un groupe de conteneurs ?"
+  ],
+  "options": {
+   "A": "Instance1 uniquement",
+   "B": "Instance2 uniquement",
+   "C": "Instance1 et Instance2 uniquement",
+   "D": "Instance3 et Instance4 uniquement"
+  }
+ },
+
+ "302": {
+  "text": [
+   "Vous disposez d'un abonnement Azure comportant les adresses IP publiques présentées dans le tableau suivant.",
+   "Vous prévoyez de déployer une instance d'Azure Firewall Premium nommée FW1. Quelles adresses IP pouvez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "IP2 uniquement",
+   "B": "IP1 et IP2 uniquement",
+   "C": "IP1, IP2 et IP5 uniquement",
+   "D": "IP1, IP2, IP4 et IP5 uniquement"
+  },
+  "explanation": "Azure Firewall exige la configuration d'au moins une adresse IP publique statique, qui sert de point de connexion externe au pare-feu. Seules les adresses IP publiques de référence Standard sont prises en charge : ni les adresses de référence Basic, ni les préfixes d'adresses IP publiques ne conviennent."
+ },
+
+ "303": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les groupes de ressources présentés dans le tableau suivant.",
+   "L'abonnement contient les réseaux virtuels présentés dans le tableau suivant.",
+   "Vous prévoyez de déployer les clusters Azure Kubernetes Service (AKS) présentés dans le tableau suivant.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Non — AKS1 est dans RG1, donc dans West US, tandis que VNet2 est dans RG2, en Central US. Les clusters AKS sont des ressources régionales et ne peuvent pas s'étendre sur plusieurs régions.\n\nBox 2 : Oui — AKS2 et VNet1 sont tous deux dans West US.\n\nBox 3 : Oui — AKS3 et VNet3 sont tous deux dans East US."
+ },
+
+ "304": {
+  "text": [
+   "Vous téléchargez un modèle Azure Resource Manager fondé sur une machine virtuelle existante. Ce modèle servira à déployer 100 machines virtuelles. Vous devez le modifier pour qu'il référence un mot de passe administrateur, sans que ce mot de passe soit stocké en clair. Que devez-vous créer pour stocker ce mot de passe ?"
+  ],
+  "options": {
+   "A": "un coffre de clés Azure et une stratégie d'accès",
+   "B": "un compte de stockage Azure et une stratégie d'accès",
+   "C": "un coffre Recovery Services et une stratégie de sauvegarde",
+   "D": "Microsoft Entra Identity Protection et une stratégie Azure"
+  },
+  "explanation": "Un modèle peut déployer une machine virtuelle Windows en récupérant le mot de passe stocké dans un coffre de clés : celui-ci n'apparaît alors jamais en clair dans le fichier de paramètres du modèle."
+ },
+
+ "305": {
+  "text": [
+   "Vous disposez des plans App Service présentés dans le tableau suivant.",
+   "Vous prévoyez de créer les applications web Azure présentées dans le tableau suivant.",
+   "Vous devez déterminer quels plans App Service peuvent être utilisés pour ces applications web. Que devez-vous retenir ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : ASP1 et ASP3. Les applications ASP.NET Core peuvent être hébergées aussi bien sous Windows que sous Linux. ASP2 est exclu car la région d'exécution d'une application est celle de son plan App Service.\n\nBox 2 : ASP1. Les applications ASP.NET ne peuvent être hébergées que sous Windows."
+ },
+
+ "306": {
+  "text": [
+   "Vous créez un groupe de machines virtuelles identiques nommé Scale1, configuré comme dans la capture suivante.",
+   "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : 6 machines virtuelles. La règle d'augmentation d'échelle ajoute 2 machines lorsque le seuil processeur atteint ou dépasse 80 % ; le nombre initial de 4 instances passe donc à 6.\n\nBox 2 : 2 machines virtuelles. La règle de réduction d'échelle retire 4 machines lorsque le seuil processeur descend à 30 % ou moins ; partant de 4 instances, le nombre ne peut toutefois pas descendre jusqu'à 0, le minimum s'appliquant."
+ },
+
+ "307": {
+  "text": [
+   "Vous devez configurer une nouvelle application Azure App Service nommée WebApp1 répondant aux exigences suivantes : WebApp1 doit pouvoir vérifier un nom de domaine personnalisé app.contoso.com ; WebApp1 doit pouvoir monter automatiquement jusqu'à huit instances ; les coûts et l'effort d'administration doivent être limités. Quel plan tarifaire devez-vous choisir, et quel type d'enregistrement devez-vous utiliser pour vérifier le domaine ?",
+   "REMARQUE : chaque bonne réponse vaut un point."
+  ],
+  "explanation": "Box 1 : Standard, qui prend en charge jusqu'à 10 instances — le plan Basic étant limité à 3.\n\nBox 2 : TXT. Sélectionnez Vérifier pour vous assurer que votre domaine personnalisé est correctement enregistré et valide pour Microsoft Entra ID. Une fois la vérification effectuée, l'enregistrement TXT ou MX de vérification peut être supprimé."
+ },
+
+ "308": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les machines virtuelles présentées dans le tableau suivant.",
+   "Vous créez une galerie de calcul Azure nommée ComputeGallery1, présentée dans la capture « Azure Compute Gallery ».",
+   "Dans ComputeGallery1, vous créez une définition d'image de machine virtuelle nommée Image1, présentée dans la capture « Image Definition ».",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Non — VM1 est de génération 2, alors que la définition d'image Image1 indique une génération V1. Les machines de génération 2 offrent des fonctionnalités que celles de génération 1 ne prennent pas en charge.\n\nBox 2 : Non — VM2 ne dispose que de 2 vCPU, alors qu'Image1 recommande de 4 à 16 vCPU.\n\nBox 3 : Oui."
+ },
+
+ "309": {
+  "text": [
+   "Vous prévoyez de créer les applications web Azure présentées dans le tableau suivant.",
+   "Quel est le nombre minimal de plans App Service à créer pour ces applications web ?"
+  ],
+  "explanation": "Un plan pour Windows (WebApp1 et WebApp2) et un pour Linux (PHP et Python).\n\nRemarque : une application PHP peut être déployée sur Azure App Service sous Linux comme sous Windows. Azure App Service est un service d'hébergement web entièrement managé qui prend en charge les applications Python dans un environnement serveur Linux."
+ },
+
+ "310": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les groupes de ressources présentés dans le tableau suivant.",
+   "Vous créez le modèle Azure Resource Manager (ARM) suivant, nommé deploy.json.",
+   "Vous déployez ce modèle en exécutant la cmdlet suivante.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — le modèle crée un groupe de ressources dans la région Azure East US.\n\nRemarque : pour déployer au niveau d'un abonnement, on utilise New-AzSubscriptionDeployment, alias de New-AzDeployment, avec le paramètre -Location qui indique où stocker les données de déploiement.\n\nBox 2 : Oui — le nom de chaque ressource comporte la fonction copyIndex()."
+ },
+
+ "311": {
+  "text": [
+   "Vous disposez d'une application Azure App Service nommée App1 comportant deux instances en cours d'exécution. Une règle de mise à l'échelle automatique est configurée comme dans la capture suivante.",
+   "Pour le paramètre de limites d'instances de la condition de mise à l'échelle, vous fixez le maximum à 5. Pendant une période de 30 minutes, App1 utilise 80 % de la mémoire disponible. Quel est le nombre maximal d'instances d'App1 pendant cette période ?"
+  ]
+ }
+}

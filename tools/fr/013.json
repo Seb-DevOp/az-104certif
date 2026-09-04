@@ -1,0 +1,274 @@
+{
+ "312": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les images de conteneur présentées dans le tableau suivant.",
+   "Vous prévoyez d'utiliser les services suivants : Azure Container Instances, Azure Container Apps et Azure App Service. Dans quels services pouvez-vous exécuter ces images ?",
+   "REMARQUE : chaque bonne réponse vaut un point."
+  ],
+  "explanation": "Box 1 : Azure Container Instances et App Service uniquement, pour Image1 sous Windows Server. App Service prend en charge les conteneurs Windows : les déployer permet d'embarquer des dépendances telles que des polices personnalisées, des cultures ou des assemblys déployés dans le GAC. Le conteneur Windows constitue alors une frontière d'isolation et de sécurité."
+ },
+
+ "313": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra nommé contoso.com et d'un abonnement Azure contenant une application web Azure App Service nommée App1 ainsi qu'un coffre de clés Azure nommé KV1. KV1 contient un certificat générique pour contoso.com. Un utilisateur nommé user1@contoso.com dispose du rôle Owner sur App1 et KV1. Vous devez configurer App1 pour qu'elle utilise le certificat générique de KV1. Que devez-vous faire en premier ?"
+  ],
+  "options": {
+   "A": "Créer une stratégie d'accès sur KV1 et y affecter le principal Microsoft Azure App Service.",
+   "B": "Affecter une identité managée par l'utilisateur à App1.",
+   "C": "Configurer KV1 pour utiliser le système d'autorisation par contrôle d'accès en fonction du rôle (RBAC).",
+   "D": "Créer une stratégie d'accès sur KV1 et l'affecter à User1."
+  }
+ },
+
+ "314": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous prévoyez de déployer les ressources présentées dans le tableau suivant.",
+   "Vous devez créer un unique modèle Azure Resource Manager (ARM) pour déployer ces ressources.",
+   "Quelle ressource faut-il ajouter à la section dependsOn de VM1 ?"
+  ],
+  "explanation": "Il faut définir l'ordre de déploiement des ressources dans un modèle ARM : certaines doivent exister avant d'autres — un serveur SQL logique avant une base de données, par exemple. Cette relation s'exprime en déclarant une ressource dépendante d'une autre, au moyen de l'élément dependsOn pour une dépendance explicite, ou de la fonction reference pour une dépendance implicite."
+ },
+
+ "315": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous créez le modèle Azure Resource Manager (ARM) suivant, nommé Template.json.",
+   "Vous devez déployer Template.json. Quelle cmdlet PowerShell devez-vous exécuter depuis Azure Cloud Shell ?"
+  ]
+ },
+
+ "316": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un groupe de ressources nommé RG1. Vous prévoyez de créer un compte de stockage nommé storage1 et disposez d'un fichier Bicep nommé File1. Vous devez modifier File1 pour automatiser le déploiement de storage1 dans RG1. Quelle propriété devez-vous modifier ?"
+  ],
+  "options": {
+   "A": "kind",
+   "B": "scope",
+   "C": "sku",
+   "D": "location"
+  }
+ },
+
+ "317": {
+  "text": [
+   "Votre entreprise souscrit un nouvel abonnement Azure. Vous créez un fichier nommé Deploy.json, présenté dans la capture suivante.",
+   "Vous vous connectez à l'abonnement et exécutez la cmdlet suivante : New-AzDeployment -Location westus -TemplateFile \"deploy.json\". Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — RG1 est un groupe de ressources, lockDeployment y est déployé en mode Incremental avec un verrou CanNotDelete.\n\nBox 2 : Non — pour RG2, le verrou est ReadOnly. Ce niveau autorise les utilisateurs habilités à lire une ressource, mais pas à la supprimer ni à la mettre à jour : cela revient à restreindre tous les utilisateurs habilités aux seules permissions de lecture."
+ },
+
+ "318": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "Vous devez configurer un groupe de placement de proximité pour VMSS1. Quels groupes de placement de proximité devez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "Proximity2 uniquement",
+   "B": "Proximity1, Proximity2 et Proximity3",
+   "C": "Proximity1 uniquement",
+   "D": "Proximity1 et Proximity3 uniquement"
+  },
+  "explanation": "VMSS1 est situé dans West US, et seul Proximity1 s'y trouve également — Proximity2 et Proximity3 sont dans Central US.\n\nRemarque : lorsque des machines virtuelles sont affectées à un groupe de placement de proximité, elles sont placées dans le même centre de données, ce qui réduit la latence et la rend déterministe."
+ },
+
+ "320": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 contenant les ressources présentées dans le tableau suivant.",
+   "Vous créez dans Subscription1 les machines virtuelles présentées dans le tableau suivant.",
+   "Vous prévoyez d'utiliser Vault1 pour sauvegarder le plus grand nombre possible de machines virtuelles. Lesquelles peuvent être sauvegardées vers Vault1 ?"
+  ],
+  "options": {
+   "A": "VM1 uniquement",
+   "B": "VM3 et VMC uniquement",
+   "C": "VM1, VM2, VM3, VMA, VMB et VMC",
+   "D": "VM1, VM3, VMA et VMC uniquement",
+   "E": "VM1 et VM3 uniquement"
+  },
+  "explanation": "Pour protéger des machines virtuelles, le coffre doit se trouver dans la même région qu'elles. Si vos machines sont réparties sur plusieurs régions, créez un coffre Recovery Services dans chacune."
+ },
+
+ "321": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un registre de conteneurs Azure nommé ContReg1. Vous activez l'utilisateur Admin pour ContReg1. Quel nom d'utilisateur pouvez-vous employer pour vous y connecter ?"
+  ]
+ },
+
+ "322": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous prévoyez de créer un registre de conteneurs Azure nommé ContReg1. Vous devez pouvoir y envoyer et en récupérer des images signées. Que devez-vous faire sur ContReg1 ?"
+  ],
+  "options": {
+   "A": "Activer le chiffrement au moyen d'une clé gérée par le client.",
+   "B": "Créer un registre connecté.",
+   "C": "Ajouter un jeton.",
+   "D": "Activer la confiance dans le contenu (content trust)."
+  },
+  "explanation": "Azure Container Registry met en œuvre le modèle de confiance dans le contenu de Docker, qui permet d'envoyer et de récupérer des images signées. La confiance dans le contenu s'applique aux étiquettes d'un dépôt : un même dépôt d'images peut contenir des étiquettes signées et non signées."
+ },
+
+ "323": {
+  "text": [
+   "Vous disposez d'un abonnement Azure comportant les registres de conteneurs Azure présentés dans le tableau suivant.",
+   "Vous prévoyez d'utiliser ACR Tasks et de configurer des connexions par point de terminaison privé. Quels registres de conteneurs prennent en charge ACR Tasks et les points de terminaison privés ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : ContReg1, ContReg2 et ContReg3. Les registres de référence Basic offrent les mêmes capacités programmatiques que Standard et Premium — intégration à l'authentification Microsoft Entra, suppression d'images, webhooks.\n\nRemarque : ACR Tasks est un ensemble de fonctionnalités d'Azure Container Registry qui assure la construction d'images de conteneur dans le cloud pour les plateformes Linux, Windows et ARM."
+ },
+
+ "324": {
+  "text": [
+   "Vous prévoyez de déployer plusieurs machines virtuelles Azure sous Windows Server 2022 dans un groupe de machines virtuelles identiques, au moyen d'un modèle Azure Resource Manager. Vous devez faire en sorte que NGINX soit disponible sur toutes ces machines une fois déployées. Que devez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "l'extension Azure Custom Script",
+   "B": "le centre de déploiement d'Azure App Service",
+   "C": "Microsoft Entra Application Proxy",
+   "D": "la cmdlet Publish-AzVMDscConfiguration"
+  },
+  "explanation": "Deux réponses sont correctes pour cette question : une extension Desired State Configuration (DSC) et l'extension Azure Custom Script."
+ },
+
+ "325": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un groupe de conteneurs nommé Group1, qui contient deux instances de conteneur Azure présentées dans le tableau suivant.",
+   "Vous devez faire en sorte que container2 puisse utiliser des ressources processeur sans nuire à container1. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Porter la limite de ressources de container1 à trois processeurs.",
+   "B": "Porter la limite de ressources de container2 à six processeurs.",
+   "C": "Supprimer la limite de ressources des deux conteneurs.",
+   "D": "Ramener la limite de ressources de container2 à deux processeurs."
+  }
+ },
+
+ "326": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous prévoyez de déployer un conteneur et devez recommander les services Azure capables de le mettre à l'échelle automatiquement. Que devez-vous recommander ?"
+  ],
+  "options": {
+   "A": "Azure Container Apps uniquement",
+   "B": "Azure Container Instances uniquement",
+   "C": "Azure Container Apps ou Azure App Service uniquement",
+   "D": "Azure Container Instances ou Azure App Service uniquement",
+   "E": "Azure Container Apps, Azure Container Instances ou Azure App Service"
+  },
+  "explanation": "Azure Container Apps gère la mise à l'échelle horizontale automatique au moyen de règles déclaratives : lorsqu'une révision monte en charge, de nouvelles instances sont créées à la demande.\n\nAzure App Service propose lui aussi une mise à l'échelle automatique, disponible pour tous les types d'applications, Windows comme Linux."
+ },
+
+ "327": {
+  "text": [
+   "Vous disposez d'un abonnement Azure qui utilise Azure Container Instances, et d'un ordinateur sur lequel Azure CLI et Docker sont installés. Vous créez une image de conteneur nommée image1. Vous devez approvisionner un nouveau registre de conteneurs Azure et y ajouter image1. Quelle commande devez-vous exécuter pour chaque besoin ?",
+   "REMARQUE : chaque bonne réponse vaut un point."
+  ],
+  "explanation": "Box 1 : az acr create, pour approvisionner un nouveau registre de conteneurs. Un groupe de ressources doit exister au préalable ; le nom du registre doit être unique à l'échelle d'Azure."
+ },
+
+ "328": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un registre de conteneurs Azure nommé Registry1 contenant une image nommée image1. Vous recevez un message d'erreur lorsque vous tentez de déployer une instance de conteneur à partir d'image1. Vous devez pouvoir effectuer ce déploiement.",
+   "Solution : vous attribuez le rôle AcrPull à ACR-Tasks-Network sur Registry1. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "329": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un registre de conteneurs Azure nommé Registry1 contenant une image nommée image1. Vous recevez un message d'erreur lorsque vous tentez de déployer une instance de conteneur à partir d'image1. Vous devez pouvoir effectuer ce déploiement.",
+   "Solution : vous sélectionnez « Use dedicated data endpoint » pour Registry1. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "La bonne solution consiste à attribuer le rôle AcrPull à ACR-Tasks-Network sur Registry1. Le rôle acrpull accorde au principal de service un accès en lecture seule au registre."
+ },
+
+ "330": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un registre de conteneurs Azure nommé Registry1 contenant une image nommée image1. Vous recevez un message d'erreur lorsque vous tentez de déployer une instance de conteneur à partir d'image1. Vous devez pouvoir effectuer ce déploiement.",
+   "Solution : vous créez une connexion par point de terminaison privé pour Registry1. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "La bonne solution consiste à attribuer le rôle AcrPull à ACR-Tasks-Network sur Registry1. Le rôle acrpull accorde au principal de service un accès en lecture seule au registre."
+ },
+
+ "331": {
+  "text": [
+   "Vous disposez d'un registre de conteneurs Azure nommé contoso2023, présenté dans la capture suivante.",
+   "Vous devez permettre à contoso2023 d'utiliser un point de terminaison de données dédié. Quels deux paramètres devez-vous configurer ?",
+   "REMARQUE : chaque bonne réponse vaut un point."
+  ],
+  "explanation": "La capture indique un plan tarifaire Standard, or les points de terminaison de données dédiés sont une fonctionnalité des registres Premium.\n\nLe niveau de service d'un registre se modifie depuis Azure CLI ou le portail Azure ; le passage d'un niveau à l'autre est libre tant que le niveau visé offre la capacité de stockage maximale requise."
+ },
+
+ "332": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un registre de conteneurs Azure nommé Registry1 contenant une image nommée image1. Vous recevez un message d'erreur lorsque vous tentez de déployer une instance de conteneur à partir d'image1. Vous devez pouvoir effectuer ce déploiement.",
+   "Solution : vous activez l'utilisateur Admin sur Registry1. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "333": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant trois machines virtuelles nommées VM1, VM2 et VM3, toutes membres d'un groupe à haute disponibilité nommé AVSet1.",
+   "Vous devez faire monter VM1 vers une nouvelle taille de machine virtuelle, mais la taille visée n'est pas disponible. Que devez-vous faire en premier ?"
+  ],
+  "options": {
+   "A": "Créer un groupe de placement de proximité.",
+   "B": "Désallouer VM1.",
+   "C": "Convertir AVSet1 en groupe à haute disponibilité managé.",
+   "D": "Arrêter VM2 et VM3."
+  },
+  "explanation": "Azure CLI permet de redimensionner une machine virtuelle appartenant à un groupe à haute disponibilité. La commande az vm list-vm-resize-options indique si la taille souhaitée est disponible ; si elle ne l'est pas, il faut désallouer la machine avant de pouvoir la redimensionner."
+ },
+
+ "334": {
+  "text": [
+   "Vous disposez d'un plan Azure App Service de référence Standard nommé Plan1. Vous devez faire en sorte que Plan1 monte automatiquement en charge lorsque l'utilisation du processeur de l'application web dépasse 80 %. Que devez-vous sélectionner pour Plan1 ?"
+  ],
+  "options": {
+   "A": "Automatique dans les paramètres de méthode de montée en charge",
+   "B": "Basé sur des règles dans les paramètres de méthode de montée en charge",
+   "C": "Premium P1 dans les paramètres de montée en gamme (plan App Service)",
+   "D": "Standard S1 dans les paramètres de montée en gamme (plan App Service)",
+   "E": "Manuel dans les paramètres de méthode de montée en charge"
+  },
+  "explanation": "Un plan de référence Standard suffit : il faut utiliser une règle de montée en charge.\n\nRemarque : la mise à l'échelle automatique permet d'adapter automatiquement applications et ressources à la demande, en approvisionnant ce qu'il faut de ressources sans surdimensionner."
+ },
+
+ "335": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune.",
+   "Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'une machine virtuelle Azure nommée VM1, déployée au moyen d'un modèle Azure Resource Manager personnalisé nommé ARM1.json. Vous recevez une notification indiquant que VM1 sera affectée par une opération de maintenance. Vous devez la déplacer immédiatement vers un autre hôte.",
+   "Solution : depuis le volet du groupe de ressources, vous déplacez VM1 vers un autre abonnement. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "La bonne solution consiste à redéployer la machine virtuelle, depuis le volet « Redéployer + réappliquer » de VM1. Déplacer la machine vers un autre groupe de ressources ou un autre abonnement ne change pas l'hôte physique sur lequel elle s'exécute."
+ },
+
+ "336": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'une machine virtuelle Azure nommée VM1, déployée au moyen d'un modèle Azure Resource Manager personnalisé nommé ARM1.json. Vous recevez une notification indiquant que VM1 sera affectée par une opération de maintenance. Vous devez la déplacer immédiatement vers un autre hôte.",
+   "Solution : depuis le volet « Redéployer + réappliquer » de VM1, vous sélectionnez Redéployer. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "C'est bien la solution attendue : redéployer la machine virtuelle depuis le volet « Redéployer + réappliquer » la place sur un nouvel hôte. Déplacer la machine vers un autre groupe de ressources ou un autre abonnement n'aurait aucun effet sur l'hôte physique."
+ },
+
+ "337": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'une machine virtuelle Azure nommée VM1, déployée au moyen d'un modèle Azure Resource Manager personnalisé nommé ARM1.json.",
+   "Vous recevez une notification indiquant que VM1 sera affectée par une opération de maintenance. Vous devez la déplacer immédiatement vers un autre hôte.",
+   "Solution : depuis le volet Mises à jour de VM1, vous sélectionnez « Mise à jour ponctuelle ». Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "La bonne solution consiste à redéployer la machine virtuelle, depuis le volet « Redéployer + réappliquer » de VM1."
+ },
+
+ "338": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'une machine virtuelle Azure nommée VM1, déployée au moyen d'un modèle Azure Resource Manager personnalisé nommé ARM1.json. Vous recevez une notification indiquant que VM1 sera affectée par une opération de maintenance. Vous devez la déplacer immédiatement vers un autre hôte.",
+   "Solution : depuis le volet du groupe de ressources, vous déplacez VM1 vers un autre groupe de ressources. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Déplacer VM1 vers un autre groupe de ressources ne change pas l'hôte physique sur lequel la machine s'exécute : les groupes de ressources servent à organiser et gérer les ressources, sans effet sur l'infrastructure sous-jacente. Pour changer d'hôte et éviter la maintenance, il faut redéployer la machine virtuelle."
+ }
+}
