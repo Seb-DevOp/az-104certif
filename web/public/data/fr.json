@@ -1981,6 +1981,204 @@
   ],
   "explanation": "Box 1 : storage1, storage2 et storage3. La gestion du cycle de vie d'Azure Storage repose sur une stratégie à base de règles permettant de faire transiter les objets blob vers le niveau d'accès approprié ou de les faire expirer. Elle est prise en charge pour les objets blob de blocs et d'ajout dans les comptes d'usage général v2, les comptes premium block blob et les comptes Blob Storage.\n\nBox 2 : storage2. Le niveau Archive du stockage Blob n'est pris en charge que pour les comptes LRS, GRS et RA-GRS."
  },
+ "180": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1. Vous devez y transférer 5 To de données et prévoyez d'utiliser un travail Azure Import/Export. Que pouvez-vous utiliser comme destination des données importées ?"
+  ],
+  "options": {
+   "A": "une base de données Azure Cosmos DB",
+   "B": "Azure Data Lake Store",
+   "C": "le stockage Blob Azure",
+   "D": "Azure Data Factory"
+  },
+  "explanation": "Le service Azure Import/Export prend en charge les types de comptes suivants : comptes standard d'usage général v2 (recommandés dans la plupart des cas), comptes Blob Storage et comptes d'usage général v1 (déploiements classiques ou Azure Resource Manager).\n\nRemarque : plusieurs variantes de cette question circulent à l'examen ; deux réponses sont correctes, Azure File Storage et Azure Blob Storage."
+ },
+ "181": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un compte de stockage nommé storage1, lui-même contenant un conteneur nommé container1. Vous créez une règle de cycle de vie d'objets blob nommée rule1. Vous devez la configurer pour déplacer automatiquement vers le niveau d'accès Cool les objets blob qui n'ont PAS été mis à jour depuis 45 jours. Comment devez-vous compléter la règle ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : daysAfterModificationGreaterThan. Box 2 : blockBlob.\n\nExemple : la stratégie JSON suivante déplace vers le niveau Cool un objet blob de blocs dont le nom commence par « log », plus de 30 jours après sa dernière modification — { \"rules\": [ { \"enabled\": true, \"name\": \"move-to-cool\", \"type\": \"Lifecycle\", \"definition\": { \"actions\": { \"baseBlob\": { \"tierToCool\": { \"daysAfterModificationGreaterThan\": 30 } } }, \"filters\": { \"blobTypes\": [ \"blockBlob\" ] } } } ] }."
+ },
+ "182": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1. Vous devez y transférer 5 To de données et prévoyez d'utiliser un travail Azure Import/Export. Que pouvez-vous utiliser comme destination des données importées ?"
+  ],
+  "options": {
+   "A": "une base de données Azure Cosmos DB",
+   "B": "Azure Blob Storage",
+   "C": "Azure SQL Database",
+   "D": "le service Storage Sync d'Azure File Sync"
+  },
+  "explanation": "Le service Azure Import/Export permet d'importer de grands volumes de données vers le stockage Blob Azure et Azure Files en expédiant des disques vers un centre de données Azure.\n\nRemarque : plusieurs variantes de cette question circulent à l'examen ; deux réponses sont correctes, Azure File Storage et Azure Blob Storage."
+ },
+ "183": {
+  "text": [
+   "Vous prévoyez de créer un compte de stockage Azure nommé storage1 qui contiendra un partage de fichiers nommé share1. Vous devez faire en sorte que share1 prenne en charge SMB Multichannel, en limitant les coûts. Comment devez-vous configurer le stockage ?"
+  ],
+  "options": {
+   "A": "Performance Premium avec stockage localement redondant (LRS)",
+   "B": "Performance Standard avec stockage redondant interzone (ZRS)",
+   "C": "Performance Premium avec stockage géo-redondant (GRS)",
+   "D": "Performance Standard avec stockage localement redondant (LRS)"
+  },
+  "explanation": "SMB Multichannel permet aux clients SMB d'ouvrir plusieurs connexions parallèles vers un partage de fichiers Azure. Ils exploitent ainsi toute la bande passante disponible et résistent mieux aux incidents réseau, ce qui réduit le coût total de possession et multiplie par 2 à 3 le débit en lecture et par 3 à 4 en écriture depuis un seul client. SMB Multichannel n'est disponible que pour les partages de fichiers premium, c'est-à-dire déployés dans un compte de type FileStorage, et il est désactivé par défaut."
+ },
+ "184": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1. Vous devez y transférer 5 To de données et prévoyez d'utiliser un travail Azure Import/Export. Que pouvez-vous utiliser comme destination des données importées ?"
+  ],
+  "options": {
+   "A": "Azure Data Lake Store",
+   "B": "Azure File Storage",
+   "C": "Azure SQL Database",
+   "D": "le service Storage Sync d'Azure File Sync"
+  },
+  "explanation": "Le service Azure Import/Export permet d'importer de grands volumes de données vers le stockage Blob Azure et Azure Files en expédiant des disques vers un centre de données Azure.\n\nRemarque : plusieurs variantes de cette question circulent à l'examen ; deux réponses sont correctes, Azure File Storage et Azure Blob Storage."
+ },
+ "185": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un compte de stockage nommé storage1. Vous prévoyez d'utiliser des conditions lors de l'attribution de rôles RBAC sur storage1. Quels services de storage1 prennent en charge les conditions dans les attributions de rôles ?"
+  ],
+  "options": {
+   "A": "les conteneurs uniquement",
+   "B": "les partages de fichiers uniquement",
+   "C": "les tables uniquement",
+   "D": "les files d'attente uniquement",
+   "E": "les conteneurs et les files d'attente uniquement",
+   "F": "les partages de fichiers et les tables uniquement"
+  }
+ },
+ "186": {
+  "text": [
+   "Vous disposez d'un compte de stockage Azure nommé storage1, d'une application Azure App Service nommée App1 et d'une application nommée App2 qui s'exécute dans une instance de conteneur Azure. Chacune utilise une identité managée. Vous devez faire en sorte qu'App1 et App2 puissent lire des objets blob depuis storage1, en respectant les exigences suivantes : limiter le nombre de secrets utilisés, et faire en sorte qu'App2 ne puisse lire storage1 que pendant les 30 prochains jours. Que devez-vous configurer dans storage1 pour chaque application ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "App1 : clés d'accès. App2 : signature d'accès partagé (SAS).\n\nUne SAS offre un accès délégué sécurisé aux ressources du compte de stockage sans compromettre la sécurité des données. Elle donne un contrôle fin sur la façon dont un client accède aux données : ressources accessibles, permissions associées et durée de validité."
+ },
+ "187": {
+  "text": [
+   "Vous disposez d'un abonnement Azure dont les bureaux se situent dans les régions Azure East US et West US. Vous prévoyez de créer le compte de stockage présenté dans la capture suivante.",
+   "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Performance. Choisissez Standard pour les comptes d'usage général v2 — c'est le choix par défaut, recommandé par Microsoft dans la plupart des cas — et Premium pour les scénarios exigeant une faible latence.\n\nLa capture indique : Performance Premium ; type de point de terminaison Standard ; emplacement eastus ; niveau de routage par défaut « Microsoft network routing » ; connectivité réseau « point de terminaison public (tous les réseaux) »."
+ },
+ "188": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous prévoyez de déployer un nouveau compte de stockage et devez en configurer le chiffrement, en respectant les exigences suivantes : utiliser une clé gérée par le client stockée dans un coffre de clés, et employer la longueur de clé maximale prise en charge. Quel type de clé et quelle longueur devez-vous utiliser ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : RSA. Dans le cadre du « Bring Your Own Key » (BYOK), la clé d'échange de clés (KEK) est une clé adossée à un HSM que le client génère dans le coffre où la clé BYOK sera importée. Cette KEK doit être une clé RSA-HSM de 4096, 3072 ou 2048 bits, avoir des opérations fixées à « import » uniquement, et se trouver dans le coffre où la clé cible sera importée."
+ },
+ "189": {
+  "text": [
+   "Vous disposez d'un compte de stockage Azure contenant 5 000 objets blob consultés par plusieurs utilisateurs. Vous devez faire en sorte que ces utilisateurs ne voient que certains objets blob, en fonction des étiquettes d'index. Que devez-vous inclure dans la solution ?"
+  ],
+  "options": {
+   "A": "une condition d'attribution de rôle",
+   "B": "une stratégie d'accès stockée",
+   "C": "l'accès juste-à-temps (JIT) aux machines virtuelles",
+   "D": "une signature d'accès partagé (SAS)"
+  }
+ },
+ "190": {
+  "text": [
+   "Vous disposez d'un compte de stockage Azure nommé storage1. Vous y créez une étendue de chiffrement nommée Scope1. Quels types de stockage pouvez-vous chiffrer au moyen de cette étendue ?"
+  ],
+  "options": {
+   "A": "les partages de fichiers uniquement",
+   "B": "les conteneurs uniquement",
+   "C": "les partages de fichiers et les conteneurs uniquement",
+   "D": "les conteneurs et les tables uniquement",
+   "E": "les partages de fichiers, les conteneurs et les tables uniquement",
+   "F": "les partages de fichiers, les conteneurs, les tables et les files d'attente"
+  },
+  "explanation": "Par défaut, un compte de stockage est chiffré avec une clé dont la portée couvre l'ensemble du compte. Une étendue de chiffrement permet de désigner une clé dont la portée est un conteneur ou un objet blob particulier. Appliquée à un objet blob, elle chiffre celui-ci avec cette clé ; appliquée à un conteneur, elle devient l'étendue par défaut des objets blob qui y sont téléversés."
+ },
+ "191": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous prévoyez de créer une définition de rôle répondant aux exigences suivantes : les utilisateurs doivent pouvoir consulter les données de configuration d'un compte de stockage, et effectuer toutes les actions sur un réseau virtuel. La solution doit appliquer le principe du privilège minimum. Que devez-vous inclure dans la définition de rôle pour chaque exigence ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : \"Microsoft.Network/virtualNetworks/*\" — toutes les actions sur un réseau virtuel supposent l'emploi du caractère générique.\n\nBox 2 : \"Microsoft.Storage/storageAccounts/read\" — cette action renvoie la liste des comptes de stockage ou les propriétés d'un compte donné, ce qui suffit à en consulter la configuration."
+ },
+ "192": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1. Vous devez y transférer 5 To de données et prévoyez d'utiliser un travail Azure Import/Export. Que pouvez-vous utiliser comme destination des données importées ?"
+  ],
+  "options": {
+   "A": "Azure Data Factory",
+   "B": "le service Storage Sync d'Azure File Sync",
+   "C": "Azure File Storage",
+   "D": "Azure SQL Database"
+  },
+  "explanation": "Le service Azure Import/Export permet d'importer de grands volumes de données vers le stockage Blob Azure et Azure Files en expédiant des disques vers un centre de données Azure. La taille maximale d'un partage de fichiers Azure est de 5 To.\n\nRemarque : plusieurs variantes de cette question circulent à l'examen ; deux réponses sont correctes, Azure File Storage et Azure Blob Storage."
+ },
+ "193": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant une machine virtuelle nommée VM1. Vous prévoyez d'y ajouter un disque de données de 1 To répondant aux exigences suivantes : assurer la résilience des données en cas de panne d'un centre de données, offrir la latence la plus faible et les meilleures performances, et garantir l'absence de perte de données en cas de défaillance d'un hôte. Vous devez recommander le type de stockage et la mise en cache d'hôte à configurer pour ce nouveau disque."
+  ],
+  "explanation": "Box 1 : SSD Premium utilisant le stockage redondant interzone (ZRS). Le SSD Premium offre la latence la plus faible et les meilleures performances. Le ZRS copie les données de façon synchrone dans trois zones de disponibilité Azure de la région primaire ; pour les applications à haute disponibilité, Microsoft recommande le ZRS dans la région primaire, doublé d'une réplication vers une région secondaire.\n\nRéponse incorrecte : le stockage localement redondant (LRS) copie les données de façon synchrone trois fois au sein d'un seul emplacement."
+ },
+ "194": {
+  "text": [
+   "Vous disposez d'une machine virtuelle Azure nommée VM1 et d'un coffre de clés Azure nommé Vault1. Sur VM1, vous prévoyez de configurer Azure Disk Encryption avec une clé de chiffrement de clé (KEK). Vous devez préparer Vault1 pour Azure Disk Encryption. Quelles deux actions devez-vous effectuer sur Vault1 ? Chaque bonne réponse constitue une partie de la solution.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "options": {
+   "A": "Sélectionner « Azure Virtual machines for deployment ».",
+   "B": "Créer une nouvelle clé.",
+   "C": "Créer un nouveau secret.",
+   "D": "Configurer une stratégie de rotation de clé.",
+   "E": "Sélectionner « Azure Disk Encryption for volume encryption »."
+  },
+  "explanation": "B : pour ajouter une couche de sécurité supplémentaire aux clés de chiffrement, ajoutez une clé de chiffrement de clé (KEK) au coffre. La cmdlet Add-AzKeyVaultKey crée cette clé ; elle peut aussi être importée depuis un HSM de gestion de clés local.\n\nE : la plateforme Azure a besoin d'accéder aux clés ou secrets du coffre pour les rendre disponibles à la machine virtuelle, ce qui suppose de définir les stratégies d'accès avancées du coffre."
+ },
+ "195": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant une machine virtuelle nommée VM1 et un coffre de clés Azure nommé KV1. Vous devez configurer le chiffrement de VM1 en respectant les exigences suivantes : stocker et utiliser la clé de chiffrement dans KV1, conserver le chiffrement si VM1 est téléchargée depuis Azure, et chiffrer à la fois le disque du système d'exploitation et les disques de données. Quelle méthode de chiffrement devez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "les clés gérées par le client",
+   "B": "le chiffrement de disque confidentiel",
+   "C": "Azure Disk Encryption",
+   "D": "le chiffrement au niveau de l'hôte"
+  },
+  "explanation": "Azure Disk Encryption (ADE) contribue à protéger vos données pour répondre à vos engagements de sécurité et de conformité. Il chiffre les disques de système d'exploitation et de données des machines virtuelles Azure, depuis l'intérieur de celles-ci, au moyen de DM-Crypt sous Linux ou de BitLocker sous Windows. ADE s'intègre à Azure Key Vault pour la gestion des clés et secrets de chiffrement, avec la possibilité de chiffrer au moyen d'une clé de chiffrement de clé (KEK)."
+ },
+ "196": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un compte de stockage nommé storage1. Vous devez configurer une signature d'accès partagé (SAS) de sorte que les utilisateurs ne puissent télécharger des objets blob que par leur nom, de façon sécurisée. Quels deux paramètres devez-vous configurer ?",
+   "REMARQUE : chaque bonne réponse vaut un point."
+  ]
+ },
+ "197": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un compte de stockage nommé storage1, lui-même contenant un conteneur nommé container1. Vous devez configurer l'accès à container1 en respectant les exigences suivantes : n'autoriser que l'accès en lecture, autoriser les protocoles HTTP et HTTPS, et appliquer les permissions à tout le contenu du conteneur. Que devez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "une stratégie d'accès",
+   "B": "une signature d'accès partagé (SAS)",
+   "C": "Azure Content Delivery Network (CDN)",
+   "D": "des clés d'accès"
+  },
+  "explanation": "Les jetons SAS offrent un accès délégué sécurisé aux ressources du compte de stockage Azure ; ceux de délégation d'utilisateur sont sécurisés par des identifiants Microsoft Entra. Les jetons SAS prennent en charge HTTP, même s'il est recommandé d'imposer HTTPS.\n\nRemarque : le stockage Blob Azure propose trois types de ressources — le compte de stockage, qui fournit un espace de noms unique pour vos données ; les conteneurs, qui organisent des ensembles d'objets blob ; et les objets blob eux-mêmes."
+ },
+ "198": {
+  "text": [
+   "Vous devez créer un compte de stockage Azure nommé storage1 répondant aux exigences suivantes : prendre en charge Azure Data Lake Storage, limiter les coûts pour les données peu consultées, et répliquer automatiquement les données vers une région Azure secondaire. Quelles trois options devez-vous configurer pour storage1 ? Chaque bonne réponse constitue une partie de la solution.",
+   "REMARQUE : chaque bonne réponse vaut un point."
+  ],
+  "options": {
+   "A": "le stockage redondant interzone (ZRS)",
+   "B": "le niveau d'accès Cool",
+   "C": "le stockage géo-redondant (GRS)",
+   "D": "le niveau d'accès Hot",
+   "E": "l'espace de noms hiérarchique"
+  },
+  "explanation": "B plutôt que D : le niveau d'accès Cool réduit les coûts pour les données peu consultées, à l'inverse du niveau Hot. C plutôt que A : seul le stockage géo-redondant (GRS) réplique les données vers une région Azure secondaire. E : l'espace de noms hiérarchique est indispensable à Azure Data Lake Storage.\n\nRemarque : c'est précisément l'ajout d'un espace de noms hiérarchique qui permet à Azure Data Lake Storage Gen2 d'offrir les performances d'un système de fichiers à l'échelle et au prix du stockage objet."
+ },
  "199": {
   "text": [
    "Vous disposez d'un compte de stockage Azure nommé storage1 qui contient deux conteneurs nommés container1 et container2. Le versionnage des objets blob est activé sur les deux conteneurs. Vous prenez régulièrement des instantanés des objets blob critiques. Vous créez la stratégie de gestion du cycle de vie suivante.",
@@ -1995,6 +2193,323 @@
     "s3": "Une version réhydratée passe automatiquement au niveau d'accès Archive au bout de 30 jours."
    }
   }
+ },
+ "200": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les comptes de stockage présentés dans le tableau suivant.",
+   "Quel compte de stockage peut être converti en réplication redondante interzone (ZRS) ?"
+  ],
+  "explanation": "Le type de compte impose des limites au changement de réplication. Toutes les redondances ne sont pas disponibles pour tous les types de comptes, et la conversion comme la migration manuelle ne sont pas toujours possibles.\n\nRéponse incorrecte : storage1 est un compte standard d'usage général v1."
+ },
+ "201": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les appareils présentés dans le tableau suivant.",
+   "Sur quels appareils pouvez-vous installer Azure Storage Explorer ?"
+  ],
+  "options": {
+   "A": "Device1 uniquement",
+   "B": "Device1 et Device2 uniquement",
+   "C": "Device1 et Device3 uniquement",
+   "D": "Device1, Device2 et Device3 uniquement",
+   "E": "Device1, Device3 et Device4 uniquement"
+  },
+  "explanation": "Microsoft Azure Storage Explorer est une application autonome qui facilite le travail sur les données Azure Storage sous Windows, macOS et Linux."
+ },
+ "202": {
+  "text": [
+   "Vous disposez d'un compte de stockage Azure nommé storage1 contenant un conteneur nommé container1, lui-même contenant des milliers de fichiers image. Vous prévoyez d'utiliser un modèle Azure Resource Manager (ARM) pour créer une règle d'inventaire d'objets blob nommée rule1. Vous devez faire en sorte que seuls les objets blob dont le nom commence par « finance » soient stockés quotidiennement dans container1 sous forme de fichier CSV. Comment devez-vous compléter rule1 ?",
+   "REMARQUE : chaque bonne réponse vaut un point."
+  ],
+  "explanation": "Box 1 : blockBlob. Les objets blob de blocs sont optimisés pour le téléversement efficace de gros volumes de données. Ils se composent de blocs identifiés chacun par un identifiant, jusqu'à 50 000 blocs de tailles éventuellement différentes, et permettent de téléverser plusieurs blocs en parallèle."
+ },
+ "203": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un compte de stockage nommé storage1, dont les objets blob se trouvent dans un conteneur nommé container1. Vous prévoyez de partager l'accès à storage1 et devez générer une signature d'accès partagé (SAS) répondant aux exigences suivantes : la SAS ne doit permettre que d'énumérer et de télécharger les objets blob de container1, et la solution doit appliquer le principe du privilège minimum. Quels trois paramètres devez-vous activer ?"
+  ],
+  "explanation": "Box 1 : type de ressource autorisé « Container ». Box 2 : type de ressource autorisé « Object ». Box 3 : permission autorisée « Read » — valable pour tous les types de ressources signés (Service, Container et Object), elle accorde la lecture sur le type de ressource indiqué."
+ },
+ "204": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un compte de stockage nommé storage1, doté des règles de gestion du cycle de vie présentées dans le tableau suivant.",
+   "Le 1er juin, vous stockez deux objets blob dans storage1 comme indiqué dans le tableau suivant.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Non — le 4 juin, Rule1 s'applique et File1 passe au stockage Archive. Le 6 juin, Rule2 (passage au stockage Cool) ne s'applique pas, File1 étant déjà en Archive.\n\nRemarque : lorsque plusieurs actions portent sur le même objet blob, la gestion du cycle de vie applique la moins coûteuse. Ainsi delete est moins coûteux que tierToArchive, lui-même moins coûteux que tierToCool.\n\nBox 2 : Oui — le 1er juin, File2 se trouve dans container2."
+ },
+ "205": {
+  "text": [
+   "Vous disposez d'un compte de stockage Azure nommé contoso2024 contenant les ressources présentées dans le tableau suivant.",
+   "Des utilisateurs disposent sur contoso2024 des permissions présentées dans le tableau suivant.",
+   "Le compte contoso2024 est configuré comme dans la capture suivante.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — User1 a le rôle Reader. Ce rôle Azure Resource Manager autorise la consultation des ressources du compte de stockage sans permettre de les modifier ; il ne donne pas accès aux données elles-mêmes, seulement aux ressources de gestion du compte, mais il est nécessaire pour naviguer jusqu'aux conteneurs d'objets blob dans le portail Azure.\n\nBox 2 : Non — User2 a le rôle Storage Account Contributor sur contoso2024, qui ne donne pas d'accès direct en lecture aux données."
+ },
+ "206": {
+  "text": [
+   "Vous disposez d'un abonnement Azure rattaché à un locataire Microsoft Entra hybride, qui contient les utilisateurs présentés dans le tableau suivant.",
+   "Vous créez les partages Azure Files présentés dans le tableau suivant.",
+   "Vous configurez l'accès basé sur l'identité pour contoso2024 comme dans la capture suivante.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Non — la synchronisation locale n'est pas activée pour User1, qui ne peut donc pas accéder au contenu de share1.\n\nBox 2 : Oui — la synchronisation locale est activée pour User2, share2 est défini dans contoso2024, et contoso2024 est activé comme source Active Directory.\n\nBox 3 : Non — share3 est défini dans contoso2025, qui n'est pas activé comme source Active Directory."
+ },
+ "207": {
+  "text": [
+   "Votre réseau comporte un domaine Active Directory Domain Services (AD DS) local, qui contient les identités présentées dans le tableau suivant.",
+   "Vous disposez d'un abonnement Azure contenant un compte de stockage nommé storage1. Les partages de fichiers de storage1 ont AD DS pour source d'identité, et leurs permissions par défaut au niveau du partage sont réglées sur « Enable permissions for all authenticated users and groups ».",
+   "Vous créez un partage Azure Files nommé share1 doté des rôles présentés dans le tableau suivant.",
+   "Vous disposez d'un locataire Microsoft Entra contenant un utilisateur uniquement cloud nommé User3. Vous utilisez Microsoft Entra Connect pour synchroniser OU1 du domaine AD DS vers le locataire Microsoft Entra. Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — User1 se trouve dans OU2, qui n'est pas synchronisée, mais il est membre de Group1, lui-même dans OU1 qui l'est. User1 est donc bien synchronisé et peut accéder au contenu de share1.\n\nBox 2 : Oui — User2 est également synchronisé depuis OU1."
+ },
+ "208": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les comptes de stockage présentés dans le tableau suivant.",
+   "Quel compte de stockage peut être converti en réplication redondante interzone (ZRS) ?"
+  ],
+  "options": {
+   "A": "storage1 uniquement",
+   "B": "storage2 uniquement",
+   "C": "storage3 uniquement",
+   "D": "storage2 et storage3",
+   "E": "storage1, storage2 et storage3"
+  },
+  "explanation": "Le ZRS prend aujourd'hui en charge les types de comptes standard d'usage général v2, FileStorage et BlockBlobStorage.\n\nRéponses incorrectes : storage2 n'est pas en LRS ; storage3 est premium. Par ailleurs, seuls les comptes standard prennent en charge la migration à chaud — les comptes premium doivent être migrés manuellement."
+ },
+ "209": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un compte de stockage Azure nommé storage1. Vous devez permettre à un utilisateur nommé User1 de lister et de régénérer les clés du compte de stockage. Solution : vous attribuez le rôle Reader and Data Access à User1. Cela répond-il à l'objectif ?"
+  ],
+  "options": {
+   "A": "Oui",
+   "B": "Non"
+  },
+  "explanation": "La bonne solution consiste à attribuer à User1 le rôle Storage Account Key Operator Service Role. Pour renouveler les clés d'accès d'un compte, l'utilisateur doit être administrateur de service ou disposer d'un rôle Azure incluant l'action Microsoft.Storage/storageAccounts/regeneratekey/action. Les rôles intégrés qui l'incluent sont Owner, Contributor et Storage Account Key Operator Service Role."
+ },
+ "210": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un compte de stockage Azure nommé storage1. Vous devez permettre à un utilisateur nommé User1 de lister et de régénérer les clés du compte de stockage. Solution : vous attribuez le rôle Storage Account Key Operator Service Role à User1. Cela répond-il à l'objectif ?"
+  ],
+  "options": {
+   "A": "Oui",
+   "B": "Non"
+  },
+  "explanation": "Pour renouveler les clés d'accès d'un compte, l'utilisateur doit être administrateur de service ou disposer d'un rôle Azure incluant l'action Microsoft.Storage/storageAccounts/regeneratekey/action. Les rôles intégrés qui l'incluent sont Owner, Contributor et Storage Account Key Operator Service Role."
+ },
+ "211": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un compte de stockage Azure nommé storage1. Vous devez permettre à un utilisateur nommé User1 de lister et de régénérer les clés du compte de stockage. Solution : vous attribuez le rôle Storage Account Encryption Scope Contributor Role à User1. Cela répond-il à l'objectif ?"
+  ],
+  "options": {
+   "A": "Oui",
+   "B": "Non"
+  },
+  "explanation": "La bonne solution consiste à attribuer à User1 le rôle Storage Account Key Operator Service Role. Pour renouveler les clés d'accès d'un compte, l'utilisateur doit être administrateur de service ou disposer d'un rôle Azure incluant l'action Microsoft.Storage/storageAccounts/regeneratekey/action. Les rôles intégrés qui l'incluent sont Owner, Contributor et Storage Account Key Operator Service Role."
+ },
+ "212": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un registre de conteneurs Azure de référence Standard nommé ContReg1. Vous devez faire en sorte que ContReg1 prenne en charge la géo-réplication. Que devez-vous faire en premier sur ContReg1 ?"
+  ],
+  "options": {
+   "A": "Activer l'utilisateur Admin.",
+   "B": "Ajouter une carte de portée (scope map).",
+   "C": "Ajouter une tâche d'automatisation.",
+   "D": "Créer une règle de cache.",
+   "E": "Faire évoluer la référence (SKU)."
+  },
+  "explanation": "La géo-réplication est une fonctionnalité des registres de référence Premium. Si votre registre ne l'est pas encore, vous pouvez passer de Basic ou Standard à Premium depuis le portail Azure."
+ },
+ "213": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un compte de stockage Azure nommé storage1. Vous devez permettre à un utilisateur nommé User1 de lister et de régénérer les clés du compte de stockage. Solution : vous attribuez le rôle Storage Account Contributor à User1. Cela répond-il à l'objectif ?"
+  ],
+  "options": {
+   "A": "Oui",
+   "B": "Non"
+  },
+  "explanation": "Le rôle Storage Account Contributor permet de gérer le compte de stockage, ce qui inclut la liste et la régénération de ses clés. Son attribution à User1 répond donc bien à l'exigence."
+ },
+ "214": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les instances de conteneur Azure présentées dans le tableau suivant.",
+   "Vous créez un compte de stockage contenant un partage de fichiers nommé storage1 dans la région Azure East US. Vous devez monter storage1 sur les instances de conteneur. Sur lesquelles pouvez-vous le monter ?"
+  ],
+  "options": {
+   "A": "container1 uniquement",
+   "B": "container3 uniquement",
+   "C": "container1 et container2 uniquement",
+   "D": "container1 et container3 uniquement",
+   "E": "container1, container2 et container3"
+  },
+  "explanation": "Azure Container Instances peut monter un partage de fichiers Azure créé avec Azure Files, mais uniquement sur des conteneurs Linux."
+ },
+ "215": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous prévoyez de créer le compte de stockage Azure présenté dans la capture suivante.",
+   "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : 3. La capture indique une réplication en stockage localement redondant (LRS), qui copie le compte trois fois au sein d'un même centre de données de la région primaire.\n\nBox 2 : le niveau d'accès (par défaut). Pour réduire le coût des données peu consultées, c'est ce paramètre qu'il faut modifier — la capture montre qu'il est réglé sur Hot."
+ },
+ "216": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "La stratégie Azure « Not allowed resource types », dont l'application est activée, est attribuée à RG1 avec les paramètres suivants : Microsoft.Network/virtualNetworks et Microsoft.Compute/virtualMachines. Dans RG1, vous devez créer une nouvelle machine virtuelle nommée VM2 connectée à VNET1. Que devez-vous faire en premier ?"
+  ],
+  "options": {
+   "A": "Ajouter un sous-réseau à VNET1.",
+   "B": "Retirer Microsoft.Network/virtualNetworks de la stratégie.",
+   "C": "Créer un modèle Azure Resource Manager.",
+   "D": "Retirer Microsoft.Compute/virtualMachines de la stratégie."
+  },
+  "explanation": "Il faut de nouveau autoriser la création de machines virtuelles.\n\nRemarque : restreindre les types de ressources autorisés est un objectif classique de gouvernance cloud — certains types sont coûteux ou contraires aux standards de l'entreprise. Plutôt que de multiplier les stratégies, Azure Policy propose une définition unique listant les types interdits."
+ },
+ "217": {
+  "text": [
+   "Vous disposez d'un compte de stockage Azure nommé storage1 dont les propriétés du service Blob sont présentées dans la capture suivante.",
+   "Le 1er janvier, vous ajoutez à storage1 les objets blob présentés dans le tableau suivant.",
+   "Vous effectuez les actions présentées dans le tableau suivant.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Non — aucune pénalité de suppression anticipée n'est facturée pour File1. La suppression réversible (45 jours) est activée et File1 se trouve au niveau Hot ; il n'a que 5 jours lorsqu'il est supprimé de façon réversible.\n\nPoint important : dans un compte où la suppression réversible est activée, un objet blob n'est considéré comme supprimé qu'une fois la période de rétention expirée. Jusque-là, il n'est que supprimé de façon réversible et n'est pas soumis à la pénalité de suppression anticipée."
+ },
+ "218": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous prévoyez de créer un compte de stockage nommé storage1 et devez y configurer une attribution de refus (deny assignment). Que devez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "Azure Policy",
+   "B": "une zone d'atterrissage",
+   "C": "une pile de déploiement",
+   "D": "un modèle Azure Resource Manager (ARM)"
+  },
+  "explanation": "Les attributions de refus ne peuvent être créées que par l'intermédiaire des Azure Blueprints, et uniquement au moment de la création de la ressource. Elles empêchent des utilisateurs d'effectuer certaines actions sur des ressources Azure, même lorsqu'une attribution de rôle leur en donne le droit ; cette protection doit être inscrite dans la définition du blueprint."
+ },
+ "219": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1. Vous y créez un partage de fichiers Azure nommé share1, puis une signature d'accès partagé (SAS) nommée SAS1 présentée dans la capture suivante.",
+   "Répondez en sélectionnant les options appropriées dans la zone de réponse.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : les identifiants seront demandés. La capture indique : services autorisés « Blob » ; types de ressources autorisés : vide, donc aucun type — ni service, ni conteneur, ni objet ; adresses IP autorisées : vide, ce qui autorise toutes les adresses."
+ },
+ "220": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant une machine virtuelle nommée VM1 et un compte de stockage Azure Blob nommé account1. Account1 contient un conteneur nommé blob1, et VM1 héberge une application qui accède à blob1. Vous devez recommander une solution de sauvegarde pour VM1 et blob1, en limitant les coûts. Que devez-vous inclure dans la recommandation ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Microsoft System Center Data Protection Manager (DPM) pour VM1. DPM assure une sauvegarde et une récupération centralisées des charges de travail d'entreprise en environnement Microsoft Windows. Il soutient la stratégie de continuité d'activité et de reprise après sinistre en sauvegardant et restaurant les données, tout en garantissant la cohérence applicative."
+ },
+ "221": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les comptes de stockage présentés dans le tableau suivant.",
+   "Vous devez déployer une application nommée App1 qui nécessite un stockage d'objets blob au niveau d'accès Hot. Quels comptes de stockage pouvez-vous utiliser pour App1 ?"
+  ],
+  "options": {
+   "A": "storage1 uniquement",
+   "B": "storage1 et storage4 uniquement",
+   "C": "storage2 et storage4 uniquement",
+   "D": "storage1, storage2 et storage4 uniquement",
+   "E": "storage1, storage2, storage3 et storage4"
+  },
+  "explanation": "Dans le stockage Blob Azure, le niveau d'accès Hot est destiné aux données consultées ou modifiées fréquemment. C'est le niveau dont le coût de stockage est le plus élevé mais le coût d'accès le plus faible, ce qui convient aux jeux de données très sollicités. Les objets blob de blocs, de pages et les partages de fichiers peuvent tous y être stockés, et un compte standard d'usage général v2 peut être utilisé avec ce niveau."
+ },
+ "222": {
+  "text": [
+   "Vous devez mettre en place une solution de sauvegarde pour App1 après le déplacement de l'application. Que devez-vous créer en premier ?"
+  ],
+  "options": {
+   "A": "un plan de récupération",
+   "B": "un serveur Azure Backup",
+   "C": "une stratégie de sauvegarde",
+   "D": "un coffre Recovery Services"
+  },
+  "explanation": "Un coffre Recovery Services est un conteneur logique qui stocke les données de sauvegarde de chaque ressource protégée, par exemple des machines virtuelles Azure. À chaque exécution du travail de sauvegarde, un point de récupération y est créé.\n\nScénario : trois niveaux applicatifs comptant chacun cinq machines virtuelles ; déplacer vers Azure toutes les machines virtuelles d'App1 et garantir qu'elles sont toutes protégées par des sauvegardes."
+ },
+ "223": {
+  "text": [
+   "Vous devez déplacer les fichiers de plans (blueprints) vers Azure. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Générer une clé d'accès, connecter un lecteur réseau, puis copier les fichiers depuis l'Explorateur de fichiers.",
+   "B": "Utiliser Azure Storage Explorer pour copier les fichiers.",
+   "C": "Utiliser le service Azure Import/Export.",
+   "D": "Générer une signature d'accès partagé (SAS), connecter un lecteur réseau, puis copier les fichiers depuis l'Explorateur de fichiers."
+  },
+  "explanation": "Azure Storage Explorer est un outil gratuit de Microsoft permettant de travailler sur les données Azure Storage sous Windows, macOS et Linux, et notamment de téléverser et télécharger des données depuis le stockage Blob.\n\nScénario : les changements prévus incluent le déplacement des fichiers de plans produit existants vers le stockage Blob Azure, et les exigences techniques imposent de les copier vers Azure via Internet."
+ },
+ "224": {
+  "text": [
+   "Vous devez identifier les besoins de stockage de Contoso. Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — Contoso déplace les fichiers de plans produit existants vers le stockage Blob Azure et utilise du stockage standard non managé pour les disques durs des machines virtuelles, ce qui correspond à des objets blob de pages. Box 2 : Non. Box 3 : Non."
+ },
+ "225": {
+  "text": [
+   "Vous devez créer container1 et share1. Quels comptes de stockage devez-vous utiliser pour chaque ressource ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ]
+ },
+ "226": {
+  "text": [
+   "Vous devez créer storage5, la solution devant prendre en charge les changements prévus. Quel type de compte de stockage devez-vous utiliser, et quel compte devez-vous configurer comme compte de destination ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ]
+ },
+ "227": {
+  "text": [
+   "Vous devez déterminer quel compte de stockage utiliser pour la journalisation des flux de trafic IP de VM5, en respectant les exigences de rétention. Quel compte devez-vous retenir ?"
+  ]
+ },
+ "228": {
+  "text": [
+   "Vous mettez en œuvre les changements prévus pour cont2. Quel est le nombre maximal de stratégies d'accès supplémentaires que vous pouvez créer pour cont2 ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : 2. Le scénario prévoit pour cont2 trois stratégies d'accès stockées nommées Stored1, Stored2 et Stored3, ainsi qu'une conservation légale pour le stockage d'objets blob immuables. Or un conteneur, une table, une file d'attente ou un partage n'accepte pas plus de cinq stratégies d'accès simultanées : il en reste donc deux possibles.\n\nBox 2 : 0."
+ },
+ "229": {
+  "text": [
+   "Vous devez configurer le chiffrement des machines virtuelles en respectant les exigences techniques. Quelles machines virtuelles pouvez-vous chiffrer ?"
+  ],
+  "options": {
+   "A": "VM1 et VM3",
+   "B": "VM4 et VM5",
+   "C": "VM2 et VM3",
+   "D": "VM2 et VM4"
+  }
+ },
+ "230": {
+  "text": [
+   "Vous devez mettre en œuvre les changements prévus pour le contenu du compte de stockage. Quels conteneurs et quels partages de fichiers pouvez-vous utiliser pour organiser ce contenu ?"
+  ],
+  "options": {
+   "A": "share1 uniquement",
+   "B": "cont1 et share1 uniquement",
+   "C": "share1 et share2 uniquement",
+   "D": "cont1, share1 et share2 uniquement",
+   "E": "cont1, cont2, share1 et share2"
+  }
+ },
+ "231": {
+  "text": [
+   "Vous mettez en œuvre les changements prévus pour Scope1 et devez faire en sorte qu'il réponde aux exigences techniques. Que pouvez-vous chiffrer au moyen de Scope1 ?"
+  ],
+  "options": {
+   "A": "les conteneurs et objets blob de storage2 uniquement",
+   "B": "les conteneurs et objets blob de storage1 et storage2",
+   "C": "les conteneurs, objets blob et partages de fichiers de storage2 uniquement",
+   "D": "les conteneurs, objets blob et partages de fichiers de storage1 et storage2",
+   "E": "les conteneurs, objets blob, partages de fichiers, files d'attente et tables de storage2 uniquement"
+  },
+  "explanation": "Toutes les options de redondance d'Azure Storage prennent en charge le chiffrement, et les données des régions primaire et secondaire sont chiffrées lorsque la géo-réplication est activée. Toutes les ressources Azure Storage sont chiffrées — objets blob, disques, fichiers, files d'attente et tables — de même que les métadonnées d'objets.\n\nScénario : les changements prévus incluent la création, dans storage2, d'une étendue de chiffrement nommée Scope1."
  },
  "232": {
   "text": [
@@ -2012,6 +2527,14 @@
     "s3": "Vous pouvez déployer VM5 dans West US."
    }
   }
+ },
+ "233": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un groupe à haute disponibilité Azure nommé WEBPROD-AS-USE2, présenté dans la capture suivante.",
+   "Vous ajoutez 14 machines virtuelles à WEBPROD-AS-USE2. Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : 2. Le groupe compte 10 domaines de mise à jour. Les 14 machines s'y répartissent : quatre domaines en contiennent deux et six n'en contiennent qu'une. Un seul domaine de mise à jour redémarre à la fois, donc au maximum deux machines sont hors ligne simultanément.\n\nBox 2 : 7. Le groupe compte 2 domaines d'erreur, soit 7 machines chacun. La défaillance d'un rack affecte un domaine d'erreur, donc 7 machines."
  },
  "293": {
   "interactive": {
