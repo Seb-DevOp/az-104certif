@@ -1,5 +1,6 @@
 import type {
-  AnswerRecord, ExamConfig, Mode, Progress, Question, SessionState, Topic,
+  AnswerRecord, DragDropSpec, ExamConfig, InteractiveSpec, Mode, Progress, Question,
+  SessionState, Topic, YesNoSpec,
 } from '../types';
 
 /** Fisher-Yates, seeded off Math.random — good enough for shuffling a quiz. */
@@ -130,7 +131,7 @@ export interface DragDropResult {
 }
 
 export function gradeDragDrop(
-  spec: NonNullable<Question['interactive']>,
+  spec: DragDropSpec,
   placed: Record<string, string[]>,
 ): DragDropResult {
   const perTarget: Record<string, boolean> = {};
@@ -141,6 +142,38 @@ export function gradeDragDrop(
     if (!ok) allOk = false;
   }
   return { correct: allOk, perTarget };
+}
+
+/**
+ * The exam awards a point per correct row, but a session scores one point per question, so
+ * a Yes/No grid counts as correct only when every row is right.
+ */
+export function gradeYesNo(spec: YesNoSpec, picks: Record<string, boolean>): boolean {
+  return spec.statements.every((s) => picks[s.id] === s.answer);
+}
+
+export const yesNoAnswered = (spec: YesNoSpec, picks: Record<string, boolean>) =>
+  spec.statements.every((s) => picks[s.id] !== undefined);
+
+export const encodeYesNo = (picks: Record<string, boolean>): string[] =>
+  Object.entries(picks).map(([id, v]) => `${id}:${v ? 'yes' : 'no'}`);
+
+export function decodeYesNo(encoded: readonly string[]): Record<string, boolean> {
+  const out: Record<string, boolean> = {};
+  for (const entry of encoded) {
+    const sep = entry.indexOf(':');
+    if (sep < 0) continue;
+    const v = entry.slice(sep + 1);
+    if (v === 'yes' || v === 'no') out[entry.slice(0, sep)] = v === 'yes';
+  }
+  return out;
+}
+
+/** Machine-graded interactive questions, whatever their shape. */
+export function gradeInteractive(spec: InteractiveSpec, selected: readonly string[]): boolean {
+  return spec.kind === 'yesno'
+    ? gradeYesNo(spec, decodeYesNo(selected))
+    : gradeDragDrop(spec, decodeDragAnswer(selected)).correct;
 }
 
 /**

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { Lang, Progress, Question, SessionState, TranslationMap } from '../types';
 import { formatDuration, makeT } from '../lib/i18n';
-import { decodeDragAnswer, gradeDragDrop, makeRecord } from '../lib/quiz';
+import { gradeInteractive, makeRecord } from '../lib/quiz';
 import { Countdown, ProgressBar } from './ui';
 import { QuestionCard } from './QuestionCard';
 
@@ -49,7 +49,7 @@ export function Quiz({
     (base: SessionState): SessionState => {
       if (!isExam || !q || !draft.length) return base;
       const correct = q.interactive
-        ? gradeDragDrop(q.interactive, decodeDragAnswer(draft)).correct
+        ? gradeInteractive(q.interactive, draft)
         : q.type === 'reveal'
           ? false
           : draft.length === q.answer.length && draft.every((k) => q.answer.includes(k));

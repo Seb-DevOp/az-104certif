@@ -39,8 +39,20 @@ Rules, in priority order:
 7. Use "vous" for the reader. Use standard IT French ("machine virtuelle", "abonnement", "groupe de ressources", "compte de stockage", "réseau virtuel", "règle d'alerte").
 
 Reply with a single JSON object and nothing else — no prose, no markdown fence. Shape:
-{"<question id>": {"text": ["..."], "options": {"A": "...", "B": "..."}, "explanation": "...", "interactive": {"prompt": "...", "items": {"<id>": "..."}, "targets": {"<id>": "..."}}}}
-Omit "options" when the question has none, "explanation" when it is empty, and "interactive" when it is absent from the input.`;
+{"<question id>": {"text": ["..."], "options": {"A": "...", "B": "..."}, "explanation": "...", "interactive": {"prompt": "...", "items": {"<id>": "..."}, "targets": {"<id>": "..."}, "statements": {"<id>": "..."}}}}
+Omit "options" when the question has none, "explanation" when it is empty, and "interactive" when it is absent from the input. Inside "interactive", reply only with the sub-keys present in the input.`;
+
+if (!process.env.ANTHROPIC_API_KEY && !process.env.ANTHROPIC_AUTH_TOKEN) {
+  console.error(`No Anthropic credentials found.
+
+Set one of:
+  export ANTHROPIC_API_KEY=sk-ant-...       (console.anthropic.com)
+  export ANTHROPIC_AUTH_TOKEN=...
+
+Without them the existing web/public/data/${LANG}.json is left untouched; untranslated
+questions simply show in English with an "EN" badge.`);
+  process.exit(1);
+}
 
 const client = new Anthropic();
 
@@ -73,11 +85,17 @@ function payload(q) {
   if (q.explanation) item.explanation = q.explanation;
   const spec = interactive[String(q.id)];
   if (spec) {
-    item.interactive = {
-      prompt: spec.prompt,
-      items: Object.fromEntries(spec.items.map((i) => [i.id, i.label])),
-      targets: Object.fromEntries(spec.targets.map((t) => [t.id, t.label])),
-    };
+    item.interactive = spec.kind === 'yesno'
+      ? {
+          prompt: spec.prompt,
+          statements: Object.fromEntries(spec.statements.map((s) => [s.id, s.text])),
+        }
+      : {
+          prompt: spec.prompt,
+          items: Object.fromEntries(spec.items.map((i) => [i.id, i.label])),
+          targets: Object.fromEntries(spec.targets.map((t) => [t.id, t.label])),
+        };
+    if (!item.interactive.prompt) delete item.interactive.prompt;
   }
   return item;
 }

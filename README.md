@@ -15,8 +15,9 @@ extraites automatiquement de `AZ-104_dump.pdf`.
 | **Mode entraînement** | Une question à la fois, correction et explication immédiates, longueur de session réglable (5 à 200 questions). |
 | **Mode examen** | 25 / 50 / 100 questions chronométrées (75 min pour 50), aucune correction avant la fin, navigation libre, palette de questions, marquage pour relecture. |
 | **Bilingue FR / EN** | Interface entièrement traduite. Le contenu des questions dispose d'une couche de traduction séparée (voir [Traduction](#traduction)) ; les questions non encore traduites s'affichent en anglais avec un badge `EN`. |
+| **Grilles Oui / Non** | Les questions « choisissez Oui si l'affirmation est vraie » sont de vraies grilles cliquables, corrigées ligne par ligne. |
 | **Glisser-déposer** | Vrai drag & drop (souris, tactile et clavier) sur les questions converties en format interactif ; correction automatique par zone. |
-| **Zones actives / Hot area** | Les 194 questions interactives de l'examen sont présentées avec leur capture d'énoncé, puis le corrigé et une auto-évaluation. |
+| **Zones actives / Hot area** | Les questions interactives non encore transcrites sont présentées avec leur capture d'énoncé, puis le corrigé et une auto-évaluation. |
 | **Progression** | Statistiques par question et par domaine, révision des erreurs, questions mises de côté, historique des examens — le tout en `localStorage`, aucun compte ni serveur d'état. |
 | **Confort** | Thème clair / sombre, raccourcis clavier (`1`-`6`, `Entrée`), reprise de session, agrandissement des captures. |
 
@@ -211,25 +212,67 @@ valide — les questions absentes s'affichent en anglais avec un badge `EN`.
 Le prompt impose de laisser en anglais les noms de produits, de rôles RBAC, de cmdlets et
 les identifiants de ressources, qui sont ceux affichés par le portail Azure et par l'examen.
 
-Le dépôt est livré avec les 5 questions glisser-déposer interactives déjà traduites, afin
-que le mode FR soit fonctionnel immédiatement.
+### État de la traduction
+
+`fr.json` est livré avec **15 questions entièrement traduites** (énoncé, affirmations,
+explication) et **13 partiellement** (affirmations des grilles Oui/Non traduites, énoncé
+encore en anglais). Les 527 autres s'affichent en anglais.
+
+Une traduction partielle est un état valide et volontairement visible : le badge `EN` sur la
+carte suit l'**énoncé**, ce que l'apprenant lit en premier. Une question dont seules les
+affirmations sont traduites porte donc encore le badge.
+
+```bash
+npm run check:translations      # cohérence fr.json ↔ banque ↔ questions interactives
+```
+
+Ce script vérifie que le nombre de paragraphes traduits correspond à la source, que les clés
+d'options existent, et que chaque affirmation d'une grille transcrite est bien traduite.
+
+Pour traduire le reste, il faut une clé API : c'est la seule étape que ce dépôt ne peut pas
+faire tourner sans identifiants.
 
 ---
 
-## Questions glisser-déposer
+## Questions interactives
 
-Dans le PDF, le corrigé des questions *drag & drop* et *hot area* n'existe que sous forme
-d'image : il n'y a pas de données exploitables pour rejouer l'interaction. Deux traitements
+Dans le PDF, le corrigé des questions *hot area* et *drag & drop* n'existe que sous forme
+d'image : rien n'y est directement exploitable pour rejouer l'interaction. Deux traitements
 coexistent donc :
 
 * **Par défaut** — l'énoncé est affiché avec sa capture, un bouton révèle le corrigé, puis
   l'apprenant s'auto-évalue. Le résultat compte dans le score et la progression.
-* **Questions converties** — `web/public/data/interactive.json` décrit un vrai plateau de
-  glisser-déposer, transcrit à la main depuis les captures. La question devient alors
-  corrigée automatiquement, zone par zone, et la capture d'origine reste consultable comme
-  corrigé.
+* **Questions transcrites** — `web/public/data/interactive.json` décrit la question sous une
+  forme réellement jouable, relevée à la main sur les captures. Elle devient alors corrigée
+  automatiquement, et la capture d'origine reste consultable comme corrigé.
 
-Cinq questions sont converties (`3`, `68`, `143`, `507`, `540`). Pour en ajouter une :
+État actuel : **28 questions transcrites** — 23 grilles Oui/Non et 5 plateaux de
+glisser-déposer.
+
+### Ajouter une grille Oui / Non
+
+Le corrigé de ces questions montre à la fois les affirmations et la colonne cochée en vert,
+une seule capture suffit donc à les relever. Ajoutez une ligne à `tools/yesno-seed.json`,
+au format `["affirmation", true|false]` où le booléen indique si **Oui** est la bonne
+réponse :
+
+```jsonc
+"163": [["User1 can create a support request.", true],
+        ["User1 can delete VM1.", false]]
+```
+
+puis développez le fichier vers `interactive.json` :
+
+```bash
+npm run data:interactive
+```
+
+Le script vérifie que chaque identifiant existe bien dans la banque, que la question est
+bien de format `hotspot`, et refuse les lignes mal formées.
+
+### Ajouter un glisser-déposer
+
+Directement dans `interactive.json` :
 
 ```jsonc
 "460": {
@@ -240,9 +283,9 @@ Cinq questions sont converties (`3`, `68`, `143`, `507`, `540`). Pour en ajouter
 }
 ```
 
-Les libellés français correspondants se placent dans `fr.json` sous la clé `interactive`
-de la même question. Aucune recompilation des données n'est nécessaire : le fichier est
-chargé au démarrage de l'application.
+Dans les deux cas, les libellés français se placent dans `fr.json` sous la clé `interactive`
+de la même question (`statements` pour une grille, `items` / `targets` pour un plateau).
+Aucune recompilation n'est nécessaire : les fichiers sont chargés au démarrage.
 
 ---
 

@@ -1,0 +1,95 @@
+{
+ "_readme": "Yes/No hot-area grids transcribed by hand from each question's answer-key screenshot (the key shows both the statements and the highlighted Yes/No). Merged into web/public/data/interactive.json by tools/merge-interactive.mjs.",
+
+ "38": [["Admin1 can add Admin2 as an owner of the subscription.", false],
+        ["Admin3 can add Admin2 as an owner of the subscription.", true],
+        ["Admin2 can create a resource group in the subscription.", false]],
+
+ "45": [["You can assign the Storage File Data SMB Share Contributor role to User1 for share1.", true],
+        ["You can assign the Storage File Data SMB Share Reader role to Computer1 for share1.", false],
+        ["You can assign the Storage File Data SMB Share Elevated Contributor role to User2 for share1.", true]],
+
+ "49": [["RG1 has the Tag2: IT tag assigned only.", false],
+        ["Storage1 has the Tag1: subscription, Tag2: IT, Tag3: value1 and Tag4: value4 tags assigned.", false],
+        ["VNET1 has the Tag2: IT and Tag3: value2 tags assigned only.", false]],
+
+ "71": [["Litwareinc.com users can be assigned to package1.", true],
+        ["After 365 days, fabrikam.com users will be removed from Group1.", false],
+        ["After 395 days, fabrikam.com users will be removed from the contoso.com tenant.", true]],
+
+ "73": [["You can assign User2 the Owner role for RG1 by adding Group2 as a member of Group1.", false],
+        ["You can assign User3 the Owner role for RG1 by adding Group3 as a member of Group1.", false],
+        ["You can assign User3 the Owner role for RG1 by assigning the Owner role to Group3 for RG1.", true]],
+
+ "76": [["User1 can create a storage account in RG1.", true],
+        ["User1 can modify the DNS settings of networkinterface1.", false],
+        ["User1 can create an inbound security rule to filter inbound traffic to networkinterface1.", true]],
+
+ "78": [["The Group1 members can view the configurations of the Azure functions.", true],
+        ["User1 can assign the Owner role for RG1.", true],
+        ["User1 can create a new resource group and deploy a virtual machine to the new group.", false]],
+
+ "81": [["You can assign User1 the Microsoft Defender for Cloud Apps Discovery license.", false],
+        ["You can remove the Microsoft Entra ID P2 license from User1.", true],
+        ["User2 is assigned the Microsoft Entra ID P2.", true]],
+
+ "94": [["User1 can read blob2.", true],
+        ["User1 can read blob3.", true],
+        ["User2 can read blob1.", false]],
+
+ "96": [["Three resource groups are created when you run the script.", true],
+        ["A resource group named RGroup5 is created.", false],
+        ["All the resource groups are created in the East US Azure region.", true]],
+
+ "103": [["User1 can resize VM1.", true],
+         ["User2 can create a new storage account in RG1.", false],
+         ["User3 can assign User1 the Owner role for RG3.", true]],
+
+ "122": [["SecAdmin1 must answer the following question during the self-service password reset: In what city was your first job?", false],
+         ["BillAdmin1 must answer the following question during the self-service password reset: What is your favorite food?", false],
+         ["User must answer the following question during the self-service password reset: What was the name of your first pet?", true]],
+
+ "126": [["User1 can access the content in cont1.", true],
+         ["User2 can access the content in cont1.", false],
+         ["User3 can access the content in share1.", false]],
+
+ "127": [["User1 can reset their password by using SSPR.", false],
+         ["User2 can reset their password by using SSPR.", true],
+         ["User3 can skip SSPR registration for a maximum of 180 days.", true]],
+
+ "144": [["You can add share3 as an additional cloud endpoint for Sync1.", false],
+         ["You can add data2 as an additional server endpoint for Sync1.", true],
+         ["You can add data3 as an additional server endpoint for Sync1.", false]],
+
+ "156": [["On October 10, you can read Dep1File1.docx without a delay.", true],
+         ["On October 10, you can read File2.docx without a delay.", true],
+         ["On October 10, you can read File3.docx without a delay.", true]],
+
+ "199": [["A blob snapshot automatically moves to the Cool access tier after 15 days.", true],
+         ["A blob version in container2 automatically moves to the Archive access tier after 30 days.", false],
+         ["A rehydrated version automatically moves to the Archive access tier after 30 days.", false]],
+
+ "232": [["You can deploy VM3 to West US.", true],
+         ["You can deploy VM4 to West US.", false],
+         ["You can deploy VM5 to West US.", false]],
+
+ "293": [["The commands will create four new resources.", true],
+         ["The commands will create storage accounts in the West US Azure region.", false],
+         ["The first storage account that is created will have a prefix of 0.", true]],
+
+ "319": [["WebApp1 can communicate with VM2.", true],
+         ["NSG1 controls inbound traffic to WebApp1.", false],
+         ["WebApp2 can communicate with VM1.", false]],
+
+ "369": [["VM1 is in the same availability set as VM2.", true],
+         ["If Probe1.htm is present on VM1 and VM2, LB1 will balance TCP port 80 between VM1 and VM2.", true],
+         ["If you delete Rule1, LB1 will balance all the requests between VM1 and VM2 for all the ports.", false]],
+
+ "502": [["Users that are assigned Role1 can assign Role1 to users.", false],
+         ["Users that are assigned Role1 can deploy new virtual machines.", false],
+         ["Users that are assigned Role1 can set a static IP address on a virtual machine.", true]],
+
+ "529": [["VM1 can access contoso102.", true],
+         ["VM2 can access contoso101.", false],
+         ["VM2 uses a private IP address to access Microsoft Entra ID.", false]]
+}

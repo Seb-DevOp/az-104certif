@@ -2,9 +2,13 @@ import { useEffect, useMemo, useState } from 'react';
 import type { Lang, Question, TranslationMap } from '../types';
 import { localise } from '../lib/data';
 import { makeT, topicLabel } from '../lib/i18n';
-import { decodeDragAnswer, encodeDragAnswer, gradeDragDrop, shuffle } from '../lib/quiz';
+import {
+  decodeDragAnswer, decodeYesNo, encodeDragAnswer, encodeYesNo, gradeDragDrop, gradeYesNo,
+  shuffle, yesNoAnswered,
+} from '../lib/quiz';
 import { Badge, Exhibit, Explanation } from './ui';
 import { DragDrop } from './DragDrop';
+import { YesNo } from './YesNo';
 
 export interface QuestionCardProps {
   question: Question;
@@ -34,8 +38,12 @@ export function QuestionCard(props: QuestionCardProps) {
   const [dragPlacement, setDragPlacement] = useState<Record<string, string[]>>(() =>
     decodeDragAnswer(selected),
   );
+  const [yesNoPicks, setYesNoPicks] = useState<Record<string, boolean>>(() => decodeYesNo(selected));
 
-  useEffect(() => setDragPlacement(decodeDragAnswer(selected)), [q.id]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    setDragPlacement(decodeDragAnswer(selected));
+    setYesNoPicks(decodeYesNo(selected));
+  }, [q.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Shuffling is keyed on the question so the order is stable while it is on screen.
   const options = useMemo(
@@ -47,7 +55,9 @@ export function QuestionCard(props: QuestionCardProps) {
   const locked = revealed || readOnly;
   const isMulti = q.type === 'multi';
   const isReveal = q.type === 'reveal';
-  const dragSpec = loc.interactive;
+  const spec = loc.interactive;
+  const dragSpec = spec?.kind === 'dragdrop' ? spec : undefined;
+  const yesNoSpec = spec?.kind === 'yesno' ? spec : undefined;
 
   const toggle = (key: string) => {
     if (locked) return;
@@ -57,7 +67,7 @@ export function QuestionCard(props: QuestionCardProps) {
 
   // Keyboard: 1-6 pick an option, Enter checks. Only while the card is live.
   useEffect(() => {
-    if (locked || isReveal || dragSpec) return;
+    if (locked || isReveal || spec) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       const target = e.target as HTMLElement | null;
@@ -74,11 +84,11 @@ export function QuestionCard(props: QuestionCardProps) {
 
   const correctSet = new Set(q.answer);
   const dragResult = dragSpec && revealed ? gradeDragDrop(dragSpec, dragPlacement) : undefined;
-  const wasCorrect = dragSpec
-    ? Boolean(dragResult?.correct)
+  const wasCorrect = spec
+    ? (yesNoSpec ? gradeYesNo(yesNoSpec, yesNoPicks) : Boolean(dragResult?.correct))
     : revealed && !isReveal && selected.length === q.answer.length && selected.every((k) => correctSet.has(k));
   // Self-graded questions state their own verdict; everything else gets a banner.
-  const showVerdict = revealed && (Boolean(dragSpec) || !isReveal);
+  const showVerdict = revealed && (Boolean(spec) || !isReveal);
 
   return (
     <article className="card animate-fade-up p-5 sm:p-6">
@@ -107,7 +117,31 @@ export function QuestionCard(props: QuestionCardProps) {
         </div>
       )}
 
-      {dragSpec ? (
+      {yesNoSpec ? (
+        <>
+          <YesNo
+            spec={yesNoSpec}
+            lang={lang}
+            value={yesNoPicks}
+            revealed={Boolean(locked)}
+            onChange={(picks) => {
+              setYesNoPicks(picks);
+              // Encoded so the session persists a grid answer like any other.
+              onSelect(encodeYesNo(picks));
+            }}
+          />
+          {!locked && !readOnly && showFeedback && (
+            <button
+              type="button"
+              className="btn-primary mt-4"
+              disabled={!yesNoAnswered(yesNoSpec, yesNoPicks)}
+              onClick={() => onCheck(gradeYesNo(yesNoSpec, yesNoPicks))}
+            >
+              {t('validate')}
+            </button>
+          )}
+        </>
+      ) : dragSpec ? (
         <div className="mt-5">
           <DragDrop
             key={q.id}
@@ -197,14 +231,14 @@ export function QuestionCard(props: QuestionCardProps) {
           <p className={`text-sm font-semibold ${wasCorrect ? 'text-emerald-800 dark:text-emerald-200' : 'text-rose-800 dark:text-rose-200'}`}>
             {wasCorrect ? `✓ ${t('correct')}` : `✕ ${t('incorrect')}`}
             {/* The drag board lists its own answer key, so only MCQs spell the keys out. */}
-            {!wasCorrect && !dragSpec && (
+            {!wasCorrect && !spec && (
               <span className="ml-2 font-normal">{t('correctAnswer')} : {q.answer.join(', ')}</span>
             )}
           </p>
         </div>
       )}
 
-      {revealed && (!isReveal || dragSpec) && <AnswerDetail q={q} lang={lang} explanation={loc.explanation} />}
+      {revealed && (!isReveal || spec) && <AnswerDetail q={q} lang={lang} explanation={loc.explanation} />}
     </article>
   );
 }

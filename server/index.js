@@ -31,11 +31,16 @@ const MIME = {
 
 const COMPRESSIBLE = new Set(['.html', '.js', '.css', '.json', '.svg', '.txt', '.map']);
 
-/** Vite emits content-hashed asset names, so those are safe to cache hard. */
+/**
+ * Vite emits content-hashed asset names, and the exhibit screenshots are named after a hash
+ * of their pixels, so both are safe to cache hard. The question bank and the translation
+ * files keep stable names and do change between deploys, so they must revalidate — the ETag
+ * makes that a cheap 304 rather than a re-download.
+ */
 function cacheControl(urlPath, ext) {
   if (urlPath.startsWith('/assets/')) return 'public, max-age=31536000, immutable';
-  if (ext === '.webp' || ext === '.png' || ext === '.jpg') return 'public, max-age=604800';
-  if (ext === '.html') return 'no-cache';
+  if (urlPath.startsWith('/img/')) return 'public, max-age=604800, immutable';
+  if (urlPath.startsWith('/data/') || ext === '.html') return 'no-cache';
   return 'public, max-age=3600';
 }
 

@@ -96,6 +96,15 @@ const DICT = {
   dragPool: { fr: 'Éléments', en: 'Items' },
   dragTargets: { fr: 'Zone de réponse', en: 'Answer area' },
   dropHere: { fr: 'Déposer ici', en: 'Drop here' },
+
+  // Yes / No statement grid
+  yesNoHint: {
+    fr: "Pour chaque affirmation, choisissez Oui si elle est vraie, sinon Non.",
+    en: 'For each statement, select Yes if it is true, otherwise No.',
+  },
+  statements: { fr: 'Affirmations', en: 'Statements' },
+  yes: { fr: 'Oui', en: 'Yes' },
+  no: { fr: 'Non', en: 'No' },
   reset: { fr: 'Réinitialiser', en: 'Reset' },
 
   // Results

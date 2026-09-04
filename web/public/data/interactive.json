@@ -1,88 +1,682 @@
 {
-  "_readme": "Hand-authored playable versions of DRAG DROP questions whose answer key exists in the PDF only as a screenshot. Transcribed from the exhibit and answer images of the matching question id. Adding an entry here turns that question from 'reveal and self-grade' into a machine-graded drag-and-drop; the original screenshots stay available as the answer key. French labels live in fr.json under the same id.",
-
-  "3": {
-    "kind": "dragdrop",
-    "prompt": "Drag every object that must be created onto the answer area. Distractors stay in the list.",
-    "items": [
-      { "id": "hyperv-site", "label": "Hyper-V site" },
-      { "id": "storage-account", "label": "Storage account" },
-      { "id": "recovery-vault", "label": "Azure Recovery Services Vault" },
-      { "id": "traffic-manager", "label": "Azure Traffic Manager instance" },
-      { "id": "replication-policy", "label": "Replication policy" },
-      { "id": "endpoint", "label": "Endpoint" }
-    ],
-    "targets": [
-      {
-        "id": "answer",
-        "label": "Answer area",
-        "accepts": ["hyperv-site", "recovery-vault", "replication-policy"]
-      }
+ "3": {
+  "kind": "dragdrop",
+  "prompt": "Drag every object that must be created onto the answer area. Distractors stay in the list.",
+  "items": [
+   {
+    "id": "hyperv-site",
+    "label": "Hyper-V site"
+   },
+   {
+    "id": "storage-account",
+    "label": "Storage account"
+   },
+   {
+    "id": "recovery-vault",
+    "label": "Azure Recovery Services Vault"
+   },
+   {
+    "id": "traffic-manager",
+    "label": "Azure Traffic Manager instance"
+   },
+   {
+    "id": "replication-policy",
+    "label": "Replication policy"
+   },
+   {
+    "id": "endpoint",
+    "label": "Endpoint"
+   }
+  ],
+  "targets": [
+   {
+    "id": "answer",
+    "label": "Answer area",
+    "accepts": [
+     "hyperv-site",
+     "recovery-vault",
+     "replication-policy"
     ]
-  },
-
-  "68": {
-    "kind": "dragdrop",
-    "prompt": "Drag the least-privileged RBAC role onto each user.",
-    "items": [
-      { "id": "owner", "label": "Owner" },
-      { "id": "contributor", "label": "Contributor" },
-      { "id": "reader-data-access", "label": "Reader and Data Access" },
-      { "id": "storage-account-contributor", "label": "Storage Account Contributor" },
-      { "id": "user-access-admin", "label": "User Access Administrator" }
-    ],
-    "targets": [
-      { "id": "user1", "label": "User1", "accepts": ["reader-data-access"] },
-      { "id": "user2", "label": "User2", "accepts": ["owner"] }
+   }
+  ]
+ },
+ "38": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "Admin1 can add Admin2 as an owner of the subscription.",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "Admin3 can add Admin2 as an owner of the subscription.",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "Admin2 can create a resource group in the subscription.",
+    "answer": false
+   }
+  ]
+ },
+ "45": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "You can assign the Storage File Data SMB Share Contributor role to User1 for share1.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "You can assign the Storage File Data SMB Share Reader role to Computer1 for share1.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "You can assign the Storage File Data SMB Share Elevated Contributor role to User2 for share1.",
+    "answer": true
+   }
+  ]
+ },
+ "49": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "RG1 has the Tag2: IT tag assigned only.",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "Storage1 has the Tag1: subscription, Tag2: IT, Tag3: value1 and Tag4: value4 tags assigned.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "VNET1 has the Tag2: IT and Tag3: value2 tags assigned only.",
+    "answer": false
+   }
+  ]
+ },
+ "68": {
+  "kind": "dragdrop",
+  "prompt": "Drag the least-privileged RBAC role onto each user.",
+  "items": [
+   {
+    "id": "owner",
+    "label": "Owner"
+   },
+   {
+    "id": "contributor",
+    "label": "Contributor"
+   },
+   {
+    "id": "reader-data-access",
+    "label": "Reader and Data Access"
+   },
+   {
+    "id": "storage-account-contributor",
+    "label": "Storage Account Contributor"
+   },
+   {
+    "id": "user-access-admin",
+    "label": "User Access Administrator"
+   }
+  ],
+  "targets": [
+   {
+    "id": "user1",
+    "label": "User1",
+    "accepts": [
+     "reader-data-access"
     ]
-  },
-
-  "143": {
-    "kind": "dragdrop",
-    "prompt": "Drag the two actions to perform, in order, onto the answer area.",
-    "items": [
-      { "id": "sync-service", "label": "Create a Storage Sync Service" },
-      { "id": "sync-agent", "label": "Install the Azure File Sync agent" },
-      { "id": "sync-group", "label": "Create a sync group" },
-      { "id": "server-registration", "label": "Run Server Registration" }
-    ],
-    "targets": [
-      { "id": "first", "label": "First action", "accepts": ["sync-service"] },
-      { "id": "second", "label": "Second action", "accepts": ["sync-agent"] }
+   },
+   {
+    "id": "user2",
+    "label": "User2",
+    "accepts": [
+     "owner"
     ]
-  },
-
-  "507": {
-    "kind": "dragdrop",
-    "prompt": "Drag the three actions onto the answer area in the correct order.",
-    "items": [
-      { "id": "managed-identity", "label": "Configure a managed identity" },
-      { "id": "backup-vault", "label": "Create an Azure Backup vault" },
-      { "id": "recovery-vault", "label": "Create a Recovery Services vault" },
-      { "id": "delegate", "label": "Delegate permissions for the vault" },
-      { "id": "backup-policy", "label": "Create a backup policy and configure the backup" }
-    ],
-    "targets": [
-      { "id": "step1", "label": "Step 1", "accepts": ["backup-vault"] },
-      { "id": "step2", "label": "Step 2", "accepts": ["managed-identity"] },
-      { "id": "step3", "label": "Step 3", "accepts": ["backup-policy"] }
+   }
+  ]
+ },
+ "71": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "Litwareinc.com users can be assigned to package1.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "After 365 days, fabrikam.com users will be removed from Group1.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "After 395 days, fabrikam.com users will be removed from the contoso.com tenant.",
+    "answer": true
+   }
+  ]
+ },
+ "73": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "You can assign User2 the Owner role for RG1 by adding Group2 as a member of Group1.",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "You can assign User3 the Owner role for RG1 by adding Group3 as a member of Group1.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "You can assign User3 the Owner role for RG1 by assigning the Owner role to Group3 for RG1.",
+    "answer": true
+   }
+  ]
+ },
+ "76": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "User1 can create a storage account in RG1.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "User1 can modify the DNS settings of networkinterface1.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "User1 can create an inbound security rule to filter inbound traffic to networkinterface1.",
+    "answer": true
+   }
+  ]
+ },
+ "78": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "The Group1 members can view the configurations of the Azure functions.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "User1 can assign the Owner role for RG1.",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "User1 can create a new resource group and deploy a virtual machine to the new group.",
+    "answer": false
+   }
+  ]
+ },
+ "81": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "You can assign User1 the Microsoft Defender for Cloud Apps Discovery license.",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "You can remove the Microsoft Entra ID P2 license from User1.",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "User2 is assigned the Microsoft Entra ID P2.",
+    "answer": true
+   }
+  ]
+ },
+ "94": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "User1 can read blob2.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "User1 can read blob3.",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "User2 can read blob1.",
+    "answer": false
+   }
+  ]
+ },
+ "96": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "Three resource groups are created when you run the script.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "A resource group named RGroup5 is created.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "All the resource groups are created in the East US Azure region.",
+    "answer": true
+   }
+  ]
+ },
+ "103": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "User1 can resize VM1.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "User2 can create a new storage account in RG1.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "User3 can assign User1 the Owner role for RG3.",
+    "answer": true
+   }
+  ]
+ },
+ "122": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "SecAdmin1 must answer the following question during the self-service password reset: In what city was your first job?",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "BillAdmin1 must answer the following question during the self-service password reset: What is your favorite food?",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "User must answer the following question during the self-service password reset: What was the name of your first pet?",
+    "answer": true
+   }
+  ]
+ },
+ "126": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "User1 can access the content in cont1.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "User2 can access the content in cont1.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "User3 can access the content in share1.",
+    "answer": false
+   }
+  ]
+ },
+ "127": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "User1 can reset their password by using SSPR.",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "User2 can reset their password by using SSPR.",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "User3 can skip SSPR registration for a maximum of 180 days.",
+    "answer": true
+   }
+  ]
+ },
+ "143": {
+  "kind": "dragdrop",
+  "prompt": "Drag the two actions to perform, in order, onto the answer area.",
+  "items": [
+   {
+    "id": "sync-service",
+    "label": "Create a Storage Sync Service"
+   },
+   {
+    "id": "sync-agent",
+    "label": "Install the Azure File Sync agent"
+   },
+   {
+    "id": "sync-group",
+    "label": "Create a sync group"
+   },
+   {
+    "id": "server-registration",
+    "label": "Run Server Registration"
+   }
+  ],
+  "targets": [
+   {
+    "id": "first",
+    "label": "First action",
+    "accepts": [
+     "sync-service"
     ]
-  },
-
-  "540": {
-    "kind": "dragdrop",
-    "prompt": "Drag the three actions onto the answer area in the correct order.",
-    "items": [
-      { "id": "workspace", "label": "Create a Log Analytics workspace." },
-      { "id": "diagnostic", "label": "Configure the Diagnostic settings." },
-      { "id": "alert-rule", "label": "Create an alert rule." },
-      { "id": "perf-counters", "label": "Collect Windows performance counters from the Log Analytics agents." },
-      { "id": "sql", "label": "Create an Azure SQL database." }
-    ],
-    "targets": [
-      { "id": "step1", "label": "Step 1", "accepts": ["workspace"] },
-      { "id": "step2", "label": "Step 2", "accepts": ["perf-counters"] },
-      { "id": "step3", "label": "Step 3", "accepts": ["alert-rule"] }
+   },
+   {
+    "id": "second",
+    "label": "Second action",
+    "accepts": [
+     "sync-agent"
     ]
-  }
+   }
+  ]
+ },
+ "144": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "You can add share3 as an additional cloud endpoint for Sync1.",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "You can add data2 as an additional server endpoint for Sync1.",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "You can add data3 as an additional server endpoint for Sync1.",
+    "answer": false
+   }
+  ]
+ },
+ "156": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "On October 10, you can read Dep1File1.docx without a delay.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "On October 10, you can read File2.docx without a delay.",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "On October 10, you can read File3.docx without a delay.",
+    "answer": true
+   }
+  ]
+ },
+ "199": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "A blob snapshot automatically moves to the Cool access tier after 15 days.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "A blob version in container2 automatically moves to the Archive access tier after 30 days.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "A rehydrated version automatically moves to the Archive access tier after 30 days.",
+    "answer": false
+   }
+  ]
+ },
+ "232": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "You can deploy VM3 to West US.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "You can deploy VM4 to West US.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "You can deploy VM5 to West US.",
+    "answer": false
+   }
+  ]
+ },
+ "293": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "The commands will create four new resources.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "The commands will create storage accounts in the West US Azure region.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "The first storage account that is created will have a prefix of 0.",
+    "answer": true
+   }
+  ]
+ },
+ "319": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "WebApp1 can communicate with VM2.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "NSG1 controls inbound traffic to WebApp1.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "WebApp2 can communicate with VM1.",
+    "answer": false
+   }
+  ]
+ },
+ "369": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "VM1 is in the same availability set as VM2.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "If Probe1.htm is present on VM1 and VM2, LB1 will balance TCP port 80 between VM1 and VM2.",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "If you delete Rule1, LB1 will balance all the requests between VM1 and VM2 for all the ports.",
+    "answer": false
+   }
+  ]
+ },
+ "502": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "Users that are assigned Role1 can assign Role1 to users.",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "Users that are assigned Role1 can deploy new virtual machines.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "Users that are assigned Role1 can set a static IP address on a virtual machine.",
+    "answer": true
+   }
+  ]
+ },
+ "507": {
+  "kind": "dragdrop",
+  "prompt": "Drag the three actions onto the answer area in the correct order.",
+  "items": [
+   {
+    "id": "managed-identity",
+    "label": "Configure a managed identity"
+   },
+   {
+    "id": "backup-vault",
+    "label": "Create an Azure Backup vault"
+   },
+   {
+    "id": "recovery-vault",
+    "label": "Create a Recovery Services vault"
+   },
+   {
+    "id": "delegate",
+    "label": "Delegate permissions for the vault"
+   },
+   {
+    "id": "backup-policy",
+    "label": "Create a backup policy and configure the backup"
+   }
+  ],
+  "targets": [
+   {
+    "id": "step1",
+    "label": "Step 1",
+    "accepts": [
+     "backup-vault"
+    ]
+   },
+   {
+    "id": "step2",
+    "label": "Step 2",
+    "accepts": [
+     "managed-identity"
+    ]
+   },
+   {
+    "id": "step3",
+    "label": "Step 3",
+    "accepts": [
+     "backup-policy"
+    ]
+   }
+  ]
+ },
+ "529": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "VM1 can access contoso102.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "VM2 can access contoso101.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "VM2 uses a private IP address to access Microsoft Entra ID.",
+    "answer": false
+   }
+  ]
+ },
+ "540": {
+  "kind": "dragdrop",
+  "prompt": "Drag the three actions onto the answer area in the correct order.",
+  "items": [
+   {
+    "id": "workspace",
+    "label": "Create a Log Analytics workspace."
+   },
+   {
+    "id": "diagnostic",
+    "label": "Configure the Diagnostic settings."
+   },
+   {
+    "id": "alert-rule",
+    "label": "Create an alert rule."
+   },
+   {
+    "id": "perf-counters",
+    "label": "Collect Windows performance counters from the Log Analytics agents."
+   },
+   {
+    "id": "sql",
+    "label": "Create an Azure SQL database."
+   }
+  ],
+  "targets": [
+   {
+    "id": "step1",
+    "label": "Step 1",
+    "accepts": [
+     "workspace"
+    ]
+   },
+   {
+    "id": "step2",
+    "label": "Step 2",
+    "accepts": [
+     "perf-counters"
+    ]
+   },
+   {
+    "id": "step3",
+    "label": "Step 3",
+    "accepts": [
+     "alert-rule"
+    ]
+   }
+  ]
+ },
+ "_readme": "Hand-authored playable versions of DRAG DROP questions whose answer key exists in the PDF only as a screenshot. Transcribed from the exhibit and answer images of the matching question id. Adding an entry here turns that question from 'reveal and self-grade' into a machine-graded drag-and-drop; the original screenshots stay available as the answer key. French labels live in fr.json under the same id."
 }

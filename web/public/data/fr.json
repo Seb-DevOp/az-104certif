@@ -17,6 +17,36 @@
   }
  },
 
+ "38": {
+  "interactive": {
+   "statements": {
+    "s1": "Admin1 peut ajouter Admin2 comme propriétaire de l'abonnement.",
+    "s2": "Admin3 peut ajouter Admin2 comme propriétaire de l'abonnement.",
+    "s3": "Admin2 peut créer un groupe de ressources dans l'abonnement."
+   }
+  }
+ },
+
+ "45": {
+  "interactive": {
+   "statements": {
+    "s1": "Vous pouvez attribuer le rôle Storage File Data SMB Share Contributor à User1 sur share1.",
+    "s2": "Vous pouvez attribuer le rôle Storage File Data SMB Share Reader à Computer1 sur share1.",
+    "s3": "Vous pouvez attribuer le rôle Storage File Data SMB Share Elevated Contributor à User2 sur share1."
+   }
+  }
+ },
+
+ "49": {
+  "interactive": {
+   "statements": {
+    "s1": "RG1 porte uniquement l'étiquette Tag2 : IT.",
+    "s2": "Storage1 porte les étiquettes Tag1 : subscription, Tag2 : IT, Tag3 : value1 et Tag4 : value4.",
+    "s3": "VNET1 porte uniquement les étiquettes Tag2 : IT et Tag3 : value2."
+   }
+  }
+ },
+
  "68": {
   "text": [
    "Vous disposez d'un abonnement Azure nommé Sub1 qui contient deux utilisateurs nommés User1 et User2. Vous devez attribuer des rôles RBAC (contrôle d'accès en fonction du rôle) à User1 et User2. Les utilisateurs doivent pouvoir effectuer les tâches suivantes dans Sub1 : • User1 doit pouvoir consulter les données de n'importe quel compte de stockage. • User2 doit pouvoir attribuer aux utilisateurs le rôle Contributor sur les comptes de stockage. La solution doit appliquer le principe du privilège minimum. Quel rôle RBAC devez-vous attribuer à chaque utilisateur ? Pour répondre, faites glisser les rôles appropriés vers les bons utilisateurs. Chaque rôle peut être utilisé une fois, plusieurs fois, ou pas du tout.",
@@ -26,6 +56,144 @@
   "interactive": {
    "prompt": "Faites glisser sur chaque utilisateur le rôle RBAC le moins privilégié qui convient.",
    "targets": { "user1": "User1", "user2": "User2" }
+  }
+ },
+
+ "71": {
+  "interactive": {
+   "statements": {
+    "s1": "Les utilisateurs de litwareinc.com peuvent être affectés à package1.",
+    "s2": "Au bout de 365 jours, les utilisateurs de fabrikam.com seront retirés de Group1.",
+    "s3": "Au bout de 395 jours, les utilisateurs de fabrikam.com seront retirés du locataire contoso.com."
+   }
+  }
+ },
+
+ "73": {
+  "interactive": {
+   "statements": {
+    "s1": "Vous pouvez attribuer à User2 le rôle Owner sur RG1 en ajoutant Group2 comme membre de Group1.",
+    "s2": "Vous pouvez attribuer à User3 le rôle Owner sur RG1 en ajoutant Group3 comme membre de Group1.",
+    "s3": "Vous pouvez attribuer à User3 le rôle Owner sur RG1 en attribuant le rôle Owner à Group3 sur RG1."
+   }
+  }
+ },
+
+ "76": {
+  "interactive": {
+   "statements": {
+    "s1": "User1 peut créer un compte de stockage dans RG1.",
+    "s2": "User1 peut modifier les paramètres DNS de networkinterface1.",
+    "s3": "User1 peut créer une règle de sécurité entrante pour filtrer le trafic entrant vers networkinterface1."
+   }
+  }
+ },
+
+ "78": {
+  "text": [
+   "Vous disposez de trois abonnements Azure nommés Sub1, Sub2 et Sub3, rattachés à un locataire Microsoft Entra. Le locataire contient un utilisateur nommé User1, un groupe de sécurité nommé Group1 et un groupe d'administration nommé MG1. User1 est membre de Group1. Sub1 et Sub2 sont membres de MG1. Sub1 contient un groupe de ressources nommé RG1. RG1 contient cinq fonctions Azure. Vous créez les attributions de rôles suivantes sur MG1 : Group1 : Reader ; User1 : User Access Administrator. Vous attribuez à User1 le rôle Virtual Machine Contributor sur Sub1 et Sub2. Vous attribuez à User1 le rôle Contributor sur RG1. Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — le groupe de ressources RG1 contient cinq fonctions Azure. Le groupe d'administration MG1 porte l'attribution de rôle « Group1 : Reader ». Le rôle Reader est un rôle Azure Resource Manager qui autorise la consultation des ressources sans permettre de les modifier. Il ne donne pas accès aux données elles-mêmes, seulement aux ressources de gestion du compte.\n\nBox 2 : Oui — MG1 porte l'attribution de rôle « User1 : User Access Administrator », et Sub1 est membre de MG1. Sub1 contient RG1. Le rôle User Access Administrator permet d'accorder à d'autres utilisateurs l'accès aux ressources Azure ; il permet notamment d'attribuer le rôle Owner sur l'abonnement.\n\nBox 3 : Non — User Access Administrator ne permet que de gérer l'accès des utilisateurs aux ressources Azure, pas de créer des ressources. Créer un groupe de ressources et y déployer une machine virtuelle demande des droits de contributeur au niveau de l'abonnement, que User1 n'a pas.",
+  "interactive": {
+   "statements": {
+    "s1": "Les membres de Group1 peuvent consulter la configuration des fonctions Azure.",
+    "s2": "User1 peut attribuer le rôle Owner sur RG1.",
+    "s3": "User1 peut créer un groupe de ressources et y déployer une machine virtuelle."
+   }
+  }
+ },
+
+ "81": {
+  "interactive": {
+   "statements": {
+    "s1": "Vous pouvez attribuer à User1 la licence Microsoft Defender for Cloud Apps Discovery.",
+    "s2": "Vous pouvez retirer la licence Microsoft Entra ID P2 de User1.",
+    "s3": "User2 dispose de la licence Microsoft Entra ID P2."
+   }
+  }
+ },
+
+ "94": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Sub1 qui contient les conteneurs d'objets blob présentés dans le tableau suivant.",
+   "Sub1 contient deux utilisateurs nommés User1 et User2. Les deux ont le rôle Reader au niveau de Sub1. Vous disposez d'une condition nommée Condition1, présentée dans la capture suivante.",
+   "Vous disposez d'une condition nommée Condition2, présentée dans la capture suivante.",
+   "Vous attribuez des rôles à User1 et User2 comme indiqué dans le tableau suivant.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — User1 a le rôle Reader sur l'abonnement et le rôle Storage Blob Data Reader au niveau de l'abonnement, assorti de Condition1. Condition1 est vérifiée lorsque l'action est .../containers/blobs/read.\n\nBox 2 : Oui — même raisonnement que pour Box 1.\n\nBox 3 : Non — c'est Condition2 qui s'applique à User2. Condition2 n'est vérifiée que si l'action est une écriture, ou si le nom du conteneur contient le caractère « 2 ». User2 ne peut donc pas lire blob1.",
+  "interactive": {
+   "statements": {
+    "s1": "User1 peut lire blob2.",
+    "s2": "User1 peut lire blob3.",
+    "s3": "User2 peut lire blob1."
+   }
+  }
+ },
+
+ "96": {
+  "text": [
+   "Vous souscrivez un nouvel abonnement Azure. Vous créez un modèle Azure Resource Manager (ARM) nommé deploy.json, présenté dans la capture suivante.",
+   "Vous vous connectez à l'abonnement et exécutez la commande suivante : New-AzDeployment -Location westus -TemplateFile \"deploy.json\". Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — deux groupes de ressources sont créés par la boucle copyIndex (\"count\": 2) et un troisième par une instruction distincte, soit trois au total.\n\nRemarque sur la syntaxe : l'élément copy s'ajoute à la section resources du modèle pour déployer plusieurs instances d'une ressource. Sa propriété name identifie la boucle et sa propriété count fixe le nombre d'itérations.\n\nBox 2 : Non — les groupes créés par la boucle s'appellent RGS1 et RGS2. Le troisième est nommé par \"[concat('RGroup', length(parameters('obj1')))]\". obj1 contient quatre éléments (PropA, PropB, PropC, Prop4), sa longueur vaut donc 4 : le groupe s'appelle RGroup4, et non RGroup5.\n\nBox 3 : Oui — la boucle utilise \"location\": \"eastus\", et le troisième groupe utilise \"[last(variables('var1'))]\" avec var1 = [\"westus\", \"centralus\", \"eastus\"], soit eastus également.\n\nRemarque : New-AzDeployment ajoute un déploiement au niveau de l'abonnement courant. L'emplacement indique à Azure Resource Manager où stocker les données du déploiement.",
+  "interactive": {
+   "statements": {
+    "s1": "Trois groupes de ressources sont créés lorsque vous exécutez le script.",
+    "s2": "Un groupe de ressources nommé RGroup5 est créé.",
+    "s3": "Tous les groupes de ressources sont créés dans la région Azure East US."
+   }
+  }
+ },
+
+ "103": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra rattaché aux abonnements présentés dans le tableau suivant.",
+   "Vous disposez des groupes de ressources présentés dans le tableau suivant.",
+   "Vous attribuez des rôles aux utilisateurs comme indiqué dans le tableau suivant.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — User1 est Contributor avec pour portée MG2. MG2 est un groupe d'administration qui remonte au groupe racine du locataire, et RG3 (dans Sub3) contient VM1.\n\nRemarque : chaque locataire Microsoft Entra possède un groupe d'administration racine unique, sous lequel se rattachent tous les groupes d'administration et abonnements. Le rôle Contributor accorde un accès complet à la gestion des ressources, mais ne permet pas d'attribuer des rôles Azure RBAC.\n\nBox 2 : Non — User2 est Storage Account Contributor avec pour portée le compte storage1 uniquement, et non RG1. Il ne peut donc pas créer un nouveau compte de stockage dans RG1.\n\nBox 3 : Oui — User3 est User Access Administrator sur le groupe racine du locataire. Ce rôle permet d'accorder à d'autres utilisateurs l'accès aux ressources Azure, d'attribuer des rôles Azure RBAC, et de s'attribuer ou d'attribuer à autrui le rôle Owner.",
+  "interactive": {
+   "statements": {
+    "s1": "User1 peut redimensionner VM1.",
+    "s2": "User2 peut créer un nouveau compte de stockage dans RG1.",
+    "s3": "User3 peut attribuer à User1 le rôle Owner sur RG3."
+   }
+  }
+ },
+
+ "122": {
+  "interactive": {
+   "statements": {
+    "s1": "SecAdmin1 doit répondre à la question suivante lors de la réinitialisation de mot de passe en libre-service : dans quelle ville avez-vous occupé votre premier emploi ?",
+    "s2": "BillAdmin1 doit répondre à la question suivante lors de la réinitialisation de mot de passe en libre-service : quel est votre plat préféré ?",
+    "s3": "User doit répondre à la question suivante lors de la réinitialisation de mot de passe en libre-service : quel était le nom de votre premier animal de compagnie ?"
+   }
+  }
+ },
+
+ "126": {
+  "interactive": {
+   "statements": {
+    "s1": "User1 peut accéder au contenu de cont1.",
+    "s2": "User2 peut accéder au contenu de cont1.",
+    "s3": "User3 peut accéder au contenu de share1."
+   }
+  }
+ },
+
+ "127": {
+  "interactive": {
+   "statements": {
+    "s1": "User1 peut réinitialiser son mot de passe via SSPR.",
+    "s2": "User2 peut réinitialiser son mot de passe via SSPR.",
+    "s3": "User3 peut différer son inscription à SSPR pendant 180 jours au maximum."
+   }
   }
  },
 
@@ -41,6 +209,121 @@
   }
  },
 
+ "144": {
+  "interactive": {
+   "statements": {
+    "s1": "Vous pouvez ajouter share3 comme point de terminaison cloud supplémentaire pour Sync1.",
+    "s2": "Vous pouvez ajouter data2 comme point de terminaison serveur supplémentaire pour Sync1.",
+    "s3": "Vous pouvez ajouter data3 comme point de terminaison serveur supplémentaire pour Sync1."
+   }
+  }
+ },
+
+ "156": {
+  "interactive": {
+   "statements": {
+    "s1": "Le 10 octobre, vous pouvez lire Dep1File1.docx sans délai.",
+    "s2": "Le 10 octobre, vous pouvez lire File2.docx sans délai.",
+    "s3": "Le 10 octobre, vous pouvez lire File3.docx sans délai."
+   }
+  }
+ },
+
+ "199": {
+  "text": [
+   "Vous disposez d'un compte de stockage Azure nommé storage1 qui contient deux conteneurs nommés container1 et container2. Le versionnage des objets blob est activé sur les deux conteneurs. Vous prenez régulièrement des instantanés des objets blob critiques. Vous créez la stratégie de gestion du cycle de vie suivante.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — la stratégie comporte tierToCool avec daysAfterCreationGreaterThan 15.\n\nBox 2 : Non — le filtre prefixMatch cible container1. La stratégie de gestion du cycle de vie ne s'applique donc pas à container2.\n\nRemarque : le versionnage du stockage Blob conserve automatiquement les versions précédentes d'un objet et les horodate. Vous pouvez restaurer une version antérieure pour récupérer des données modifiées ou supprimées par erreur.\n\nBox 3 : Non — la stratégie comporte tierToArchive avec daysAfterLastTierChangeGreaterThan 7, soit après 7 jours et non après 30.",
+  "interactive": {
+   "statements": {
+    "s1": "Un instantané d'objet blob passe automatiquement au niveau d'accès Cool au bout de 15 jours.",
+    "s2": "Une version d'objet blob dans container2 passe automatiquement au niveau d'accès Archive au bout de 30 jours.",
+    "s3": "Une version réhydratée passe automatiquement au niveau d'accès Archive au bout de 30 jours."
+   }
+  }
+ },
+
+ "232": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 dont les quotas sont présentés dans le tableau suivant.",
+   "Vous déployez dans Subscription1 les machines virtuelles présentées dans le tableau suivant.",
+   "Vous prévoyez de déployer les machines virtuelles présentées dans le tableau suivant.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Le quota régional total est de 20 vCPU, toutes tailles de machines virtuelles confondues. La machine virtuelle désallouée avec ses 16 vCPU est comptabilisée dans ce total. VM20 et VM1 consomment 18 des 20 vCPU disponibles : il ne reste donc que deux vCPU.",
+  "interactive": {
+   "statements": {
+    "s1": "Vous pouvez déployer VM3 dans West US.",
+    "s2": "Vous pouvez déployer VM4 dans West US.",
+    "s3": "Vous pouvez déployer VM5 dans West US."
+   }
+  }
+ },
+
+ "293": {
+  "interactive": {
+   "statements": {
+    "s1": "Les commandes créeront quatre nouvelles ressources.",
+    "s2": "Les commandes créeront des comptes de stockage dans la région Azure West US.",
+    "s3": "Le premier compte de stockage créé aura le préfixe 0."
+   }
+  }
+ },
+
+ "319": {
+  "text": [
+   "Vous disposez d'un abonnement Azure qui contient les réseaux virtuels présentés dans le tableau suivant.",
+   "L'abonnement contient les machines virtuelles présentées dans le tableau suivant.",
+   "L'abonnement contient les applications web Azure App Service présentées dans le tableau suivant.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — WebApp1 utilise le niveau tarifaire Premium et bénéficie de l'intégration au réseau virtuel VNet1. VNet1 est appairé avec VNet2, qui contient VM2.\n\nRemarque : l'intégration au réseau virtuel permet la connexion à un réseau virtuel de la même région. Elle donne accès aux ressources du réseau intégré, aux ressources des réseaux virtuels appairés (y compris en appairage global), aux ressources accessibles via Azure ExpressRoute, aux services sécurisés par point de terminaison de service et aux services exposés par point de terminaison privé.\n\nBox 2 : Non — NSG1 est associé à Subnet1 dans VNet1. Avec l'intégration au réseau virtuel, un groupe de sécurité réseau placé sur le sous-réseau d'intégration permet de bloquer le trafic sortant ; les règles entrantes ne s'appliquent pas, car l'intégration au réseau virtuel ne fournit pas d'accès entrant vers l'application.\n\nBox 3 : Non — WebApp2 utilise le niveau tarifaire Isolated et est déployée dans Subnet2. C'est VM2, et non VM1, qui se trouve dans Subnet2. Par ailleurs, la fonctionnalité n'est pas disponible pour les applications de plan Isolated dans un App Service Environment.",
+  "interactive": {
+   "statements": {
+    "s1": "WebApp1 peut communiquer avec VM2.",
+    "s2": "NSG1 contrôle le trafic entrant vers WebApp1.",
+    "s3": "WebApp2 peut communiquer avec VM1."
+   }
+  }
+ },
+
+ "369": {
+  "text": [
+   "Vous disposez d'un abonnement Azure qui contient les ressources présentées dans le tableau suivant.",
+   "Vous installez le rôle serveur Web Server (IIS) sur VM1 et VM2, puis ajoutez VM1 et VM2 à LB1. LB1 est configuré comme dans la capture LB1.",
+   "Rule1 est configurée comme dans la capture Rule1.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — un équilibreur de charge de référence Basic ne prend en charge que des machines virtuelles appartenant à un même groupe à haute disponibilité ou à un même groupe de machines virtuelles identiques.\n\nBox 2 : Oui — les règles d'équilibrage d'Azure Load Balancer exigent une sonde d'intégrité pour déterminer l'état des points de terminaison back-end. La configuration de la sonde et les réponses reçues déterminent quelles instances du pool reçoivent de nouveaux flux. Lorsqu'une sonde échoue, l'équilibreur cesse d'envoyer de nouveaux flux vers l'instance concernée ; seule la connectivité entrante est affectée, pas la connectivité sortante.\n\nBox 3 : Non — sans Rule1, LB1 n'équilibre plus le trafic : une règle d'équilibrage est nécessaire pour distribuer les requêtes.",
+  "interactive": {
+   "statements": {
+    "s1": "VM1 se trouve dans le même groupe à haute disponibilité que VM2.",
+    "s2": "Si Probe1.htm est présent sur VM1 et VM2, LB1 équilibrera le port TCP 80 entre VM1 et VM2.",
+    "s3": "Si vous supprimez Rule1, LB1 équilibrera toutes les requêtes entre VM1 et VM2 sur tous les ports."
+   }
+  }
+ },
+
+ "502": {
+  "text": [
+   "Vous disposez du rôle personnalisé de contrôle d'accès en fonction du rôle (RBAC) suivant.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "interactive": {
+   "statements": {
+    "s1": "Les utilisateurs auxquels Role1 est attribué peuvent attribuer Role1 à d'autres utilisateurs.",
+    "s2": "Les utilisateurs auxquels Role1 est attribué peuvent déployer de nouvelles machines virtuelles.",
+    "s3": "Les utilisateurs auxquels Role1 est attribué peuvent définir une adresse IP statique sur une machine virtuelle."
+   }
+  }
+ },
+
  "507": {
   "text": [
    "Vous disposez d'un abonnement Azure qui contient une machine virtuelle nommée VM1. VM1 possède un disque de système d'exploitation nommé Disk1 et un disque de données nommé Disk2. Vous devez sauvegarder Disk2 à l'aide d'Azure Backup. Quelles trois actions devez-vous effectuer, et dans quel ordre ? Pour répondre, déplacez les actions appropriées de la liste vers la zone de réponse et classez-les dans le bon ordre."
@@ -48,6 +331,24 @@
   "interactive": {
    "prompt": "Faites glisser les trois actions vers la zone de réponse, dans le bon ordre.",
    "targets": { "step1": "Étape 1", "step2": "Étape 2", "step3": "Étape 3" }
+  }
+ },
+
+ "529": {
+  "text": [
+   "Vous disposez d'un abonnement Azure qui contient deux comptes de stockage nommés contoso101 et contoso102. L'abonnement contient les machines virtuelles présentées dans le tableau suivant.",
+   "VNet1 dispose des points de terminaison de service configurés comme dans la capture « Service endpoints ».",
+   "Le point de terminaison de service Microsoft.Storage est régi par la stratégie présentée dans la capture « Microsoft.Storage ».",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — VM1 est connectée à VNet1/Subnet1 et dispose d'une adresse IP publique de référence Basic. Subnet1 porte un point de terminaison de service Microsoft.Storage, et la stratégie associée contient le compte de stockage contoso1.\n\nRemarque : le point de terminaison de service Azure Storage (Microsoft.Storage) est disponible dans toutes les régions Azure. Vous pouvez configurer un compte de stockage pour n'autoriser l'accès que depuis certains sous-réseaux, y compris des sous-réseaux d'un autre abonnement ou d'un autre locataire Microsoft Entra.\n\nBox 2 : Non — VM2 est connectée à VNet1/Subnet2 et dispose d'une adresse IP publique de référence Standard. Subnet2 ne porte qu'un point de terminaison de service Microsoft.AzureActiveDirectory.\n\nBox 3 : Non — pour la même raison : Subnet2 ne porte qu'un point de terminaison Microsoft.AzureActiveDirectory, utilisé par l'intégration au réseau virtuel de Data Lake Storage Gen1, et non pour joindre Microsoft Entra ID par une adresse IP privée.",
+  "interactive": {
+   "statements": {
+    "s1": "VM1 peut accéder à contoso102.",
+    "s2": "VM2 peut accéder à contoso101.",
+    "s3": "VM2 utilise une adresse IP privée pour accéder à Microsoft Entra ID."
+   }
   }
  },
 

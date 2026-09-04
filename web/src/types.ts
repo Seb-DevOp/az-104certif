@@ -28,14 +28,17 @@ export interface Question {
   /** Answer-key screenshots, hidden until the answer is revealed. */
   answerImages: string[];
   page: number;
-  /** Present only for questions upgraded to a playable drag-and-drop. */
-  interactive?: DragDropSpec;
+  /** Present only for questions upgraded to a playable form. */
+  interactive?: InteractiveSpec;
 }
 
 /**
- * An exam-style "drag the item onto the target" question. Authored in
- * data/interactive.json for questions whose answer key is otherwise just a screenshot.
+ * A question the dump only carries as a screenshot, transcribed into something the learner
+ * can actually answer. Authored in web/public/data/interactive.json, keyed by question id.
  */
+export type InteractiveSpec = DragDropSpec | YesNoSpec;
+
+/** An exam-style "drag the item onto the target" question. */
 export interface DragDropSpec {
   kind: 'dragdrop';
   /** Prompt shown above the board, e.g. "Drag each action to the right step". */
@@ -48,6 +51,17 @@ export interface DragDropSpec {
   exhaustive?: boolean;
 }
 
+/**
+ * The exam's "select Yes if the statement is true, otherwise No" grid — the single most
+ * common hot-area shape in this dump.
+ */
+export interface YesNoSpec {
+  kind: 'yesno';
+  prompt?: string;
+  /** `answer: true` means Yes is correct for that row. */
+  statements: { id: string; text: string; answer: boolean }[];
+}
+
 export type Lang = 'fr' | 'en';
 
 /** Per-question French text, keyed by question id. Missing entries fall back to English. */
@@ -55,11 +69,12 @@ export interface Translation {
   text?: string[];
   options?: Record<string, string>;
   explanation?: string;
-  /** French labels for a hand-authored drag-and-drop, keyed by item / target id. */
+  /** French labels for a hand-authored interactive question, keyed by element id. */
   interactive?: {
     prompt?: string;
     items?: Record<string, string>;
     targets?: Record<string, string>;
+    statements?: Record<string, string>;
   };
 }
 
