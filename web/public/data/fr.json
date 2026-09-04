@@ -4744,6 +4744,555 @@
   },
   "explanation": "L'équilibreur de charge Azure prend en charge plusieurs modes de distribution vers les instances du pool principal. Avec la persistance de session « Client IP », le trafic issu d'une même adresse IP cliente est toujours dirigé vers la même instance."
  },
+ "444": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Sub1. Vous prévoyez de déployer une application multi-niveaux comportant les niveaux présentés dans le tableau suivant.",
+   "Vous devez recommander une solution réseau répondant aux exigences suivantes : répartir équitablement entre les machines virtuelles la communication entre les serveurs web et le niveau de logique métier, et protéger les serveurs web des attaques par injection SQL. Quelle ressource Azure devez-vous recommander pour chaque exigence ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : un équilibreur de charge interne. L'équilibreur de charge interne Azure assure la répartition de charge réseau entre des machines virtuelles situées dans un service cloud ou un réseau virtuel de portée régionale.\n\nBox 2 : une passerelle Application Gateway de niveau WAF. Le pare-feu d'applications web (WAF) d'Azure Application Gateway offre une protection centralisée de vos applications."
+ },
+ "445": {
+  "text": [
+   "Votre entreprise dispose de trois bureaux, à Miami, Los Angeles et New York, chacun doté d'un centre de données. Vous disposez d'un abonnement Azure contenant des ressources dans les régions Azure East US et West US, chacune abritant un réseau virtuel ; ces réseaux virtuels sont appairés. Vous devez connecter les centres de données à l'abonnement en limitant la latence réseau entre eux. Que devez-vous créer ?"
+  ],
+  "options": {
+   "A": "trois passerelles Azure Application Gateway et une passerelle de données locale",
+   "B": "trois hubs virtuels et un WAN virtuel",
+   "C": "trois WAN virtuels et un hub virtuel",
+   "D": "trois passerelles de données locales et une passerelle Azure Application Gateway"
+  }
+ },
+ "446": {
+  "text": [
+   "Vous disposez d'un abonnement Azure comportant les adresses IP publiques présentées dans le tableau suivant.",
+   "Vous prévoyez de déployer un hôte Azure Bastion de référence Basic nommé Bastion1. Quelles adresses IP pouvez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "IP1 uniquement",
+   "B": "IP1 et IP2 uniquement",
+   "C": "IP3, IP4 et IP5 uniquement",
+   "D": "IP1, IP2, IP4 et IP5 uniquement",
+   "E": "IP1, IP2, IP3, IP4 et IP5"
+  }
+ },
+ "447": {
+  "text": [
+   "Vous disposez de cinq machines virtuelles Azure sous Windows Server 2016, configurées en serveurs web. Un équilibreur de charge Azure nommé LB1 assure la répartition de charge entre ces machines. Vous devez faire en sorte qu'un visiteur soit servi par le même serveur web à chaque requête. Que devez-vous configurer ?"
+  ],
+  "options": {
+   "A": "Floating IP (retour direct au serveur) sur Désactivé",
+   "B": "Floating IP (retour direct au serveur) sur Activé",
+   "C": "Une sonde d'intégrité",
+   "D": "La persistance de session sur « Client IP »"
+  },
+  "explanation": "L'équilibreur de charge Azure prend en charge plusieurs modes de distribution vers les instances du pool principal. Avec la persistance de session « Client IP », le trafic issu d'une même adresse IP cliente est toujours dirigé vers la même instance ; en mode fondé sur le hachage, il peut aller vers n'importe quelle instance saine du pool."
+ },
+ "448": {
+  "text": [
+   "Vous disposez de cinq machines virtuelles Azure sous Windows Server 2016, configurées en serveurs web. Un équilibreur de charge Azure nommé LB1 assure la répartition de charge entre ces machines. Vous devez faire en sorte qu'un visiteur soit servi par le même serveur web à chaque requête. Que devez-vous configurer ?"
+  ],
+  "options": {
+   "A": "Floating IP (retour direct au serveur) sur Activé",
+   "B": "Le délai d'inactivité (minutes) sur 20",
+   "C": "Une sonde d'intégrité",
+   "D": "La persistance de session sur « Client IP »"
+  },
+  "explanation": "L'équilibreur de charge Azure prend en charge plusieurs modes de distribution vers les instances du pool principal. Avec la persistance de session « Client IP », le trafic issu d'une même adresse IP cliente est toujours dirigé vers la même instance ; en mode fondé sur le hachage, il peut aller vers n'importe quelle instance saine du pool."
+ },
+ "449": {
+  "text": [
+   "Vous disposez de cinq machines virtuelles Azure sous Windows Server 2016, configurées en serveurs web. Un équilibreur de charge Azure nommé LB1 assure la répartition de charge entre ces machines. Vous devez faire en sorte qu'un visiteur soit servi par le même serveur web à chaque requête. Que devez-vous configurer ?"
+  ],
+  "options": {
+   "A": "La persistance de session sur « Client IP and protocol »",
+   "B": "Le délai d'inactivité (minutes) sur 20",
+   "C": "La persistance de session sur « None »",
+   "D": "Floating IP (retour direct au serveur) sur Activé"
+  },
+  "explanation": "Avec les sessions persistantes, lorsqu'un client ouvre une session sur l'un de vos serveurs web, celle-ci reste sur ce serveur. Pour configurer un équilibreur de charge Azure en ce sens, réglez la persistance de session sur « Client IP » ou sur « Client IP and protocol »."
+ },
+ "450": {
+  "text": [
+   "Vous disposez de cinq machines virtuelles Azure sous Windows Server 2016, configurées en serveurs web. Un équilibreur de charge Azure nommé LB1 assure la répartition de charge entre ces machines. Vous devez faire en sorte qu'un visiteur soit servi par le même serveur web à chaque requête. Que devez-vous configurer ?"
+  ],
+  "options": {
+   "A": "Floating IP (retour direct au serveur) sur Désactivé",
+   "B": "Le délai d'inactivité (minutes) sur 20",
+   "C": "Une sonde d'intégrité",
+   "D": "La persistance de session sur « Client IP »"
+  },
+  "explanation": "Avec les sessions persistantes, lorsqu'un client ouvre une session sur l'un de vos serveurs web, celle-ci reste sur ce serveur. Pour configurer un équilibreur de charge Azure en ce sens, réglez la persistance de session sur « Client IP » ou sur « Client IP and protocol »."
+ },
+ "451": {
+  "text": [
+   "Vous disposez de cinq machines virtuelles Azure sous Windows Server 2016, configurées en serveurs web. Un équilibreur de charge Azure nommé LB1 assure la répartition de charge entre ces machines. Vous devez faire en sorte qu'un visiteur soit servi par le même serveur web à chaque requête. Que devez-vous configurer ?"
+  ],
+  "options": {
+   "A": "La persistance de session sur « Client IP »",
+   "B": "Le délai d'inactivité (minutes) sur 20",
+   "C": "La persistance de session sur « None »",
+   "D": "Le protocole sur UDP"
+  },
+  "explanation": "Avec les sessions persistantes, lorsqu'un client ouvre une session sur l'un de vos serveurs web, celle-ci reste sur ce serveur. Pour configurer un équilibreur de charge Azure en ce sens, réglez la persistance de session sur « Client IP » ou sur « Client IP and protocol »."
+ },
+ "452": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un coffre Recovery Services nommé Vault1. Vous devez y activer l'autorisation multi-utilisateur (MAU). Quelle ressource devez-vous créer en premier ?"
+  ],
+  "options": {
+   "A": "une unité administrative",
+   "B": "une identité managée",
+   "C": "un resource guard",
+   "D": "un rôle Azure personnalisé"
+  },
+  "explanation": "Pour activer l'autorisation multi-utilisateur dans Azure Backup, il faut créer un resource guard. Prérequis : le resource guard et le coffre Recovery Services doivent se trouver dans la même région Azure, et l'administrateur de sauvegarde ne doit pas disposer de permissions Contributor sur le resource guard. Celui-ci peut être placé dans un autre abonnement du même annuaire."
+ },
+ "453": {
+  "text": [
+   "Vous créez une machine virtuelle Azure nommée VM1 sous Windows Server 2019. VM1 est configurée comme dans la capture.",
+   "Vous devez activer Desired State Configuration pour VM1. Que devez-vous faire en premier ?"
+  ],
+  "options": {
+   "A": "Vous connecter à VM1.",
+   "B": "Démarrer VM1.",
+   "C": "Prendre un instantané de VM1.",
+   "D": "Configurer un nom DNS pour VM1."
+  },
+  "explanation": "L'état de la machine est « Arrêté (désalloué) ». Or l'extension DSC pour Windows exige que la machine virtuelle cible puisse communiquer avec Azure : elle doit donc être démarrée."
+ },
+ "454": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les réseaux virtuels présentés dans le tableau suivant.",
+   "Les sous-réseaux ont les espaces d'adressage présentés dans le tableau suivant.",
+   "Vous prévoyez de créer une application conteneurisée nommée contapp1 dans la région Azure East US. Vous devez créer un environnement d'applications conteneurisées nommé con-env1 répondant aux exigences suivantes : utiliser son propre réseau virtuel existant, utiliser son propre sous-réseau nouvellement créé, et être connecté au plus petit sous-réseau possible. À quels réseaux virtuels pouvez-vous connecter con-env1, et quel masque de sous-réseau devez-vous utiliser ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : VNet1, VNet2 ou VNet3 — tous trois disposent de sous-réseaux suffisamment grands, et les restrictions de plage d'adresses de sous-réseau ne s'appliquent pas.\n\nRemarque sur la configuration d'un réseau virtuel personnalisé : si vous souhaitez que votre application conteneurisée interdise tout accès extérieur, créez un environnement Container Apps interne."
+ },
+ "455": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les réseaux virtuels présentés dans le tableau suivant.",
+   "Tous ces réseaux virtuels sont appairés et chacun contient neuf machines virtuelles. Vous devez configurer des connexions RDP sécurisées vers ces machines au moyen d'Azure Bastion. Quel est le nombre minimal d'hôtes Bastion nécessaires ?"
+  ]
+ },
+ "456": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les réseaux virtuels présentés dans le tableau suivant.",
+   "L'abonnement contient les machines virtuelles présentées dans le tableau suivant.",
+   "Chaque machine virtuelle ne possède qu'une adresse IP privée. Vous créez un hôte Azure Bastion pour VNet1, comme présenté dans la capture suivante.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — VM1 et Bastion1 se trouvent dans le même réseau virtuel."
+ },
+ "457": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les réseaux virtuels présentés dans le tableau suivant.",
+   "L'abonnement contient les sous-réseaux présentés dans le tableau suivant.",
+   "L'abonnement contient les comptes de stockage présentés dans le tableau suivant.",
+   "Vous créez dans la région Azure South Central US une stratégie de point de terminaison de service nommée Policy1, autorisant la connectivité vers tous les comptes de stockage de l'abonnement. Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — Policy1 est une stratégie de point de terminaison de service dans la région South Central US ; Subnet3 appartient à VNET3, qui possède un point de terminaison Microsoft.Storage et se trouve dans cette même région.\n\nRemarque : les stratégies de point de terminaison de service pour Azure Storage permettent de filtrer le trafic sortant d'un réseau virtuel vers Azure Storage."
+ },
+ "458": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un groupe de ressources nommé RG1 et un réseau virtuel nommé VNet1. Vous prévoyez de créer une instance de conteneur Azure nommée container1 et devez pouvoir y configurer la réutilisation de la portée de l'étiquette de nom DNS. Que devez-vous configurer pour container1 ?"
+  ],
+  "options": {
+   "A": "le type de réseau privé",
+   "B": "le type de réseau public",
+   "C": "un nouveau sous-réseau sur VNet1",
+   "D": "une référence confidentielle"
+  },
+  "explanation": "Dans le portail Azure, la stratégie de réutilisation du nom DNS se définit sous l'onglet Réseau, lors de la création de l'instance de conteneur, au moyen du champ de portée de réutilisation de l'étiquette de nom DNS."
+ },
+ "459": {
+  "text": [
+   "Vous disposez des machines virtuelles Azure présentées dans le tableau suivant.",
+   "VNET1, VNET2 et VNET3 sont appairés. VM4 héberge un serveur DNS faisant autorité sur une zone nommée contoso.com et contenant les enregistrements présentés dans le tableau suivant.",
+   "VNET1 et VNET2 sont liés à une zone DNS privée Azure nommée contoso.com, qui contient les enregistrements présentés dans le tableau suivant.",
+   "Les réseaux virtuels sont configurés pour utiliser les serveurs DNS présentés dans le tableau suivant.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — VM1 se trouve dans VNET1, où Server1 se résout en 131.107.3.3.\n\nBox 2 : Non — VM2 se trouve dans VNET2, qui utilise le serveur DNS personnalisé 192.168.0.5.\n\nBox 3 : Oui."
+ },
+ "460": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un groupe de ressources nommé RG1. Vous prévoyez de créer un modèle Azure Resource Manager (ARM) pour déployer une nouvelle machine virtuelle nommée VM1, qui devra permettre la capture de données de performance. Vous devez indiquer les dépendances entre ressources dans ce modèle. Dans quel ordre devez-vous déployer les ressources ? Pour répondre, déplacez toutes les ressources de la liste vers la zone de réponse et classez-les dans le bon ordre."
+  ],
+  "explanation": "Étape 1 : le réseau virtuel.\n\nÉtape 2 : l'interface réseau (Microsoft.Network/networkInterfaces), qui dépend de deux autres ressources : Microsoft.Network/publicIPAddresses et Microsoft.Network/virtualNetworks."
+ },
+ "461": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les réseaux virtuels présentés dans le tableau suivant.",
+   "L'abonnement contient les machines virtuelles présentées dans le tableau suivant.",
+   "Toutes ces machines virtuelles ne possèdent que des adresses IP privées. Vous déployez un hôte Azure Bastion nommé Bastion1 dans VNet1. À quelles machines virtuelles pouvez-vous vous connecter via Bastion1 ?"
+  ],
+  "options": {
+   "A": "VM1 uniquement",
+   "B": "VM1 et VM2 uniquement",
+   "C": "VM1 et VM3 uniquement",
+   "D": "VM1, VM2 et VM3"
+  },
+  "explanation": "Il faut un hôte Bastion par région lorsque les réseaux virtuels de la région sont appairés. VM1 et VM2 se trouvent dans la même région que Bastion1.\n\nRemarque : Azure Bastion et l'appairage de réseaux virtuels s'utilisent conjointement. Lorsque l'appairage est configuré, il n'est pas nécessaire de déployer un hôte Bastion dans chaque réseau appairé."
+ },
+ "462": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous prévoyez d'y migrer 50 machines virtuelles depuis VMware vSphere. Vous créez un coffre Recovery Services. Que devez-vous faire ensuite ?"
+  ],
+  "options": {
+   "A": "Configurer un réseau étendu.",
+   "B": "Créer un plan de récupération.",
+   "C": "Déployer un modèle OVA (Open Virtualization Application) sur vSphere.",
+   "D": "Configurer un réseau virtuel."
+  },
+  "explanation": "Pour migrer des machines virtuelles VMware vSphere vers Azure avec la méthode par agent, il faut préparer Azure : créer un projet Azure Migrate — ce qui suppose des permissions Contributor ou Owner — et vérifier que votre compte Azure dispose des droits nécessaires à la création de machines virtuelles."
+ },
+ "463": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les réseaux virtuels présentés dans le tableau suivant.",
+   "Chaque réseau virtuel compte 50 machines virtuelles connectées. Vous devez mettre en place Azure Bastion en respectant les exigences suivantes : prendre en charge la mise à l'échelle des hôtes, permettre le téléversement et le téléchargement de fichiers, desservir les machines virtuelles de VNet1 comme de VNet2, et limiter le nombre d'adresses du sous-réseau Azure Bastion. Comment devez-vous configurer Azure Bastion ?",
+   "REMARQUE : chaque bonne réponse vaut un point."
+  ],
+  "explanation": "Box 1 : /26. Le sous-réseau Azure Bastion doit être créé dans le réseau virtuel où vous déployez Bastion, se nommer AzureBastionSubnet et faire au moins /26 (ou plus grand : /25, /24…). Un /26 au minimum est recommandé pour la mise à l'échelle des hôtes."
+ },
+ "464": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les réseaux virtuels présentés dans le tableau suivant.",
+   "Vous devez faire en sorte que tout le trafic entre VNet1 et VNet2 emprunte le réseau fédérateur Microsoft. Que devez-vous configurer ?"
+  ],
+  "options": {
+   "A": "un point de terminaison privé",
+   "B": "l'appairage",
+   "C": "ExpressRoute",
+   "D": "une table de routage"
+  }
+ },
+ "465": {
+  "text": [
+   "Vous disposez des réseaux virtuels Azure présentés dans le tableau suivant.",
+   "Quels réseaux virtuels pouvez-vous appairer avec VNet1 ?"
+  ],
+  "options": {
+   "A": "VNet2, VNet3 et VNet4",
+   "B": "VNet2 uniquement",
+   "C": "VNet3 et VNet4 uniquement",
+   "D": "VNet2 et VNet3 uniquement"
+  }
+ },
+ "466": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous créez une instance de conteneur Azure avec les paramètres suivants : nom du conteneur cont1 ; référence Standard.",
+   "Type de système d'exploitation Windows ; type de réseau public ; mémoire 2,5 Gio ; nombre de cœurs de processeur 2. Vous constatez que le paramètre « Privé » du type de réseau n'est pas disponible. Vous devez faire en sorte que cont1 puisse utiliser un réseau privé. Quel paramètre devez-vous modifier ?"
+  ],
+  "options": {
+   "A": "Mémoire (Gio)",
+   "B": "Type de réseau",
+   "C": "Nombre de cœurs de processeur",
+   "D": "Type de système d'exploitation",
+   "E": "Référence (SKU)"
+  }
+ },
+ "467": {
+  "text": [
+   "Vous disposez d'un réseau virtuel Azure nommé VNet1 ainsi configuré : espace d'adressage IPv4 172.16.10.0/24 ; sous-réseau nommé Subnet1 ; plage d'adresses du sous-réseau 172.16.10.0/25. Quel est le nombre maximal de machines virtuelles pouvant se connecter à Subnet1 ?"
+  ],
+  "explanation": "Dans un réseau virtuel Azure, les quatre premières adresses IP et la dernière d'un bloc CIDR sont réservées et ne peuvent pas être attribuées à d'autres ressources.\n\nPour 172.16.10.0/25 : 128 adresses au total, 126 hôtes utilisables au sens classique, soit une plage de 172.16.10.1 à 172.16.10.126."
+ },
+ "468": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "Vous créez une table de routage nommée RT1 dans la région Azure East US. À quelles ressources pouvez-vous l'associer ?"
+  ],
+  "options": {
+   "A": "VNet1 uniquement",
+   "B": "Subnet1 uniquement",
+   "C": "VNet1 et NIC1 uniquement",
+   "D": "Subnet1 et NIC1 uniquement",
+   "E": "VNet1, Subnet1 et NIC1"
+  },
+  "explanation": "Azure achemine automatiquement le trafic entre sous-réseaux, réseaux virtuels et réseaux locaux. Pour modifier ce routage par défaut, vous créez une table de routage. Une table de routage s'associe à un sous-réseau — à zéro, un ou plusieurs — mais pas aux interfaces réseau ni aux réseaux virtuels."
+ },
+ "469": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous créez une table de routage nommée RT1 et devez y ajouter un itinéraire précisant l'adresse IP du tronçon suivant. Quel type de tronçon suivant devez-vous sélectionner ?"
+  ],
+  "options": {
+   "A": "Internet",
+   "B": "Passerelle de réseau virtuel",
+   "C": "Réseau virtuel",
+   "D": "Appliance virtuelle"
+  }
+ },
+ "470": {
+  "text": [
+   "Vous disposez de deux abonnements Azure nommés Sub1 et Sub2, rattachés à des locataires Microsoft Entra distincts.",
+   "Vous disposez des réseaux virtuels présentés dans le tableau suivant. Quels réseaux virtuels pouvez-vous appairer avec VNet1 ?"
+  ],
+  "options": {
+   "A": "VNet2 uniquement",
+   "B": "VNet2 et VNet3 uniquement",
+   "C": "VNet2 et VNet4 uniquement",
+   "D": "VNet2, VNet3 et VNet4 uniquement",
+   "E": "VNet2, VNet3, VNet4 et VNet5"
+  },
+  "explanation": "VNet2 convient : même emplacement et même abonnement que VNet1. VNet3 convient également : même abonnement, mais région différente — l'appairage de réseaux virtuels situés dans des régions différentes s'appelle l'appairage global. VNet4 convient aussi, dans un abonnement différent."
+ },
+ "471": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les réseaux virtuels présentés dans le tableau suivant.",
+   "Vous disposez des options d'appairage présentées dans la capture suivante.",
+   "Vous devez concevoir une stratégie de communication pour les ressources de ces réseaux virtuels. Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Non — l'appairage 1-2 est une configuration possible. Il relie VNet1 (East US, de type Azure Government) et VNet2 (West US 2, de type Public).\n\nRemarque : l'appairage de réseaux virtuels entre régions différentes s'appelle l'appairage global, disponible dans toutes les régions Azure."
+ },
+ "472": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un compte de stockage nommé storage1. Vous devez autoriser l'accès à storage1 depuis des réseaux sélectionnés et depuis votre bureau à domicile, en limitant l'effort d'administration. Que devez-vous faire en premier sur storage1 ?"
+  ],
+  "options": {
+   "A": "Ajouter un point de terminaison privé.",
+   "B": "Modifier les paramètres d'accès au réseau public.",
+   "C": "Sélectionner le routage Internet.",
+   "D": "Modifier les paramètres de contrôle d'accès (IAM)."
+  }
+ },
+ "473": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "Vous créez une adresse IP publique nommée IP1. À quelles deux ressources pouvez-vous l'associer ? Chaque bonne réponse constitue une solution complète.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "B : un équilibreur de charge Azure doit avoir une adresse IP associée à une configuration frontale. Une adresse IP publique distincte peut servir de frontale pour le trafic entrant et sortant ; pour la changer, vous associez à la frontale une nouvelle adresse IP publique créée au préalable."
+ },
+ "474": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les machines virtuelles présentées dans le tableau suivant.",
+   "L'abonnement contient un compte de stockage nommé contoso2024, présenté dans la capture suivante.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non."
+  ],
+  "explanation": "Box 1 : Oui — VM1 possède l'adresse IP publique 131.107.10.10 et est connectée à VNet1/Subnet1. Le réseau est autorisé pour VNet1 sur ce sous-réseau pour les adresses 131.107.10.10, 150.120.10.10 et 170.20.10.10.\n\nBox 2 : Non — VM2 se trouve sur VNet1/Subnet2."
+ },
+ "475": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant deux réseaux virtuels appairés nommés VNet1 et VNet2. VNet1 possède une passerelle VPN en routage statique, et le réseau local dispose d'une connexion VPN vers cette passerelle. Vous devez permettre aux utilisateurs du réseau local de se connecter à une machine virtuelle de VNet2, en limitant les coûts. Quel type de connectivité devez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "Azure Firewall avec une adresse IP privée",
+   "B": "le chaînage de services et des itinéraires définis par l'utilisateur (UDR)",
+   "C": "Azure Application Gateway",
+   "D": "des circuits ExpressRoute vers VNet2"
+  },
+  "explanation": "Le chaînage de services permet de diriger le trafic d'un réseau virtuel vers une appliance virtuelle ou une passerelle située dans un réseau appairé, au moyen d'itinéraires définis par l'utilisateur. Pour l'activer, configurez des itinéraires pointant vers des machines virtuelles de réseaux virtuels appairés comme adresse IP de tronçon suivant."
+ },
+ "476": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant deux réseaux virtuels appairés nommés VNet1 et VNet2, ainsi qu'une appliance virtuelle réseau nommée NetVA1. Vous devez faire en sorte que le trafic de VNet1 vers VNet2 soit inspecté par NetVA1. Que devez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "une passerelle de réseau local",
+   "B": "une table de routage comportant des itinéraires personnalisés",
+   "C": "un point de terminaison de service",
+   "D": "des réservations d'adresses IP"
+  },
+  "explanation": "Le chaînage de services permet de diriger le trafic d'un réseau virtuel vers une appliance virtuelle ou une passerelle située dans un réseau appairé, au moyen d'itinéraires définis par l'utilisateur pointant vers des machines virtuelles des réseaux appairés comme adresse IP de tronçon suivant."
+ },
+ "477": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Vous prévoyez de déployer le fichier suivant, nommé File1.bicep.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Non — le nom du réseau virtuel est fixé à VNET1 ; c'est son emplacement, et non son nom, qui reprend celui du groupe de ressources.\n\nBox 2 : Oui — les deux objets de sous-réseau seront correctement approvisionnés."
+ },
+ "478": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un groupe de ressources nommé RG1, et d'un fichier nommé File1.bicep présenté dans la capture « File1.bicep ».",
+   "Vous créez un fichier nommé File2.bicep, présenté dans la capture « File2.bicep ».",
+   "Vous exécutez les commandes PowerShell suivantes : New-AzResourceGroupDeployment -ResourceGroupName RG1 -TemplateFile File1.bicep, puis New-AzResourceGroupDeployment -Whatif -ResourceGroupName RG1 -TemplateFile File2.bicep. Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — l'étiquette CostCenter de VNet1 vaut 12345. Seul File1.bicep sert au déploiement effectif : File2.bicep est exécuté avec l'opération -Whatif, qui se contente de prévisualiser les changements sans les appliquer."
+ },
+ "479": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un réseau virtuel nommé VNet1, qui héberge des machines virtuelles sur lesquelles le Bureau à distance est activé. Plusieurs utilisateurs prévoient de travailler à distance et de s'y connecter depuis leur domicile. Vous devez configurer la connectivité vers ces machines pour prendre en charge une connexion VPN de point à site pour chaque utilisateur. Quelles trois actions devez-vous effectuer, et dans quel ordre ? Pour répondre, déplacez les actions appropriées de la liste vers la zone de réponse et classez-les dans le bon ordre."
+  ],
+  "explanation": "Une connexion de passerelle VPN de point à site permet d'établir une connexion sécurisée vers votre réseau virtuel depuis un poste client isolé ; elle est initiée depuis ce poste.\n\nÉtape 1 : créer un nouveau sous-réseau dans VNet1. Un sous-réseau de passerelle est indispensable : il contient les adresses IP utilisées par la passerelle de réseau virtuel."
+ },
+ "480": {
+  "text": [
+   "Vous déployez des machines virtuelles Azure dans trois régions Azure. Chaque région contient un réseau virtuel, lui-même composé de plusieurs sous-réseaux appairés en topologie maillée complète. Chaque sous-réseau comporte un groupe de sécurité réseau doté de règles. Un utilisateur signale qu'il ne parvient pas à utiliser le port 33000 pour se connecter depuis une machine virtuelle d'une région vers une machine virtuelle d'une autre région. Quelles deux options pouvez-vous utiliser pour diagnostiquer le problème ? Chaque bonne réponse constitue une solution complète.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "options": {
+   "A": "les règles de sécurité effectives",
+   "B": "Azure Monitor Network Insights",
+   "C": "la vérification du flux IP",
+   "D": "Azure Virtual Network Manager",
+   "E": "le dépannage de connexion"
+  },
+  "explanation": "Pour diagnostiquer un problème de connectivité entre deux réseaux virtuels appairés situés dans des régions différentes, utilisez le dépannage de connexion et la vérification du flux IP depuis la machine virtuelle source vers la machine de destination, afin de déterminer si un groupe de sécurité réseau ou un itinéraire défini par l'utilisateur perturbe les flux."
+ },
+ "481": {
+  "text": [
+   "Vous disposez de deux abonnements Azure nommés Sub1 et Sub2, contenant les réseaux virtuels présentés dans le tableau suivant.",
+   "Vous devez faire en sorte que VM1 et VM2 puissent communiquer, en limitant les coûts et l'effort d'administration. Que devez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "un itinéraire défini par l'utilisateur (UDR)",
+   "B": "l'appairage de réseaux",
+   "C": "Azure Route Server",
+   "D": "une passerelle VPN Azure",
+   "E": "une appliance virtuelle réseau (NVA)"
+  },
+  "explanation": "L'appairage permet de relier des réseaux virtuels situés dans la même région ou dans des régions différentes — on parle alors d'appairage global. Une fois appairés, les ressources des deux réseaux communiquent entre elles par une connexion à faible latence et à haut débit."
+ },
+ "482": {
+  "text": [
+   "Vous disposez d'une application web Azure nommée webapp1, d'un réseau virtuel nommé VNET1 et d'une machine virtuelle Azure nommée VM1 qui héberge une base de données MySQL et se connecte à VNET1. Vous devez faire en sorte que webapp1 puisse accéder aux données hébergées sur VM1. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Déployer un équilibreur de charge interne.",
+   "B": "Appairer VNET1 à un autre réseau virtuel.",
+   "C": "Déployer une passerelle Azure Application Gateway.",
+   "D": "Connecter webapp1 à VNET1."
+  },
+  "explanation": "Pour relier une application App Service à une base de données hébergée dans un réseau virtuel, ajoutez l'application au réseau virtuel : la commande az webapp vnet-integration ajoute une intégration régionale au réseau virtuel, en précisant le réseau et le sous-réseau visés."
+ },
+ "483": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "Vous devez créer une interface réseau nommée NIC1 sans créer de ressources supplémentaires. Dans quelle région pouvez-vous la créer ?"
+  ],
+  "options": {
+   "A": "East US uniquement",
+   "B": "East US et West Europe uniquement",
+   "C": "East US et North Europe uniquement",
+   "D": "East US, West Europe et North Europe"
+  },
+  "explanation": "Une interface réseau ne peut être affectée qu'à un réseau virtuel situé dans le même abonnement et le même emplacement qu'elle. Toute ressource connectée à un réseau virtuel, interface réseau comprise, doit résider dans la même région que ce réseau."
+ },
+ "484": {
+  "text": [
+   "Vous disposez de deux abonnements Azure nommés Sub1 et Sub2. Sub1 contient une machine virtuelle nommée VM1 et un compte de stockage nommé storage1. VM1 est associée aux ressources présentées dans le tableau suivant.",
+   "Vous déplacez VM1 vers Sub2. Quelles ressources sont déplacées vers Sub2 ?"
+  ],
+  "options": {
+   "A": "VM1, Disk1 et NetInt1 uniquement",
+   "B": "VM1, Disk1 et VNet1 uniquement",
+   "C": "VM1, Disk1 et storage1 uniquement",
+   "D": "VM1, Disk1, NetInt1 et VNet1"
+  },
+  "explanation": "Pour déplacer une machine virtuelle vers un autre abonnement Azure avec son disque système, son interface réseau et son réseau virtuel, il faut déplacer la machine et ses ressources dépendantes ensemble. Vous pouvez pour cela utiliser Azure Resource Mover ou procéder à une migration manuelle."
+ },
+ "485": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un réseau virtuel nommé VNET1 dans la région East US 2. Des interfaces réseau nommées VM1-NI et VM2-NI y sont connectées. Vous déployez avec succès le modèle Azure Resource Manager suivant.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — VM1 et VM2 peuvent se connecter à VNET1. On voit que VM1 dépend de VM1-NI et porte l'interface réseau VM2-NI.\n\nRemarque : dans un modèle ARM, la définition d'une machine virtuelle comporte généralement une propriété networkProfile, qui précise les interfaces réseau attachées à la machine."
+ },
+ "486": {
+  "text": [
+   "Vous devez faire en sorte que VM1 puisse communiquer avec VM4, en limitant l'effort d'administration. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Créer un groupe de sécurité réseau et l'associer à VM1 et VM4.",
+   "B": "Établir un appairage entre VNET1 et VNET3.",
+   "C": "Attribuer à VM4 l'adresse IP 10.0.1.5/24.",
+   "D": "Créer un itinéraire défini par l'utilisateur de VNET1 vers VNET3."
+  }
+ },
+ "487": {
+  "text": [
+   "Vous devez répondre aux exigences de connexion du bureau de New York. Que devez-vous faire ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : créer une passerelle de réseau virtuel et une passerelle de réseau local. Le service de passerelle VPN permet de relier le réseau virtuel au réseau local par l'intermédiaire d'un équipement VPN."
+ },
+ "488": {
+  "text": [
+   "Vous devez recommander une solution pour App1, répondant aux exigences techniques. Que devez-vous inclure dans la recommandation ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "L'architecture de référence correspondante montre comment déployer des machines virtuelles et un réseau virtuel configurés pour une application à N niveaux, avec SQL Server sous Windows pour le niveau de données.\n\nScénario : App1 est une application exposée publiquement, composée de trois niveaux — une base de données SQL, une interface web et un niveau intermédiaire de traitement."
+ },
+ "489": {
+  "text": [
+   "Vous préparez la migration d'App1 vers Azure et créez un groupe de sécurité réseau. Vous devez recommander une solution donnant aux utilisateurs l'accès à App1. Que devez-vous recommander ?"
+  ],
+  "options": {
+   "A": "Créer une règle de sécurité entrante pour le port 443 depuis Internet, et associer le groupe de sécurité réseau au sous-réseau qui contient les serveurs web.",
+   "B": "Créer une règle de sécurité sortante pour le port 443 depuis Internet, et associer le groupe de sécurité réseau au sous-réseau qui contient les serveurs web.",
+   "C": "Créer une règle de sécurité entrante pour le port 443 depuis Internet, et associer le groupe de sécurité réseau à tous les sous-réseaux.",
+   "D": "Créer une règle de sécurité sortante pour le port 443 depuis Internet, et associer le groupe de sécurité réseau à tous les sous-réseaux."
+  },
+  "explanation": "Une règle entrante, sur le seul sous-réseau des serveurs web, puisque les utilisateurs accèdent à l'interface web uniquement en HTTPS.\n\nScénario : App1 est une application exposée publiquement, composée de trois niveaux — une base de données SQL, une interface web et un niveau intermédiaire de traitement — chacun comptant cinq machines virtuelles."
+ },
+ "490": {
+  "text": [
+   "Vous mettez en œuvre les changements prévus pour NSG1 et NSG2. Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Non — NSG2 bloque le RDP vers VM2. Box 2 : Oui — le protocole ICMP n'est pas bloqué. Box 3 : Non — NSG2 bloque le RDP depuis VM2."
+ },
+ "491": {
+  "text": [
+   "Vous devez ajouter VM1 et VM2 au pool principal de LB1. Que devez-vous faire en premier ?"
+  ],
+  "options": {
+   "A": "Connecter VM2 à VNET1/Subnet1.",
+   "B": "Redéployer VM1 et VM2 dans la même zone de disponibilité.",
+   "C": "Redéployer VM1 et VM2 dans le même groupe à haute disponibilité.",
+   "D": "Créer un groupe de sécurité réseau et l'associer à VNET1/Subnet1."
+  }
+ },
+ "492": {
+  "text": [
+   "Vous devez faire en sorte que VM1 puisse communiquer avec VM4, en limitant l'effort d'administration. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Créer un itinéraire défini par l'utilisateur de VNET1 vers VNET3.",
+   "B": "Créer un groupe de sécurité réseau et l'associer à VM1 et VM4.",
+   "C": "Attribuer à VM4 l'adresse IP 10.0.1.5/24.",
+   "D": "Établir un appairage entre VNET1 et VNET3."
+  },
+  "explanation": "Il faut mettre en place un appairage entre VNET1 et VNET3.\n\nRemarque sur le chaînage de services : il permet de diriger le trafic d'un réseau virtuel vers une appliance virtuelle ou une passerelle d'un réseau appairé, au moyen d'itinéraires définis par l'utilisateur pointant vers des machines virtuelles des réseaux appairés."
+ },
+ "493": {
+  "text": [
+   "Vous devez mettre en œuvre les changements prévus pour User1. Quels rôles devez-vous lui attribuer, et sur quelles ressources ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Private DNS Zone Contributor. Ce rôle permet de gérer les ressources de zones DNS privées, mais pas les réseaux virtuels auxquels elles sont liées ; il autorise notamment l'action Microsoft.Network/virtualNetworks/join/action.\n\nRéponse incorrecte : DNS Zone Contributor permet de gérer les zones DNS et les jeux d'enregistrements d'Azure DNS, mais ne convient pas ici."
+ },
+ "494": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les alertes présentées dans la capture suivante.",
+   "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : ne peut pas être modifié. Alert1 est fermée : son état n'est plus modifiable.\n\nBox 2 : peut passer à « Acquittée » ou « Fermée ». Alert2 est nouvelle, sa réponse peut donc encore évoluer."
+ },
+ "495": {
+  "text": [
+   "Vous disposez d'un abonnement Azure comportant un coffre Recovery Services nommé Vault1. L'abonnement contient les machines virtuelles présentées dans le tableau suivant :",
+   "Vous prévoyez de planifier des sauvegardes chaque nuit à 23 h 00. Quelles machines virtuelles pouvez-vous sauvegarder au moyen d'Azure Backup ?"
+  ],
+  "options": {
+   "A": "VM1 et VM3 uniquement",
+   "B": "VM1, VM2, VM3 et VM4",
+   "C": "VM1 et VM2 uniquement",
+   "D": "VM1 uniquement"
+  },
+  "explanation": "Azure Backup prend en charge la sauvegarde des systèmes Windows Server 64 bits à partir de Windows Server 2008, de Windows 10 64 bits, et d'Ubuntu Server 64 bits à partir de la version 12.04. Il prend également en charge la sauvegarde des machines virtuelles arrêtées ou hors ligne."
+ },
  "502": {
   "text": [
    "Vous disposez du rôle personnalisé de contrôle d'accès en fonction du rôle (RBAC) suivant.",
