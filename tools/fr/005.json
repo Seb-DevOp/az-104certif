@@ -1,0 +1,312 @@
+{
+ "100": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Sub1 contenant les ressources présentées dans le tableau suivant.",
+   "Vous créez un utilisateur nommé Admin1. À quoi pouvez-vous l'ajouter comme coadministrateur ?"
+  ],
+  "explanation": "L'administrateur de service et les coadministrateurs disposent d'un accès équivalent à celui des utilisateurs auxquels le rôle Owner est attribué au niveau de l'abonnement."
+ },
+
+ "101": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra contenant les groupes présentés dans le tableau suivant.",
+   "Le locataire contient les utilisateurs présentés dans le tableau suivant.",
+   "Quels utilisateurs et quels groupes pouvez-vous supprimer ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : User1 et User4 uniquement. User1 n'appartient à aucun groupe et dispose d'une licence attribuée directement : une licence directe peut être modifiée ou retirée sans incidence sur les licences héritées. User2 est en revanche membre de Group1 : lorsqu'un utilisateur hérite d'une licence d'un groupe, cette licence ne peut pas être retirée directement."
+ },
+
+ "102": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "Vous devez faire en sorte que les transferts de données entre storage1 et VM1 ne transitent PAS par Internet. Que devez-vous configurer sur storage1 ?"
+  ],
+  "options": {
+   "A": "la protection des données",
+   "B": "un point de terminaison privé",
+   "C": "l'accès au réseau public dans les paramètres Pare-feu et réseaux virtuels",
+   "D": "une signature d'accès partagé (SAS)"
+  },
+  "explanation": "Les points de terminaison privés permettent aux clients d'un réseau virtuel d'accéder aux données d'un compte de stockage Azure de façon sécurisée via Private Link. Le point de terminaison privé utilise, pour chaque service du compte de stockage, une adresse IP distincte prise dans l'espace d'adressage du réseau virtuel. Le trafic emprunte alors le réseau virtuel puis une liaison privée sur le réseau fédérateur Microsoft, sans exposition à l'Internet public."
+ },
+
+ "104": {
+  "text": [
+   "Votre réseau local comporte une passerelle VPN. Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "Vous devez faire en sorte que tout le trafic entre VM1 et storage1 transite par le réseau fédérateur Microsoft. Que devez-vous configurer ?"
+  ],
+  "options": {
+   "A": "un groupe de sécurité réseau (NSG)",
+   "B": "des points de terminaison privés",
+   "C": "Microsoft Entra Application Proxy",
+   "D": "Azure Virtual WAN"
+  },
+  "explanation": "Deux réponses sont correctes selon les variantes de cette question : les points de terminaison privés et les points de terminaison de service. Les points de terminaison privés permettent aux clients d'un réseau virtuel d'accéder aux données d'un compte de stockage Azure via Private Link, le trafic empruntant alors le réseau fédérateur Microsoft."
+ },
+
+ "105": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra. Vous prévoyez d'importer des utilisateurs en masse. Vous devez faire en sorte que les objets utilisateur importés soient automatiquement ajoutés comme membres d'un groupe précis en fonction du service de chacun, en limitant l'effort d'administration. Quelles deux actions devez-vous effectuer ? Chaque bonne réponse constitue une partie de la solution.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "options": {
+   "A": "Créer des groupes utilisant le type d'appartenance Assigned.",
+   "B": "Créer un modèle Azure Resource Manager (ARM).",
+   "C": "Créer des groupes utilisant le type d'appartenance Dynamic User.",
+   "D": "Écrire un script PowerShell qui analyse un fichier d'import.",
+   "E": "Créer un fichier XML contenant les informations et attributs des utilisateurs.",
+   "F": "Créer un fichier CSV contenant les informations et attributs des utilisateurs."
+  },
+  "explanation": "C : les règles d'appartenance dynamique permettent de définir des critères fondés sur les attributs, de sorte que les membres soient ajoutés et retirés automatiquement du groupe.\n\nF : Microsoft Entra ID prend en charge la création et la suppression groupées d'utilisateurs à partir d'un fichier CSV, dont un modèle est téléchargeable depuis Microsoft Entra ID."
+ },
+
+ "106": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un compte de stockage nommé storage1. Vous devez faire en sorte que les clés d'accès de storage1 soient renouvelées automatiquement. Que devez-vous configurer ?"
+  ],
+  "options": {
+   "A": "un coffre de sauvegarde",
+   "B": "la redondance de storage1",
+   "C": "la gestion du cycle de vie de storage1",
+   "D": "un coffre de clés Azure",
+   "E": "un coffre Recovery Services"
+  },
+  "explanation": "Microsoft recommande d'utiliser Azure Key Vault pour gérer et renouveler les clés d'accès. Votre application peut y accéder de façon sécurisée, ce qui évite de stocker les clés avec son code.\n\nRemarque : il est recommandé de renouveler périodiquement les clés d'accès pour préserver la sécurité du compte de stockage. Sans Key Vault, ce renouvellement doit être fait manuellement."
+ },
+
+ "107": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les identités Microsoft Entra présentées dans le tableau suivant.",
+   "Vous devez activer la réinitialisation de mot de passe en libre-service (SSPR). Pour quelles identités pouvez-vous l'activer depuis le portail Azure ?"
+  ],
+  "options": {
+   "A": "User1 uniquement",
+   "B": "Group1 uniquement",
+   "C": "User1 et Group1 uniquement",
+   "D": "Group1 et Group2 uniquement",
+   "E": "User1, Group1 et Group2"
+  }
+ },
+
+ "108": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra.",
+   "Vous devez faire en sorte que le nom de tout nouveau groupe Microsoft 365 soit automatiquement mis en forme ainsi : <Service><Nom du groupe>. Quelles trois actions devez-vous effectuer, et dans quel ordre, dans le centre d'administration Microsoft Entra ? Pour répondre, déplacez les actions appropriées de la liste vers la zone de réponse et classez-les dans le bon ordre."
+  ],
+  "explanation": "Étape 1 : créer une stratégie de nommage de groupe. Pour imposer des conventions de nommage cohérentes aux groupes Microsoft 365 créés ou modifiés par vos utilisateurs, définissez une stratégie de nommage dans Microsoft Entra ID : connectez-vous au centre d'administration avec au moins le rôle Group Administrator, ouvrez Microsoft Entra ID, puis Tous les groupes > Groupes > Stratégie de nommage.\n\nÉtape 2 : définir le préfixe sur Attribut, dans la stratégie de nommage préfixe-suffixe."
+ },
+
+ "109": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra contenant les utilisateurs présentés dans le tableau suivant.",
+   "Le locataire contient les groupes présentés dans le tableau suivant.",
+   "Quels utilisateurs et quels groupes peuvent être supprimés ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : User1, User2, User3 et User4 — tous les utilisateurs peuvent être supprimés. Box 2 : Group1 et Group3 uniquement — Group1 et Group3 n'ont pas de licence, tandis que Group2 et Group4 en ont une attribuée."
+ },
+
+ "110": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "Vous prévoyez d'utiliser un coffre de clés Azure pour fournir un secret à app1. Que devez-vous créer pour qu'app1 accède au coffre, et depuis quel coffre le secret peut-il être utilisé ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : une identité managée. Quand vous définissez un secret, vous créez une référence vers un secret stocké dans Azure Key Vault ; Container Apps en récupère automatiquement la valeur et la met à disposition de votre application. Pour référencer un secret du coffre, il faut d'abord activer une identité managée sur l'application et lui accorder l'accès aux secrets du coffre.\n\nBox 2 : Vault1 et Vault2 uniquement, car ils se trouvent dans le même groupe de ressources qu'app1."
+ },
+
+ "111": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra nommé contoso.com. Vous collaborez avec un partenaire externe nommé fabrikam.com et prévoyez d'inviter ses utilisateurs dans le locataire contoso.com. Vous devez faire en sorte que les invitations ne puissent être envoyées qu'aux utilisateurs de fabrikam.com. Que devez-vous faire dans le centre d'administration Microsoft Entra ?"
+  ],
+  "options": {
+   "A": "Dans les paramètres d'accès inter-locataires, configurer les restrictions de locataire.",
+   "B": "Dans les paramètres d'accès inter-locataires, configurer les paramètres du cloud Microsoft.",
+   "C": "Dans les paramètres de collaboration externe, configurer les restrictions d'accès des utilisateurs invités.",
+   "D": "Dans les paramètres de collaboration externe, configurer les restrictions de collaboration."
+  },
+  "explanation": "Les paramètres de collaboration externe déterminent quels rôles de votre organisation peuvent inviter des utilisateurs externes en collaboration B2B. Ils permettent aussi d'autoriser ou de bloquer des domaines précis : les restrictions de collaboration s'appuient sur une liste d'autorisation ou une liste de blocage pour n'accepter les invitations que vers les domaines indiqués."
+ },
+
+ "112": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un compte de stockage nommé storage1, qui contient des données d'objets blob. Vous devez attribuer un rôle à un utilisateur nommé User1 pour qu'il puisse accéder à ces données, et l'attribution doit prendre en charge les conditions. Quels deux rôles pouvez-vous attribuer à User1 ? Chaque bonne réponse constitue une solution complète.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ]
+ },
+
+ "113": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra configuré comme dans la capture suivante.",
+   "Le locataire contient les identités présentées dans le tableau suivant.",
+   "Vous achetez une licence Microsoft Fabric. À quelles identités pouvez-vous l'attribuer ?"
+  ],
+  "options": {
+   "A": "User1 uniquement",
+   "B": "User1 et Group1 uniquement",
+   "C": "User1 et Group2 uniquement",
+   "D": "User1, Group1 et Group2"
+  }
+ },
+
+ "114": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un compte de stockage nommé storage. Ce compte contient un objet blob stockant des images. L'accès client à storage1 est accordé au moyen d'une signature d'accès partagé (SAS). Vous devez faire en sorte que les utilisateurs reçoivent un avertissement lorsqu'ils génèrent une SAS dépassant sept jours. Que devez-vous faire sur storage ?"
+  ],
+  "options": {
+   "A": "Activer un verrou en lecture seule.",
+   "B": "Configurer une règle d'alerte.",
+   "C": "Ajouter une règle de gestion du cycle de vie.",
+   "D": "Activer « Allow recommended upper limit for shared access signature (SAS) expiry interval »."
+  },
+  "explanation": "Une fois la stratégie d'expiration des SAS configurée, tout utilisateur qui crée une SAS dont l'intervalle dépasse la limite supérieure recommandée reçoit un avertissement.\n\nPour la configurer : ouvrez le compte de stockage dans le portail Azure, puis Paramètres > Configuration, activez « Allow recommended upper limit for shared access signature (SAS) expiry interval » et indiquez la durée recommandée."
+ },
+
+ "115": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra. Vous prévoyez de créer un groupe par service de l'entreprise. Vous devez faire en sorte que les permissions des utilisateurs et des groupes répondent aux exigences suivantes : lorsqu'un nouvel utilisateur est ajouté au locataire, il rejoint automatiquement le groupe de son service ; si un utilisateur change de service, ses permissions sur les ressources du service sont mises à jour automatiquement. La solution doit limiter l'effort d'administration. Quelles deux actions devez-vous effectuer ? Chaque bonne réponse constitue une partie de la solution.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "options": {
+   "A": "Créer un groupe de sécurité avec le type d'appartenance Assigned.",
+   "B": "Créer une stratégie d'accès conditionnel.",
+   "C": "Créer un modèle Azure Resource Manager (ARM).",
+   "D": "Créer un groupe de sécurité avec le type d'appartenance Dynamic User.",
+   "E": "Mettre à jour les propriétés des utilisateurs.",
+   "F": "Créer un fichier CSV et l'importer."
+  },
+  "explanation": "Un groupe de sécurité à appartenance dynamique ajoute et retire automatiquement les utilisateurs selon des critères, par exemple l'attribut de service : un nouvel utilisateur ou un changement de service met donc l'appartenance à jour tout seul.\n\nEncore faut-il que les propriétés des utilisateurs soient à jour : c'est la bonne tenue du champ « service » qui fait fonctionner les groupes dynamiques."
+ },
+
+ "116": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra contenant un utilisateur nommé User1. Vous examinez les licences qui lui sont attribuées, présentées dans la capture suivante.",
+   "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : cinq licences. Pour Microsoft Intune Suite, la capture montre que 5 des 8 licences (services activés) sont utilisées.\n\nBox 2 : retirer User1 de Group1 uniquement. Les chemins d'attribution de Microsoft Fabric (Free) sont « Direct » et « Hérité (Group1) » : il faut donc retirer User1 de Group1.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "User1 consomme [choix] pour Microsoft Intune Suite.",
+     "options": ["une licence", "deux licences", "cinq licences", "huit licences"]
+    },
+    "f2": {
+     "label": "Pour retirer Microsoft Fabric (Free) des attributions de licence de User1, vous devez [choix].",
+     "options": ["retirer la licence de User1 uniquement", "retirer User1 de Group1 uniquement", "retirer la licence de User1 et retirer la licence de Group1"]
+    }
+   }
+  }
+ },
+
+ "117": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un locataire Microsoft Entra nommé Adatum et d'un abonnement Azure nommé Subscription1. Adatum contient un groupe nommé Developers. Subscription1 contient un groupe de ressources nommé Dev. Vous devez permettre au groupe Developers de créer des applications logiques Azure dans le groupe de ressources Dev. Solution : sur Dev, vous attribuez le rôle Contributor au groupe Developers. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "La bonne solution consiste à attribuer sur Dev le rôle Logic App Contributor au groupe Developers : ce rôle permet de gérer une application logique — la consulter, la modifier, la mettre à jour — sans y accéder.\n\nContributor accorde certes un accès complet à la gestion des ressources, mais ce n'est pas le rôle de moindre privilège attendu ici."
+ },
+
+ "118": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra contenant les utilisateurs présentés dans le tableau suivant.",
+   "Vous devez effectuer les tâches suivantes : créer un attribut nommé Property1, et faire en sorte qu'Admin1 puisse attribuer Property1 à User1. Quels deux paramètres devez-vous configurer dans le volet Microsoft Entra ID ?",
+   "REMARQUE : chaque bonne réponse vaut un point.",
+   "Zone active :"
+  ],
+  "explanation": "Box 1 : Custom security attributes (attributs de sécurité personnalisés), pour créer l'attribut Property1. Dans le centre d'administration Microsoft Entra, connectez-vous avec le rôle Attribute Definition Administrator, ouvrez Protection > Attributs de sécurité personnalisés, puis ajoutez un ensemble d'attributs.\n\nBox 2 : Rôles et administrateurs, pour qu'Admin1 puisse attribuer Property1 à User1."
+ },
+
+ "119": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un groupe de ressources nommé RG1.",
+   "Vous devez empêcher les administrateurs de modifier par inadvertance les ressources de RG1. Comment devez-vous compléter la commande PowerShell ?",
+   "REMARQUE : chaque bonne réponse vaut un point."
+  ],
+  "explanation": "Box 1 : New-AzResourceLock. En tant qu'administrateur, vous pouvez verrouiller un abonnement, un groupe de ressources ou une ressource pour les protéger des suppressions et modifications accidentelles ; le verrou prime sur les permissions des utilisateurs. En PowerShell, on utilise New-AzResourceLock en fournissant le nom, le type et le groupe de ressources.\n\nBox 2 : ReadOnly, le niveau de verrou qui empêche toute modification."
+ },
+
+ "120": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra contenant les utilisateurs présentés dans le tableau suivant.",
+   "Le locataire contient les groupes présentés dans le tableau suivant.",
+   "La réinitialisation de mot de passe en libre-service (SSPR) doit être configurée pour le locataire. Quels utilisateurs peuvent la configurer, et pour quel groupe peut-elle être activée ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Admin1 et Admin2 uniquement. Admin1 est administrateur général et Admin2 est Authentication Policy Administrator ; l'activation de SSPR requiert au minimum le rôle Authentication Policy Administrator. Admin3, qui est Authentication Administrator et Security Administrator, ne convient pas."
+ },
+
+ "121": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra contenant un utilisateur nommé User1. Vous examinez les licences qui lui sont attribuées, présentées dans la capture suivante.",
+   "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : 1. User1 dispose d'une licence Microsoft Intune Suite par attribution directe de Microsoft 365 E5 Intune, d'une autre par attribution directe de Microsoft Intune Suite, et d'une troisième héritée de Group1.\n\nRemarque : un utilisateur peut appartenir à plusieurs groupes porteurs de licences. Plusieurs licences d'un même produit peuvent se recouvrir, tous les services activés étant alors appliqués à l'utilisateur."
+ },
+
+ "122": {
+  "text": [
+   "Vous disposez d'un abonnement Azure rattaché à un locataire Microsoft Entra nommé contoso.com, qui contient les utilisateurs présentés dans le tableau suivant.",
+   "Vous activez la réinitialisation de mot de passe en libre-service (SSPR) pour tous les utilisateurs et la configurez ainsi : nombre de méthodes requises pour réinitialiser, 2 ; méthodes disponibles, téléphone mobile et questions de sécurité ; nombre de questions à enregistrer, 3 ; nombre de questions requises pour réinitialiser, 3. Vous retenez les questions de sécurité suivantes : quel est votre plat préféré ?",
+   "Dans quelle ville avez-vous occupé votre premier emploi ? Quel était le nom de votre premier animal de compagnie ? Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Non. SecAdmin1 est Security Administrator. Les comptes d'administrateur Azure sont soumis à des restrictions différentes de celles des comptes ordinaires : Microsoft impose une stratégie de réinitialisation à deux facteurs pour tout rôle d'administrateur Azure, ce qui interdit l'usage des questions de sécurité."
+ },
+
+ "123": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra contenant les identités présentées dans le tableau suivant.",
+   "Vous disposez d'un attribut de sécurité personnalisé nommé Attr1. Vous devez l'attribuer à toutes les identités qui le prennent en charge. À quelles identités pouvez-vous attribuer Attr1 ?"
+  ],
+  "options": {
+   "A": "User1 uniquement",
+   "B": "Group1 uniquement",
+   "C": "User1 et Group1 uniquement",
+   "D": "User1 et Principal1 uniquement",
+   "E": "User1, Group1 et Principal1"
+  },
+  "explanation": "Les attributs de sécurité personnalisés de Microsoft Entra ID sont des attributs propres à l'entreprise (paires clé-valeur) que vous définissez et attribuez à des objets Microsoft Entra, pour stocker de l'information, catégoriser des objets ou appliquer un contrôle d'accès fin. Les objets qui les prennent en charge sont les utilisateurs Microsoft Entra et les applications d'entreprise (principaux de service)."
+ },
+
+ "124": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant deux utilisateurs nommés User1 et User2. Vous devez activer la réinitialisation de mot de passe en libre-service (SSPR) pour User1, en veillant à ce qu'elle reste désactivée pour User2. Que devez-vous faire en premier ?"
+  ],
+  "options": {
+   "A": "Désactiver les paramètres de sécurité par défaut.",
+   "B": "Créer un groupe.",
+   "C": "Créer un contexte d'authentification.",
+   "D": "Configurer une stratégie de méthodes d'authentification."
+  },
+  "explanation": "Les anciens paramètres de stratégie Microsoft Entra ID qui contrôlaient séparément l'authentification multifacteur et la réinitialisation de mot de passe en libre-service peuvent être migrés vers une gestion unifiée par la stratégie de méthodes d'authentification.\n\nCette stratégie est aujourd'hui la manière recommandée de gérer les méthodes d'authentification, y compris les méthodes modernes sans mot de passe ; les Authentication Policy Administrators peuvent la modifier pour activer des méthodes par groupe."
+ },
+
+ "125": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant une machine virtuelle nommée VM1 et deux utilisateurs nommés User1 et User2. Vous attribuez à User1 le rôle Contributor sur VM1. Quelles deux actions User1 peut-il effectuer sur VM1 ? Chaque bonne réponse constitue une solution complète.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "options": {
+   "A": "Configurer une sauvegarde quotidienne.",
+   "B": "Attribuer à User2 le rôle Contributor sur VM1.",
+   "C": "Attribuer à User2 le rôle Reader sur VM1.",
+   "D": "Ajouter un disque de données.",
+   "E": "Téléverser une image de VM1 vers une galerie de calcul Azure."
+  },
+  "explanation": "Contributor accorde un accès complet à la gestion de toutes les ressources, mais ne permet pas d'attribuer des rôles dans Azure RBAC (donc ni B ni C), de gérer des affectations dans Azure Blueprints, ni de partager des galeries d'images (donc pas E)."
+ },
+
+ "126": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un compte de stockage nommé contoso2023, lui-même contenant les ressources présentées dans le tableau suivant.",
+   "Le compte contoso2023 est configuré comme dans la capture suivante.",
+   "Vous disposez d'un locataire Microsoft Entra contenant les utilisateurs présentés dans le tableau suivant.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Azure Storage prend en charge trois types de signatures d'accès partagé : la SAS de délégation d'utilisateur, la SAS de service et la SAS de compte.\n\nBox 1 : Oui — User1 dispose d'une SAS de délégation d'utilisateur avec le maximum de permissions disponibles. Ce type de SAS est sécurisé par des identifiants Microsoft Entra en plus des permissions déclarées ; il est pris en charge pour Blob Storage et Data Lake Storage."
+ }
+}

@@ -1,0 +1,294 @@
+{
+ "71": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra nommé contoso.com. Vous avez deux organisations partenaires externes nommées fabrikam.com et litwareinc.com. Fabrikam.com est configurée comme organisation connectée. Vous créez un package d'accès présenté dans la capture « Access package ».",
+   "Vous configurez les paramètres de cycle de vie des utilisateurs externes comme dans la capture « Lifecycle ».",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — le package d'accès comporte le paramètre « Utilisateurs pouvant demander l'accès : toutes les organisations connectées configurées », ce qui autorise les utilisateurs des organisations connectées (autres annuaires et domaines) à demander ce package.\n\nBox 2 : Non — la première capture indique que les attributions du package expirent au bout de 365 jours, mais la seconde ajoute un délai supplémentaire de 30 jours avant le retrait des utilisateurs de Group1.\n\nBox 3 : Oui — 365 + 30 = 395 jours."
+ },
+
+ "72": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 contenant un réseau virtuel nommé VNet1, placé dans un groupe de ressources nommé RG1. Subscription1 comprend un utilisateur nommé User1, qui possède les rôles Reader, Security Admin et Security Reader. Vous devez faire en sorte que User1 puisse attribuer le rôle Reader sur VNet1 à d'autres utilisateurs. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Attribuer à User1 le rôle Network Contributor sur VNet1.",
+   "B": "Retirer User1 du rôle Security Reader sur Subscription1 et lui attribuer le rôle Contributor sur RG1.",
+   "C": "Attribuer à User1 le rôle Owner sur VNet1.",
+   "D": "Attribuer à User1 le rôle Network Contributor sur RG1."
+  },
+  "explanation": "Le rôle Owner accorde un accès complet à la gestion de toutes les ressources, y compris la capacité d'attribuer des rôles dans Azure RBAC.\n\nRéponses incorrectes A et D : le rôle Network Contributor permet de gérer les réseaux, mais pas d'y accéder ni de déléguer l'accès."
+ },
+
+ "73": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les utilisateurs présentés dans le tableau suivant.",
+   "Les groupes sont configurés comme indiqué dans le tableau suivant.",
+   "Vous disposez d'un groupe de ressources nommé RG1, présenté dans la capture suivante.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Non — l'imbrication de groupes n'est pas prise en charge : un groupe ne peut pas être membre d'un groupe assignable à un rôle. Box 2 : Non — même raison. Box 3 : Oui."
+ },
+
+ "74": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 contenant un réseau virtuel nommé VNet1, placé dans un groupe de ressources nommé RG1. Subscription1 comprend un utilisateur nommé User1, qui possède les rôles Reader, Security Admin et Security Reader. Vous devez faire en sorte que User1 puisse attribuer le rôle Reader sur VNet1 à d'autres utilisateurs. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Retirer User1 du rôle Security Reader sur Subscription1 et lui attribuer le rôle Contributor sur RG1.",
+   "B": "Attribuer à User1 le rôle Owner sur VNet1.",
+   "C": "Retirer User1 des rôles Security Reader et Reader sur Subscription1 et lui attribuer le rôle Contributor sur Subscription1.",
+   "D": "Attribuer à User1 le rôle Contributor sur VNet1."
+  },
+  "explanation": "Contributor ne suffit pas : il faut Owner, et la portée correcte est VNet1. Owner donne un accès complet à toutes les ressources, y compris le droit de déléguer l'accès à d'autres. Contributor permet de créer et gérer tous types de ressources Azure, mais pas d'accorder l'accès à d'autres.\n\nRemarque sur la portée : lors d'une attribution de rôle, il faut préciser une portée, c'est-à-dire l'ensemble de ressources auquel s'applique l'accès. Azure propose quatre niveaux, du plus large au plus étroit : groupe d'administration, abonnement, groupe de ressources et ressource."
+ },
+
+ "75": {
+  "text": [
+   "Votre réseau local comporte une passerelle VPN. Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "Vous devez faire en sorte que tout le trafic entre VM1 et storage1 transite par le réseau fédérateur Microsoft. Que devez-vous configurer ?"
+  ],
+  "options": {
+   "A": "Azure Application Gateway",
+   "B": "des points de terminaison privés",
+   "C": "un groupe de sécurité réseau (NSG)",
+   "D": "Azure Virtual WAN"
+  },
+  "explanation": "Les points de terminaison privés permettent aux clients d'un réseau virtuel d'accéder aux données d'un compte de stockage Azure de façon sécurisée via Private Link. Le point de terminaison privé utilise, pour chaque service du compte de stockage, une adresse IP distincte prise dans l'espace d'adressage du réseau virtuel. Le trafic entre les clients du réseau virtuel et le compte de stockage emprunte alors le réseau virtuel puis une liaison privée sur le réseau fédérateur Microsoft, sans exposition à l'Internet public."
+ },
+
+ "76": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un utilisateur nommé User1 et les ressources présentées dans le tableau suivant.",
+   "NSG1 est associé à networkinterface1. User1 dispose sur NSG1 des attributions de rôles présentées dans le tableau suivant.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Oui — User1 est Storage Account Contributor sur RG1, ce qui permet de créer et gérer des comptes de stockage.\n\nBox 2 : Non — User1 est Contributor sur NSG1, et networkinterface1 relève de NSG1. Mais les paramètres DNS de networkinterface1 relèvent de la portée de RG1, et non de celle de NSG1 : sur RG1, User1 n'est que lecteur."
+ },
+
+ "77": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 contenant un réseau virtuel nommé VNet1, placé dans un groupe de ressources nommé RG1. Subscription1 comprend un utilisateur nommé User1, qui possède les rôles Reader, Security Admin et Security Reader. Vous devez faire en sorte que User1 puisse attribuer le rôle Reader sur VNet1 à d'autres utilisateurs. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Retirer User1 du rôle Security Reader sur Subscription1 et lui attribuer le rôle Contributor sur RG1.",
+   "B": "Attribuer à User1 le rôle Access Administrator sur VNet1.",
+   "C": "Retirer User1 des rôles Security Reader et Reader sur Subscription1 et lui attribuer le rôle Contributor sur Subscription1.",
+   "D": "Attribuer à User1 le rôle Network Contributor sur RG1."
+  },
+  "explanation": "Le rôle User Access Administrator permet d'accorder à d'autres utilisateurs l'accès aux ressources Azure.\n\nRemarque : plusieurs variantes de cette question circulent à l'examen. Trois réponses sont correctes : attribuer à User1 le rôle Access Administrator sur VNet1, le rôle User Access Administrator sur VNet1, ou le rôle Owner sur VNet1."
+ },
+
+ "79": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "Vous devez attribuer à User1 le rôle Storage File Data SMB Share Contributor sur share1. Que devez-vous faire en premier ?"
+  ],
+  "options": {
+   "A": "Activer l'accès aux données basé sur l'identité pour les partages de fichiers de storage1.",
+   "B": "Modifier le profil de sécurité des partages de fichiers de storage1.",
+   "C": "Sélectionner « Default to Microsoft Entra authorization » dans le portail Azure pour storage1.",
+   "D": "Configurer le contrôle d'accès (IAM) sur share1."
+  }
+ },
+
+ "80": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 contenant un réseau virtuel nommé VNet1, placé dans un groupe de ressources nommé RG1. Subscription1 comprend un utilisateur nommé User1, qui possède les rôles Reader, Security Admin et Security Reader. Vous devez faire en sorte que User1 puisse attribuer le rôle Reader sur VNet1 à d'autres utilisateurs. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Retirer User1 du rôle Security Reader sur Subscription1 et lui attribuer le rôle Contributor sur RG1.",
+   "B": "Attribuer à User1 le rôle User Access Administrator sur VNet1.",
+   "C": "Retirer User1 des rôles Security Reader et Reader sur Subscription1.",
+   "D": "Attribuer à User1 le rôle Contributor sur VNet1."
+  },
+  "explanation": "Le rôle User Access Administrator permet d'accorder à d'autres utilisateurs l'accès aux ressources Azure.\n\nRemarque : plusieurs variantes de cette question circulent à l'examen. Trois réponses sont correctes : le rôle Access Administrator sur VNet1, le rôle User Access Administrator sur VNet1, ou le rôle Owner sur VNet1."
+ },
+
+ "81": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra nommé adatum.com contenant les groupes présentés dans le tableau suivant.",
+   "Adatum.com contient les utilisateurs présentés dans le tableau suivant.",
+   "Vous attribuez une licence Microsoft Entra ID P2 à Group1 comme indiqué dans la capture suivante.",
+   "Aucune licence n'est directement attribuée à Group2. Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Non — User1 est membre de Group1, et la capture d'attribution de licence montre que l'option Microsoft Defender for Cloud Apps Discovery est désactivée.\n\nBox 2 : Oui — User1 est membre de Group1, et l'option Microsoft Entra ID P2 est activée.\n\nBox 3 : Oui — User2 est membre de Group2, lui-même membre de Group1, et l'option Microsoft Entra ID P2 est activée."
+ },
+
+ "82": {
+  "text": [
+   "Vous disposez d'un déploiement hybride Microsoft Entra contenant les utilisateurs présentés dans le tableau suivant.",
+   "Vous devez modifier les attributs JobTitle et UsageLocation de ces utilisateurs. Pour quels utilisateurs pouvez-vous les modifier depuis Microsoft Entra ID ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : User1 et User3 uniquement — pour les utilisateurs dont la source d'autorité est Windows Server Active Directory, l'identité, les coordonnées et les informations professionnelles doivent être mises à jour depuis Active Directory. Box 2 : User1, User2 et User3."
+ },
+
+ "83": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un locataire Microsoft Entra nommé contoso.com. Vous avez un fichier CSV contenant les noms et adresses e-mail de 500 utilisateurs externes. Vous devez créer un compte d'utilisateur invité dans contoso.com pour chacun d'eux.",
+   "Solution : vous écrivez un script PowerShell qui exécute la cmdlet New-MgUser pour chaque utilisateur externe. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "84": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un locataire Microsoft Entra nommé contoso.com. Vous avez un fichier CSV contenant les noms et adresses e-mail de 500 utilisateurs externes. Vous devez créer un compte d'utilisateur invité dans contoso.com pour chacun d'eux.",
+   "Solution : vous écrivez un script PowerShell qui exécute la cmdlet New-MgInvitation pour chaque utilisateur externe. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Mauvais module. New-MgInvitation appartient au module Microsoft.Graph.Identity.SignIns. Il faut utiliser à la place la cmdlet New-AzureADMSInvitation, qui sert à inviter un nouvel utilisateur externe dans votre annuaire."
+ },
+
+ "85": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 contenant un réseau virtuel nommé VNet1, placé dans un groupe de ressources nommé RG1. Un utilisateur nommé User1 possède sur Subscription1 les rôles Reader, Security Admin et Security Reader.",
+   "Vous devez faire en sorte que User1 puisse attribuer le rôle Reader sur VNet1 à d'autres utilisateurs. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Attribuer à User1 le rôle Contributor sur VNet1.",
+   "B": "Attribuer à User1 le rôle Network Contributor sur VNet1.",
+   "C": "Attribuer à User1 le rôle User Access Administrator sur VNet1.",
+   "D": "Retirer User1 des rôles Security Reader et Reader sur Subscription1 et lui attribuer le rôle Contributor sur Subscription1."
+  },
+  "explanation": "User Access Administrator permet de gérer l'accès des utilisateurs aux ressources Azure, d'attribuer des rôles Azure RBAC, et de s'attribuer ou d'attribuer à autrui le rôle Owner.\n\nRéponse incorrecte B : Network Contributor permet de gérer les réseaux, mais pas d'y accéder. Réponses incorrectes A et D : Contributor accorde un accès complet à la gestion des ressources, mais ne permet pas d'attribuer des rôles Azure RBAC, de gérer des affectations dans Azure Blueprints, ni de partager des galeries d'images."
+ },
+
+ "86": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 contenant un réseau virtuel nommé VNet1, placé dans un groupe de ressources nommé RG1. Un utilisateur nommé User1 possède sur Subscription1 les rôles Reader, Security Admin et Security Reader. Vous devez faire en sorte que User1 puisse attribuer le rôle Reader sur VNet1 à d'autres utilisateurs. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Retirer User1 des rôles Security Reader et Reader sur Subscription1 et lui attribuer le rôle Contributor sur Subscription1.",
+   "B": "Retirer User1 du rôle Security Reader sur Subscription1 et lui attribuer le rôle Contributor sur RG1.",
+   "C": "Attribuer à User1 le rôle Network Contributor sur VNet1.",
+   "D": "Attribuer à User1 le rôle User Access Administrator sur VNet1."
+  },
+  "explanation": "Le rôle User Access Administrator permet d'accorder à d'autres utilisateurs l'accès aux ressources Azure.\n\nRemarque : plusieurs variantes de cette question circulent à l'examen. Trois réponses sont correctes : le rôle Access Administrator sur VNet1, le rôle User Access Administrator sur VNet1, ou le rôle Owner sur VNet1."
+ },
+
+ "87": {
+  "text": [
+   "Vous disposez d'un compte de stockage Azure nommé storage1 qui utilise le stockage Blob et le stockage Fichier. Vous devez utiliser AzCopy pour copier des données vers ces deux types de stockage. Quelle méthode d'authentification devez-vous employer pour chacun ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Les informations d'autorisation peuvent être fournies via Microsoft Entra ID ou via un jeton de signature d'accès partagé (SAS).\n\nBox 1 : Microsoft Entra ID et signature d'accès partagé (SAS) — les deux sont pris en charge pour le stockage Blob.\n\nBox 2 : signature d'accès partagé (SAS) uniquement — seul le jeton SAS est pris en charge pour le stockage Fichier."
+ },
+
+ "88": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra contenant un utilisateur nommé External User, qui s'authentifie auprès du locataire avec external195@gmail.com. Vous devez faire en sorte qu'il s'authentifie désormais avec contractor@gmail.com.",
+   "Quels deux paramètres devez-vous configurer depuis le volet Vue d'ensemble ?",
+   "REMARQUE : chaque bonne réponse vaut un point."
+  ],
+  "explanation": "Box 1 : Identities. Cette propriété indique le fournisseur d'identité principal de l'utilisateur. Un utilisateur peut en avoir plusieurs, consultables via le lien Identities de son profil ou en interrogeant la propriété identities avec l'API Microsoft Graph.\n\nBox 2 : B2B collaboration. La collaboration B2B de Microsoft Entra, qui fait partie d'External Identities, permet d'inviter des utilisateurs invités à collaborer avec votre organisation et de partager en toute sécurité les applications et services de l'entreprise."
+ },
+
+ "89": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "Vous devez attribuer à Workspace1 un rôle autorisant les opérations de lecture, d'écriture et de suppression sur les données stockées dans les conteneurs de storage1. Quel rôle devez-vous attribuer ?"
+  ],
+  "explanation": "Storage Blob Data Contributor permet de lire, écrire et supprimer des conteneurs et des objets blob Azure Storage.\n\nRéponses incorrectes. Storage Account Contributor autorise la gestion des comptes de stockage et donne accès à la clé du compte. Reader and Data Access permet de tout consulter, mais pas de supprimer ni de créer un compte de stockage ou une ressource qu'il contient. Contributor accorde un accès complet à la gestion des ressources, mais ne permet pas d'attribuer des rôles Azure RBAC."
+ },
+
+ "90": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 contenant un réseau virtuel nommé VNet1, placé dans un groupe de ressources nommé RG1. Un utilisateur nommé User1 possède sur Subscription1 les rôles Reader, Security Admin et Security Reader. Vous devez faire en sorte que User1 puisse attribuer le rôle Reader sur VNet1 à d'autres utilisateurs. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Retirer User1 des rôles Security Reader et Reader sur Subscription1 et lui attribuer le rôle Contributor sur Subscription1.",
+   "B": "Attribuer à User1 le rôle Contributor sur VNet1.",
+   "C": "Attribuer à User1 le rôle Owner sur VNet1.",
+   "D": "Attribuer à User1 le rôle Network Contributor sur RG1."
+  },
+  "explanation": "Owner accorde un accès complet à la gestion de toutes les ressources, y compris la capacité d'attribuer des rôles dans Azure RBAC.\n\nRéponses incorrectes A et B : Contributor accorde un accès complet à la gestion des ressources, mais ne permet pas d'attribuer des rôles Azure RBAC. Réponse incorrecte D : Network Contributor permet de gérer les réseaux, mais pas d'y accéder."
+ },
+
+ "91": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra contenant les groupes présentés dans le tableau suivant.",
+   "Vous achetez des licences Microsoft Entra ID P2. À quels groupes pouvez-vous attribuer une licence ?"
+  ],
+  "options": {
+   "A": "Group1 uniquement",
+   "B": "Group1 et Group3 uniquement",
+   "C": "Group3 et Group4 uniquement",
+   "D": "Group1, Group2 et Group3 uniquement",
+   "E": "Group1, Group2, Group3 et Group4"
+  },
+  "explanation": "Les licences peuvent être attribuées à n'importe quel groupe de sécurité dans Microsoft Entra ID."
+ },
+
+ "92": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra. Vous devez créer un groupe Microsoft 365 ne contenant que les membres du service marketing en France. Comment devez-vous compléter la règle d'appartenance dynamique ?",
+   "REMARQUE : chaque bonne réponse vaut un point."
+  ],
+  "explanation": "Box 1 : user.department. Exemple de règle d'appartenance correctement formée avec une seule expression : user.department -eq \"Sales\".\n\nBox 2 : and — les deux conditions doivent être vraies. Une règle d'appartenance peut comporter plusieurs expressions reliées par les opérateurs logiques -and, -or et -not, éventuellement combinés : (user.department -eq \"Sales\") -or (user.department -eq \"Marketing\") ; (user.department -eq \"Sales\") -and -not (user.jobTitle -contains \"SDE\").\n\nBox 3 : -eq."
+ },
+
+ "93": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra. Vous devez modifier les paramètres de permissions du rôle utilisateur par défaut du locataire. La solution doit répondre aux exigences suivantes : empêcher les utilisateurs standard de créer de nouveaux principaux de service ; ne leur permettre d'utiliser PowerShell ou Microsoft Graph que pour gérer leurs propres ressources Azure. Quels deux paramètres devez-vous modifier ?",
+   "REMARQUE : chaque bonne réponse vaut un point."
+  ],
+  "explanation": "Box 1 : « Users can register applications ». Pour empêcher les utilisateurs standard de créer des principaux de service, passez cette option à « Non » dans le volet des paramètres utilisateur du centre d'administration Microsoft Entra. Les utilisateurs non privilégiés ne pourront plus créer d'applications ni de principaux de service dans le locataire, tandis que les utilisateurs privilégiés le pourront toujours."
+ },
+
+ "95": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un locataire Microsoft Entra nommé contoso.com. Vous avez un fichier CSV contenant les noms et adresses e-mail de 500 utilisateurs externes. Vous devez créer un compte d'utilisateur invité dans contoso.com pour chacun d'eux. Solution : vous écrivez un script PowerShell qui exécute la cmdlet New-MgUser pour chaque utilisateur. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Il faut utiliser à la place la cmdlet New-AzureADMSInvitation, qui sert à inviter un nouvel utilisateur externe dans votre annuaire. Solution correcte : écrire un script PowerShell qui exécute New-AzureADMSInvitation pour chaque utilisateur externe."
+ },
+
+ "97": {
+  "text": [
+   "Votre réseau local comporte une passerelle VPN. Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "Vous devez faire en sorte que tout le trafic entre VM1 et storage1 transite par le réseau fédérateur Microsoft. Que devez-vous configurer ?"
+  ],
+  "options": {
+   "A": "Microsoft Entra Application Proxy",
+   "B": "des points de terminaison privés",
+   "C": "un groupe de sécurité réseau (NSG)",
+   "D": "Azure Peering Service"
+  },
+  "explanation": "Deux réponses sont correctes selon les variantes de cette question : les points de terminaison privés et les points de terminaison de service.\n\nLes points de terminaison privés permettent aux clients d'un réseau virtuel d'accéder aux données d'un compte de stockage Azure via Private Link. Le trafic entre les clients du réseau virtuel et le compte de stockage emprunte alors le réseau virtuel puis une liaison privée sur le réseau fédérateur Microsoft."
+ },
+
+ "98": {
+  "text": [
+   "Votre réseau local comporte une passerelle VPN. Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "Vous devez faire en sorte que tout le trafic entre VM1 et storage1 transite par le réseau fédérateur Microsoft. Que devez-vous configurer ?"
+  ],
+  "options": {
+   "A": "Microsoft Entra Application Proxy",
+   "B": "des points de terminaison de service",
+   "C": "un groupe de sécurité réseau (NSG)",
+   "D": "Azure Firewall"
+  },
+  "explanation": "Deux réponses sont correctes selon les variantes de cette question : les points de terminaison privés et les points de terminaison de service. Dans les deux cas, le trafic entre le réseau virtuel et le compte de stockage emprunte le réseau fédérateur Microsoft plutôt que l'Internet public."
+ },
+
+ "99": {
+  "text": [
+   "Votre réseau local comporte une passerelle VPN. Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
+   "Vous devez faire en sorte que tout le trafic entre VM1 et storage1 transite par le réseau fédérateur Microsoft. Que devez-vous configurer ?"
+  ],
+  "options": {
+   "A": "Azure Application Gateway",
+   "B": "des points de terminaison de service",
+   "C": "un groupe de sécurité réseau (NSG)",
+   "D": "Azure Peering Service"
+  },
+  "explanation": "Deux réponses sont correctes selon les variantes de cette question : les points de terminaison privés et les points de terminaison de service. Dans les deux cas, le trafic entre le réseau virtuel et le compte de stockage emprunte le réseau fédérateur Microsoft plutôt que l'Internet public."
+ }
+}
