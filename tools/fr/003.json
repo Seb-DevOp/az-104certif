@@ -1,0 +1,274 @@
+{
+ "46": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 contenant un réseau virtuel nommé VNet1. Vous ajoutez les utilisateurs présentés dans le tableau suivant.",
+   "Quel utilisateur peut effectuer chaque configuration ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : User1 et User3 uniquement. User1 — le rôle Owner permet de tout gérer, y compris l'accès aux ressources. User3 — le rôle Network Contributor permet de gérer les réseaux, et donc de créer des sous-réseaux. Box 2 : User1 uniquement. Le rôle Security Admin, limité à Security Center, permet de consulter et modifier les stratégies de sécurité, de consulter les états de sécurité, de voir les alertes et recommandations et de les ignorer."
+ },
+
+ "47": {
+  "text": [
+   "Vous disposez des ressources Azure présentées dans la capture suivante.",
+   "Vous prévoyez de suivre l'utilisation des ressources et d'empêcher leur suppression. À quelles ressources pouvez-vous appliquer des verrous et des étiquettes ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Sub1, RG1 et VM1 uniquement. Un abonnement, un groupe de ressources ou une ressource peuvent être verrouillés pour empêcher d'autres utilisateurs de votre organisation de supprimer ou modifier par erreur des éléments critiques. Box 2 : Sub1, RG1 et VM1 uniquement. Les étiquettes s'appliquent aux ressources, aux groupes de ressources et aux abonnements Azure."
+ },
+
+ "48": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra.",
+   "Vous prévoyez de supprimer plusieurs utilisateurs au moyen de la suppression groupée depuis le centre d'administration Microsoft Entra. Vous devez créer et téléverser un fichier pour cette suppression groupée. Quels attributs d'utilisateur devez-vous y inclure ?"
+  ],
+  "options": {
+   "A": "Le nom d'utilisateur principal et l'emplacement d'utilisation de chaque utilisateur, uniquement",
+   "B": "Le nom d'utilisateur principal de chaque utilisateur, uniquement",
+   "C": "Le nom d'affichage de chaque utilisateur, uniquement",
+   "D": "Le nom d'affichage et l'emplacement d'utilisation de chaque utilisateur, uniquement",
+   "E": "Le nom d'affichage et le nom d'utilisateur principal de chaque utilisateur, uniquement"
+  }
+ },
+
+ "49": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Sub1 contenant les ressources Azure présentées dans le tableau suivant.",
+   "Vous attribuez une stratégie Azure avec les paramètres suivants : portée Sub1 ; exclusions Sub1/RG1/VNET1 ; définition de stratégie « Append a tag and its value to resources » ; application activée ; nom d'étiquette Tag4 ; valeur value4. Vous attribuez ensuite des étiquettes aux ressources comme indiqué dans le tableau suivant.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Non — la stratégie Azure ajoutera Tag4 à RG1. Box 2 : Non — les étiquettes appliquées à un groupe de ressources ou à un abonnement ne sont pas héritées par les ressources, même si l'héritage peut être activé via Azure Policy. Storage1 porte Tag3 : Value1 et la stratégie y ajoutera Tag4. Box 3 : Non — les étiquettes n'étant pas héritées, VNET1 ne porte pas Tag2. VNET1 porte Tag3 : value2, et comme il est exclu de la stratégie, Tag4 ne lui sera pas ajouté."
+ },
+
+ "50": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous devez faire en sorte qu'un utilisateur Microsoft Entra nommé Admin1 dispose du rôle requis pour activer Traffic Analytics sur un abonnement Azure.",
+   "Solution : vous attribuez à Admin1 le rôle Traffic Manager Contributor au niveau de l'abonnement. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "51": {
+  "text": [
+   "Vous disposez de trois bureaux et d'un abonnement Azure contenant un locataire Microsoft Entra. Vous devez accorder des permissions de gestion des utilisateurs à un administrateur local dans chaque bureau. Que devez-vous utiliser ?"
+  ],
+  "options": {
+   "A": "les rôles Microsoft Entra",
+   "B": "les unités administratives",
+   "C": "les packages d'accès de la gestion des droits Microsoft Entra",
+   "D": "les rôles Azure"
+  }
+ },
+
+ "52": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un locataire Microsoft Entra nommé Adatum et d'un abonnement Azure nommé Subscription1. Adatum contient un groupe nommé Developers. Subscription1 contient un groupe de ressources nommé Dev. Vous devez permettre au groupe Developers de créer des applications logiques Azure dans le groupe de ressources Dev. Solution : sur Dev, vous attribuez le rôle Logic App Contributor au groupe Developers. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "53": {
+  "text": [
+   "Vous disposez d'un équilibreur de charge Azure nommé LB1. Vous attribuez à un utilisateur nommé User1 les rôles présentés dans la capture suivante.",
+   "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "User1 peut [choix] LB1.",
+     "options": ["supprimer", "créer une règle NAT pour", "attribuer l'accès à d'autres utilisateurs sur"]
+    },
+    "f2": {
+     "label": "User1 peut [choix] le groupe de ressources.",
+     "options": ["supprimer une machine virtuelle de", "modifier les règles d'équilibrage de charge de", "déployer un cluster Azure Kubernetes Service (AKS) dans"]
+    }
+   }
+  }
+ },
+
+ "54": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 contenant un réseau virtuel nommé VNet1, placé dans un groupe de ressources nommé RG1. Subscription1 comprend un utilisateur nommé User1, qui possède les rôles Reader, Security Admin et Security Reader. Vous devez faire en sorte que User1 puisse attribuer le rôle Reader sur VNet1 à d'autres utilisateurs. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Retirer User1 du rôle Security Reader sur Subscription1 et lui attribuer le rôle Contributor sur RG1.",
+   "B": "Attribuer à User1 le rôle Owner sur VNet1.",
+   "C": "Attribuer à User1 le rôle Contributor sur VNet1.",
+   "D": "Attribuer à User1 le rôle Network Contributor sur VNet1."
+  },
+  "explanation": "Le rôle Owner donne un accès complet à toutes les ressources, y compris le droit de déléguer l'accès à d'autres.\n\nRemarque : plusieurs variantes de cette question circulent à l'examen. Deux réponses sont correctes : attribuer à User1 le rôle User Access Administrator sur VNet1, ou lui attribuer le rôle Owner sur VNet1."
+ },
+
+ "55": {
+  "text": [
+   "Vous configurez le rôle personnalisé présenté dans la capture suivante.",
+   "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : roletype. Il faut configurer la stratégie Azure RBAC qui détermine qui peut se connecter à la machine virtuelle. Deux rôles Azure servent à autoriser cette connexion : Virtual Machine Administrator Login, qui permet de se connecter avec des privilèges d'administrateur, et Virtual Machine User Login, qui permet de se connecter avec des privilèges d'utilisateur standard.\n\nBox 2 : assignableScopes. Le contrôle d'accès en fonction du rôle (Azure RBAC) est le système d'autorisation qui gère l'accès aux ressources Azure ; c'est la portée assignable qui limite le rôle à un groupe de ressources donné.",
+  "interactive": {
+   "fields": {
+    "f1": { "label": "Pour permettre aux utilisateurs de se connecter aux machines virtuelles auxquelles role1 est attribué, modifiez la section [choix]." },
+    "f2": { "label": "Pour que role1 ne puisse être attribué qu'à un groupe de ressources nommé RG1, modifiez la section [choix]." }
+   }
+  }
+ },
+
+ "56": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un compte de stockage nommé storage1, lui-même contenant un partage de fichiers nommé share1. L'abonnement est rattaché à un locataire Microsoft Entra hybride contenant un groupe de sécurité nommé Group1. Vous devez accorder à Group1 le rôle Storage File Data SMB Share Elevated Contributor sur share1. Que devez-vous faire en premier ?"
+  ],
+  "options": {
+   "A": "Activer l'authentification Active Directory Domain Services (AD DS) pour storage1.",
+   "B": "Accorder les permissions au niveau du partage depuis l'Explorateur de fichiers.",
+   "C": "Monter share1 depuis l'Explorateur de fichiers.",
+   "D": "Créer un point de terminaison privé."
+  },
+  "explanation": "Avant d'activer Microsoft Entra ID sur SMB pour des partages de fichiers Azure, deux prérequis doivent être remplis : disposer d'un locataire Microsoft Entra, et activer Azure AD Domain Services sur ce locataire pour prendre en charge l'authentification par identifiants Microsoft Entra.\n\nRemarque : le rôle Storage File Data SMB Share Elevated Contributor autorise la lecture, l'écriture, la suppression et la modification des permissions NTFS dans les partages de fichiers Azure via SMB."
+ },
+
+ "57": {
+  "text": [
+   "Vous disposez de 15 abonnements Azure et d'un locataire Microsoft Entra contenant un groupe de sécurité nommé Group1. Vous prévoyez d'acquérir un abonnement Azure supplémentaire. Vous devez faire en sorte que Group1 puisse gérer les attributions de rôles sur les abonnements existants et à venir. La solution doit appliquer le principe du privilège minimum et limiter l'effort d'administration. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Attribuer à Group1 le rôle Owner sur le groupe d'administration racine.",
+   "B": "Attribuer à Group1 le rôle User Access Administrator sur le groupe d'administration racine.",
+   "C": "Créer un nouveau groupe d'administration et y attribuer à Group1 le rôle User Access Administrator.",
+   "D": "Créer un nouveau groupe d'administration et y attribuer à Group1 le rôle Owner."
+  },
+  "explanation": "Le rôle User Access Administrator permet d'accorder à d'autres utilisateurs l'accès aux ressources Azure. Les groupes d'administration offrent une gestion à l'échelle de l'entreprise quel que soit le type d'abonnements. Chaque annuaire possède un groupe d'administration de premier niveau unique, le groupe « Root », auquel se rattachent tous les groupes d'administration et abonnements ; il permet d'appliquer des stratégies globales et des attributions de rôles Azure au niveau de l'annuaire."
+ },
+
+ "58": {
+  "text": [
+   "Vous disposez d'un abonnement Azure dont la hiérarchie est présentée dans la capture suivante.",
+   "Vous créez une définition de stratégie Azure nommée Policy1. À quelles ressources Azure pouvez-vous attribuer Policy1, et lesquelles pouvez-vous en exclure ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Tenant Root Group, ManagementGroup1, Subscription1, RG1 et VM1. Une fois les règles métier formulées, la définition de stratégie ou l'initiative s'attribue à n'importe quelle portée de ressources prise en charge par Azure : groupes d'administration, abonnements, groupes de ressources ou ressources individuelles.\n\nRemarque : Azure propose quatre niveaux de portée — groupes d'administration, abonnements, groupes de ressources et ressources.\n\nBox 2 : ManagementGroup1, Subscription1, RG1 et VM1. Une sous-portée peut être exclue de l'attribution."
+ },
+
+ "59": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un abonnement Azure contenant les utilisateurs suivants dans un locataire Microsoft Entra nommé contoso.onmicrosoft.com :",
+   "User1 crée un nouveau locataire Microsoft Entra nommé external.contoso.onmicrosoft.com. Vous devez créer de nouveaux comptes d'utilisateur dans external.contoso.onmicrosoft.com.",
+   "Solution : vous demandez à User2 de créer les comptes. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "60": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un abonnement Azure contenant les utilisateurs suivants dans un locataire Microsoft Entra nommé contoso.onmicrosoft.com :",
+   "User1 crée un nouveau locataire Microsoft Entra nommé external.contoso.onmicrosoft.com. Vous devez créer de nouveaux comptes d'utilisateur dans external.contoso.onmicrosoft.com.",
+   "Solution : vous demandez à User4 de créer les comptes. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Seul un administrateur général peut ajouter des utilisateurs à ce locataire."
+ },
+
+ "61": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un abonnement Azure contenant les utilisateurs suivants dans un locataire Microsoft Entra nommé contoso.onmicrosoft.com :",
+   "User1 crée un nouveau locataire Microsoft Entra nommé external.contoso.onmicrosoft.com. Vous devez créer de nouveaux comptes d'utilisateur dans external.contoso.onmicrosoft.com.",
+   "Solution : vous demandez à User3 de créer les comptes. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Seul un administrateur général peut ajouter des utilisateurs à ce locataire."
+ },
+
+ "62": {
+  "text": [
+   "Vous disposez de deux abonnements Azure nommés Sub1 et Sub2, rattachés au même locataire Microsoft Entra. Un administrateur crée un rôle personnalisé dont la portée assignable est un groupe de ressources nommé RG1 dans Sub1. Vous devez pouvoir appliquer ce rôle personnalisé à n'importe quel groupe de ressources de Sub1 et de Sub2, en limitant l'effort d'administration. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Sélectionner le rôle personnalisé et ajouter Sub1 et Sub2 aux portées assignables. Retirer RG1 des portées assignables.",
+   "B": "Créer un nouveau rôle personnalisé pour Sub1, un autre pour Sub2, puis retirer le rôle de RG1.",
+   "C": "Créer un nouveau rôle personnalisé pour Sub1 et ajouter Sub2 aux portées assignables. Retirer le rôle de RG1.",
+   "D": "Sélectionner le rôle personnalisé et ajouter Sub1 aux portées assignables. Retirer RG1 des portées assignables. Créer un nouveau rôle personnalisé pour Sub2."
+  },
+  "explanation": "On peut écrire : \"AssignableScopes\": [ \"/subscriptions/{Sub1}\", \"/subscriptions/{Sub2}\" ].\n\nUn rôle personnalisé se définit en JSON, avec notamment un nom, une description, la liste des actions autorisées et les portées assignables."
+ },
+
+ "63": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un compte de stockage nommé storageacct1234 et deux utilisateurs nommés User1 et User2. Vous attribuez à User1 les rôles présentés dans la capture suivante.",
+   "Quelles deux actions User1 peut-il effectuer ? Chaque bonne réponse constitue une solution complète.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "options": {
+   "A": "Attribuer des rôles à User2 sur storageacct1234.",
+   "B": "Téléverser des données d'objets blob vers storageacct1234.",
+   "C": "Modifier le pare-feu de storageacct1234.",
+   "D": "Consulter les données d'objets blob de storageacct1234.",
+   "E": "Lister les fichiers des partages de fichiers de storageacct1234."
+  }
+ },
+
+ "64": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 contenant un espace de travail Azure Log Analytics nommé Workspace1. Vous devez consulter les événements d'erreur d'une table nommée Event. Quelle requête devez-vous exécuter dans Workspace1 ?"
+  ],
+  "explanation": "L'opérateur search offre une recherche multi-tables et multi-colonnes. Sa syntaxe est : Table_name | search \"terme recherché\".\n\nRemarque : plusieurs variantes de cette question circulent à l'examen. Trois réponses sont correctes : search in (Event) \"error\" ; Event | search \"error\" ; Event | where EventType == \"error\"."
+ },
+
+ "65": {
+  "text": [
+   "Vous disposez d'une application web Azure App Service nommée App1. Vous prévoyez de la déployer au moyen de Web Deploy. Vous devez faire en sorte que les développeurs d'App1 puissent utiliser leurs identifiants Microsoft Entra pour y déployer du contenu. La solution doit appliquer le principe du privilège minimum. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Attribuer le rôle Owner aux développeurs.",
+   "B": "Configurer des identifiants FTPS au niveau de l'application.",
+   "C": "Attribuer le rôle Website Contributor aux développeurs.",
+   "D": "Configurer des identifiants FTPS au niveau de l'utilisateur."
+  }
+ },
+
+ "66": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un locataire Microsoft Entra nommé contoso.com. Vous avez un fichier CSV contenant les noms et adresses e-mail de 500 utilisateurs externes. Vous devez créer un compte d'utilisateur invité dans contoso.com pour chacun d'eux. Solution : depuis Microsoft Entra ID dans le portail Azure, vous utilisez l'opération d'invitation groupée d'utilisateurs. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Utilisez la cmdlet New-AzureADMSInvitation, qui sert à inviter un nouvel utilisateur externe dans votre annuaire."
+ },
+
+ "67": {
+  "text": [
+   "Vous disposez d'un abonnement Azure rattaché à un locataire Microsoft Entra. Ce locataire contient les rôles RBAC personnalisés présentés dans le tableau suivant.",
+   "Depuis le portail Azure, vous devez créer deux rôles personnalisés nommés Role3 et Role4. Role3 sera un rôle d'abonnement Azure, Role4 un rôle Microsoft Entra. Quels rôles pouvez-vous cloner pour créer ces nouveaux rôles ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Role1 et les rôles intégrés d'abonnement Azure uniquement, puisque Role3 sera un rôle d'abonnement Azure.\n\nRemarque sur le clonage : si un rôle existant ne porte pas exactement les permissions voulues, on peut le cloner puis modifier ses permissions. Dans le portail Azure, ouvrez l'abonnement ou le groupe de ressources où le rôle personnalisé doit être assignable, puis Contrôle d'accès (IAM), onglet Rôles, et clonez le rôle voulu."
+ },
+
+ "69": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant 10 machines virtuelles, un coffre de clés nommé Vault1 et un groupe de sécurité réseau nommé NSG1. Toutes les ressources sont déployées dans la région Azure East US. Les machines virtuelles sont protégées par NSG1, configuré pour bloquer tout le trafic sortant vers Internet. Vous devez faire en sorte que les machines virtuelles puissent accéder à Vault1. La solution doit appliquer le principe du privilège minimum et limiter l'effort d'administration.",
+   "Que devez-vous configurer comme destination de la règle de sécurité sortante de NSG1 ?"
+  ],
+  "options": {
+   "A": "un groupe de sécurité d'application",
+   "B": "une balise de service",
+   "C": "une plage d'adresses IP"
+  },
+  "explanation": "Une balise de service (service tag) représente un ensemble de préfixes d'adresses IP d'un service Azure donné. Microsoft gère ces préfixes et met la balise à jour automatiquement quand les adresses changent, ce qui évite de modifier constamment les règles de sécurité réseau. La balise appropriée ici est AzureKeyVault."
+ },
+
+ "70": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra nommé adatum.com contenant les groupes présentés dans le tableau suivant.",
+   "Adatum.com contient les utilisateurs présentés dans le tableau suivant.",
+   "Vous attribuez la licence Microsoft Entra ID P2 à Group1 et à User4. Quels utilisateurs disposent de la licence Microsoft Entra ID P2 ?"
+  ],
+  "options": {
+   "A": "User4 uniquement",
+   "B": "User1 et User4 uniquement",
+   "C": "User1, User2 et User4 uniquement",
+   "D": "User1, User2, User3 et User4"
+  },
+  "explanation": "User1 est membre de Group1, auquel la licence Microsoft Entra ID P2 est directement attribuée. User4 dispose de la licence attribuée directement.\n\nRemarque : toute personne devant utiliser un service Microsoft Entra sous licence doit disposer de la licence appropriée. Les droits de licence peuvent être ajoutés à des utilisateurs ou à un groupe entier."
+ }
+}

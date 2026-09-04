@@ -1,0 +1,194 @@
+{
+ "1": {
+  "text": [
+   "Votre entreprise dispose d'un locataire Azure Active Directory (Azure AD) configuré en coexistence hybride avec le domaine Active Directory local. L'environnement virtuel local est constitué de machines virtuelles hébergées sur des serveurs Hyper-V sous Windows Server 2012 R2. Vous avez écrit des scripts PowerShell pour automatiser la configuration des nouvelles machines virtuelles, et vous prévoyez d'en créer plusieurs. Il vous faut une solution qui garantisse l'exécution de ces scripts sur les nouvelles machines. Laquelle des solutions suivantes est la meilleure ?"
+  ],
+  "options": {
+   "A": "Configurer un fichier de commandes SetupComplete.cmd dans le répertoire %windir%\\setup\\scripts.",
+   "B": "Configurer un objet de stratégie de groupe (GPO) pour exécuter les scripts en tant que scripts d'ouverture de session.",
+   "C": "Configurer un objet de stratégie de groupe (GPO) pour exécuter les scripts en tant que scripts de démarrage.",
+   "D": "Placer les scripts sur un nouveau disque dur virtuel (VHD)."
+  },
+  "explanation": "Après le déploiement d'une machine virtuelle, il faut généralement lui apporter quelques modifications avant qu'elle soit utilisable. Cela peut se faire manuellement, ou par exemple via Remote PowerShell pour automatiser la configuration après déploiement. Il existe désormais une troisième possibilité pour personnaliser la machine : l'extension CustomScript. Exécutée par l'agent de la machine virtuelle, elle est très directe : vous indiquez les fichiers à télécharger depuis votre compte de stockage et celui à exécuter. Vous pouvez même préciser les arguments à passer au script. La seule exigence est d'exécuter un fichier .ps1."
+ },
+
+ "2": {
+  "text": [
+   "Votre entreprise dispose d'un locataire Azure Active Directory (Azure AD) configuré en coexistence hybride avec le domaine Active Directory local. Vous prévoyez de déployer plusieurs nouvelles machines virtuelles dans Azure. Elles auront le même système d'exploitation et les mêmes besoins en logiciels personnalisés. Vous configurez une machine virtuelle de référence dans l'environnement virtuel local, puis vous la généralisez pour en créer une image.",
+   "Vous devez téléverser cette image vers Azure afin qu'elle soit proposée lors de la création des nouvelles machines virtuelles Azure. Quelle cmdlet PowerShell devez-vous utiliser ?"
+  ],
+  "explanation": "La cmdlet Add-AzVhd téléverse des disques durs virtuels locaux, au format .vhd, vers un compte de stockage d'objets blob, sous forme de disques durs virtuels de taille fixe."
+ },
+
+ "4": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant la même configuration. Chaque question a toutefois un résultat qui lui est propre. Déterminez si la solution proposée répond aux exigences. L'abonnement Azure de votre entreprise comprend deux réseaux Azure nommés VirtualNetworkA et VirtualNetworkB. VirtualNetworkA comporte une passerelle VPN configurée en routage statique. Une connexion VPN de site à site existe par ailleurs entre le réseau local de l'entreprise et VirtualNetworkA. Vous avez configuré une connexion VPN de point à site vers VirtualNetworkA depuis un poste de travail sous Windows 10. Après avoir configuré l'appairage de réseaux virtuels entre VirtualNetworkA et VirtualNetworkB, vous constatez que VirtualNetworkB est bien accessible depuis le réseau local de l'entreprise. En revanche, vous ne parvenez pas à établir de connexion vers VirtualNetworkB depuis le poste Windows 10.",
+   "Vous devez faire en sorte qu'une connexion à VirtualNetworkB puisse être établie depuis le poste Windows 10.",
+   "Solution : vous activez le paramètre « Allow gateway transit » sur VirtualNetworkA. Cette solution répond-elle à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "5": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant la même configuration. Chaque question a toutefois un résultat qui lui est propre. Déterminez si la solution proposée répond aux exigences. L'abonnement Azure de votre entreprise comprend deux réseaux Azure nommés VirtualNetworkA et VirtualNetworkB. VirtualNetworkA comporte une passerelle VPN configurée en routage statique. Une connexion VPN de site à site existe par ailleurs entre le réseau local de l'entreprise et VirtualNetworkA. Vous avez configuré une connexion VPN de point à site vers VirtualNetworkA depuis un poste de travail sous Windows 10. Après avoir configuré l'appairage de réseaux virtuels entre VirtualNetworkA et VirtualNetworkB, vous constatez que VirtualNetworkB est bien accessible depuis le réseau local de l'entreprise. En revanche, vous ne parvenez pas à établir de connexion vers VirtualNetworkB depuis le poste Windows 10. Vous devez faire en sorte qu'une connexion à VirtualNetworkB puisse être établie depuis le poste Windows 10.",
+   "Solution : vous activez le paramètre « Allow gateway transit » sur VirtualNetworkB. Cette solution répond-elle à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "6": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant la même configuration. Chaque question a toutefois un résultat qui lui est propre. Déterminez si la solution proposée répond aux exigences. L'abonnement Azure de votre entreprise comprend deux réseaux Azure nommés VirtualNetworkA et VirtualNetworkB. VirtualNetworkA comporte une passerelle VPN configurée en routage statique. Une connexion VPN de site à site existe par ailleurs entre le réseau local de l'entreprise et VirtualNetworkA. Vous avez configuré une connexion VPN de point à site vers VirtualNetworkA depuis un poste de travail sous Windows 10. Après avoir configuré l'appairage de réseaux virtuels entre VirtualNetworkA et VirtualNetworkB, vous constatez que VirtualNetworkB est bien accessible depuis le réseau local de l'entreprise. En revanche, vous ne parvenez pas à établir de connexion vers VirtualNetworkB depuis le poste Windows 10. Vous devez faire en sorte qu'une connexion à VirtualNetworkB puisse être établie depuis le poste Windows 10.",
+   "Solution : vous téléchargez et réinstallez le package de configuration du client VPN sur le poste Windows 10. Cette solution répond-elle à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "7": {
+  "text": [
+   "Votre entreprise héberge des machines virtuelles dans Microsoft Azure. Elles se trouvent toutes dans un même réseau virtuel Azure nommé VNet1. Certains collaborateurs travaillent à distance et doivent accéder aux machines virtuelles de VNet1. Vous devez leur fournir cet accès. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Configurer un VPN de site à site (S2S).",
+   "B": "Configurer un VPN de réseau virtuel à réseau virtuel.",
+   "C": "Configurer un VPN de point à site (P2S).",
+   "D": "Configurer DirectAccess sur une machine virtuelle Windows Server 2012.",
+   "E": "Configurer un VPN multisite."
+  },
+  "explanation": "Une connexion de passerelle VPN de point à site (P2S) permet d'établir une connexion sécurisée vers votre réseau virtuel depuis un poste client isolé."
+ },
+
+ "8": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant la même configuration. Chaque question a toutefois un résultat qui lui est propre. Déterminez si la solution proposée répond aux exigences. Votre entreprise dispose d'un groupe de disponibilité Microsoft SQL Server Always On configuré sur ses machines virtuelles Azure. Vous devez configurer un équilibreur de charge interne Azure comme écouteur pour ce groupe de disponibilité. Solution : vous créez une sonde d'intégrité HTTP sur le port 1433. Cette solution répond-elle à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "9": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant la même configuration. Chaque question a toutefois un résultat qui lui est propre. Déterminez si la solution proposée répond aux exigences. Votre entreprise dispose d'un groupe de disponibilité Microsoft SQL Server Always On configuré sur ses machines virtuelles Azure. Vous devez configurer un équilibreur de charge interne Azure comme écouteur pour ce groupe de disponibilité. Solution : vous réglez la persistance de session sur « Client IP ». Cette solution répond-elle à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "10": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant la même configuration. Chaque question a toutefois un résultat qui lui est propre. Déterminez si la solution proposée répond aux exigences. Votre entreprise dispose d'un groupe de disponibilité Microsoft SQL Server Always On configuré sur ses machines virtuelles Azure. Vous devez configurer un équilibreur de charge interne Azure comme écouteur pour ce groupe de disponibilité. Solution : vous activez Floating IP. Cette solution répond-elle à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "11": {
+  "text": [
+   "Votre entreprise dispose de deux serveurs locaux nommés SRV01 et SRV02. Des développeurs ont créé une application qui s'exécute sur SRV01 et qui appelle un service sur SRV02 par son adresse IP. Vous prévoyez de migrer cette application vers des machines virtuelles Azure. Vous avez configuré deux machines virtuelles sur un même sous-réseau d'un réseau virtuel Azure. Vous devez leur attribuer des adresses IP internes statiques. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Exécuter la cmdlet PowerShell New-AzureRMVMConfig.",
+   "B": "Exécuter la cmdlet PowerShell Set-AzureSubnet.",
+   "C": "Modifier les propriétés de la machine virtuelle dans le portail de gestion Azure.",
+   "D": "Modifier les propriétés IP dans le Centre Réseau et partage de Windows.",
+   "E": "Exécuter la cmdlet PowerShell Set-AzureStaticVNetIP."
+  },
+  "explanation": "Pour définir une adresse IP interne statique sur une machine virtuelle déjà créée, utilisez les cmdlets ci-dessous. Si une adresse IP a déjà été définie et que vous voulez la changer, supprimez d'abord l'adresse statique existante.\n\nLa procédure s'appuie sur Update-AzureVM, qui redémarre la machine dans le cadre de la mise à jour : l'adresse IP dynamique indiquée est attribuée après le redémarrage. Dans cet exemple, on définit l'adresse de VM2, située dans le service cloud StaticDemo : Get-AzureVM -ServiceName StaticDemo -Name VM2 | Set-AzureStaticVNetIP -IPAddress 192.168.4.7 | Update-AzureVM"
+ },
+
+ "12": {
+  "text": [
+   "Votre entreprise dispose d'un abonnement Azure Active Directory (Azure AD). Vous devez déployer cinq machines virtuelles sur le sous-réseau du réseau virtuel de l'entreprise. Chaque machine aura une adresse IP publique et une adresse IP privée. Les règles de sécurité entrantes et sortantes doivent être identiques pour toutes ces machines. Quel est le nombre minimal d'interfaces réseau nécessaires à cette configuration ?"
+  ]
+ },
+
+ "13": {
+  "text": [
+   "Votre entreprise dispose d'un abonnement Azure Active Directory (Azure AD). Vous devez déployer cinq machines virtuelles sur le sous-réseau du réseau virtuel de l'entreprise. Chaque machine aura une adresse IP publique et une adresse IP privée. Les règles de sécurité entrantes et sortantes doivent être identiques pour toutes ces machines. Quel est le nombre minimal de groupes de sécurité nécessaires à cette configuration ?"
+  ]
+ },
+
+ "14": {
+  "text": [
+   "L'abonnement Azure de votre entreprise comprend des machines virtuelles Azure sous Windows Server 2016. L'une d'elles est sauvegardée chaque jour au moyen d'Azure Backup Instant Restore.",
+   "La machine est infectée par un rançongiciel chiffrant les données et vous décidez de récupérer ses fichiers. Laquelle des propositions suivantes est VRAIE dans ce scénario ?"
+  ],
+  "options": {
+   "A": "Vous ne pouvez restaurer les fichiers que sur la machine virtuelle infectée.",
+   "B": "Vous pouvez restaurer les fichiers sur n'importe quelle machine virtuelle de l'abonnement de l'entreprise.",
+   "C": "Vous ne pouvez restaurer les fichiers que sur une nouvelle machine virtuelle.",
+   "D": "Vous ne pourrez pas récupérer les fichiers."
+  }
+ },
+
+ "15": {
+  "text": [
+   "L'abonnement Azure de votre entreprise comprend des machines virtuelles Azure sous Windows Server 2016. L'une d'elles est sauvegardée chaque jour au moyen d'Azure Backup Instant Restore. La machine est infectée par un rançongiciel chiffrant les données et vous devez la restaurer. Quelle action devez-vous mener ?"
+  ],
+  "options": {
+   "A": "Restaurer la machine virtuelle après avoir supprimé la machine infectée.",
+   "B": "Restaurer la machine virtuelle sur n'importe quelle machine de l'abonnement de l'entreprise.",
+   "C": "Restaurer la machine virtuelle sur une nouvelle machine virtuelle Azure.",
+   "D": "Restaurer la machine virtuelle sur un appareil Windows local."
+  }
+ },
+
+ "16": {
+  "text": [
+   "Vous administrez une solution dans Azure qui présente actuellement des problèmes de performance. Vous devez en identifier la cause à partir des métriques de l'infrastructure Azure. Quel outil devez-vous utiliser ?"
+  ],
+  "explanation": "Les métriques d'Azure Monitor sont stockées dans une base de données de séries temporelles, optimisée pour l'analyse de données horodatées. Elles se prêtent donc particulièrement bien aux alertes et à la détection rapide des incidents."
+ },
+
+ "17": {
+  "text": [
+   "L'abonnement Azure de votre entreprise comprend un coffre Recovery Services. Vous souhaitez utiliser Azure Backup pour planifier la sauvegarde des machines virtuelles de l'entreprise vers ce coffre. Lesquelles de ces machines virtuelles pouvez-vous sauvegarder ? Choisissez toutes les réponses qui s'appliquent."
+  ],
+  "options": {
+   "A": "Les machines virtuelles sous Windows 10.",
+   "B": "Les machines virtuelles sous Windows Server 2012 ou version ultérieure.",
+   "C": "Les machines virtuelles qui n'ont PAS été arrêtées.",
+   "D": "Les machines virtuelles sous Debian 8.2 ou version ultérieure.",
+   "E": "Les machines virtuelles qui ont été arrêtées."
+  },
+  "explanation": "Azure Backup prend en charge la sauvegarde des systèmes Windows Server 64 bits à partir de Windows Server 2008, de Windows 10 64 bits, et de Debian 64 bits à partir de la version 7.9. Il prend également en charge la sauvegarde des machines virtuelles arrêtées ou hors ligne."
+ },
+
+ "18": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un locataire Azure Active Directory (Azure AD) nommé contoso.com. Vous avez un fichier CSV contenant les noms et adresses e-mail de 500 utilisateurs externes. Vous devez créer un compte d'utilisateur invité dans contoso.com pour chacun d'eux.",
+   "Solution : vous écrivez un script PowerShell qui exécute la cmdlet New-AzureADUser pour chaque utilisateur. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "La cmdlet New-AzureADUser crée un utilisateur dans Azure Active Directory (Azure AD). Il faut utiliser à la place New-AzureADMSInvitation, qui sert à inviter un nouvel utilisateur externe dans votre annuaire."
+ },
+
+ "19": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un locataire Microsoft Entra nommé contoso.com. Vous avez un fichier CSV contenant les noms et adresses e-mail de 500 utilisateurs externes. Vous devez créer un compte d'utilisateur invité dans contoso.com pour chacun d'eux. Solution : depuis Microsoft Entra ID dans le portail Azure, vous utilisez l'opération de création groupée d'utilisateurs. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Il faut utiliser à la place la cmdlet New-AzureADMSInvitation, qui sert à inviter un nouvel utilisateur externe dans votre annuaire."
+ },
+
+ "20": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un locataire Azure Active Directory (Azure AD) nommé contoso.com. Vous avez un fichier CSV contenant les noms et adresses e-mail de 500 utilisateurs externes. Vous devez créer un compte d'utilisateur invité dans contoso.com pour chacun d'eux.",
+   "Solution : vous écrivez un script PowerShell qui exécute la cmdlet New-AzureADMSInvitation pour chaque utilisateur externe. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Utilisez la cmdlet New-AzureADMSInvitation, qui sert à inviter un nouvel utilisateur externe dans votre annuaire."
+ },
+
+ "21": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 qui contient un groupe de ressources nommé RG1. Dans RG1, vous créez un équilibreur de charge interne nommé LB1 et un équilibreur de charge public nommé LB2. Vous devez faire en sorte qu'un administrateur nommé Admin1 puisse gérer LB1 et LB2. La solution doit appliquer le principe du privilège minimum. Quel rôle devez-vous attribuer à Admin1 pour chaque tâche ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Le rôle Network Contributor permet de gérer les réseaux, mais pas d'y accéder.",
+  "interactive": {
+   "fields": {
+    "f1": { "label": "Pour ajouter un pool principal à LB1 :" },
+    "f2": { "label": "Pour ajouter une sonde d'intégrité à LB2 :" }
+   }
+  }
+ }
+}

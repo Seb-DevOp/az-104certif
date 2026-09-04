@@ -22,6 +22,7 @@
     "data:interactive": "node tools/merge-interactive.mjs",
     "check:translations": "node tools/check-translations.mjs",
     "data:transcribe": "node tools/transcribe-hotspots.mjs",
-    "check:interactive": "node tools/check-interactive.mjs"
+    "check:interactive": "node tools/check-interactive.mjs",
+    "data:translations": "node tools/merge-translations.mjs"
   }
 }

@@ -38,15 +38,27 @@ for (const [id, entry] of Object.entries(tr)) {
   const ix = entry.interactive;
   if (ix && !spec) problems.push(`Q${id}: interactive translation but no interactive spec`);
   if (ix && spec) {
-    const ids = spec.kind === 'yesno'
-      ? new Set(spec.statements.map((s) => s.id))
-      : new Set([...spec.items.map((i) => i.id), ...spec.targets.map((t) => t.id)]);
-    for (const k of Object.keys({ ...ix.statements, ...ix.items, ...ix.targets })) {
+    const ids = new Set(
+      spec.kind === 'yesno' ? spec.statements.map((s) => s.id)
+      : spec.kind === 'dropdown' ? spec.fields.map((f) => f.id)
+      : [...spec.items.map((i) => i.id), ...spec.targets.map((t) => t.id)],
+    );
+    for (const k of Object.keys({ ...ix.statements, ...ix.items, ...ix.targets, ...ix.fields })) {
       if (!ids.has(k)) problems.push(`Q${id}: interactive id "${k}" does not exist in the spec`);
     }
     if (spec.kind === 'yesno' && ix.statements) {
       const missing = spec.statements.filter((s) => !ix.statements[s.id]).map((s) => s.id);
       if (missing.length) problems.push(`Q${id}: statements not translated: ${missing.join(', ')}`);
+    }
+    if (spec.kind === 'dropdown' && ix.fields) {
+      for (const f of spec.fields) {
+        // A translated choice list must stay aligned with the spec, because the answer is
+        // an index into it.
+        const opts = ix.fields[f.id]?.options;
+        if (opts && opts.length !== f.options.length) {
+          problems.push(`Q${id}/${f.id}: ${opts.length} options translated, spec has ${f.options.length}`);
+        }
+      }
     }
   }
 }

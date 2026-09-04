@@ -1,0 +1,251 @@
+{
+ "22": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft 365 et d'un locataire Microsoft Entra nommé contoso.com. Vous prévoyez d'accorder à trois utilisateurs nommés User1, User2 et User3 l'accès à une bibliothèque de documents Microsoft SharePoint temporaire nommée Library1. Vous devez créer des groupes pour ces utilisateurs. La solution doit garantir que les groupes seront supprimés automatiquement au bout de 180 jours. Quels deux groupes devez-vous créer ? Chaque bonne réponse constitue une solution complète.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "options": {
+   "A": "un groupe Microsoft 365 avec le type d'appartenance Assigned",
+   "B": "un groupe de sécurité avec le type d'appartenance Assigned",
+   "C": "un groupe Microsoft 365 avec le type d'appartenance Dynamic User",
+   "D": "un groupe de sécurité avec le type d'appartenance Dynamic User",
+   "E": "un groupe de sécurité avec le type d'appartenance Dynamic Device"
+  },
+  "explanation": "Une stratégie d'expiration ne peut être définie que sur les groupes Office 365 dans Microsoft Entra ID.\n\nRemarque : avec la généralisation des groupes Office 365, administrateurs et utilisateurs ont besoin d'un moyen de faire le ménage dans les groupes inutilisés. Les stratégies d'expiration permettent de retirer du système les groupes inactifs.\n\nÀ l'expiration d'un groupe, tous les services associés (boîte aux lettres, Planner, site SharePoint, etc.) sont également supprimés. Une règle d'appartenance dynamique peut être définie aussi bien sur des groupes de sécurité que sur des groupes Office 365. Réponses incorrectes B, D et E : la stratégie d'expiration n'existe que pour les groupes Office 365."
+ },
+
+ "23": {
+  "text": [
+   "Vous disposez d'une stratégie Azure présentée dans la capture suivante :",
+   "Quel est l'effet de cette stratégie ?"
+  ],
+  "options": {
+   "A": "Vous ne pouvez créer de serveur Azure SQL nulle part dans Subscription 1.",
+   "B": "Vous ne pouvez créer des serveurs Azure SQL que dans ContosoRG1.",
+   "C": "Vous ne pouvez pas créer de serveur Azure SQL dans ContosoRG1 uniquement.",
+   "D": "Vous pouvez créer des serveurs Azure SQL dans n'importe quel groupe de ressources de Subscription 1."
+  },
+  "explanation": "Vous ne pouvez créer de serveur Azure SQL nulle part dans Subscription 1, à l'exception de ContosoRG1."
+ },
+
+ "24": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous disposez d'un locataire Microsoft Entra nommé Adatum et d'un abonnement Azure nommé Subscription1. Adatum contient un groupe nommé Developers. Subscription1 contient un groupe de ressources nommé Dev. Vous devez permettre au groupe Developers de créer des applications logiques Azure dans le groupe de ressources Dev. Solution : sur Subscription1, vous attribuez le rôle DevTest Labs User au groupe Developers. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Le rôle DevTest Labs User permet uniquement de se connecter aux machines virtuelles d'Azure DevTest Labs, de les démarrer, redémarrer et arrêter. C'est le rôle Logic App Contributor qui permet de gérer une application logique — sans y accéder — en donnant le droit de la consulter, de la modifier et de la mettre à jour."
+ },
+
+ "25": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1, qui contient les groupes de ressources présentés dans le tableau suivant.",
+   "RG1 contient une application web nommée WebApp1, située en Europe de l'Ouest. Vous déplacez WebApp1 vers RG2. Quel est l'effet de ce déplacement ?"
+  ],
+  "options": {
+   "A": "Le plan App Service de WebApp1 reste en Europe de l'Ouest. Policy2 s'applique à WebApp1.",
+   "B": "Le plan App Service de WebApp1 est déplacé en Europe du Nord. Policy2 s'applique à WebApp1.",
+   "C": "Le plan App Service de WebApp1 reste en Europe de l'Ouest. Policy1 s'applique à WebApp1.",
+   "D": "Le plan App Service de WebApp1 est déplacé en Europe du Nord. Policy1 s'applique à WebApp1."
+  },
+  "explanation": "Vous pouvez déplacer une application vers un autre plan App Service, à condition que le plan source et le plan cible se trouvent dans le même groupe de ressources et la même région géographique. La région dans laquelle s'exécute votre application est celle de son plan App Service. En revanche, la région d'un plan App Service ne peut pas être modifiée."
+ },
+
+ "26": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1, dont l'identifiant est c276fc76-9cd4-44c9-99a7-4fd71546436e. Vous devez créer un rôle RBAC personnalisé nommé CR1 répondant aux exigences suivantes : il ne peut être attribué qu'aux groupes de ressources de Subscription1 ; il interdit la gestion des autorisations d'accès de ces groupes de ressources ; il autorise la consultation, la création, la modification et la suppression des ressources qu'ils contiennent. Que devez-vous indiquer dans les éléments « assignable scopes » et « permissions » de la définition de CR1 ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ]
+ },
+
+ "27": {
+  "text": [
+   "Vous disposez d'un abonnement Azure. Les utilisateurs accèdent aux ressources de l'abonnement depuis leur domicile ou depuis des sites clients. Depuis leur domicile, ils doivent établir un VPN de point à site ; depuis les sites clients, ils passent par des VPN de site à site. Vous avez une application métier nommée App1 qui s'exécute sur plusieurs machines virtuelles Azure sous Windows Server. Vous devez faire en sorte que les connexions à App1 soient réparties sur l'ensemble de ces machines.",
+   "Quels sont les deux services Azure envisageables ? Chaque bonne réponse constitue une solution complète.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "options": {
+   "A": "un équilibreur de charge interne",
+   "B": "un équilibreur de charge public",
+   "C": "un réseau de diffusion de contenu Azure (CDN)",
+   "D": "Traffic Manager",
+   "E": "une passerelle Azure Application Gateway"
+  },
+  "explanation": "Le trafic réseau issu de la passerelle VPN est acheminé vers l'application cloud par un équilibreur de charge interne, placé dans le sous-réseau frontal de l'application."
+ },
+
+ "28": {
+  "text": [
+   "Vous disposez d'un abonnement Azure comptant 100 machines virtuelles Azure. Vous devez repérer rapidement les machines sous-utilisées dont le niveau de service pourrait être ramené à une offre moins coûteuse. Quel volet devez-vous utiliser ?"
+  ],
+  "explanation": "Bonne réponse : Advisor. Azure Advisor aide à optimiser et réduire la dépense Azure globale en identifiant les ressources inactives et sous-utilisées. Les recommandations de coût sont accessibles depuis l'onglet Coût du tableau de bord Advisor."
+ },
+
+ "29": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra. Vous devez créer une stratégie d'accès conditionnel imposant à tous les utilisateurs l'authentification multifacteur lorsqu'ils accèdent au portail Azure. Quels trois paramètres devez-vous configurer ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ]
+ },
+
+ "30": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra nommé contoso.onmicrosoft.com. Le rôle User administrator est attribué à un utilisateur nommé Admin1. Un partenaire externe possède un compte Microsoft dont l'identifiant de connexion est user1@outlook.com. Admin1 tente d'inviter ce partenaire à se connecter au locataire Microsoft Entra et reçoit le message d'erreur suivant : « Unable to invite user user1@outlook.com • Generic authorization exception. » Vous devez faire en sorte qu'Admin1 puisse inviter le partenaire externe. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Depuis le volet des paramètres Utilisateurs, modifier les paramètres de collaboration externe.",
+   "B": "Depuis le volet Noms de domaine personnalisés, ajouter un domaine personnalisé.",
+   "C": "Depuis le volet Relations organisationnelles, ajouter un fournisseur d'identité.",
+   "D": "Depuis le volet Rôles et administrateurs, attribuer le rôle Security administrator à Admin1."
+  }
+ },
+
+ "31": {
+  "text": [
+   "Vous disposez d'un abonnement Azure rattaché à un locataire Microsoft Entra. Le locataire comprend un compte utilisateur nommé User1. Vous devez faire en sorte que User1 puisse attribuer une stratégie au groupe d'administration racine du locataire. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Attribuer le rôle Owner sur l'abonnement Azure à User1, puis modifier les stratégies d'accès conditionnel par défaut.",
+   "B": "Attribuer le rôle Owner sur l'abonnement Azure à User1, puis demander à User1 de configurer la gestion des accès pour les ressources Azure.",
+   "C": "Attribuer le rôle Global administrator à User1, puis demander à User1 de configurer la gestion des accès pour les ressources Azure.",
+   "D": "Créer un nouveau groupe d'administration et désigner User1 comme propriétaire de ce groupe."
+  },
+  "explanation": "Chaque annuaire possède un groupe d'administration de premier niveau unique, le groupe « Root ». Intégré à la hiérarchie, il rassemble tous les groupes d'administration et tous les abonnements, et permet d'appliquer des stratégies globales et des attributions de rôles Azure au niveau de l'annuaire. L'administrateur général Microsoft Entra doit d'abord élever ses propres droits au rôle User Access Administrator sur ce groupe racine. Une fois cet accès élevé obtenu, il peut attribuer n'importe quel rôle Azure à d'autres utilisateurs ou groupes de l'annuaire pour gérer la hiérarchie, et notamment désigner son propre compte comme propriétaire du groupe d'administration racine."
+ },
+
+ "32": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra nommé adatum.com, qui contient les groupes présentés dans le tableau suivant.",
+   "Vous créez deux comptes d'utilisateur configurés comme indiqué dans le tableau suivant.",
+   "De quels groupes User1 et User2 sont-ils membres ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Group1 uniquement — seule la première règle s'applique. Box 2 : Group1 et Group2 uniquement — les deux règles d'appartenance s'appliquent."
+ },
+
+ "33": {
+  "text": [
+   "Vous disposez d'un déploiement hybride de Microsoft Entra ID contenant les utilisateurs présentés dans le tableau suivant.",
+   "Vous devez modifier les attributs JobTitle et UsageLocation de ces utilisateurs.",
+   "Pour quels utilisateurs pouvez-vous modifier ces attributs depuis Microsoft Entra ID ?",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : User1 et User3 uniquement — pour les utilisateurs dont la source d'autorité est Windows Server Active Directory, l'identité, les coordonnées et les informations professionnelles doivent être mises à jour depuis Active Directory. Box 2 : User1, User2 et User3."
+ },
+
+ "34": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous devez faire en sorte qu'un utilisateur Microsoft Entra nommé Admin1 dispose du rôle requis pour activer Traffic Analytics sur un abonnement Azure.",
+   "Solution : vous attribuez à Admin1 le rôle Network Contributor au niveau de l'abonnement. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Pour activer Traffic Analytics, votre compte doit posséder, au niveau de l'abonnement, l'un des rôles Azure suivants : owner, contributor, reader ou network contributor."
+ },
+
+ "35": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous devez faire en sorte qu'un utilisateur Microsoft Entra nommé Admin1 dispose du rôle requis pour activer Traffic Analytics sur un abonnement Azure.",
+   "Solution : vous attribuez à Admin1 le rôle Owner au niveau de l'abonnement. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" },
+  "explanation": "Pour activer Traffic Analytics, votre compte doit posséder, au niveau de l'abonnement, l'un des rôles Azure suivants : owner, contributor, reader ou network contributor."
+ },
+
+ "36": {
+  "text": [
+   "Remarque : cette question fait partie d'une série de questions présentant le même scénario. Chaque question de la série propose une solution différente, susceptible ou non d'atteindre l'objectif. Certaines séries admettent plusieurs solutions correctes, d'autres aucune. Une fois que vous aurez répondu à une question de cette section, vous ne pourrez plus y revenir : elle n'apparaîtra pas dans l'écran de révision. Vous devez faire en sorte qu'un utilisateur Microsoft Entra nommé Admin1 dispose du rôle requis pour activer Traffic Analytics sur un abonnement Azure.",
+   "Solution : vous attribuez à Admin1 le rôle Reader au niveau de l'abonnement. Cela répond-il à l'objectif ?"
+  ],
+  "options": { "A": "Oui", "B": "Non" }
+ },
+
+ "37": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un utilisateur nommé User1. Vous devez faire en sorte que User1 puisse déployer des machines virtuelles et gérer des réseaux virtuels. La solution doit appliquer le principe du privilège minimum. Quel rôle RBAC devez-vous attribuer à User1 ?"
+  ],
+  "explanation": "Contributor accorde un accès complet à la gestion de toutes les ressources, mais ne permet pas d'attribuer des rôles dans Azure RBAC.\n\nRéponses incorrectes. A — Owner : accès complet à la gestion de toutes les ressources, y compris l'attribution de rôles Azure RBAC. B — Virtual Machine Contributor : permet de gérer les machines virtuelles, mais pas d'y accéder, ni de gérer le réseau virtuel ou le compte de stockage auxquels elles sont rattachées. D — Virtual Machine Administrator Login : permet de voir les machines virtuelles dans le portail et de s'y connecter en tant qu'administrateur."
+ },
+
+ "38": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra contenant trois administrateurs généraux nommés Admin1, Admin2 et Admin3. Le locataire est associé à un abonnement Azure. Le contrôle d'accès de l'abonnement est configuré comme dans la capture « Access control ».",
+   "Vous vous connectez au portail Azure en tant qu'Admin1 et configurez le locataire comme dans la capture « Tenant ».",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ],
+  "explanation": "Box 1 : Non — seul Admin3, le propriétaire, peut attribuer la propriété. Box 2 : Oui. Box 3 : Non."
+ },
+
+ "39": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 contenant une machine virtuelle Azure nommée VM1, placée dans un groupe de ressources nommé RG1. VM1 exécute des services qui serviront à déployer des ressources dans RG1. Vous devez faire en sorte qu'un service exécuté sur VM1 puisse gérer les ressources de RG1 en utilisant l'identité de VM1. Que devez-vous faire en premier ?"
+  ],
+  "options": {
+   "A": "Depuis le portail Azure, modifier les paramètres Managed Identity de VM1.",
+   "B": "Depuis le portail Azure, modifier les paramètres Contrôle d'accès (IAM) de RG1.",
+   "C": "Depuis le portail Azure, modifier les paramètres Contrôle d'accès (IAM) de VM1.",
+   "D": "Depuis le portail Azure, modifier les paramètres Stratégies de RG1."
+  },
+  "explanation": "Les identités managées pour les ressources Azure dotent les services Azure d'une identité gérée automatiquement dans Microsoft Entra ID. Cette identité permet de s'authentifier auprès de tout service prenant en charge l'authentification Microsoft Entra, sans placer d'identifiants dans le code. L'identité managée affectée par le système s'active et se désactive depuis le portail Azure."
+ },
+
+ "40": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un groupe de ressources nommé TestRG, que vous utilisez pour valider un déploiement Azure. TestRG contient les ressources suivantes :",
+   "Vous devez supprimer TestRG. Que devez-vous faire en premier ?"
+  ],
+  "options": {
+   "A": "Modifier la configuration de sauvegarde de VM1 et modifier le type de verrou de ressource de VNET1.",
+   "B": "Retirer le verrou de ressource de VNET1 et supprimer toutes les données de Vault1.",
+   "C": "Arrêter VM1 et retirer le verrou de ressource de VNET1.",
+   "D": "Arrêter VM1 et supprimer toutes les données de Vault1."
+  }
+ },
+
+ "41": {
+  "text": [
+   "Vous disposez d'une zone DNS Azure nommée adatum.com. Vous devez déléguer un sous-domaine nommé research.adatum.com à un autre serveur DNS dans Azure. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Créer un enregistrement NS nommé research dans la zone adatum.com.",
+   "B": "Créer un enregistrement PTR nommé research dans la zone adatum.com.",
+   "C": "Modifier l'enregistrement SOA d'adatum.com.",
+   "D": "Créer un enregistrement A nommé *.research dans la zone adatum.com."
+  },
+  "explanation": "Il faut créer un enregistrement de serveur de noms (NS) pour la zone."
+ },
+
+ "42": {
+  "text": [
+   "Vous disposez d'un locataire Microsoft Entra dont le nom de domaine est contoso.onmicrosoft.com. Vous avez par ailleurs un nom de domaine contoso.com enregistré auprès d'un bureau d'enregistrement tiers. Vous devez pouvoir créer des utilisateurs Microsoft Entra dont le nom porte le suffixe @contoso.com. Quelles trois actions devez-vous effectuer, et dans quel ordre ? Pour répondre, déplacez les actions appropriées de la liste vers la zone de réponse et classez-les dans le bon ordre."
+  ],
+  "explanation": "1. Ajouter le nom de domaine personnalisé à votre annuaire. 2. Ajouter une entrée DNS pour ce nom de domaine chez le bureau d'enregistrement. 3. Vérifier le nom de domaine personnalisé dans Microsoft Entra ID."
+ },
+
+ "43": {
+  "text": [
+   "Vous disposez d'un abonnement Azure nommé Subscription1 contenant un espace de travail Azure Log Analytics nommé Workspace1. Vous devez consulter les événements d'erreur d'une table nommée Event. Quelle requête devez-vous exécuter dans Workspace1 ?"
+  ],
+  "explanation": "L'opérateur search offre une recherche multi-tables et multi-colonnes. Sa syntaxe est : Table_name | search \"terme recherché\".\n\nRemarque : plusieurs variantes de cette question circulent à l'examen. Trois réponses sont correctes : search in (Event) \"error\" ; Event | search \"error\" ; Event | where EventType == \"error\"."
+ },
+
+ "44": {
+  "text": [
+   "Vous disposez d'un nom de domaine DNS enregistré, contoso.com. Vous créez une zone DNS Azure publique nommée contoso.com. Vous devez faire en sorte que les enregistrements créés dans cette zone soient résolvables depuis Internet. Que devez-vous faire ?"
+  ],
+  "options": {
+   "A": "Créer des enregistrements NS dans contoso.com.",
+   "B": "Modifier l'enregistrement SOA chez le bureau d'enregistrement du domaine DNS.",
+   "C": "Créer l'enregistrement SOA dans contoso.com.",
+   "D": "Modifier les enregistrements NS chez le bureau d'enregistrement du domaine DNS."
+  }
+ },
+
+ "45": {
+  "text": [
+   "Vous disposez d'un abonnement Azure contenant un compte de stockage nommé storage1. L'abonnement est rattaché à un locataire Microsoft Entra nommé contoso.com, synchronisé avec un domaine Active Directory local. Ce domaine contient les principaux de sécurité présentés dans le tableau suivant.",
+   "Dans Microsoft Entra ID, vous créez un utilisateur nommé User2. Le compte storage1 contient un partage de fichiers nommé share1 et présente la configuration suivante.",
+   "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
+   "REMARQUE : chaque sélection correcte vaut un point."
+  ]
+ }
+}
