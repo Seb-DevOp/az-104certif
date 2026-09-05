@@ -4232,7 +4232,17 @@
    "Vous disposez d'un abonnement Azure. Vous déployez un groupe de machines virtuelles identiques configuré comme dans la capture suivante.",
    "Utilisez les menus déroulants pour choisir la réponse à chaque question à partir des informations présentées dans le graphique.",
    "REMARQUE : chaque sélection correcte vaut un point."
-  ]
+  ],
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "À 9h00, le groupe identique démarre et l’utilisation du processeur atteint 90 % pendant 15 minutes. Combien d’instances de machine virtuelle seront en cours d’exécution à 9h15 ?"
+    },
+    "f2": {
+     "label": "À 10h00, le groupe identique compte cinq instances en cours d’exécution et l’utilisation du processeur descend sous 15 % pendant 60 minutes. Combien d’instances seront en cours d’exécution à 11h00 ?"
+    }
+   }
+  }
  },
  "275": {
   "text": [
@@ -4263,7 +4273,17 @@
    "Vous disposez d'un abonnement Azure contenant les ressources présentées dans le tableau suivant.",
    "Dans Azure Cloud Shell, vous devez créer une machine virtuelle au moyen d'un modèle Azure Resource Manager (ARM). Comment devez-vous compléter la commande ?",
    "REMARQUE : chaque sélection correcte vaut un point."
-  ]
+  ],
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "[choix] …"
+    },
+    "f2": {
+     "label": "… [choix] -TemplateUri \"https://raw.githubusercontent.com/…\" …"
+    }
+   }
+  }
  },
  "278": {
   "text": [
@@ -4315,7 +4335,17 @@
   "text": [
    "Vous disposez d'un abonnement Azure. Vous devez utiliser un modèle Azure Resource Manager (ARM) pour créer une machine virtuelle dotée de plusieurs disques de données. Comment devez-vous compléter le modèle ?",
    "REMARQUE : chaque sélection correcte vaut un point."
-  ]
+  ],
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "\"storageProfile\" : { [choix]"
+    },
+    "f2": {
+     "label": "\"lun\" : [choix] ('dataDisks')]\","
+    }
+   }
+  }
  },
  "283": {
   "text": [
@@ -4361,7 +4391,29 @@
    "Vous disposez d'une application Azure App Service nommée WebApp1 contenant deux dossiers nommés Folder1 et Folder2. Vous devez configurer une sauvegarde quotidienne de WebApp1, en excluant Folder2. Que devez-vous créer en premier, et qu'utilisez-vous pour exclure Folder2 ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : un compte de stockage Azure. App Service peut sauvegarder vers un compte de stockage et un conteneur Azure configurés pour l'application : la configuration de l'application, le contenu des fichiers et la base de données qui lui est associée.\n\nChoisissez la destination de la sauvegarde en sélectionnant un compte de stockage et un conteneur ; ce compte doit appartenir au même abonnement que l'application à sauvegarder."
+  "explanation": "Box 1 : un compte de stockage Azure. App Service peut sauvegarder vers un compte de stockage et un conteneur Azure configurés pour l'application : la configuration de l'application, le contenu des fichiers et la base de données qui lui est associée.\n\nChoisissez la destination de la sauvegarde en sélectionnant un compte de stockage et un conteneur ; ce compte doit appartenir au même abonnement que l'application à sauvegarder.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Créez d’abord :",
+     "options": [
+      "un compte de stockage Azure",
+      "un coffre Backup",
+      "un coffre Recovery Services",
+      "un groupe de ressources"
+     ]
+    },
+    "f2": {
+     "label": "Pour exclure Folder2, utilisez :",
+     "options": [
+      "un fichier _backup.filter",
+      "une stratégie de sauvegarde",
+      "un verrou",
+      "un WebJob"
+     ]
+    }
+   }
+  }
  },
  "288": {
   "text": [
@@ -4380,14 +4432,34 @@
    "Vous disposez d'un abonnement Azure contenant une machine virtuelle sous Windows 10. Vous devez joindre cette machine à un domaine Active Directory. Comment devez-vous compléter le modèle Azure Resource Manager (ARM) ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : \"Microsoft.Compute/virtualMachines/extensions\". Ce type de ressource permet d'installer l'extension de jointure de domaine Active Directory, avec des paramètres fournis au moment du déploiement ; une fois l'extension déployée, la machine est jointe au domaine managé indiqué.\n\nBox 2 : \"protectedSettings\", qui héberge les valeurs sensibles telles que le mot de passe du compte de jointure."
+  "explanation": "Box 1 : \"Microsoft.Compute/virtualMachines/extensions\". Ce type de ressource permet d'installer l'extension de jointure de domaine Active Directory, avec des paramètres fournis au moment du déploiement ; une fois l'extension déployée, la machine est jointe au domaine managé indiqué.\n\nBox 2 : \"protectedSettings\", qui héberge les valeurs sensibles telles que le mot de passe du compte de jointure.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "\"type\" : [choix],"
+    },
+    "f2": {
+     "label": "[choix] \"Password\" : \"[parameters('domainPassword')]\""
+    }
+   }
+  }
  },
  "290": {
   "text": [
    "Vous disposez d'un abonnement Azure. Vous devez déployer une machine virtuelle au moyen d'un modèle Azure Resource Manager (ARM). Comment devez-vous compléter le modèle ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : resourceId. Exemple : \"dependsOn\": [ \"[resourceId('Microsoft.Network/networkInterfaces', concat(variables('nicPrefix'), '-', copyIndex()))]\" ].\n\nBox 2 : imageReference, à l'intérieur de storageProfile, qui désigne l'éditeur, l'offre et la référence de l'image système."
+  "explanation": "Box 1 : resourceId. Exemple : \"dependsOn\": [ \"[resourceId('Microsoft.Network/networkInterfaces', concat(variables('nicPrefix'), '-', copyIndex()))]\" ].\n\nBox 2 : imageReference, à l'intérieur de storageProfile, qui désigne l'éditeur, l'offre et la référence de l'image système.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "\"dependsOn\" : [ \"[[choix]('Microsoft.Network/networkInterfaces/', 'VM1')]\""
+    },
+    "f2": {
+     "label": "\"storageProfile\" : { \"[choix]\" :{"
+    }
+   }
+  }
  },
  "291": {
   "text": [
@@ -4395,14 +4467,47 @@
    "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : modifier le paramètre de configuration réseau. La capture indique « Network policy : None ». Or, pour qu'un cluster AKS prenne en charge des pools de nœuds destinés aux conteneurs Windows Server, il doit utiliser une stratégie réseau reposant sur le plug-in Azure CNI (advanced)."
+  "explanation": "Box 1 : modifier le paramètre de configuration réseau. La capture indique « Network policy : None ». Or, pour qu'un cluster AKS prenne en charge des pools de nœuds destinés aux conteneurs Windows Server, il doit utiliser une stratégie réseau reposant sur le plug-in Azure CNI (advanced).",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Pour pouvoir créer des conteneurs Windows dans AKS1, vous devez [choix].",
+     "options": [
+      "activer les nœuds virtuels",
+      "augmenter le nombre de pools de nœuds",
+      "modifier le réglage Version de Kubernetes",
+      "modifier le réglage Configuration réseau"
+     ]
+    },
+    "f2": {
+     "label": "Pour pouvoir intégrer AKS1 à un registre de conteneurs Azure, vous devez modifier le réglage [choix].",
+     "options": [
+      "Microsoft Entra ID géré par AKS",
+      "Méthode d’authentification",
+      "Plages d’adresses IP autorisées",
+      "Version de Kubernetes",
+      "Configuration réseau"
+     ]
+    }
+   }
+  }
  },
  "292": {
   "text": [
    "Vous disposez d'un abonnement Azure contenant un cluster Azure Kubernetes Service (AKS) nommé Cluster1, qui héberge un pool de nœuds nommé Pool1 comptant quatre nœuds. Vous devez effectuer une mise à niveau coordonnée de Cluster1 en respectant les exigences suivantes : déployer deux nouveaux nœuds pour réaliser la mise à niveau, et limiter les coûts. Comment devez-vous compléter la commande ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : add. La commande az aks nodepool add ajoute un pool de nœuds au cluster Kubernetes managé.\n\nBox 2 : --max-surge 2. Ce paramètre désigne les nœuds supplémentaires utilisés pour accélérer la mise à niveau, exprimés en nombre ou en pourcentage.\n\nRéponse incorrecte : --max-count fixe le nombre maximal de nœuds pour l'autoscaler, et ne s'applique qu'avec --enable-cluster-autoscaler."
+  "explanation": "Box 1 : add. La commande az aks nodepool add ajoute un pool de nœuds au cluster Kubernetes managé.\n\nBox 2 : --max-surge 2. Ce paramètre désigne les nœuds supplémentaires utilisés pour accélérer la mise à niveau, exprimés en nombre ou en pourcentage.\n\nRéponse incorrecte : --max-count fixe le nombre maximal de nœuds pour l'autoscaler, et ne s'applique qu'avec --enable-cluster-autoscaler.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "az aks nodepool [choix] -n pool1 -g RG1 --cluster-name cluster1 …"
+    },
+    "f2": {
+     "label": "… [choix]"
+    }
+   }
+  }
  },
  "293": {
   "interactive": {
@@ -4467,14 +4572,46 @@
    "VNet1 se trouve dans RG1 et VNet2 dans RG2 ; il n'existe aucune connectivité entre les deux. Un administrateur nommé Admin1 crée dans RG1 une machine virtuelle Azure nommée VM1, qui utilise un disque nommé Disk1 et se connecte à VNet1. Admin1 installe ensuite une application personnalisée sur VM1. Vous devez rendre cette application accessible sur VNet2, en limitant l'effort d'administration. Quelles deux actions devez-vous effectuer ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Une machine virtuelle ne peut pas simplement être déplacée d'un réseau à un autre. Il faut identifier le disque qu'elle utilise, supprimer la machine tout en conservant le disque, recréer la machine dans le réseau virtuel cible, puis y rattacher le disque d'origine."
+  "explanation": "Une machine virtuelle ne peut pas simplement être déplacée d'un réseau à un autre. Il faut identifier le disque qu'elle utilise, supprimer la machine tout en conservant le disque, recréer la machine dans le réseau virtuel cible, puis y rattacher le disque d'origine.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Première action :",
+     "options": [
+      "Créer une interface réseau dans RG2.",
+      "Détacher une interface réseau.",
+      "Supprimer VM1.",
+      "Déplacer une interface réseau vers RG2."
+     ]
+    },
+    "f2": {
+     "label": "Deuxième action :",
+     "options": [
+      "Attacher une interface réseau.",
+      "Créer une interface réseau dans RG2.",
+      "Créer une nouvelle machine virtuelle.",
+      "Déplacer VM1 vers RG2."
+     ]
+    }
+   }
+  }
  },
  "299": {
   "text": [
    "Vous disposez d'un abonnement Azure contenant un groupe de ressources nommé RG1. Vous prévoyez d'utiliser un modèle Azure Resource Manager (ARM) nommé template1 pour déployer des ressources, en respectant les exigences suivantes : déployer les nouvelles ressources dans RG1, et supprimer toutes les ressources existantes de RG1 au préalable. Comment devez-vous compléter la commande ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : -ResourceGroupName. La cmdlet New-AzResourceGroupDeployment ajoute un déploiement à un groupe de ressources existant, et ce paramètre en indique le nom.\n\nBox 2 : Complete. Le paramètre -Mode définit le mode de déploiement ; le mode Complete supprime les ressources existantes du groupe qui ne figurent pas dans le modèle."
+  "explanation": "Box 1 : -ResourceGroupName. La cmdlet New-AzResourceGroupDeployment ajoute un déploiement à un groupe de ressources existant, et ce paramètre en indique le nom.\n\nBox 2 : Complete. Le paramètre -Mode définit le mode de déploiement ; le mode Complete supprime les ressources existantes du groupe qui ne figurent pas dans le modèle.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "New-AzResourceGroupDeployment -TemplateUri \"https://contoso.com/template1\" -TemplateParameterfile params.json [choix] …"
+    },
+    "f2": {
+     "label": "… RG1 -Mode [choix]"
+    }
+   }
+  }
  },
  "300": {
   "text": [
@@ -4483,7 +4620,30 @@
    "Utilisez les menus déroulants pour choisir la réponse à chaque question à partir des informations présentées dans le graphique.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : 2 instances. La première capture indique un nombre d'instances par défaut de 1 ; la seconde montre que si l'utilisation du processeur dépasse 70 % pendant 10 minutes, le nombre d'instances augmente de 1. Le délai de récupération est de 5 minutes.\n\nBox 2 : 15 minutes. Le délai de récupération est de 5 minutes, auxquelles s'ajoutent les 10 minutes nécessaires pour déclencher une deuxième mise à l'échelle."
+  "explanation": "Box 1 : 2 instances. La première capture indique un nombre d'instances par défaut de 1 ; la seconde montre que si l'utilisation du processeur dépasse 70 % pendant 10 minutes, le nombre d'instances augmente de 1. Le délai de récupération est de 5 minutes.\n\nBox 2 : 15 minutes. Le délai de récupération est de 5 minutes, auxquelles s'ajoutent les 10 minutes nécessaires pour déclencher une deuxième mise à l'échelle.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Une fois que l’utilisation du processeur a atteint 80 % pendant 15 minutes, [choix] seront en cours d’exécution.",
+     "options": [
+      "1 instance",
+      "2 instances",
+      "3 instances",
+      "4 instances",
+      "5 instances"
+     ]
+    },
+    "f2": {
+     "label": "Une fois la première instance de montée en charge créée, le délai minimal avant la création d’une instance supplémentaire sera de [choix].",
+     "options": [
+      "1 minute",
+      "5 minutes",
+      "10 minutes",
+      "15 minutes"
+     ]
+    }
+   }
+  }
  },
  "301": {
   "text": [
@@ -4518,7 +4678,14 @@
    "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Non — AKS1 est dans RG1, donc dans West US, tandis que VNet2 est dans RG2, en Central US. Les clusters AKS sont des ressources régionales et ne peuvent pas s'étendre sur plusieurs régions.\n\nBox 2 : Oui — AKS2 et VNet1 sont tous deux dans West US.\n\nBox 3 : Oui — AKS3 et VNet3 sont tous deux dans East US."
+  "explanation": "Box 1 : Non — AKS1 est dans RG1, donc dans West US, tandis que VNet2 est dans RG2, en Central US. Les clusters AKS sont des ressources régionales et ne peuvent pas s'étendre sur plusieurs régions.\n\nBox 2 : Oui — AKS2 et VNet1 sont tous deux dans West US.\n\nBox 3 : Oui — AKS3 et VNet3 sont tous deux dans East US.",
+  "interactive": {
+   "statements": {
+    "s1": "Vous pouvez déployer AKS1 sur VNet2.",
+    "s2": "Vous pouvez déployer AKS2 sur VNet1.",
+    "s3": "Vous pouvez déployer AKS3 sur VNet3."
+   }
+  }
  },
  "304": {
   "text": [
@@ -4539,7 +4706,31 @@
    "Vous devez déterminer quels plans App Service peuvent être utilisés pour ces applications web. Que devez-vous retenir ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : ASP1 et ASP3. Les applications ASP.NET Core peuvent être hébergées aussi bien sous Windows que sous Linux. ASP2 est exclu car la région d'exécution d'une application est celle de son plan App Service.\n\nBox 2 : ASP1. Les applications ASP.NET ne peuvent être hébergées que sous Windows."
+  "explanation": "Box 1 : ASP1 et ASP3. Les applications ASP.NET Core peuvent être hébergées aussi bien sous Windows que sous Linux. ASP2 est exclu car la région d'exécution d'une application est celle de son plan App Service.\n\nBox 2 : ASP1. Les applications ASP.NET ne peuvent être hébergées que sous Windows.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "WebApp1 :",
+     "options": [
+      "ASP1 uniquement",
+      "ASP3 uniquement",
+      "ASP1 et ASP2 uniquement",
+      "ASP1 et ASP3 uniquement",
+      "ASP1, ASP2 et ASP3"
+     ]
+    },
+    "f2": {
+     "label": "WebApp2 :",
+     "options": [
+      "ASP1 uniquement",
+      "ASP3 uniquement",
+      "ASP1 et ASP2 uniquement",
+      "ASP1 et ASP3 uniquement",
+      "ASP1, ASP2 et ASP3"
+     ]
+    }
+   }
+  }
  },
  "306": {
   "text": [
@@ -4547,14 +4738,48 @@
    "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : 6 machines virtuelles. La règle d'augmentation d'échelle ajoute 2 machines lorsque le seuil processeur atteint ou dépasse 80 % ; le nombre initial de 4 instances passe donc à 6.\n\nBox 2 : 2 machines virtuelles. La règle de réduction d'échelle retire 4 machines lorsque le seuil processeur descend à 30 % ou moins ; partant de 4 instances, le nombre ne peut toutefois pas descendre jusqu'à 0, le minimum s'appliquant."
+  "explanation": "Box 1 : 6 machines virtuelles. La règle d'augmentation d'échelle ajoute 2 machines lorsque le seuil processeur atteint ou dépasse 80 % ; le nombre initial de 4 instances passe donc à 6.\n\nBox 2 : 2 machines virtuelles. La règle de réduction d'échelle retire 4 machines lorsque le seuil processeur descend à 30 % ou moins ; partant de 4 instances, le nombre ne peut toutefois pas descendre jusqu'à 0, le minimum s'appliquant.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Si Scale1 est utilisé à 85 % pendant six minutes après son déploiement, Scale1 exécutera [choix].",
+     "options": [
+      "2 machines virtuelles",
+      "4 machines virtuelles",
+      "6 machines virtuelles",
+      "10 machines virtuelles",
+      "20 machines virtuelles"
+     ]
+    },
+    "f2": {
+     "label": "Si Scale1 est d’abord utilisé à 25 % pendant six minutes après son déploiement, puis à 50 % pendant six minutes, Scale1 exécutera [choix].",
+     "options": [
+      "2 machines virtuelles",
+      "4 machines virtuelles",
+      "6 machines virtuelles",
+      "8 machines virtuelles",
+      "10 machines virtuelles"
+     ]
+    }
+   }
+  }
  },
  "307": {
   "text": [
    "Vous devez configurer une nouvelle application Azure App Service nommée WebApp1 répondant aux exigences suivantes : WebApp1 doit pouvoir vérifier un nom de domaine personnalisé app.contoso.com ; WebApp1 doit pouvoir monter automatiquement jusqu'à huit instances ; les coûts et l'effort d'administration doivent être limités. Quel plan tarifaire devez-vous choisir, et quel type d'enregistrement devez-vous utiliser pour vérifier le domaine ?",
    "REMARQUE : chaque bonne réponse vaut un point."
   ],
-  "explanation": "Box 1 : Standard, qui prend en charge jusqu'à 10 instances — le plan Basic étant limité à 3.\n\nBox 2 : TXT. Sélectionnez Vérifier pour vous assurer que votre domaine personnalisé est correctement enregistré et valide pour Microsoft Entra ID. Une fois la vérification effectuée, l'enregistrement TXT ou MX de vérification peut être supprimé."
+  "explanation": "Box 1 : Standard, qui prend en charge jusqu'à 10 instances — le plan Basic étant limité à 3.\n\nBox 2 : TXT. Sélectionnez Vérifier pour vous assurer que votre domaine personnalisé est correctement enregistré et valide pour Microsoft Entra ID. Une fois la vérification effectuée, l'enregistrement TXT ou MX de vérification peut être supprimé.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Plan tarifaire :"
+    },
+    "f2": {
+     "label": "Type d’enregistrement :"
+    }
+   }
+  }
  },
  "308": {
   "text": [
@@ -4564,7 +4789,14 @@
    "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Non — VM1 est de génération 2, alors que la définition d'image Image1 indique une génération V1. Les machines de génération 2 offrent des fonctionnalités que celles de génération 1 ne prennent pas en charge.\n\nBox 2 : Non — VM2 ne dispose que de 2 vCPU, alors qu'Image1 recommande de 4 à 16 vCPU.\n\nBox 3 : Oui."
+  "explanation": "Box 1 : Non — VM1 est de génération 2, alors que la définition d'image Image1 indique une génération V1. Les machines de génération 2 offrent des fonctionnalités que celles de génération 1 ne prennent pas en charge.\n\nBox 2 : Non — VM2 ne dispose que de 2 vCPU, alors qu'Image1 recommande de 4 à 16 vCPU.\n\nBox 3 : Oui.",
+  "interactive": {
+   "statements": {
+    "s1": "Le disque du système d’exploitation de VM1 peut servir de source à une version d’Image1.",
+    "s2": "Le disque du système d’exploitation de VM2 peut servir de source à une version d’Image1.",
+    "s3": "Le disque du système d’exploitation de VM3 peut servir de source à une version d’Image1."
+   }
+  }
  },
  "309": {
   "text": [
@@ -4581,7 +4813,14 @@
    "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Oui — le modèle crée un groupe de ressources dans la région Azure East US.\n\nRemarque : pour déployer au niveau d'un abonnement, on utilise New-AzSubscriptionDeployment, alias de New-AzDeployment, avec le paramètre -Location qui indique où stocker les données de déploiement.\n\nBox 2 : Oui — le nom de chaque ressource comporte la fonction copyIndex()."
+  "explanation": "Box 1 : Oui — le modèle crée un groupe de ressources dans la région Azure East US.\n\nRemarque : pour déployer au niveau d'un abonnement, on utilise New-AzSubscriptionDeployment, alias de New-AzDeployment, avec le paramètre -Location qui indique où stocker les données de déploiement.\n\nBox 2 : Oui — le nom de chaque ressource comporte la fonction copyIndex().",
+  "interactive": {
+   "statements": {
+    "s1": "Le modèle crée un groupe de ressources nommé RG0 dans la région Azure East US.",
+    "s2": "Le modèle crée quatre nouveaux groupes de ressources.",
+    "s3": "Le modèle crée un groupe de ressources nommé RG3 dans la région Azure West US."
+   }
+  }
  },
  "311": {
   "text": [
@@ -4639,7 +4878,14 @@
    "Vous vous connectez à l'abonnement et exécutez la cmdlet suivante : New-AzDeployment -Location westus -TemplateFile \"deploy.json\". Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Oui — RG1 est un groupe de ressources, lockDeployment y est déployé en mode Incremental avec un verrou CanNotDelete.\n\nBox 2 : Non — pour RG2, le verrou est ReadOnly. Ce niveau autorise les utilisateurs habilités à lire une ressource, mais pas à la supprimer ni à la mettre à jour : cela revient à restreindre tous les utilisateurs habilités aux seules permissions de lecture."
+  "explanation": "Box 1 : Oui — RG1 est un groupe de ressources, lockDeployment y est déployé en mode Incremental avec un verrou CanNotDelete.\n\nBox 2 : Non — pour RG2, le verrou est ReadOnly. Ce niveau autorise les utilisateurs habilités à lire une ressource, mais pas à la supprimer ni à la mettre à jour : cela revient à restreindre tous les utilisateurs habilités aux seules permissions de lecture.",
+  "interactive": {
+   "statements": {
+    "s1": "Vous pouvez déployer une machine virtuelle dans RG1.",
+    "s2": "Vous pouvez déployer une machine virtuelle dans RG2.",
+    "s3": "Vous pouvez créer manuellement un groupe de ressources nommé RG3."
+   }
+  }
  },
  "318": {
   "text": [
@@ -4709,7 +4955,27 @@
    "Vous prévoyez d'utiliser ACR Tasks et de configurer des connexions par point de terminaison privé. Quels registres de conteneurs prennent en charge ACR Tasks et les points de terminaison privés ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : ContReg1, ContReg2 et ContReg3. Les registres de référence Basic offrent les mêmes capacités programmatiques que Standard et Premium — intégration à l'authentification Microsoft Entra, suppression d'images, webhooks.\n\nRemarque : ACR Tasks est un ensemble de fonctionnalités d'Azure Container Registry qui assure la construction d'images de conteneur dans le cloud pour les plateformes Linux, Windows et ARM."
+  "explanation": "Box 1 : ContReg1, ContReg2 et ContReg3. Les registres de référence Basic offrent les mêmes capacités programmatiques que Standard et Premium — intégration à l'authentification Microsoft Entra, suppression d'images, webhooks.\n\nRemarque : ACR Tasks est un ensemble de fonctionnalités d'Azure Container Registry qui assure la construction d'images de conteneur dans le cloud pour les plateformes Linux, Windows et ARM.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Tâches ACR :",
+     "options": [
+      "ContReg1 uniquement",
+      "ContReg1 et ContReg2 uniquement",
+      "ContReg1, ContReg2 et ContReg3"
+     ]
+    },
+    "f2": {
+     "label": "Points de terminaison privés :",
+     "options": [
+      "ContReg1 uniquement",
+      "ContReg1 et ContReg2 uniquement",
+      "ContReg1, ContReg2 et ContReg3"
+     ]
+    }
+   }
+  }
  },
  "324": {
   "text": [
@@ -4753,7 +5019,17 @@
    "Vous disposez d'un abonnement Azure qui utilise Azure Container Instances, et d'un ordinateur sur lequel Azure CLI et Docker sont installés. Vous créez une image de conteneur nommée image1. Vous devez approvisionner un nouveau registre de conteneurs Azure et y ajouter image1. Quelle commande devez-vous exécuter pour chaque besoin ?",
    "REMARQUE : chaque bonne réponse vaut un point."
   ],
-  "explanation": "Box 1 : az acr create, pour approvisionner un nouveau registre de conteneurs. Un groupe de ressources doit exister au préalable ; le nom du registre doit être unique à l'échelle d'Azure."
+  "explanation": "Box 1 : az acr create, pour approvisionner un nouveau registre de conteneurs. Un groupe de ressources doit exister au préalable ; le nom du registre doit être unique à l'échelle d'Azure.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Approvisionner un nouveau registre de conteneurs :"
+    },
+    "f2": {
+     "label": "Ajouter image1 au registre :"
+    }
+   }
+  }
  },
  "328": {
   "text": [
@@ -4793,7 +5069,34 @@
    "Vous devez permettre à contoso2023 d'utiliser un point de terminaison de données dédié. Quels deux paramètres devez-vous configurer ?",
    "REMARQUE : chaque bonne réponse vaut un point."
   ],
-  "explanation": "La capture indique un plan tarifaire Standard, or les points de terminaison de données dédiés sont une fonctionnalité des registres Premium.\n\nLe niveau de service d'un registre se modifie depuis Azure CLI ou le portail Azure ; le passage d'un niveau à l'autre est libre tant que le niveau visé offre la capacité de stockage maximale requise."
+  "explanation": "La capture indique un plan tarifaire Standard, or les points de terminaison de données dédiés sont une fonctionnalité des registres Premium.\n\nLe niveau de service d'un registre se modifie depuis Azure CLI ou le portail Azure ; le passage d'un niveau à l'autre est libre tant que le niveau visé offre la capacité de stockage maximale requise.",
+  "interactive": {
+   "prompt": "Faites glisser dans la zone de réponse les deux réglages à configurer. Les intrus restent dans la liste.",
+   "items": {
+    "i1": "Vue d’ensemble",
+    "i2": "Journal d’activité",
+    "i3": "Contrôle d’accès (IAM)",
+    "i4": "Étiquettes",
+    "i5": "Démarrage rapide",
+    "i6": "Événements",
+    "i7": "Clés d’accès",
+    "i8": "Chiffrement",
+    "i9": "Identité",
+    "i10": "Réseau",
+    "i11": "Microsoft Defender pour le cloud",
+    "i12": "Propriétés",
+    "i13": "Verrous",
+    "i14": "Référentiels",
+    "i15": "Webhooks",
+    "i16": "Géo-réplications",
+    "i17": "Tâches",
+    "i18": "Registres connectés (préversion)",
+    "i19": "Cache"
+   },
+   "targets": {
+    "answer": "Zone de réponse"
+   }
+  }
  },
  "332": {
   "text": [
@@ -4921,7 +5224,29 @@
    "Vous prévoyez de déployer un plan App Service supplémentaire ainsi configuré : nom ASP4 ; plan tarifaire Premium v3 ; système d'exploitation Windows. Quels plans App Service prennent en charge la montée en charge par règles et la redondance de zone ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : ASP2, ASP3 et ASP4 uniquement. ASP1, en Linux Basic B1, ne prend pas en charge la montée en charge par règles, contrairement à ASP2 (Windows Standard S1), ASP3 (Linux Premium v3) et ASP4 (Windows Premium v3).\n\nRemarque : la mise à l'échelle automatique d'Azure App Service est disponible pour tous les types d'applications, Windows comme Linux, qu'elles soient déployées sous forme de code ou de conteneur. Elle n'est en revanche pas prise en charge pour le trafic des emplacements de déploiement."
+  "explanation": "Box 1 : ASP2, ASP3 et ASP4 uniquement. ASP1, en Linux Basic B1, ne prend pas en charge la montée en charge par règles, contrairement à ASP2 (Windows Standard S1), ASP3 (Linux Premium v3) et ASP4 (Windows Premium v3).\n\nRemarque : la mise à l'échelle automatique d'Azure App Service est disponible pour tous les types d'applications, Windows comme Linux, qu'elles soient déployées sous forme de code ou de conteneur. Elle n'est en revanche pas prise en charge pour le trafic des emplacements de déploiement.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Montée en charge par règles :",
+     "options": [
+      "ASP4 uniquement",
+      "ASP2 et ASP4 uniquement",
+      "ASP2, ASP3 et ASP4 uniquement",
+      "ASP1, ASP2, ASP3 et ASP4"
+     ]
+    },
+    "f2": {
+     "label": "Redondance de zone :",
+     "options": [
+      "ASP4 uniquement",
+      "ASP2 et ASP4 uniquement",
+      "ASP2, ASP3 et ASP4 uniquement",
+      "ASP1, ASP2, ASP3 et ASP4"
+     ]
+    }
+   }
+  }
  },
  "343": {
   "text": [
@@ -4978,7 +5303,33 @@
    "Vous devez mettre en œuvre les changements prévus pour les nouveaux conteneurs. Quels services Azure pouvez-vous utiliser pour chaque image ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Scénario : les changements prévus comprennent le déploiement de nouveaux conteneurs à partir d'Image1 ou d'Image2.\n\nBox 1 : App Service ou Azure Container Instances uniquement, Image1 étant sous Windows Server. Azure App Service propose des piles applicatives prédéfinies, comme ASP.NET ou Node.js, qui s'exécutent sur IIS sous Windows."
+  "explanation": "Scénario : les changements prévus comprennent le déploiement de nouveaux conteneurs à partir d'Image1 ou d'Image2.\n\nBox 1 : App Service ou Azure Container Instances uniquement, Image1 étant sous Windows Server. Azure App Service propose des piles applicatives prédéfinies, comme ASP.NET ou Node.js, qui s'exécutent sur IIS sous Windows.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Image1 :",
+     "options": [
+      "Azure Container Apps uniquement",
+      "Azure Container Instances uniquement",
+      "Azure Container Apps ou Azure Container Instances uniquement",
+      "App Service ou Azure Container Apps uniquement",
+      "App Service ou Azure Container Instances uniquement",
+      "App Service, Azure Container Apps ou Azure Container Instances"
+     ]
+    },
+    "f2": {
+     "label": "Image2 :",
+     "options": [
+      "Azure Container Apps uniquement",
+      "Azure Container Instances uniquement",
+      "Azure Container Apps ou Azure Container Instances uniquement",
+      "App Service ou Azure Container Apps uniquement",
+      "App Service ou Azure Container Instances uniquement",
+      "App Service, Azure Container Apps ou Azure Container Instances"
+     ]
+    }
+   }
+  }
  },
  "348": {
   "text": [
@@ -4998,7 +5349,17 @@
    "Vous prévoyez de déployer cinq machines virtuelles sur un sous-réseau d'un réseau virtuel. Chaque machine aura une adresse IP publique et une adresse IP privée, et toutes exigent les mêmes règles de sécurité entrantes et sortantes. Quel est le nombre minimal d'interfaces réseau et de groupes de sécurité réseau nécessaires ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : 5. Une adresse IP publique et une adresse IP privée peuvent être affectées à une même interface réseau.\n\nBox 2 : 1. Chaque sous-réseau et chaque interface réseau accepte zéro ou un groupe de sécurité réseau, et un même groupe peut être associé à autant de sous-réseaux et d'interfaces que vous le souhaitez."
+  "explanation": "Box 1 : 5. Une adresse IP publique et une adresse IP privée peuvent être affectées à une même interface réseau.\n\nBox 2 : 1. Chaque sous-réseau et chaque interface réseau accepte zéro ou un groupe de sécurité réseau, et un même groupe peut être associé à autant de sous-réseaux et d'interfaces que vous le souhaitez.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Nombre minimal d’interfaces réseau :"
+    },
+    "f2": {
+     "label": "Nombre minimal de groupes de sécurité réseau :"
+    }
+   }
+  }
  },
  "350": {
   "text": [

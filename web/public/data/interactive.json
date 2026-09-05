@@ -3043,6 +3043,218 @@
    }
   ]
  },
+ "274": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "At 9:00 AM, the scale set starts and CPU utilization is 90 percent for 15 minutes. How many virtual machine instances will be running at 9:15 AM?",
+    "options": [
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "f2",
+    "label": "At 10:00 AM, the scale set has five virtual machine instances running and CPU utilization falls to less than 15 percent for 60 minutes. How many virtual machine instances will be running at 11:00 AM?",
+    "options": [
+     "1",
+     "2",
+     "3",
+     "4"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "277": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "[answer choice] ...",
+    "options": [
+     "New-AzVm",
+     "New-AzResource",
+     "New-AzTemplateSpec",
+     "New-AzResourceGroupDeployment"
+    ],
+    "answer": 3
+   },
+   {
+    "id": "f2",
+    "label": "... [answer choice] -TemplateUri \"https://raw.githubusercontent.com/...\" ...",
+    "options": [
+     "-Tag 'Tag1'",
+     "-ResourceGroupName RG1",
+     "-GroupName ManagementGroup1",
+     "-Subscription 9c8bc1cd-7655-4c66-b3ea-a8ee101d8f75"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "282": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "\"storageProfile\": { [answer choice]",
+    "options": [
+     "\"copy\": [",
+     "\"copyIndex\":[",
+     "\"dependsOn\":["
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "\"lun\": [answer choice] ('dataDisks')]\",",
+    "options": [
+     "\"[copy",
+     "\"[copyIndex",
+     "\"[dependsOn"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "287": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "First create:",
+    "options": [
+     "An Azure Storage account",
+     "A Backup vault",
+     "A Recovery Services vault",
+     "A resource group"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "To exclude Folder2, use:",
+    "options": [
+     "A _backup.filter file",
+     "A backup policy",
+     "A lock",
+     "A WebJob"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "289": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "\"type\": [answer choice],",
+    "options": [
+     "\"Extensions\"",
+     "\"Microsoft.Compute/VirtualMachines\"",
+     "\"Microsoft.Compute/virtualMachines/extensions\""
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "[answer choice] \"Password\": \"[parameters('domainPassword')]\"",
+    "options": [
+     "\"ProtectedSettings\":{",
+     "\"Settings\":{",
+     "\"Statuses\":{"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "290": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "\"dependsOn\": [ \"[[answer choice]('Microsoft.Network/networkInterfaces/', 'VM1')]\"",
+    "options": [
+     "reference",
+     "resourceId",
+     "Union"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "f2",
+    "label": "\"storageProfile\": { \"[answer choice]\":{",
+    "options": [
+     "Array",
+     "Image",
+     "ImageReference",
+     "vhd"
+    ],
+    "answer": 2
+   }
+  ]
+ },
+ "291": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "To ensure that you can create Windows containers in AKS1, you must [answer choice].",
+    "options": [
+     "enable virtual nodes",
+     "increase the number of node pools",
+     "modify the Kubernetes version setting",
+     "modify the Network configuration setting"
+    ],
+    "answer": 3
+   },
+   {
+    "id": "f2",
+    "label": "To ensure that you can integrate AKS1 with an Azure container registry, you must modify the [answer choice] setting.",
+    "options": [
+     "AKS-managed Microsoft Entra ID",
+     "Authentication method",
+     "Authorized IP ranges",
+     "Kubernetes version",
+     "Network configuration"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "292": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "az aks nodepool [answer choice] -n pool1 -g RG1 --cluster-name cluster1 ...",
+    "options": [
+     "add",
+     "get-updates",
+     "scale",
+     "updates"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "... [answer choice]",
+    "options": [
+     "--max-count 2",
+     "--max-pods 2",
+     "--max-surge 2",
+     "--node-count 2"
+    ],
+    "answer": 2
+   }
+  ]
+ },
  "293": {
   "kind": "yesno",
   "statements": [
@@ -3059,6 +3271,252 @@
    {
     "id": "s3",
     "text": "The first storage account that is created will have a prefix of 0.",
+    "answer": true
+   }
+  ]
+ },
+ "298": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "First action:",
+    "options": [
+     "Create a network interface in RG2.",
+     "Detach a network interface.",
+     "Delete VM1.",
+     "Move a network interface to RG2."
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "Second action:",
+    "options": [
+     "Attach a network interface.",
+     "Create a network interface in RG2.",
+     "Create a new virtual machine.",
+     "Move VM1 to RG2."
+    ],
+    "answer": 2
+   }
+  ]
+ },
+ "299": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "New-AzResourceGroupDeployment -TemplateUri \"https://contoso.com/template1\" -TemplateParameterfile params.json [answer choice] ...",
+    "options": [
+     "-Name",
+     "-QueryString",
+     "-ResourceGroupName",
+     "-Tag"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "... RG1 -Mode [answer choice]",
+    "options": [
+     "All",
+     "Complete",
+     "Incremental"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "300": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "After CPU usage has reached 80 percent for 15 minutes, [answer choice] will be running.",
+    "options": [
+     "1 instance",
+     "2 instances",
+     "3 instances",
+     "4 instances",
+     "5 instances"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "f2",
+    "label": "Once the first scale-out instance is created, the minimum time before an additional instance is created will be [answer choice].",
+    "options": [
+     "1 minute",
+     "5 minutes",
+     "10 minutes",
+     "15 minutes"
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ "303": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "You can deploy AKS1 to VNet2.",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "You can deploy AKS2 to VNet1.",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "You can deploy AKS3 to VNet3.",
+    "answer": true
+   }
+  ]
+ },
+ "305": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "WebApp1:",
+    "options": [
+     "ASP1 only",
+     "ASP3 only",
+     "ASP1 and ASP2 only",
+     "ASP1 and ASP3 only",
+     "ASP1, ASP2, and ASP3"
+    ],
+    "answer": 3
+   },
+   {
+    "id": "f2",
+    "label": "WebApp2:",
+    "options": [
+     "ASP1 only",
+     "ASP3 only",
+     "ASP1 and ASP2 only",
+     "ASP1 and ASP3 only",
+     "ASP1, ASP2, and ASP3"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "306": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "If Scale1 is utilized at 85 percent for six minutes after it is deployed, Scale1 will be running [answer choice].",
+    "options": [
+     "2 virtual machines",
+     "4 virtual machines",
+     "6 virtual machines",
+     "10 virtual machines",
+     "20 virtual machines"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "If Scale1 is first utilized at 25 percent for six minutes after it is deployed, and then utilized at 50 percent for six minutes, Scale1 will be running [answer choice].",
+    "options": [
+     "2 virtual machines",
+     "4 virtual machines",
+     "6 virtual machines",
+     "8 virtual machines",
+     "10 virtual machines"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "307": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Pricing plan:",
+    "options": [
+     "Basic",
+     "Free",
+     "Shared",
+     "Standard"
+    ],
+    "answer": 3
+   },
+   {
+    "id": "f2",
+    "label": "Record type:",
+    "options": [
+     "A",
+     "AAAA",
+     "PTR",
+     "TXT"
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ "308": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "The operating system disk of VM1 can be used as a source for a version of Image1.",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "The operating system disk of VM2 can be used as a source for a version of Image1.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "The operating system disk of VM3 can be used as a source for a version of Image1.",
+    "answer": true
+   }
+  ]
+ },
+ "310": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "The template creates a resource group named RG0 in the East US Azure region.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "The template creates four new resource groups.",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "The template creates a resource group named RG3 in the West US Azure region.",
+    "answer": false
+   }
+  ]
+ },
+ "317": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "You can deploy a virtual machine to RG1.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "You can deploy a virtual machine to RG2.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "You can manually create a resource group named RG3.",
     "answer": true
    }
   ]
@@ -3080,6 +3538,235 @@
     "id": "s3",
     "text": "WebApp2 can communicate with VM1.",
     "answer": false
+   }
+  ]
+ },
+ "323": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "ACR Tasks:",
+    "options": [
+     "ContReg1 only",
+     "ContReg1 and ContReg2 only",
+     "ContReg1, ContReg2, and ContReg3"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "Private endpoints:",
+    "options": [
+     "ContReg1 only",
+     "ContReg1 and ContReg2 only",
+     "ContReg1, ContReg2, and ContReg3"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "327": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Provision a new container registry:",
+    "options": [
+     "az acr build",
+     "az acr create",
+     "az container create",
+     "docker create"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "f2",
+    "label": "Add image1 to the registry:",
+    "options": [
+     "az acr create",
+     "az container create",
+     "docker pull",
+     "docker push"
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ "331": {
+  "kind": "dragdrop",
+  "prompt": "Drag the two settings you must configure into the answer area. Distractors stay in the list.",
+  "items": [
+   {
+    "id": "i1",
+    "label": "Overview"
+   },
+   {
+    "id": "i2",
+    "label": "Activity log"
+   },
+   {
+    "id": "i3",
+    "label": "Access control (IAM)"
+   },
+   {
+    "id": "i4",
+    "label": "Tags"
+   },
+   {
+    "id": "i5",
+    "label": "Quick start"
+   },
+   {
+    "id": "i6",
+    "label": "Events"
+   },
+   {
+    "id": "i7",
+    "label": "Access keys"
+   },
+   {
+    "id": "i8",
+    "label": "Encryption"
+   },
+   {
+    "id": "i9",
+    "label": "Identity"
+   },
+   {
+    "id": "i10",
+    "label": "Networking"
+   },
+   {
+    "id": "i11",
+    "label": "Microsoft Defender for Cloud"
+   },
+   {
+    "id": "i12",
+    "label": "Properties"
+   },
+   {
+    "id": "i13",
+    "label": "Locks"
+   },
+   {
+    "id": "i14",
+    "label": "Repositories"
+   },
+   {
+    "id": "i15",
+    "label": "Webhooks"
+   },
+   {
+    "id": "i16",
+    "label": "Geo-replications"
+   },
+   {
+    "id": "i17",
+    "label": "Tasks"
+   },
+   {
+    "id": "i18",
+    "label": "Connected registries (Preview)"
+   },
+   {
+    "id": "i19",
+    "label": "Cache"
+   }
+  ],
+  "targets": [
+   {
+    "id": "answer",
+    "label": "Answer area",
+    "accepts": [
+     "i10",
+     "i18"
+    ]
+   }
+  ]
+ },
+ "342": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Rule-based scale out:",
+    "options": [
+     "ASP4 only",
+     "ASP2 and ASP4 only",
+     "ASP2, ASP3, and ASP4 only",
+     "ASP1, ASP2, ASP3, and ASP4"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "Zone redundancy:",
+    "options": [
+     "ASP4 only",
+     "ASP2 and ASP4 only",
+     "ASP2, ASP3, and ASP4 only",
+     "ASP1, ASP2, ASP3, and ASP4"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "347": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Image1:",
+    "options": [
+     "Azure Container Apps only",
+     "Azure Container Instances only",
+     "Azure Container Apps or Azure Container Instances only",
+     "App Service or Azure Container Apps only",
+     "App Service or Azure Container Instances only",
+     "App Service, Azure Container Apps, or Azure Container Instances"
+    ],
+    "answer": 4
+   },
+   {
+    "id": "f2",
+    "label": "Image2:",
+    "options": [
+     "Azure Container Apps only",
+     "Azure Container Instances only",
+     "Azure Container Apps or Azure Container Instances only",
+     "App Service or Azure Container Apps only",
+     "App Service or Azure Container Instances only",
+     "App Service, Azure Container Apps, or Azure Container Instances"
+    ],
+    "answer": 5
+   }
+  ]
+ },
+ "349": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Minimum number of network interfaces:",
+    "options": [
+     "5",
+     "10",
+     "15",
+     "20"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "Minimum number of network security groups:",
+    "options": [
+     "1",
+     "2",
+     "5",
+     "10"
+    ],
+    "answer": 0
    }
   ]
  },

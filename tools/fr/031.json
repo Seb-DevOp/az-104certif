@@ -1,0 +1,221 @@
+{
+ "305": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "WebApp1 :",
+     "options": [
+      "ASP1 uniquement",
+      "ASP3 uniquement",
+      "ASP1 et ASP2 uniquement",
+      "ASP1 et ASP3 uniquement",
+      "ASP1, ASP2 et ASP3"
+     ]
+    },
+    "f2": {
+     "label": "WebApp2 :",
+     "options": [
+      "ASP1 uniquement",
+      "ASP3 uniquement",
+      "ASP1 et ASP2 uniquement",
+      "ASP1 et ASP3 uniquement",
+      "ASP1, ASP2 et ASP3"
+     ]
+    }
+   }
+  }
+ },
+ "306": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Si Scale1 est utilisé à 85 % pendant six minutes après son déploiement, Scale1 exécutera [choix].",
+     "options": [
+      "2 machines virtuelles",
+      "4 machines virtuelles",
+      "6 machines virtuelles",
+      "10 machines virtuelles",
+      "20 machines virtuelles"
+     ]
+    },
+    "f2": {
+     "label": "Si Scale1 est d’abord utilisé à 25 % pendant six minutes après son déploiement, puis à 50 % pendant six minutes, Scale1 exécutera [choix].",
+     "options": [
+      "2 machines virtuelles",
+      "4 machines virtuelles",
+      "6 machines virtuelles",
+      "8 machines virtuelles",
+      "10 machines virtuelles"
+     ]
+    }
+   }
+  }
+ },
+ "307": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Plan tarifaire :"
+    },
+    "f2": {
+     "label": "Type d’enregistrement :"
+    }
+   }
+  }
+ },
+ "308": {
+  "interactive": {
+   "statements": {
+    "s1": "Le disque du système d’exploitation de VM1 peut servir de source à une version d’Image1.",
+    "s2": "Le disque du système d’exploitation de VM2 peut servir de source à une version d’Image1.",
+    "s3": "Le disque du système d’exploitation de VM3 peut servir de source à une version d’Image1."
+   }
+  }
+ },
+ "310": {
+  "interactive": {
+   "statements": {
+    "s1": "Le modèle crée un groupe de ressources nommé RG0 dans la région Azure East US.",
+    "s2": "Le modèle crée quatre nouveaux groupes de ressources.",
+    "s3": "Le modèle crée un groupe de ressources nommé RG3 dans la région Azure West US."
+   }
+  }
+ },
+ "317": {
+  "interactive": {
+   "statements": {
+    "s1": "Vous pouvez déployer une machine virtuelle dans RG1.",
+    "s2": "Vous pouvez déployer une machine virtuelle dans RG2.",
+    "s3": "Vous pouvez créer manuellement un groupe de ressources nommé RG3."
+   }
+  }
+ },
+ "323": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Tâches ACR :",
+     "options": [
+      "ContReg1 uniquement",
+      "ContReg1 et ContReg2 uniquement",
+      "ContReg1, ContReg2 et ContReg3"
+     ]
+    },
+    "f2": {
+     "label": "Points de terminaison privés :",
+     "options": [
+      "ContReg1 uniquement",
+      "ContReg1 et ContReg2 uniquement",
+      "ContReg1, ContReg2 et ContReg3"
+     ]
+    }
+   }
+  }
+ },
+ "327": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Approvisionner un nouveau registre de conteneurs :"
+    },
+    "f2": {
+     "label": "Ajouter image1 au registre :"
+    }
+   }
+  }
+ },
+ "331": {
+  "interactive": {
+   "prompt": "Faites glisser dans la zone de réponse les deux réglages à configurer. Les intrus restent dans la liste.",
+   "items": {
+    "i1": "Vue d’ensemble",
+    "i2": "Journal d’activité",
+    "i3": "Contrôle d’accès (IAM)",
+    "i4": "Étiquettes",
+    "i5": "Démarrage rapide",
+    "i6": "Événements",
+    "i7": "Clés d’accès",
+    "i8": "Chiffrement",
+    "i9": "Identité",
+    "i10": "Réseau",
+    "i11": "Microsoft Defender pour le cloud",
+    "i12": "Propriétés",
+    "i13": "Verrous",
+    "i14": "Référentiels",
+    "i15": "Webhooks",
+    "i16": "Géo-réplications",
+    "i17": "Tâches",
+    "i18": "Registres connectés (préversion)",
+    "i19": "Cache"
+   },
+   "targets": {
+    "answer": "Zone de réponse"
+   }
+  }
+ },
+ "342": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Montée en charge par règles :",
+     "options": [
+      "ASP4 uniquement",
+      "ASP2 et ASP4 uniquement",
+      "ASP2, ASP3 et ASP4 uniquement",
+      "ASP1, ASP2, ASP3 et ASP4"
+     ]
+    },
+    "f2": {
+     "label": "Redondance de zone :",
+     "options": [
+      "ASP4 uniquement",
+      "ASP2 et ASP4 uniquement",
+      "ASP2, ASP3 et ASP4 uniquement",
+      "ASP1, ASP2, ASP3 et ASP4"
+     ]
+    }
+   }
+  }
+ },
+ "347": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Image1 :",
+     "options": [
+      "Azure Container Apps uniquement",
+      "Azure Container Instances uniquement",
+      "Azure Container Apps ou Azure Container Instances uniquement",
+      "App Service ou Azure Container Apps uniquement",
+      "App Service ou Azure Container Instances uniquement",
+      "App Service, Azure Container Apps ou Azure Container Instances"
+     ]
+    },
+    "f2": {
+     "label": "Image2 :",
+     "options": [
+      "Azure Container Apps uniquement",
+      "Azure Container Instances uniquement",
+      "Azure Container Apps ou Azure Container Instances uniquement",
+      "App Service ou Azure Container Apps uniquement",
+      "App Service ou Azure Container Instances uniquement",
+      "App Service, Azure Container Apps ou Azure Container Instances"
+     ]
+    }
+   }
+  }
+ },
+ "349": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Nombre minimal d’interfaces réseau :"
+    },
+    "f2": {
+     "label": "Nombre minimal de groupes de sécurité réseau :"
+    }
+   }
+  }
+ },
+ "_note": "Libellés français du lot 8 de zones actives (305, 306, 307, 308, 310, 317, 323, 327, 331, 342, 347, 349). Les commandes az et les noms de lames du portail restent en anglais."
+}

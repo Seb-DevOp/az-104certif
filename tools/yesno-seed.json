@@ -419,6 +419,62 @@
    true
   ]
  ],
+ "303": [
+  [
+   "You can deploy AKS1 to VNet2.",
+   false
+  ],
+  [
+   "You can deploy AKS2 to VNet1.",
+   true
+  ],
+  [
+   "You can deploy AKS3 to VNet3.",
+   true
+  ]
+ ],
+ "308": [
+  [
+   "The operating system disk of VM1 can be used as a source for a version of Image1.",
+   false
+  ],
+  [
+   "The operating system disk of VM2 can be used as a source for a version of Image1.",
+   false
+  ],
+  [
+   "The operating system disk of VM3 can be used as a source for a version of Image1.",
+   true
+  ]
+ ],
+ "310": [
+  [
+   "The template creates a resource group named RG0 in the East US Azure region.",
+   true
+  ],
+  [
+   "The template creates four new resource groups.",
+   true
+  ],
+  [
+   "The template creates a resource group named RG3 in the West US Azure region.",
+   false
+  ]
+ ],
+ "317": [
+  [
+   "You can deploy a virtual machine to RG1.",
+   true
+  ],
+  [
+   "You can deploy a virtual machine to RG2.",
+   false
+  ],
+  [
+   "You can manually create a resource group named RG3.",
+   true
+  ]
+ ],
  "319": [
   [
    "WebApp1 can communicate with VM2.",

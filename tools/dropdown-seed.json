@@ -1283,6 +1283,426 @@
    1
   ]
  ],
+ "274": [
+  [
+   "At 9:00 AM, the scale set starts and CPU utilization is 90 percent for 15 minutes. How many virtual machine instances will be running at 9:15 AM?",
+   [
+    "2",
+    "3",
+    "4",
+    "5"
+   ],
+   1
+  ],
+  [
+   "At 10:00 AM, the scale set has five virtual machine instances running and CPU utilization falls to less than 15 percent for 60 minutes. How many virtual machine instances will be running at 11:00 AM?",
+   [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   0
+  ]
+ ],
+ "277": [
+  [
+   "[answer choice] ...",
+   [
+    "New-AzVm",
+    "New-AzResource",
+    "New-AzTemplateSpec",
+    "New-AzResourceGroupDeployment"
+   ],
+   3
+  ],
+  [
+   "... [answer choice] -TemplateUri \"https://raw.githubusercontent.com/...\" ...",
+   [
+    "-Tag 'Tag1'",
+    "-ResourceGroupName RG1",
+    "-GroupName ManagementGroup1",
+    "-Subscription 9c8bc1cd-7655-4c66-b3ea-a8ee101d8f75"
+   ],
+   1
+  ]
+ ],
+ "282": [
+  [
+   "\"storageProfile\": { [answer choice]",
+   [
+    "\"copy\": [",
+    "\"copyIndex\":[",
+    "\"dependsOn\":["
+   ],
+   0
+  ],
+  [
+   "\"lun\": [answer choice] ('dataDisks')]\",",
+   [
+    "\"[copy",
+    "\"[copyIndex",
+    "\"[dependsOn"
+   ],
+   1
+  ]
+ ],
+ "287": [
+  [
+   "First create:",
+   [
+    "An Azure Storage account",
+    "A Backup vault",
+    "A Recovery Services vault",
+    "A resource group"
+   ],
+   0
+  ],
+  [
+   "To exclude Folder2, use:",
+   [
+    "A _backup.filter file",
+    "A backup policy",
+    "A lock",
+    "A WebJob"
+   ],
+   0
+  ]
+ ],
+ "289": [
+  [
+   "\"type\": [answer choice],",
+   [
+    "\"Extensions\"",
+    "\"Microsoft.Compute/VirtualMachines\"",
+    "\"Microsoft.Compute/virtualMachines/extensions\""
+   ],
+   2
+  ],
+  [
+   "[answer choice] \"Password\": \"[parameters('domainPassword')]\"",
+   [
+    "\"ProtectedSettings\":{",
+    "\"Settings\":{",
+    "\"Statuses\":{"
+   ],
+   0
+  ]
+ ],
+ "290": [
+  [
+   "\"dependsOn\": [ \"[[answer choice]('Microsoft.Network/networkInterfaces/', 'VM1')]\"",
+   [
+    "reference",
+    "resourceId",
+    "Union"
+   ],
+   1
+  ],
+  [
+   "\"storageProfile\": { \"[answer choice]\":{",
+   [
+    "Array",
+    "Image",
+    "ImageReference",
+    "vhd"
+   ],
+   2
+  ]
+ ],
+ "291": [
+  [
+   "To ensure that you can create Windows containers in AKS1, you must [answer choice].",
+   [
+    "enable virtual nodes",
+    "increase the number of node pools",
+    "modify the Kubernetes version setting",
+    "modify the Network configuration setting"
+   ],
+   3
+  ],
+  [
+   "To ensure that you can integrate AKS1 with an Azure container registry, you must modify the [answer choice] setting.",
+   [
+    "AKS-managed Microsoft Entra ID",
+    "Authentication method",
+    "Authorized IP ranges",
+    "Kubernetes version",
+    "Network configuration"
+   ],
+   0
+  ]
+ ],
+ "292": [
+  [
+   "az aks nodepool [answer choice] -n pool1 -g RG1 --cluster-name cluster1 ...",
+   [
+    "add",
+    "get-updates",
+    "scale",
+    "updates"
+   ],
+   0
+  ],
+  [
+   "... [answer choice]",
+   [
+    "--max-count 2",
+    "--max-pods 2",
+    "--max-surge 2",
+    "--node-count 2"
+   ],
+   2
+  ]
+ ],
+ "298": [
+  [
+   "First action:",
+   [
+    "Create a network interface in RG2.",
+    "Detach a network interface.",
+    "Delete VM1.",
+    "Move a network interface to RG2."
+   ],
+   2
+  ],
+  [
+   "Second action:",
+   [
+    "Attach a network interface.",
+    "Create a network interface in RG2.",
+    "Create a new virtual machine.",
+    "Move VM1 to RG2."
+   ],
+   2
+  ]
+ ],
+ "299": [
+  [
+   "New-AzResourceGroupDeployment -TemplateUri \"https://contoso.com/template1\" -TemplateParameterfile params.json [answer choice] ...",
+   [
+    "-Name",
+    "-QueryString",
+    "-ResourceGroupName",
+    "-Tag"
+   ],
+   2
+  ],
+  [
+   "... RG1 -Mode [answer choice]",
+   [
+    "All",
+    "Complete",
+    "Incremental"
+   ],
+   1
+  ]
+ ],
+ "300": [
+  [
+   "After CPU usage has reached 80 percent for 15 minutes, [answer choice] will be running.",
+   [
+    "1 instance",
+    "2 instances",
+    "3 instances",
+    "4 instances",
+    "5 instances"
+   ],
+   1
+  ],
+  [
+   "Once the first scale-out instance is created, the minimum time before an additional instance is created will be [answer choice].",
+   [
+    "1 minute",
+    "5 minutes",
+    "10 minutes",
+    "15 minutes"
+   ],
+   3
+  ]
+ ],
+ "305": [
+  [
+   "WebApp1:",
+   [
+    "ASP1 only",
+    "ASP3 only",
+    "ASP1 and ASP2 only",
+    "ASP1 and ASP3 only",
+    "ASP1, ASP2, and ASP3"
+   ],
+   3
+  ],
+  [
+   "WebApp2:",
+   [
+    "ASP1 only",
+    "ASP3 only",
+    "ASP1 and ASP2 only",
+    "ASP1 and ASP3 only",
+    "ASP1, ASP2, and ASP3"
+   ],
+   0
+  ]
+ ],
+ "306": [
+  [
+   "If Scale1 is utilized at 85 percent for six minutes after it is deployed, Scale1 will be running [answer choice].",
+   [
+    "2 virtual machines",
+    "4 virtual machines",
+    "6 virtual machines",
+    "10 virtual machines",
+    "20 virtual machines"
+   ],
+   2
+  ],
+  [
+   "If Scale1 is first utilized at 25 percent for six minutes after it is deployed, and then utilized at 50 percent for six minutes, Scale1 will be running [answer choice].",
+   [
+    "2 virtual machines",
+    "4 virtual machines",
+    "6 virtual machines",
+    "8 virtual machines",
+    "10 virtual machines"
+   ],
+   0
+  ]
+ ],
+ "307": [
+  [
+   "Pricing plan:",
+   [
+    "Basic",
+    "Free",
+    "Shared",
+    "Standard"
+   ],
+   3
+  ],
+  [
+   "Record type:",
+   [
+    "A",
+    "AAAA",
+    "PTR",
+    "TXT"
+   ],
+   3
+  ]
+ ],
+ "323": [
+  [
+   "ACR Tasks:",
+   [
+    "ContReg1 only",
+    "ContReg1 and ContReg2 only",
+    "ContReg1, ContReg2, and ContReg3"
+   ],
+   2
+  ],
+  [
+   "Private endpoints:",
+   [
+    "ContReg1 only",
+    "ContReg1 and ContReg2 only",
+    "ContReg1, ContReg2, and ContReg3"
+   ],
+   0
+  ]
+ ],
+ "327": [
+  [
+   "Provision a new container registry:",
+   [
+    "az acr build",
+    "az acr create",
+    "az container create",
+    "docker create"
+   ],
+   1
+  ],
+  [
+   "Add image1 to the registry:",
+   [
+    "az acr create",
+    "az container create",
+    "docker pull",
+    "docker push"
+   ],
+   3
+  ]
+ ],
+ "342": [
+  [
+   "Rule-based scale out:",
+   [
+    "ASP4 only",
+    "ASP2 and ASP4 only",
+    "ASP2, ASP3, and ASP4 only",
+    "ASP1, ASP2, ASP3, and ASP4"
+   ],
+   2
+  ],
+  [
+   "Zone redundancy:",
+   [
+    "ASP4 only",
+    "ASP2 and ASP4 only",
+    "ASP2, ASP3, and ASP4 only",
+    "ASP1, ASP2, ASP3, and ASP4"
+   ],
+   0
+  ]
+ ],
+ "347": [
+  [
+   "Image1:",
+   [
+    "Azure Container Apps only",
+    "Azure Container Instances only",
+    "Azure Container Apps or Azure Container Instances only",
+    "App Service or Azure Container Apps only",
+    "App Service or Azure Container Instances only",
+    "App Service, Azure Container Apps, or Azure Container Instances"
+   ],
+   4
+  ],
+  [
+   "Image2:",
+   [
+    "Azure Container Apps only",
+    "Azure Container Instances only",
+    "Azure Container Apps or Azure Container Instances only",
+    "App Service or Azure Container Apps only",
+    "App Service or Azure Container Instances only",
+    "App Service, Azure Container Apps, or Azure Container Instances"
+   ],
+   5
+  ]
+ ],
+ "349": [
+  [
+   "Minimum number of network interfaces:",
+   [
+    "5",
+    "10",
+    "15",
+    "20"
+   ],
+   0
+  ],
+  [
+   "Minimum number of network security groups:",
+   [
+    "1",
+    "2",
+    "5",
+    "10"
+   ],
+   0
+  ]
+ ],
  "409": [
   [
    "Direction:",
