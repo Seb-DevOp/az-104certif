@@ -237,5 +237,252 @@
    ]
   ]
  },
+ "173": {
+  "prompt": "Drag the two blades you must configure into the answer area. Distractors stay in the list.",
+  "choices": [
+   [
+    "Diagnose and solve problems",
+    false
+   ],
+   [
+    "Access Control (IAM)",
+    true
+   ],
+   [
+    "Data migration",
+    false
+   ],
+   [
+    "Events",
+    false
+   ],
+   [
+    "Storage browser",
+    false
+   ],
+   [
+    "Containers",
+    false
+   ],
+   [
+    "File shares",
+    false
+   ],
+   [
+    "Queues",
+    false
+   ],
+   [
+    "Tables",
+    false
+   ],
+   [
+    "Networking",
+    false
+   ],
+   [
+    "Azure CDN",
+    false
+   ],
+   [
+    "Access keys",
+    false
+   ],
+   [
+    "Shared access signature",
+    false
+   ],
+   [
+    "Encryption",
+    false
+   ],
+   [
+    "Microsoft Defender for Cloud",
+    false
+   ],
+   [
+    "Geo-replication",
+    true
+   ],
+   [
+    "Data protection",
+    false
+   ],
+   [
+    "Object replication",
+    false
+   ]
+  ]
+ },
+ "196": {
+  "prompt": "Drag the two settings you must configure into the answer area. Distractors stay in the list.",
+  "choices": [
+   [
+    "Allowed services: Blob",
+    false
+   ],
+   [
+    "Allowed services: File",
+    false
+   ],
+   [
+    "Allowed services: Queue",
+    false
+   ],
+   [
+    "Allowed services: Table",
+    false
+   ],
+   [
+    "Allowed resource types: Service",
+    false
+   ],
+   [
+    "Allowed resource types: Container",
+    false
+   ],
+   [
+    "Allowed resource types: Object",
+    true
+   ],
+   [
+    "Allowed permissions: Read",
+    true
+   ],
+   [
+    "Allowed permissions: Write",
+    false
+   ],
+   [
+    "Allowed permissions: Delete",
+    false
+   ],
+   [
+    "Allowed permissions: List",
+    false
+   ],
+   [
+    "Allowed permissions: Add",
+    false
+   ],
+   [
+    "Allowed permissions: Create",
+    false
+   ],
+   [
+    "Allowed permissions: Update",
+    false
+   ],
+   [
+    "Allowed permissions: Process",
+    false
+   ],
+   [
+    "Allowed permissions: Immutable storage",
+    false
+   ],
+   [
+    "Allowed permissions: Permanent delete",
+    false
+   ],
+   [
+    "Blob versioning permissions: Enables deletion of versions",
+    false
+   ],
+   [
+    "Allowed blob index permissions: Read/Write",
+    false
+   ],
+   [
+    "Allowed blob index permissions: Filter",
+    false
+   ]
+  ]
+ },
+ "203": {
+  "prompt": "Drag the three settings you must enable into the answer area. Distractors stay in the list.",
+  "choices": [
+   [
+    "Allowed services: Blob",
+    false
+   ],
+   [
+    "Allowed services: File",
+    false
+   ],
+   [
+    "Allowed services: Queue",
+    false
+   ],
+   [
+    "Allowed services: Table",
+    false
+   ],
+   [
+    "Allowed resource types: Service",
+    false
+   ],
+   [
+    "Allowed resource types: Container",
+    true
+   ],
+   [
+    "Allowed resource types: Object",
+    true
+   ],
+   [
+    "Allowed permissions: Read",
+    true
+   ],
+   [
+    "Allowed permissions: Write",
+    false
+   ],
+   [
+    "Allowed permissions: Delete",
+    false
+   ],
+   [
+    "Allowed permissions: List",
+    false
+   ],
+   [
+    "Allowed permissions: Add",
+    false
+   ],
+   [
+    "Allowed permissions: Create",
+    false
+   ],
+   [
+    "Allowed permissions: Update",
+    false
+   ],
+   [
+    "Allowed permissions: Process",
+    false
+   ],
+   [
+    "Allowed permissions: Immutable storage",
+    false
+   ],
+   [
+    "Allowed permissions: Permanent delete",
+    false
+   ],
+   [
+    "Blob versioning permissions: Enables deletion of versions",
+    false
+   ],
+   [
+    "Allowed blob index permissions: Read/Write",
+    false
+   ],
+   [
+    "Allowed blob index permissions: Filter",
+    false
+   ]
+  ]
+ },
  "_readme": "Hot-area questions that ask for N settings out of a list rather than a value per row, transcribed by hand from each answer-key screenshot (the key highlights the settings that belong in the answer). One entry per question id: { prompt, choices: [[label, true|false], ...] }, true meaning the setting is part of the answer. Expanded into a one-target drag-and-drop board by tools/merge-interactive.mjs."
 }

@@ -1,0 +1,77 @@
+{
+ "_note": "Libellés français du lot 3 de zones actives (136, 137, 139, 145, 147, 153, 158, 163, 164, 166, 171, 173). Les fragments JSON, les commandes azcopy et les noms de lames restent en anglais.",
+
+ "136": { "interactive": { "fields": {
+  "f1": { "label": "azcopy [choix] …" },
+  "f2": { "label": "… 'https://mystorageaccount.[choix].core.windows.net/vmimages'" }
+ } } },
+
+ "137": { "interactive": { "fields": {
+  "f1": { "label": "Les machines virtuelles du sous-réseau 10.2.9.0/24 auront une connectivité réseau vers les partages de fichiers du compte de stockage [choix].", "options": ["toujours", "pendant une sauvegarde", "jamais"] },
+  "f2": { "label": "Azure Backup pourra sauvegarder les disques durs non managés des machines virtuelles du compte de stockage [choix].", "options": ["toujours", "pendant une sauvegarde", "jamais"] }
+ } } },
+
+ "139": { "interactive": { "fields": {
+  "f1": { "label": "Stockage Blob :", "options": ["Microsoft Entra ID uniquement", "Signature d'accès partagé (SAS) uniquement", "Clés d'accès et signature d'accès partagé (SAS) uniquement", "Microsoft Entra ID et signature d'accès partagé (SAS) uniquement", "Microsoft Entra ID, clés d'accès et signature d'accès partagé (SAS)"] },
+  "f2": { "label": "Stockage Fichier :", "options": ["Microsoft Entra ID uniquement", "Signature d'accès partagé (SAS) uniquement", "Clés d'accès et signature d'accès partagé (SAS) uniquement", "Microsoft Entra ID et signature d'accès partagé (SAS) uniquement", "Microsoft Entra ID, clés d'accès et signature d'accès partagé (SAS)"] }
+ } } },
+
+ "145": { "interactive": { "fields": {
+  "f1": { "label": "Comptes de stockage :", "options": ["storage1 uniquement", "storage2 uniquement", "storage3 uniquement", "storage1, storage2 et storage3"] },
+  "f2": { "label": "Espaces de travail Log Analytics :", "options": ["Analytics1 uniquement", "Analytics2 uniquement", "Analytics3 uniquement", "Analytics1, Analytics2 et Analytics3"] }
+ } } },
+
+ "147": { "interactive": { "fields": {
+  "f1": { "label": "Si, le 2 septembre 2018, vous lancez Microsoft Azure Storage Explorer sur un ordinateur dont l'adresse IP est 193.77.134.1 et que vous utilisez SAS1 pour vous connecter au compte de stockage, vous [choix].", "options": ["serez invité à saisir des identifiants", "n'aurez aucun accès", "aurez un accès en lecture, écriture et liste", "aurez un accès en lecture seule"] },
+  "f2": { "label": "Si, le 10 septembre 2018, vous exécutez la commande net use sur un ordinateur dont l'adresse IP est 193.77.134.50 et que vous utilisez SAS1 comme mot de passe pour vous connecter à share1, vous [choix].", "options": ["serez invité à saisir des identifiants", "n'aurez aucun accès", "aurez un accès en lecture, écriture et liste", "aurez un accès en lecture seule"] }
+ } } },
+
+ "153": { "interactive": { "statements": {
+  "s1": "Un serveur dont l'adresse IP publique est 131.107.103.10 peut accéder à storageaccount1",
+  "s2": "Des blobs individuels de storageaccount1 peuvent être placés dans le niveau archive",
+  "s3": "Les administrateurs généraux de Microsoft Entra ID peuvent accéder à un partage de fichiers hébergé dans storageaccount1 avec leurs identifiants Microsoft Entra"
+ } } },
+
+ "158": { "interactive": { "fields": {
+  "f1": { "label": "Type de compte :", "options": ["StorageV2 uniquement", "StorageV2 ou FileStorage uniquement", "StorageV2 ou BlobStorage uniquement", "StorageV2, BlobStorage ou FileStorage"] },
+  "f2": { "label": "Type d'objet à créer dans le nouveau compte :", "options": ["Conteneur", "Partage de fichiers", "Table", "File d'attente"] }
+ } } },
+
+ "163": { "interactive": { "statements": {
+  "s1": "Le 6 juin, File1 sera stocké dans le niveau d'accès Cool.",
+  "s2": "Le 1er juin, File2 sera stocké dans le niveau d'accès Cool.",
+  "s3": "Le 16 juin, File2 sera stocké dans le niveau d'accès Archive."
+ } } },
+
+ "164": { "interactive": { "statements": {
+  "s1": "Les modifications apportées aux données de storage1 peuvent être annulées après sept jours.",
+  "s2": "Seuls les utilisateurs situés dans la région Azure East US peuvent se connecter à storage1.",
+  "s3": "Trois copies de storage1 seront conservées dans la région Azure East US."
+ } } },
+
+ "166": { "interactive": { "fields": {
+  "f1": { "label": "\"actions\" : { \"baseBlob\" : { [choix]" },
+  "f2": { "label": "\"filters\" : { [choix] \"container1/\"" }
+ } } },
+
+ "171": { "interactive": { "fields": {
+  "f1": { "label": "Vous pouvez utiliser [choix] pour Azure Table Storage.", "options": ["storageaccount1 uniquement", "storageaccount2 uniquement", "storageaccount3 uniquement", "storageaccount1 et storageaccount2 uniquement", "storageaccount2 et storageaccount3 uniquement"] },
+  "f2": { "label": "Vous pouvez utiliser [choix] pour Azure Blob storage.", "options": ["storageaccount3 uniquement", "storageaccount2 et storageaccount3 uniquement", "storageaccount1 et storageaccount3 uniquement", "tous les comptes de stockage"] }
+ } } },
+
+ "173": { "interactive": {
+  "prompt": "Faites glisser dans la zone de réponse les deux lames à configurer. Les intrus restent dans la liste.",
+  "items": {
+   "i1": "Diagnostiquer et résoudre les problèmes",
+   "i2": "Contrôle d'accès (IAM)",
+   "i3": "Migration de données", "i4": "Événements", "i5": "Explorateur de stockage",
+   "i6": "Conteneurs", "i7": "Partages de fichiers", "i8": "Files d'attente", "i9": "Tables",
+   "i10": "Réseau", "i11": "Azure CDN", "i12": "Clés d'accès",
+   "i13": "Signature d'accès partagé", "i14": "Chiffrement",
+   "i15": "Microsoft Defender pour le cloud",
+   "i16": "Géo-réplication",
+   "i17": "Protection des données", "i18": "Réplication d'objets"
+  },
+  "targets": { "answer": "Zone de réponse" }
+ } }
+}

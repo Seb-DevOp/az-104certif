@@ -223,6 +223,20 @@
    false
   ]
  ],
+ "153": [
+  [
+   "A server that has a public IP address of 131.107.103.10 can access storageaccount1",
+   true
+  ],
+  [
+   "Individual blobs in storageaccount1 can be set to use the archive tier",
+   true
+  ],
+  [
+   "Global administrators in Microsoft Entra ID can access a file share hosted in storageaccount1 by using their Microsoft Entra credentials",
+   false
+  ]
+ ],
  "156": [
   [
    "On October 10, you can read Dep1File1.docx without a delay.",
@@ -234,6 +248,34 @@
   ],
   [
    "On October 10, you can read File3.docx without a delay.",
+   true
+  ]
+ ],
+ "163": [
+  [
+   "On June 6, File1 will be stored in the Cool access tier.",
+   false
+  ],
+  [
+   "On June 1, File2 will be stored in the Cool access tier.",
+   false
+  ],
+  [
+   "On June 16, File2 will be stored in the Archive access tier.",
+   false
+  ]
+ ],
+ "164": [
+  [
+   "Changes made to the data in storage1 can be rolled back after seven days.",
+   false
+  ],
+  [
+   "Only users located in the East US Azure region can connect to storage1.",
+   false
+  ],
+  [
+   "Three copies of storage1 will be maintained in the East US Azure region.",
    true
   ]
  ],

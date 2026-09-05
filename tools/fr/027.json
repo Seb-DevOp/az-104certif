@@ -1,0 +1,247 @@
+{
+ "175": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "key1 :",
+     "options": [
+      "Table1 uniquement",
+      "Table1 et container1 uniquement",
+      "folder1 et Table1 uniquement",
+      "folder1 et container1 uniquement",
+      "Table1, folder1 et container1"
+     ]
+    },
+    "f2": {
+     "label": "SAS1 :",
+     "options": [
+      "Table1 uniquement",
+      "Table1 et container1 uniquement",
+      "folder1 et Table1 uniquement",
+      "folder1 et container1 uniquement",
+      "Table1, folder1 et container1"
+     ]
+    }
+   }
+  }
+ },
+ "176": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Le nombre maximal de stratégies d’accès stockées supplémentaires que vous pouvez créer pour container1 est [choix]."
+    },
+    "f2": {
+     "label": "Le nombre maximal de stratégies de stockage de blobs immuables supplémentaires que vous pouvez créer pour container1 est [choix]."
+    }
+   }
+  }
+ },
+ "179": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Gestion du cycle de vie :",
+     "options": [
+      "storage1 uniquement",
+      "storage2 uniquement",
+      "storage1 et storage3 uniquement",
+      "storage2 et storage3 uniquement",
+      "storage1, storage2 et storage3"
+     ]
+    },
+    "f2": {
+     "label": "Le niveau d’accès Archive :",
+     "options": [
+      "storage1 uniquement",
+      "storage2 uniquement",
+      "storage1 et storage3 uniquement",
+      "storage2 et storage3 uniquement",
+      "storage1, storage2 et storage3"
+     ]
+    }
+   }
+  }
+ },
+ "181": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "\"tierToCool\" : { [choix] : 45"
+    },
+    "f2": {
+     "label": "\"blobTypes\" : [ [choix] ]"
+    }
+   }
+  }
+ },
+ "186": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "App1 :",
+     "options": [
+      "Clés d’accès",
+      "Sécurité avancée",
+      "Contrôle d’accès (IAM)",
+      "Signatures d’accès partagé (SAS)"
+     ]
+    },
+    "f2": {
+     "label": "App2 :",
+     "options": [
+      "Clés d’accès",
+      "Sécurité avancée",
+      "Contrôle d’accès (IAM)",
+      "Signatures d’accès partagé (SAS)"
+     ]
+    }
+   }
+  }
+ },
+ "187": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Pour réduire au minimum les coûts réseau d’accès à adatum22, modifiez le réglage [choix].",
+     "options": [
+      "Niveau de routage par défaut",
+      "Type de point de terminaison",
+      "Emplacement",
+      "Connectivité réseau",
+      "Performance"
+     ]
+    },
+    "f2": {
+     "label": "Une fois adatum22 créé, vous pouvez modifier le réglage [choix].",
+     "options": [
+      "Activer le chiffrement de l’infrastructure",
+      "Activer la prise en charge des clés gérées par le client",
+      "Type de chiffrement",
+      "Type de compte Premium"
+     ]
+    }
+   }
+  }
+ },
+ "188": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Clé :"
+    },
+    "f2": {
+     "label": "Longueur de clé :"
+    }
+   }
+  }
+ },
+ "191": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Effectuer toutes les actions sur un réseau virtuel :"
+    },
+    "f2": {
+     "label": "Consulter les données de configuration d’un compte de stockage :"
+    }
+   }
+  }
+ },
+ "193": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Type de stockage :",
+     "options": [
+      "SSD Premium en stockage localement redondant (LRS)",
+      "SSD Premium en stockage redondant interzone (ZRS)",
+      "SSD Standard en stockage localement redondant (LRS)",
+      "SSD Standard en stockage redondant interzone (ZRS)"
+     ]
+    },
+    "f2": {
+     "label": "Mise en cache de l’hôte :",
+     "options": [
+      "Aucune",
+      "Lecture seule",
+      "Lecture/Écriture"
+     ]
+    }
+   }
+  }
+ },
+ "196": {
+  "interactive": {
+   "prompt": "Faites glisser dans la zone de réponse les deux réglages à configurer. Les intrus restent dans la liste.",
+   "items": {
+    "i1": "Services autorisés : Blob",
+    "i2": "Services autorisés : File",
+    "i3": "Services autorisés : Queue",
+    "i4": "Services autorisés : Table",
+    "i5": "Types de ressources autorisés : Service",
+    "i6": "Types de ressources autorisés : Container",
+    "i7": "Types de ressources autorisés : Object",
+    "i8": "Autorisations : Lecture",
+    "i9": "Autorisations : Écriture",
+    "i10": "Autorisations : Suppression",
+    "i11": "Autorisations : Liste",
+    "i12": "Autorisations : Ajout",
+    "i13": "Autorisations : Création",
+    "i14": "Autorisations : Mise à jour",
+    "i15": "Autorisations : Traitement",
+    "i16": "Autorisations : Stockage immuable",
+    "i17": "Autorisations : Suppression définitive",
+    "i18": "Autorisations de versionnage de blob : Autoriser la suppression de versions",
+    "i19": "Autorisations d’index de blob : Lecture/Écriture",
+    "i20": "Autorisations d’index de blob : Filtre"
+   },
+   "targets": {
+    "answer": "Zone de réponse"
+   }
+  }
+ },
+ "202": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "\"blobTypes\" : [choix]"
+    },
+    "f2": {
+     "label": "\"prefixMatch\" : [choix]"
+    }
+   }
+  }
+ },
+ "203": {
+  "interactive": {
+   "prompt": "Faites glisser dans la zone de réponse les trois réglages à activer. Les intrus restent dans la liste.",
+   "items": {
+    "i1": "Services autorisés : Blob",
+    "i2": "Services autorisés : File",
+    "i3": "Services autorisés : Queue",
+    "i4": "Services autorisés : Table",
+    "i5": "Types de ressources autorisés : Service",
+    "i6": "Types de ressources autorisés : Container",
+    "i7": "Types de ressources autorisés : Object",
+    "i8": "Autorisations : Lecture",
+    "i9": "Autorisations : Écriture",
+    "i10": "Autorisations : Suppression",
+    "i11": "Autorisations : Liste",
+    "i12": "Autorisations : Ajout",
+    "i13": "Autorisations : Création",
+    "i14": "Autorisations : Mise à jour",
+    "i15": "Autorisations : Traitement",
+    "i16": "Autorisations : Stockage immuable",
+    "i17": "Autorisations : Suppression définitive",
+    "i18": "Autorisations de versionnage de blob : Autoriser la suppression de versions",
+    "i19": "Autorisations d’index de blob : Lecture/Écriture",
+    "i20": "Autorisations d’index de blob : Filtre"
+   },
+   "targets": {
+    "answer": "Zone de réponse"
+   }
+  }
+ },
+ "_note": "Libellés français du lot 4 de zones actives (175, 176, 179, 181, 186, 187, 188, 191, 193, 196, 202, 203). Les fragments JSON et les chaînes d’opérations RBAC restent en anglais."
+}

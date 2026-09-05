@@ -1388,6 +1388,88 @@
    }
   ]
  },
+ "136": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "azcopy [answer choice] ...",
+    "options": [
+     "make",
+     "sync",
+     "copy"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "... 'https://mystorageaccount.[answer choice].core.windows.net/vmimages'",
+    "options": [
+     "blob",
+     "dfs",
+     "queue",
+     "table",
+     "images",
+     "file"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "137": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "The virtual machines on the 10.2.9.0/24 subnet will have network connectivity to the file shares in the storage account [answer choice].",
+    "options": [
+     "always",
+     "during a backup",
+     "never"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "Azure Backup will be able to back up the unmanaged hard disks of the virtual machines in the storage account [answer choice].",
+    "options": [
+     "always",
+     "during a backup",
+     "never"
+    ],
+    "answer": 2
+   }
+  ]
+ },
+ "139": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Blob storage:",
+    "options": [
+     "Microsoft Entra ID only",
+     "Shared access signature (SAS) only",
+     "Access keys and shared access signature (SAS) only",
+     "Microsoft Entra ID and shared access signature (SAS) only",
+     "Microsoft Entra ID, access keys, and shared access signature (SAS)"
+    ],
+    "answer": 3
+   },
+   {
+    "id": "f2",
+    "label": "File storage:",
+    "options": [
+     "Microsoft Entra ID only",
+     "Shared access signature (SAS) only",
+     "Access keys and shared access signature (SAS) only",
+     "Microsoft Entra ID and shared access signature (SAS) only",
+     "Microsoft Entra ID, access keys, and shared access signature (SAS)"
+    ],
+    "answer": 1
+   }
+  ]
+ },
  "143": {
   "kind": "dragdrop",
   "prompt": "Drag the two actions to perform, in order, onto the answer area.",
@@ -1446,6 +1528,33 @@
    }
   ]
  },
+ "145": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Storage accounts:",
+    "options": [
+     "storage1 only",
+     "storage2 only",
+     "storage3 only",
+     "storage1, storage2, and storage3"
+    ],
+    "answer": 3
+   },
+   {
+    "id": "f2",
+    "label": "Log Analytics workspaces:",
+    "options": [
+     "Analytics1 only",
+     "Analytics2 only",
+     "Analytics3 only",
+     "Analytics1, Analytics2, and Analytics3"
+    ],
+    "answer": 2
+   }
+  ]
+ },
  "146": {
   "kind": "dropdown",
   "fields": [
@@ -1475,6 +1584,53 @@
    }
   ]
  },
+ "147": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "If on September 2, 2018, you run Microsoft Azure Storage Explorer on a computer that has an IP address of 193.77.134.1, and you use SAS1 to connect to the storage account, you [answer choice].",
+    "options": [
+     "will be prompted for credentials",
+     "will have no access",
+     "will have read, write, and list access",
+     "will have read-only access"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "f2",
+    "label": "If on September 10, 2018, you run the net use command on a computer that has an IP address of 193.77.134.50, and you use SAS1 as the password to connect to share1, you [answer choice].",
+    "options": [
+     "will be prompted for credentials",
+     "will have no access",
+     "will have read, write, and list access",
+     "will have read-only access"
+    ],
+    "answer": 2
+   }
+  ]
+ },
+ "153": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "A server that has a public IP address of 131.107.103.10 can access storageaccount1",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "Individual blobs in storageaccount1 can be set to use the archive tier",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "Global administrators in Microsoft Entra ID can access a file share hosted in storageaccount1 by using their Microsoft Entra credentials",
+    "answer": false
+   }
+  ]
+ },
  "156": {
   "kind": "yesno",
   "statements": [
@@ -1492,6 +1648,33 @@
     "id": "s3",
     "text": "On October 10, you can read File3.docx without a delay.",
     "answer": true
+   }
+  ]
+ },
+ "158": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Account type:",
+    "options": [
+     "StorageV2 only",
+     "StorageV2 or FileStorage only",
+     "StorageV2 or BlobStorage only",
+     "StorageV2, BlobStorage, or FileStorage"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "Object type to create in the new account:",
+    "options": [
+     "Container",
+     "File share",
+     "Table",
+     "Queue"
+    ],
+    "answer": 0
    }
   ]
  },
@@ -1518,6 +1701,71 @@
      "OAuth",
      "A shared access signature (SAS) token",
      "A storage account access key"
+    ],
+    "answer": 2
+   }
+  ]
+ },
+ "163": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "On June 6, File1 will be stored in the Cool access tier.",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "On June 1, File2 will be stored in the Cool access tier.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "On June 16, File2 will be stored in the Archive access tier.",
+    "answer": false
+   }
+  ]
+ },
+ "164": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "Changes made to the data in storage1 can be rolled back after seven days.",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "Only users located in the East US Azure region can connect to storage1.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "Three copies of storage1 will be maintained in the East US Azure region.",
+    "answer": true
+   }
+  ]
+ },
+ "166": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "\"actions\": { \"baseBlob\": { [answer choice]",
+    "options": [
+     "\"enableAutoTierToHotFromCool\":{",
+     "\"tierToArchive\":{",
+     "\"tierToCool\":{"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "f2",
+    "label": "\"filters\": { [answer choice] \"container1/\"",
+    "options": [
+     "\"blobIndexMatch\":[",
+     "\"blobTypes\":[",
+     "\"prefixMatch\":["
     ],
     "answer": 2
    }
@@ -1572,6 +1820,462 @@
    }
   ]
  },
+ "171": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "You can use [answer choice] for Azure Table Storage.",
+    "options": [
+     "storageaccount1 only",
+     "storageaccount2 only",
+     "storageaccount3 only",
+     "storageaccount1 and storageaccount2 only",
+     "storageaccount2 and storageaccount3 only"
+    ],
+    "answer": 3
+   },
+   {
+    "id": "f2",
+    "label": "You can use [answer choice] for Azure Blob storage.",
+    "options": [
+     "storageaccount3 only",
+     "storageaccount2 and storageaccount3 only",
+     "storageaccount1 and storageaccount3 only",
+     "all the storage accounts"
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ "173": {
+  "kind": "dragdrop",
+  "prompt": "Drag the two blades you must configure into the answer area. Distractors stay in the list.",
+  "items": [
+   {
+    "id": "i1",
+    "label": "Diagnose and solve problems"
+   },
+   {
+    "id": "i2",
+    "label": "Access Control (IAM)"
+   },
+   {
+    "id": "i3",
+    "label": "Data migration"
+   },
+   {
+    "id": "i4",
+    "label": "Events"
+   },
+   {
+    "id": "i5",
+    "label": "Storage browser"
+   },
+   {
+    "id": "i6",
+    "label": "Containers"
+   },
+   {
+    "id": "i7",
+    "label": "File shares"
+   },
+   {
+    "id": "i8",
+    "label": "Queues"
+   },
+   {
+    "id": "i9",
+    "label": "Tables"
+   },
+   {
+    "id": "i10",
+    "label": "Networking"
+   },
+   {
+    "id": "i11",
+    "label": "Azure CDN"
+   },
+   {
+    "id": "i12",
+    "label": "Access keys"
+   },
+   {
+    "id": "i13",
+    "label": "Shared access signature"
+   },
+   {
+    "id": "i14",
+    "label": "Encryption"
+   },
+   {
+    "id": "i15",
+    "label": "Microsoft Defender for Cloud"
+   },
+   {
+    "id": "i16",
+    "label": "Geo-replication"
+   },
+   {
+    "id": "i17",
+    "label": "Data protection"
+   },
+   {
+    "id": "i18",
+    "label": "Object replication"
+   }
+  ],
+  "targets": [
+   {
+    "id": "answer",
+    "label": "Answer area",
+    "accepts": [
+     "i2",
+     "i16"
+    ]
+   }
+  ]
+ },
+ "175": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "key1:",
+    "options": [
+     "Table1 only",
+     "Table1 and container1 only",
+     "folder1 and Table1 only",
+     "folder1 and container1 only",
+     "Table1, folder1, and container1"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "SAS1:",
+    "options": [
+     "Table1 only",
+     "Table1 and container1 only",
+     "folder1 and Table1 only",
+     "folder1 and container1 only",
+     "Table1, folder1, and container1"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "176": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "The maximum number of additional stored access policies that you can create for container1 is [answer choice].",
+    "options": [
+     "0",
+     "1",
+     "3",
+     "5",
+     "6"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "The maximum number of additional immutable blob storage policies that you can create for container1 is [answer choice].",
+    "options": [
+     "0",
+     "1",
+     "2",
+     "4",
+     "5"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "179": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Lifecycle management:",
+    "options": [
+     "storage1 only",
+     "storage2 only",
+     "storage1 and storage3 only",
+     "storage2 and storage3 only",
+     "storage1, storage2, and storage3"
+    ],
+    "answer": 4
+   },
+   {
+    "id": "f2",
+    "label": "The Archive access tier:",
+    "options": [
+     "storage1 only",
+     "storage2 only",
+     "storage1 and storage3 only",
+     "storage2 and storage3 only",
+     "storage1, storage2, and storage3"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "181": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "\"tierToCool\": { [answer choice] : 45",
+    "options": [
+     "\"daysAfterCreationCreaterThan\"",
+     "\"daysAfterLastAccessTimeGreaterThan\"",
+     "\"daysAfterModificationGreaterThan\""
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "\"blobTypes\": [ [answer choice] ]",
+    "options": [
+     "\"AppendBlob\"",
+     "\"Blockblob\"",
+     "\"Pageblob\""
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "186": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "App1:",
+    "options": [
+     "Access keys",
+     "Advanced security",
+     "Access control (IAM)",
+     "Shared access signatures (SAS)"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "App2:",
+    "options": [
+     "Access keys",
+     "Advanced security",
+     "Access control (IAM)",
+     "Shared access signatures (SAS)"
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ "187": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "To minimize the network costs of accessing adatum22, modify the [answer choice] setting.",
+    "options": [
+     "Default routing tier",
+     "Endpoint type",
+     "Location",
+     "Network connectivity",
+     "Performance"
+    ],
+    "answer": 4
+   },
+   {
+    "id": "f2",
+    "label": "After adatum22 is created, you can modify the [answer choice] setting.",
+    "options": [
+     "Enable infrastructure encryption",
+     "Enable support for customer-managed keys",
+     "Encryption type",
+     "Premium account type"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "188": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Key:",
+    "options": [
+     "AES",
+     "3DES",
+     "RSA"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "Bit length:",
+    "options": [
+     "2048",
+     "3072",
+     "4096",
+     "8192"
+    ],
+    "answer": 2
+   }
+  ]
+ },
+ "191": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Perform all actions on a virtual network:",
+    "options": [
+     "\"Microsoft.Network/virtualNetworks/*\"",
+     "\"Microsoft.Network/virtualNetworks/delete\"",
+     "\"Microsoft.Network/virtualNetworks/write\""
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "View the configuration data of a storage account:",
+    "options": [
+     "\"Microsoft.Storage/StorageAccounts/*\"",
+     "\"Microsoft.Storage/StorageAccounts/read\"",
+     "\"Microsoft.Storage/StorageAccounts/blobServices/containers/blob/read\""
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "193": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Storage type:",
+    "options": [
+     "Premium SSD that uses locally-redundant storage (LRS)",
+     "Premium SSD that uses zone-redundant storage (ZRS)",
+     "Standard SSD that uses locally-redundant storage (LRS)",
+     "Standard SSD that uses zone-redundant storage (ZRS)"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "f2",
+    "label": "Host caching:",
+    "options": [
+     "None",
+     "Read-only",
+     "Read/Write"
+    ],
+    "answer": 2
+   }
+  ]
+ },
+ "196": {
+  "kind": "dragdrop",
+  "prompt": "Drag the two settings you must configure into the answer area. Distractors stay in the list.",
+  "items": [
+   {
+    "id": "i1",
+    "label": "Allowed services: Blob"
+   },
+   {
+    "id": "i2",
+    "label": "Allowed services: File"
+   },
+   {
+    "id": "i3",
+    "label": "Allowed services: Queue"
+   },
+   {
+    "id": "i4",
+    "label": "Allowed services: Table"
+   },
+   {
+    "id": "i5",
+    "label": "Allowed resource types: Service"
+   },
+   {
+    "id": "i6",
+    "label": "Allowed resource types: Container"
+   },
+   {
+    "id": "i7",
+    "label": "Allowed resource types: Object"
+   },
+   {
+    "id": "i8",
+    "label": "Allowed permissions: Read"
+   },
+   {
+    "id": "i9",
+    "label": "Allowed permissions: Write"
+   },
+   {
+    "id": "i10",
+    "label": "Allowed permissions: Delete"
+   },
+   {
+    "id": "i11",
+    "label": "Allowed permissions: List"
+   },
+   {
+    "id": "i12",
+    "label": "Allowed permissions: Add"
+   },
+   {
+    "id": "i13",
+    "label": "Allowed permissions: Create"
+   },
+   {
+    "id": "i14",
+    "label": "Allowed permissions: Update"
+   },
+   {
+    "id": "i15",
+    "label": "Allowed permissions: Process"
+   },
+   {
+    "id": "i16",
+    "label": "Allowed permissions: Immutable storage"
+   },
+   {
+    "id": "i17",
+    "label": "Allowed permissions: Permanent delete"
+   },
+   {
+    "id": "i18",
+    "label": "Blob versioning permissions: Enables deletion of versions"
+   },
+   {
+    "id": "i19",
+    "label": "Allowed blob index permissions: Read/Write"
+   },
+   {
+    "id": "i20",
+    "label": "Allowed blob index permissions: Filter"
+   }
+  ],
+  "targets": [
+   {
+    "id": "answer",
+    "label": "Answer area",
+    "accepts": [
+     "i7",
+     "i8"
+    ]
+   }
+  ]
+ },
  "199": {
   "kind": "yesno",
   "statements": [
@@ -1589,6 +2293,128 @@
     "id": "s3",
     "text": "A rehydrated version automatically moves to the Archive access tier after 30 days.",
     "answer": false
+   }
+  ]
+ },
+ "202": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "\"blobTypes\": [answer choice]",
+    "options": [
+     "appendBlob",
+     "blockBlob",
+     "pageBlob"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "f2",
+    "label": "\"prefixMatch\": [answer choice]",
+    "options": [
+     "container1/*",
+     "container1/finance",
+     "finance"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "203": {
+  "kind": "dragdrop",
+  "prompt": "Drag the three settings you must enable into the answer area. Distractors stay in the list.",
+  "items": [
+   {
+    "id": "i1",
+    "label": "Allowed services: Blob"
+   },
+   {
+    "id": "i2",
+    "label": "Allowed services: File"
+   },
+   {
+    "id": "i3",
+    "label": "Allowed services: Queue"
+   },
+   {
+    "id": "i4",
+    "label": "Allowed services: Table"
+   },
+   {
+    "id": "i5",
+    "label": "Allowed resource types: Service"
+   },
+   {
+    "id": "i6",
+    "label": "Allowed resource types: Container"
+   },
+   {
+    "id": "i7",
+    "label": "Allowed resource types: Object"
+   },
+   {
+    "id": "i8",
+    "label": "Allowed permissions: Read"
+   },
+   {
+    "id": "i9",
+    "label": "Allowed permissions: Write"
+   },
+   {
+    "id": "i10",
+    "label": "Allowed permissions: Delete"
+   },
+   {
+    "id": "i11",
+    "label": "Allowed permissions: List"
+   },
+   {
+    "id": "i12",
+    "label": "Allowed permissions: Add"
+   },
+   {
+    "id": "i13",
+    "label": "Allowed permissions: Create"
+   },
+   {
+    "id": "i14",
+    "label": "Allowed permissions: Update"
+   },
+   {
+    "id": "i15",
+    "label": "Allowed permissions: Process"
+   },
+   {
+    "id": "i16",
+    "label": "Allowed permissions: Immutable storage"
+   },
+   {
+    "id": "i17",
+    "label": "Allowed permissions: Permanent delete"
+   },
+   {
+    "id": "i18",
+    "label": "Blob versioning permissions: Enables deletion of versions"
+   },
+   {
+    "id": "i19",
+    "label": "Allowed blob index permissions: Read/Write"
+   },
+   {
+    "id": "i20",
+    "label": "Allowed blob index permissions: Filter"
+   }
+  ],
+  "targets": [
+   {
+    "id": "answer",
+    "label": "Answer area",
+    "accepts": [
+     "i6",
+     "i7",
+     "i8"
+    ]
    }
   ]
  },

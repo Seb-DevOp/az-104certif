@@ -484,6 +484,95 @@
    3
   ]
  ],
+ "136": [
+  [
+   "azcopy [answer choice] ...",
+   [
+    "make",
+    "sync",
+    "copy"
+   ],
+   0
+  ],
+  [
+   "... 'https://mystorageaccount.[answer choice].core.windows.net/vmimages'",
+   [
+    "blob",
+    "dfs",
+    "queue",
+    "table",
+    "images",
+    "file"
+   ],
+   0
+  ]
+ ],
+ "137": [
+  [
+   "The virtual machines on the 10.2.9.0/24 subnet will have network connectivity to the file shares in the storage account [answer choice].",
+   [
+    "always",
+    "during a backup",
+    "never"
+   ],
+   2
+  ],
+  [
+   "Azure Backup will be able to back up the unmanaged hard disks of the virtual machines in the storage account [answer choice].",
+   [
+    "always",
+    "during a backup",
+    "never"
+   ],
+   2
+  ]
+ ],
+ "139": [
+  [
+   "Blob storage:",
+   [
+    "Microsoft Entra ID only",
+    "Shared access signature (SAS) only",
+    "Access keys and shared access signature (SAS) only",
+    "Microsoft Entra ID and shared access signature (SAS) only",
+    "Microsoft Entra ID, access keys, and shared access signature (SAS)"
+   ],
+   3
+  ],
+  [
+   "File storage:",
+   [
+    "Microsoft Entra ID only",
+    "Shared access signature (SAS) only",
+    "Access keys and shared access signature (SAS) only",
+    "Microsoft Entra ID and shared access signature (SAS) only",
+    "Microsoft Entra ID, access keys, and shared access signature (SAS)"
+   ],
+   1
+  ]
+ ],
+ "145": [
+  [
+   "Storage accounts:",
+   [
+    "storage1 only",
+    "storage2 only",
+    "storage3 only",
+    "storage1, storage2, and storage3"
+   ],
+   3
+  ],
+  [
+   "Log Analytics workspaces:",
+   [
+    "Analytics1 only",
+    "Analytics2 only",
+    "Analytics3 only",
+    "Analytics1, Analytics2, and Analytics3"
+   ],
+   2
+  ]
+ ],
  "146": [
   [
    "You can create a premium file share in",
@@ -506,6 +595,312 @@
     "contoso101, contoso102, contoso103, and contoso104"
    ],
    2
+  ]
+ ],
+ "147": [
+  [
+   "If on September 2, 2018, you run Microsoft Azure Storage Explorer on a computer that has an IP address of 193.77.134.1, and you use SAS1 to connect to the storage account, you [answer choice].",
+   [
+    "will be prompted for credentials",
+    "will have no access",
+    "will have read, write, and list access",
+    "will have read-only access"
+   ],
+   1
+  ],
+  [
+   "If on September 10, 2018, you run the net use command on a computer that has an IP address of 193.77.134.50, and you use SAS1 as the password to connect to share1, you [answer choice].",
+   [
+    "will be prompted for credentials",
+    "will have no access",
+    "will have read, write, and list access",
+    "will have read-only access"
+   ],
+   2
+  ]
+ ],
+ "158": [
+  [
+   "Account type:",
+   [
+    "StorageV2 only",
+    "StorageV2 or FileStorage only",
+    "StorageV2 or BlobStorage only",
+    "StorageV2, BlobStorage, or FileStorage"
+   ],
+   2
+  ],
+  [
+   "Object type to create in the new account:",
+   [
+    "Container",
+    "File share",
+    "Table",
+    "Queue"
+   ],
+   0
+  ]
+ ],
+ "166": [
+  [
+   "\"actions\": { \"baseBlob\": { [answer choice]",
+   [
+    "\"enableAutoTierToHotFromCool\":{",
+    "\"tierToArchive\":{",
+    "\"tierToCool\":{"
+   ],
+   1
+  ],
+  [
+   "\"filters\": { [answer choice] \"container1/\"",
+   [
+    "\"blobIndexMatch\":[",
+    "\"blobTypes\":[",
+    "\"prefixMatch\":["
+   ],
+   2
+  ]
+ ],
+ "171": [
+  [
+   "You can use [answer choice] for Azure Table Storage.",
+   [
+    "storageaccount1 only",
+    "storageaccount2 only",
+    "storageaccount3 only",
+    "storageaccount1 and storageaccount2 only",
+    "storageaccount2 and storageaccount3 only"
+   ],
+   3
+  ],
+  [
+   "You can use [answer choice] for Azure Blob storage.",
+   [
+    "storageaccount3 only",
+    "storageaccount2 and storageaccount3 only",
+    "storageaccount1 and storageaccount3 only",
+    "all the storage accounts"
+   ],
+   3
+  ]
+ ],
+ "175": [
+  [
+   "key1:",
+   [
+    "Table1 only",
+    "Table1 and container1 only",
+    "folder1 and Table1 only",
+    "folder1 and container1 only",
+    "Table1, folder1, and container1"
+   ],
+   2
+  ],
+  [
+   "SAS1:",
+   [
+    "Table1 only",
+    "Table1 and container1 only",
+    "folder1 and Table1 only",
+    "folder1 and container1 only",
+    "Table1, folder1, and container1"
+   ],
+   1
+  ]
+ ],
+ "176": [
+  [
+   "The maximum number of additional stored access policies that you can create for container1 is [answer choice].",
+   [
+    "0",
+    "1",
+    "3",
+    "5",
+    "6"
+   ],
+   2
+  ],
+  [
+   "The maximum number of additional immutable blob storage policies that you can create for container1 is [answer choice].",
+   [
+    "0",
+    "1",
+    "2",
+    "4",
+    "5"
+   ],
+   1
+  ]
+ ],
+ "179": [
+  [
+   "Lifecycle management:",
+   [
+    "storage1 only",
+    "storage2 only",
+    "storage1 and storage3 only",
+    "storage2 and storage3 only",
+    "storage1, storage2, and storage3"
+   ],
+   4
+  ],
+  [
+   "The Archive access tier:",
+   [
+    "storage1 only",
+    "storage2 only",
+    "storage1 and storage3 only",
+    "storage2 and storage3 only",
+    "storage1, storage2, and storage3"
+   ],
+   1
+  ]
+ ],
+ "181": [
+  [
+   "\"tierToCool\": { [answer choice] : 45",
+   [
+    "\"daysAfterCreationCreaterThan\"",
+    "\"daysAfterLastAccessTimeGreaterThan\"",
+    "\"daysAfterModificationGreaterThan\""
+   ],
+   2
+  ],
+  [
+   "\"blobTypes\": [ [answer choice] ]",
+   [
+    "\"AppendBlob\"",
+    "\"Blockblob\"",
+    "\"Pageblob\""
+   ],
+   1
+  ]
+ ],
+ "186": [
+  [
+   "App1:",
+   [
+    "Access keys",
+    "Advanced security",
+    "Access control (IAM)",
+    "Shared access signatures (SAS)"
+   ],
+   0
+  ],
+  [
+   "App2:",
+   [
+    "Access keys",
+    "Advanced security",
+    "Access control (IAM)",
+    "Shared access signatures (SAS)"
+   ],
+   3
+  ]
+ ],
+ "187": [
+  [
+   "To minimize the network costs of accessing adatum22, modify the [answer choice] setting.",
+   [
+    "Default routing tier",
+    "Endpoint type",
+    "Location",
+    "Network connectivity",
+    "Performance"
+   ],
+   4
+  ],
+  [
+   "After adatum22 is created, you can modify the [answer choice] setting.",
+   [
+    "Enable infrastructure encryption",
+    "Enable support for customer-managed keys",
+    "Encryption type",
+    "Premium account type"
+   ],
+   1
+  ]
+ ],
+ "188": [
+  [
+   "Key:",
+   [
+    "AES",
+    "3DES",
+    "RSA"
+   ],
+   2
+  ],
+  [
+   "Bit length:",
+   [
+    "2048",
+    "3072",
+    "4096",
+    "8192"
+   ],
+   2
+  ]
+ ],
+ "191": [
+  [
+   "Perform all actions on a virtual network:",
+   [
+    "\"Microsoft.Network/virtualNetworks/*\"",
+    "\"Microsoft.Network/virtualNetworks/delete\"",
+    "\"Microsoft.Network/virtualNetworks/write\""
+   ],
+   0
+  ],
+  [
+   "View the configuration data of a storage account:",
+   [
+    "\"Microsoft.Storage/StorageAccounts/*\"",
+    "\"Microsoft.Storage/StorageAccounts/read\"",
+    "\"Microsoft.Storage/StorageAccounts/blobServices/containers/blob/read\""
+   ],
+   1
+  ]
+ ],
+ "193": [
+  [
+   "Storage type:",
+   [
+    "Premium SSD that uses locally-redundant storage (LRS)",
+    "Premium SSD that uses zone-redundant storage (ZRS)",
+    "Standard SSD that uses locally-redundant storage (LRS)",
+    "Standard SSD that uses zone-redundant storage (ZRS)"
+   ],
+   1
+  ],
+  [
+   "Host caching:",
+   [
+    "None",
+    "Read-only",
+    "Read/Write"
+   ],
+   2
+  ]
+ ],
+ "202": [
+  [
+   "\"blobTypes\": [answer choice]",
+   [
+    "appendBlob",
+    "blockBlob",
+    "pageBlob"
+   ],
+   1
+  ],
+  [
+   "\"prefixMatch\": [answer choice]",
+   [
+    "container1/*",
+    "container1/finance",
+    "finance"
+   ],
+   1
   ]
  ],
  "409": [
