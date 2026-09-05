@@ -6,6 +6,11 @@
 // Seed formats, one entry per question id:
 //   yesno-seed.json     [["statement text", true|false], ...]        true = Yes is correct
 //   dropdown-seed.json  [["label", ["choice", ...], answerIndex], ...]
+//   pick-seed.json      { prompt, choices: [["label", true|false], ...] }  true = part of the answer
+//
+// A "pick" seed covers the hot-area questions that ask for N settings out of a list rather
+// than a value per row. It becomes a one-target drag-and-drop board: the learner drags the
+// settings that belong in the answer, and the rest stay in the pool as distractors.
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -29,8 +34,9 @@ function mergeSeed(file, build) {
     const q = byId.get(id);
     if (!q) { problems.push(`${file} Q${id}: not in the question bank`); continue; }
     if (q.format !== 'hotspot') problems.push(`${file} Q${id}: format is "${q.format}", expected hotspot`);
-    if (!Array.isArray(rows) || !rows.length) { problems.push(`${file} Q${id}: no rows`); continue; }
-    const spec = build(id, rows, file);
+    const rows2 = Array.isArray(rows) ? rows : rows?.choices;
+    if (!Array.isArray(rows2) || !rows2.length) { problems.push(`${file} Q${id}: no rows`); continue; }
+    const spec = build(id, rows2, file, rows);
     if (!spec) continue;
     if (target[id]) replaced++; else added++;
     target[id] = spec;
@@ -58,6 +64,27 @@ mergeSeed('dropdown-seed.json', (id, rows, file) => ({
     return { id: `f${i + 1}`, label, options, answer };
   }),
 }));
+
+mergeSeed('pick-seed.json', (id, rows, file, seed) => {
+  const items = rows.map(([label], i) => ({ id: `i${i + 1}`, label }));
+  const accepts = [];
+  rows.forEach(([label, chosen], i) => {
+    if (typeof label !== 'string' || typeof chosen !== 'boolean') {
+      problems.push(`${file} Q${id} row ${i + 1}: expected ["label", true|false]`);
+    }
+    if (chosen) accepts.push(`i${i + 1}`);
+  });
+  if (!accepts.length) problems.push(`${file} Q${id}: nothing marked as part of the answer`);
+  if (accepts.length === rows.length) {
+    problems.push(`${file} Q${id}: every choice is part of the answer, so there is nothing to get wrong`);
+  }
+  return {
+    kind: 'dragdrop',
+    prompt: seed?.prompt || 'Drag every setting that belongs in the answer. Distractors stay in the list.',
+    items,
+    targets: [{ id: 'answer', label: 'Answer area', accepts }],
+  };
+});
 
 fs.writeFileSync(TARGET, JSON.stringify(target, null, 1) + '\n');
 

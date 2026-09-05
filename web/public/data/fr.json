@@ -276,7 +276,17 @@
   "text": [
    "Vous disposez d'un abonnement Azure nommé Subscription1, dont l'identifiant est c276fc76-9cd4-44c9-99a7-4fd71546436e. Vous devez créer un rôle RBAC personnalisé nommé CR1 répondant aux exigences suivantes : il ne peut être attribué qu'aux groupes de ressources de Subscription1 ; il interdit la gestion des autorisations d'accès de ces groupes de ressources ; il autorise la consultation, la création, la modification et la suppression des ressources qu'ils contiennent. Que devez-vous indiquer dans les éléments « assignable scopes » et « permissions » de la définition de CR1 ?",
    "REMARQUE : chaque sélection correcte vaut un point."
-  ]
+  ],
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "\"assignableScopes\" : ["
+    },
+    "f2": {
+     "label": "\"notActions\" : ["
+    }
+   }
+  }
  },
  "27": {
   "text": [
@@ -303,7 +313,20 @@
   "text": [
    "Vous disposez d'un locataire Microsoft Entra. Vous devez créer une stratégie d'accès conditionnel imposant à tous les utilisateurs l'authentification multifacteur lorsqu'ils accèdent au portail Azure. Quels trois paramètres devez-vous configurer ?",
    "REMARQUE : chaque sélection correcte vaut un point."
-  ]
+  ],
+  "interactive": {
+   "prompt": "Faites glisser dans la zone de réponse les trois réglages à configurer. Les intrus restent dans la liste.",
+   "items": {
+    "i1": "Utilisateurs et groupes",
+    "i2": "Applications cloud",
+    "i3": "Conditions",
+    "i4": "Accorder (Grant)",
+    "i5": "Session"
+   },
+   "targets": {
+    "answer": "Zone de réponse"
+   }
+  }
  },
  "30": {
   "text": [
@@ -335,7 +358,35 @@
    "De quels groupes User1 et User2 sont-ils membres ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Group1 uniquement — seule la première règle s'applique. Box 2 : Group1 et Group2 uniquement — les deux règles d'appartenance s'appliquent."
+  "explanation": "Box 1 : Group1 uniquement — seule la première règle s'applique. Box 2 : Group1 et Group2 uniquement — les deux règles d'appartenance s'appliquent.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "User1 :",
+     "options": [
+      "Groupe1 uniquement",
+      "Groupe2 uniquement",
+      "Groupe3 uniquement",
+      "Groupe1 et Groupe2 uniquement",
+      "Groupe1 et Groupe3 uniquement",
+      "Groupe2 et Groupe3 uniquement",
+      "Groupe1, Groupe2 et Groupe3"
+     ]
+    },
+    "f2": {
+     "label": "User2 :",
+     "options": [
+      "Groupe1 uniquement",
+      "Groupe2 uniquement",
+      "Groupe3 uniquement",
+      "Groupe1 et Groupe2 uniquement",
+      "Groupe1 et Groupe3 uniquement",
+      "Groupe2 et Groupe3 uniquement",
+      "Groupe1, Groupe2 et Groupe3"
+     ]
+    }
+   }
+  }
  },
  "33": {
   "text": [
@@ -344,7 +395,29 @@
    "Pour quels utilisateurs pouvez-vous modifier ces attributs depuis Microsoft Entra ID ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : User1 et User3 uniquement — pour les utilisateurs dont la source d'autorité est Windows Server Active Directory, l'identité, les coordonnées et les informations professionnelles doivent être mises à jour depuis Active Directory. Box 2 : User1, User2 et User3."
+  "explanation": "Box 1 : User1 et User3 uniquement — pour les utilisateurs dont la source d'autorité est Windows Server Active Directory, l'identité, les coordonnées et les informations professionnelles doivent être mises à jour depuis Active Directory. Box 2 : User1, User2 et User3.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "JobTitle :",
+     "options": [
+      "User1 uniquement",
+      "User1 et User2 uniquement",
+      "User1 et User3 uniquement",
+      "User1, User2 et User3"
+     ]
+    },
+    "f2": {
+     "label": "UsageLocation :",
+     "options": [
+      "User1 uniquement",
+      "User1 et User2 uniquement",
+      "User1 et User3 uniquement",
+      "User1, User2 et User3"
+     ]
+    }
+   }
+  }
  },
  "34": {
   "text": [
@@ -496,7 +569,32 @@
    "Quel utilisateur peut effectuer chaque configuration ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : User1 et User3 uniquement. User1 — le rôle Owner permet de tout gérer, y compris l'accès aux ressources. User3 — le rôle Network Contributor permet de gérer les réseaux, et donc de créer des sous-réseaux. Box 2 : User1 uniquement. Le rôle Security Admin, limité à Security Center, permet de consulter et modifier les stratégies de sécurité, de consulter les états de sécurité, de voir les alertes et recommandations et de les ignorer."
+  "explanation": "Box 1 : User1 et User3 uniquement. User1 — le rôle Owner permet de tout gérer, y compris l'accès aux ressources. User3 — le rôle Network Contributor permet de gérer les réseaux, et donc de créer des sous-réseaux. Box 2 : User1 uniquement. Le rôle Security Admin, limité à Security Center, permet de consulter et modifier les stratégies de sécurité, de consulter les états de sécurité, de voir les alertes et recommandations et de les ignorer.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Ajouter un sous-réseau à VNet1 :",
+     "options": [
+      "User1 uniquement",
+      "User3 uniquement",
+      "User1 et User3 uniquement",
+      "User2 et User3 uniquement",
+      "User1, User2 et User3"
+     ]
+    },
+    "f2": {
+     "label": "Attribuer à un utilisateur le rôle Lecteur sur VNet1 :",
+     "options": [
+      "User1 uniquement",
+      "User2 uniquement",
+      "User3 uniquement",
+      "User1 et User2 uniquement",
+      "User2 et User3 uniquement",
+      "User1, User2 et User3"
+     ]
+    }
+   }
+  }
  },
  "47": {
   "text": [
@@ -504,7 +602,31 @@
    "Vous prévoyez de suivre l'utilisation des ressources et d'empêcher leur suppression. À quelles ressources pouvez-vous appliquer des verrous et des étiquettes ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Sub1, RG1 et VM1 uniquement. Un abonnement, un groupe de ressources ou une ressource peuvent être verrouillés pour empêcher d'autres utilisateurs de votre organisation de supprimer ou modifier par erreur des éléments critiques. Box 2 : Sub1, RG1 et VM1 uniquement. Les étiquettes s'appliquent aux ressources, aux groupes de ressources et aux abonnements Azure."
+  "explanation": "Box 1 : Sub1, RG1 et VM1 uniquement. Un abonnement, un groupe de ressources ou une ressource peuvent être verrouillés pour empêcher d'autres utilisateurs de votre organisation de supprimer ou modifier par erreur des éléments critiques. Box 2 : Sub1, RG1 et VM1 uniquement. Les étiquettes s'appliquent aux ressources, aux groupes de ressources et aux abonnements Azure.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Verrous :",
+     "options": [
+      "RG1 et VM1 uniquement",
+      "Sub1 et RG1 uniquement",
+      "Sub1, RG1 et VM1 uniquement",
+      "MG1, Sub1, RG1 et VM1 uniquement",
+      "Groupe racine du locataire, MG1, Sub1, RG1 et VM1"
+     ]
+    },
+    "f2": {
+     "label": "Étiquettes (tags) :",
+     "options": [
+      "RG1 et VM1 uniquement",
+      "Sub1 et RG1 uniquement",
+      "Sub1, RG1 et VM1 uniquement",
+      "MG1, Sub1, RG1 et VM1 uniquement",
+      "Groupe racine du locataire, MG1, Sub1, RG1 et VM1"
+     ]
+    }
+   }
+  }
  },
  "48": {
   "text": [
@@ -652,7 +774,31 @@
    "Vous créez une définition de stratégie Azure nommée Policy1. À quelles ressources Azure pouvez-vous attribuer Policy1, et lesquelles pouvez-vous en exclure ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Tenant Root Group, ManagementGroup1, Subscription1, RG1 et VM1. Une fois les règles métier formulées, la définition de stratégie ou l'initiative s'attribue à n'importe quelle portée de ressources prise en charge par Azure : groupes d'administration, abonnements, groupes de ressources ou ressources individuelles.\n\nRemarque : Azure propose quatre niveaux de portée — groupes d'administration, abonnements, groupes de ressources et ressources.\n\nBox 2 : ManagementGroup1, Subscription1, RG1 et VM1. Une sous-portée peut être exclue de l'attribution."
+  "explanation": "Box 1 : Tenant Root Group, ManagementGroup1, Subscription1, RG1 et VM1. Une fois les règles métier formulées, la définition de stratégie ou l'initiative s'attribue à n'importe quelle portée de ressources prise en charge par Azure : groupes d'administration, abonnements, groupes de ressources ou ressources individuelles.\n\nRemarque : Azure propose quatre niveaux de portée — groupes d'administration, abonnements, groupes de ressources et ressources.\n\nBox 2 : ManagementGroup1, Subscription1, RG1 et VM1. Une sous-portée peut être exclue de l'attribution.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Vous pouvez affecter Policy1 à :",
+     "options": [
+      "Subscription1 et RG1 uniquement",
+      "ManagementGroup1 et Subscription1 uniquement",
+      "Groupe racine du locataire, ManagementGroup1 et Subscription1 uniquement",
+      "Groupe racine du locataire, ManagementGroup1, Subscription1 et RG1 uniquement",
+      "Groupe racine du locataire, ManagementGroup1, Subscription1, RG1 et VM1"
+     ]
+    },
+    "f2": {
+     "label": "Vous pouvez exclure Policy1 de :",
+     "options": [
+      "VM1 uniquement",
+      "RG1 et VM1 uniquement",
+      "Subscription1, RG1 et VM1 uniquement",
+      "ManagementGroup1, Subscription1, RG1 et VM1 uniquement",
+      "Groupe racine du locataire, ManagementGroup1, Subscription1, RG1 et VM1"
+     ]
+    }
+   }
+  }
  },
  "59": {
   "text": [
@@ -748,7 +894,31 @@
    "Depuis le portail Azure, vous devez créer deux rôles personnalisés nommés Role3 et Role4. Role3 sera un rôle d'abonnement Azure, Role4 un rôle Microsoft Entra. Quels rôles pouvez-vous cloner pour créer ces nouveaux rôles ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Role1 et les rôles intégrés d'abonnement Azure uniquement, puisque Role3 sera un rôle d'abonnement Azure.\n\nRemarque sur le clonage : si un rôle existant ne porte pas exactement les permissions voulues, on peut le cloner puis modifier ses permissions. Dans le portail Azure, ouvrez l'abonnement ou le groupe de ressources où le rôle personnalisé doit être assignable, puis Contrôle d'accès (IAM), onglet Rôles, et clonez le rôle voulu."
+  "explanation": "Box 1 : Role1 et les rôles intégrés d'abonnement Azure uniquement, puisque Role3 sera un rôle d'abonnement Azure.\n\nRemarque sur le clonage : si un rôle existant ne porte pas exactement les permissions voulues, on peut le cloner puis modifier ses permissions. Dans le portail Azure, ouvrez l'abonnement ou le groupe de ressources où le rôle personnalisé doit être assignable, puis Contrôle d'accès (IAM), onglet Rôles, et clonez le rôle voulu.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Role3 :",
+     "options": [
+      "Role1 uniquement",
+      "Rôles intégrés d’abonnement Azure uniquement",
+      "Role1 et rôles intégrés d’abonnement Azure uniquement",
+      "Rôles intégrés d’abonnement Azure et rôles intégrés Microsoft Entra uniquement",
+      "Role1, Role2, rôles intégrés d’abonnement Azure, rôles intégrés Microsoft Entra"
+     ]
+    },
+    "f2": {
+     "label": "Role4 :",
+     "options": [
+      "Role2 uniquement",
+      "Rôles intégrés Microsoft Entra uniquement",
+      "Role2 et rôles intégrés Microsoft Entra uniquement",
+      "Rôles intégrés Microsoft Entra et rôles intégrés d’abonnement Azure uniquement",
+      "Role1, Role2, rôles intégrés Microsoft Entra, rôles intégrés d’abonnement Azure"
+     ]
+    }
+   }
+  }
  },
  "68": {
   "text": [
@@ -949,7 +1119,29 @@
    "Vous devez modifier les attributs JobTitle et UsageLocation de ces utilisateurs. Pour quels utilisateurs pouvez-vous les modifier depuis Microsoft Entra ID ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : User1 et User3 uniquement — pour les utilisateurs dont la source d'autorité est Windows Server Active Directory, l'identité, les coordonnées et les informations professionnelles doivent être mises à jour depuis Active Directory. Box 2 : User1, User2 et User3."
+  "explanation": "Box 1 : User1 et User3 uniquement — pour les utilisateurs dont la source d'autorité est Windows Server Active Directory, l'identité, les coordonnées et les informations professionnelles doivent être mises à jour depuis Active Directory. Box 2 : User1, User2 et User3.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "JobTitle :",
+     "options": [
+      "User1 uniquement",
+      "User1 et User2 uniquement",
+      "User1 et User3 uniquement",
+      "User1, User2 et User3"
+     ]
+    },
+    "f2": {
+     "label": "UsageLocation :",
+     "options": [
+      "User1 uniquement",
+      "User1 et User2 uniquement",
+      "User1 et User3 uniquement",
+      "User1, User2 et User3"
+     ]
+    }
+   }
+  }
  },
  "83": {
   "text": [
@@ -1002,7 +1194,27 @@
    "Vous disposez d'un compte de stockage Azure nommé storage1 qui utilise le stockage Blob et le stockage Fichier. Vous devez utiliser AzCopy pour copier des données vers ces deux types de stockage. Quelle méthode d'authentification devez-vous employer pour chacun ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Les informations d'autorisation peuvent être fournies via Microsoft Entra ID ou via un jeton de signature d'accès partagé (SAS).\n\nBox 1 : Microsoft Entra ID et signature d'accès partagé (SAS) — les deux sont pris en charge pour le stockage Blob.\n\nBox 2 : signature d'accès partagé (SAS) uniquement — seul le jeton SAS est pris en charge pour le stockage Fichier."
+  "explanation": "Les informations d'autorisation peuvent être fournies via Microsoft Entra ID ou via un jeton de signature d'accès partagé (SAS).\n\nBox 1 : Microsoft Entra ID et signature d'accès partagé (SAS) — les deux sont pris en charge pour le stockage Blob.\n\nBox 2 : signature d'accès partagé (SAS) uniquement — seul le jeton SAS est pris en charge pour le stockage Fichier.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Stockage Blob :",
+     "options": [
+      "Microsoft Entra ID uniquement",
+      "Signatures d’accès partagé (SAS) uniquement",
+      "Microsoft Entra ID et signatures d’accès partagé (SAS)"
+     ]
+    },
+    "f2": {
+     "label": "Stockage Fichier :",
+     "options": [
+      "Microsoft Entra ID uniquement",
+      "Signatures d’accès partagé (SAS) uniquement",
+      "Microsoft Entra ID et signatures d’accès partagé (SAS)"
+     ]
+    }
+   }
+  }
  },
  "88": {
   "text": [
@@ -1010,7 +1222,22 @@
    "Quels deux paramètres devez-vous configurer depuis le volet Vue d'ensemble ?",
    "REMARQUE : chaque bonne réponse vaut un point."
   ],
-  "explanation": "Box 1 : Identities. Cette propriété indique le fournisseur d'identité principal de l'utilisateur. Un utilisateur peut en avoir plusieurs, consultables via le lien Identities de son profil ou en interrogeant la propriété identities avec l'API Microsoft Graph.\n\nBox 2 : B2B collaboration. La collaboration B2B de Microsoft Entra, qui fait partie d'External Identities, permet d'inviter des utilisateurs invités à collaborer avec votre organisation et de partager en toute sécurité les applications et services de l'entreprise."
+  "explanation": "Box 1 : Identities. Cette propriété indique le fournisseur d'identité principal de l'utilisateur. Un utilisateur peut en avoir plusieurs, consultables via le lien Identities de son profil ou en interrogeant la propriété identities avec l'API Microsoft Graph.\n\nBox 2 : B2B collaboration. La collaboration B2B de Microsoft Entra, qui fait partie d'External Identities, permet d'inviter des utilisateurs invités à collaborer avec votre organisation et de partager en toute sécurité les applications et services de l'entreprise.",
+  "interactive": {
+   "prompt": "Faites glisser dans la zone de réponse les deux réglages à configurer. Les intrus restent dans la liste.",
+   "items": {
+    "i1": "Identités",
+    "i2": "Collaboration B2B — Réinitialiser l’état d’acceptation",
+    "i3": "Réinitialiser le mot de passe",
+    "i4": "Révoquer les sessions",
+    "i5": "Rôles attribués",
+    "i6": "Méthodes d’authentification",
+    "i7": "État du compte"
+   },
+   "targets": {
+    "answer": "Zone de réponse"
+   }
+  }
  },
  "89": {
   "text": [
@@ -1050,14 +1277,42 @@
    "Vous disposez d'un locataire Microsoft Entra. Vous devez créer un groupe Microsoft 365 ne contenant que les membres du service marketing en France. Comment devez-vous compléter la règle d'appartenance dynamique ?",
    "REMARQUE : chaque bonne réponse vaut un point."
   ],
-  "explanation": "Box 1 : user.department. Exemple de règle d'appartenance correctement formée avec une seule expression : user.department -eq \"Sales\".\n\nBox 2 : and — les deux conditions doivent être vraies. Une règle d'appartenance peut comporter plusieurs expressions reliées par les opérateurs logiques -and, -or et -not, éventuellement combinés : (user.department -eq \"Sales\") -or (user.department -eq \"Marketing\") ; (user.department -eq \"Sales\") -and -not (user.jobTitle -contains \"SDE\").\n\nBox 3 : -eq."
+  "explanation": "Box 1 : user.department. Exemple de règle d'appartenance correctement formée avec une seule expression : user.department -eq \"Sales\".\n\nBox 2 : and — les deux conditions doivent être vraies. Une règle d'appartenance peut comporter plusieurs expressions reliées par les opérateurs logiques -and, -or et -not, éventuellement combinés : (user.department -eq \"Sales\") -or (user.department -eq \"Marketing\") ; (user.department -eq \"Sales\") -and -not (user.jobTitle -contains \"SDE\").\n\nBox 3 : -eq.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "( [choix] -eq \"Marketing\")"
+    },
+    "f2": {
+     "label": "… -eq \"Marketing\") [choix] (user.country …"
+    },
+    "f3": {
+     "label": "(user.country [choix] \"France\")"
+    }
+   }
+  }
  },
  "93": {
   "text": [
    "Vous disposez d'un locataire Microsoft Entra. Vous devez modifier les paramètres de permissions du rôle utilisateur par défaut du locataire. La solution doit répondre aux exigences suivantes : empêcher les utilisateurs standard de créer de nouveaux principaux de service ; ne leur permettre d'utiliser PowerShell ou Microsoft Graph que pour gérer leurs propres ressources Azure. Quels deux paramètres devez-vous modifier ?",
    "REMARQUE : chaque bonne réponse vaut un point."
   ],
-  "explanation": "Box 1 : « Users can register applications ». Pour empêcher les utilisateurs standard de créer des principaux de service, passez cette option à « Non » dans le volet des paramètres utilisateur du centre d'administration Microsoft Entra. Les utilisateurs non privilégiés ne pourront plus créer d'applications ni de principaux de service dans le locataire, tandis que les utilisateurs privilégiés le pourront toujours."
+  "explanation": "Box 1 : « Users can register applications ». Pour empêcher les utilisateurs standard de créer des principaux de service, passez cette option à « Non » dans le volet des paramètres utilisateur du centre d'administration Microsoft Entra. Les utilisateurs non privilégiés ne pourront plus créer d'applications ni de principaux de service dans le locataire, tandis que les utilisateurs privilégiés le pourront toujours.",
+  "interactive": {
+   "prompt": "Faites glisser dans la zone de réponse les deux réglages à modifier. Les intrus restent dans la liste.",
+   "items": {
+    "i1": "Les utilisateurs peuvent inscrire des applications",
+    "i2": "Empêcher les utilisateurs non-administrateurs de créer des locataires",
+    "i3": "Les utilisateurs peuvent créer des groupes de sécurité",
+    "i4": "Restrictions d'accès des utilisateurs invités",
+    "i5": "Restreindre l'accès au portail d'administration Azure AD",
+    "i6": "Autoriser les utilisateurs à connecter leur compte professionnel ou scolaire à LinkedIn",
+    "i7": "Afficher « Rester connecté »"
+   },
+   "targets": {
+    "answer": "Zone de réponse"
+   }
+  }
  },
  "94": {
   "text": [
@@ -1155,7 +1410,29 @@
    "Quels utilisateurs et quels groupes pouvez-vous supprimer ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : User1 et User4 uniquement. User1 n'appartient à aucun groupe et dispose d'une licence attribuée directement : une licence directe peut être modifiée ou retirée sans incidence sur les licences héritées. User2 est en revanche membre de Group1 : lorsqu'un utilisateur hérite d'une licence d'un groupe, cette licence ne peut pas être retirée directement."
+  "explanation": "Box 1 : User1 et User4 uniquement. User1 n'appartient à aucun groupe et dispose d'une licence attribuée directement : une licence directe peut être modifiée ou retirée sans incidence sur les licences héritées. User2 est en revanche membre de Group1 : lorsqu'un utilisateur hérite d'une licence d'un groupe, cette licence ne peut pas être retirée directement.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Utilisateurs :",
+     "options": [
+      "User4 uniquement",
+      "User1 et User4 uniquement",
+      "User2 et User4 uniquement",
+      "User1, User2, User3 et User4"
+     ]
+    },
+    "f2": {
+     "label": "Groupes :",
+     "options": [
+      "Group2 uniquement",
+      "Group2 et Group3 uniquement",
+      "Group2 et Group4 uniquement",
+      "Group1, Group2, Group3 et Group4"
+     ]
+    }
+   }
+  }
  },
  "102": {
   "text": [
@@ -1272,7 +1549,29 @@
    "Quels utilisateurs et quels groupes peuvent être supprimés ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : User1, User2, User3 et User4 — tous les utilisateurs peuvent être supprimés. Box 2 : Group1 et Group3 uniquement — Group1 et Group3 n'ont pas de licence, tandis que Group2 et Group4 en ont une attribuée."
+  "explanation": "Box 1 : User1, User2, User3 et User4 — tous les utilisateurs peuvent être supprimés. Box 2 : Group1 et Group3 uniquement — Group1 et Group3 n'ont pas de licence, tandis que Group2 et Group4 en ont une attribuée.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Utilisateurs :",
+     "options": [
+      "User4 uniquement",
+      "User3 et User4 uniquement",
+      "User2 et User4 uniquement",
+      "User1, User2, User3 et User4"
+     ]
+    },
+    "f2": {
+     "label": "Groupes :",
+     "options": [
+      "Group1 uniquement",
+      "Group4 uniquement",
+      "Group1 et Group3 uniquement",
+      "Group1, Group2, Group3 et Group4"
+     ]
+    }
+   }
+  }
  },
  "110": {
   "text": [
@@ -1280,7 +1579,29 @@
    "Vous prévoyez d'utiliser un coffre de clés Azure pour fournir un secret à app1. Que devez-vous créer pour qu'app1 accède au coffre, et depuis quel coffre le secret peut-il être utilisé ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : une identité managée. Quand vous définissez un secret, vous créez une référence vers un secret stocké dans Azure Key Vault ; Container Apps en récupère automatiquement la valeur et la met à disposition de votre application. Pour référencer un secret du coffre, il faut d'abord activer une identité managée sur l'application et lui accorder l'accès aux secrets du coffre.\n\nBox 2 : Vault1 et Vault2 uniquement, car ils se trouvent dans le même groupe de ressources qu'app1."
+  "explanation": "Box 1 : une identité managée. Quand vous définissez un secret, vous créez une référence vers un secret stocké dans Azure Key Vault ; Container Apps en récupère automatiquement la valeur et la met à disposition de votre application. Pour référencer un secret du coffre, il faut d'abord activer une identité managée sur l'application et lui accorder l'accès aux secrets du coffre.\n\nBox 2 : Vault1 et Vault2 uniquement, car ils se trouvent dans le même groupe de ressources qu'app1.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Créer :",
+     "options": [
+      "une identité managée",
+      "un point de terminaison privé",
+      "un principal de service",
+      "un compte d'utilisateur"
+     ]
+    },
+    "f2": {
+     "label": "Utiliser le secret depuis :",
+     "options": [
+      "Vault1 uniquement",
+      "Vault1 et Vault2 uniquement",
+      "Vault1 et Vault3 uniquement",
+      "Vault1, Vault2 ou Vault3"
+     ]
+    }
+   }
+  }
  },
  "111": {
   "text": [
@@ -1386,7 +1707,34 @@
    "REMARQUE : chaque bonne réponse vaut un point.",
    "Zone active :"
   ],
-  "explanation": "Box 1 : Custom security attributes (attributs de sécurité personnalisés), pour créer l'attribut Property1. Dans le centre d'administration Microsoft Entra, connectez-vous avec le rôle Attribute Definition Administrator, ouvrez Protection > Attributs de sécurité personnalisés, puis ajoutez un ensemble d'attributs.\n\nBox 2 : Rôles et administrateurs, pour qu'Admin1 puisse attribuer Property1 à User1."
+  "explanation": "Box 1 : Custom security attributes (attributs de sécurité personnalisés), pour créer l'attribut Property1. Dans le centre d'administration Microsoft Entra, connectez-vous avec le rôle Attribute Definition Administrator, ouvrez Protection > Attributs de sécurité personnalisés, puis ajoutez un ensemble d'attributs.\n\nBox 2 : Rôles et administrateurs, pour qu'Admin1 puisse attribuer Property1 à User1.",
+  "interactive": {
+   "prompt": "Faites glisser dans la zone de réponse les deux lames à configurer. Les intrus restent dans la liste.",
+   "items": {
+    "i1": "Utilisateurs",
+    "i2": "Groupes",
+    "i3": "Identités externes",
+    "i4": "Rôles et administrateurs",
+    "i5": "Unités administratives",
+    "i6": "Partenaires d'administration déléguée",
+    "i7": "Applications d'entreprise",
+    "i8": "Appareils",
+    "i9": "Inscriptions d'applications",
+    "i10": "Gouvernance des identités",
+    "i11": "Proxy d'application",
+    "i12": "Attributs de sécurité personnalisés",
+    "i13": "Licences",
+    "i14": "Synchronisation inter-locataires",
+    "i15": "Microsoft Entra Connect",
+    "i16": "Noms de domaine personnalisés",
+    "i17": "Mobilité (MDM et WIP)",
+    "i18": "Réinitialisation de mot de passe",
+    "i19": "Identité visuelle"
+   },
+   "targets": {
+    "answer": "Zone de réponse"
+   }
+  }
  },
  "119": {
   "text": [
@@ -1394,7 +1742,17 @@
    "Vous devez empêcher les administrateurs de modifier par inadvertance les ressources de RG1. Comment devez-vous compléter la commande PowerShell ?",
    "REMARQUE : chaque bonne réponse vaut un point."
   ],
-  "explanation": "Box 1 : New-AzResourceLock. En tant qu'administrateur, vous pouvez verrouiller un abonnement, un groupe de ressources ou une ressource pour les protéger des suppressions et modifications accidentelles ; le verrou prime sur les permissions des utilisateurs. En PowerShell, on utilise New-AzResourceLock en fournissant le nom, le type et le groupe de ressources.\n\nBox 2 : ReadOnly, le niveau de verrou qui empêche toute modification."
+  "explanation": "Box 1 : New-AzResourceLock. En tant qu'administrateur, vous pouvez verrouiller un abonnement, un groupe de ressources ou une ressource pour les protéger des suppressions et modifications accidentelles ; le verrou prime sur les permissions des utilisateurs. En PowerShell, on utilise New-AzResourceLock en fournissant le nom, le type et le groupe de ressources.\n\nBox 2 : ReadOnly, le niveau de verrou qui empêche toute modification.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "[choix] -LockName LockGroup -LockLevel …"
+    },
+    "f2": {
+     "label": "… -LockLevel [choix] -ResourceGroupName RG1"
+    }
+   }
+  }
  },
  "120": {
   "text": [
@@ -1403,7 +1761,32 @@
    "La réinitialisation de mot de passe en libre-service (SSPR) doit être configurée pour le locataire. Quels utilisateurs peuvent la configurer, et pour quel groupe peut-elle être activée ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Admin1 et Admin2 uniquement. Admin1 est administrateur général et Admin2 est Authentication Policy Administrator ; l'activation de SSPR requiert au minimum le rôle Authentication Policy Administrator. Admin3, qui est Authentication Administrator et Security Administrator, ne convient pas."
+  "explanation": "Box 1 : Admin1 et Admin2 uniquement. Admin1 est administrateur général et Admin2 est Authentication Policy Administrator ; l'activation de SSPR requiert au minimum le rôle Authentication Policy Administrator. Admin3, qui est Authentication Administrator et Security Administrator, ne convient pas.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Utilisateurs :",
+     "options": [
+      "Admin1 uniquement",
+      "Admin2 uniquement",
+      "Admin 3 uniquement",
+      "Admin1 et Admin2 uniquement",
+      "Admin2 et Admin3 uniquement",
+      "Admin1, Admin2 et Admin3"
+     ]
+    },
+    "f2": {
+     "label": "Groupe :",
+     "options": [
+      "Group1 uniquement",
+      "Group2 uniquement",
+      "Group1 ou Group2 uniquement",
+      "Group1 ou Group3 uniquement",
+      "Group1, Group2 ou Group3"
+     ]
+    }
+   }
+  }
  },
  "121": {
   "text": [
@@ -1411,7 +1794,28 @@
    "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : 1. User1 dispose d'une licence Microsoft Intune Suite par attribution directe de Microsoft 365 E5 Intune, d'une autre par attribution directe de Microsoft Intune Suite, et d'une troisième héritée de Group1.\n\nRemarque : un utilisateur peut appartenir à plusieurs groupes porteurs de licences. Plusieurs licences d'un même produit peuvent se recouvrir, tous les services activés étant alors appliqués à l'utilisateur."
+  "explanation": "Box 1 : 1. User1 dispose d'une licence Microsoft Intune Suite par attribution directe de Microsoft 365 E5 Intune, d'une autre par attribution directe de Microsoft Intune Suite, et d'une troisième héritée de Group1.\n\nRemarque : un utilisateur peut appartenir à plusieurs groupes porteurs de licences. Plusieurs licences d'un même produit peuvent se recouvrir, tous les services activés étant alors appliqués à l'utilisateur.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "User1 consomme [choix] pour Microsoft Intune Suite.",
+     "options": [
+      "une licence",
+      "deux licences",
+      "cinq licences",
+      "huit licences"
+     ]
+    },
+    "f2": {
+     "label": "Pour retirer Microsoft Fabric (Free) des licences attribuées à User1, vous devez [choix].",
+     "options": [
+      "retirer la licence de User1 uniquement",
+      "retirer User1 de Group1 uniquement",
+      "retirer la licence de User1 et retirer User1 de Group1"
+     ]
+    }
+   }
+  }
  },
  "122": {
   "interactive": {
@@ -1522,7 +1926,24 @@
    "Vous disposez d'un abonnement Azure et d'une licence Microsoft Entra ID P1. Vous devez effectuer les actions suivantes : activer la réinitialisation de mot de passe en libre-service (SSPR) pour tous les utilisateurs, et exiger qu'ils répondent à quatre questions lors de leur inscription à SSPR. Quels deux paramètres devez-vous utiliser ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Propriétés. Microsoft Entra ID permet d'activer SSPR pour aucun utilisateur, une sélection d'utilisateurs ou tous. Connectez-vous au centre d'administration Microsoft Entra avec au moins le rôle Authentication Policy Administrator, ouvrez Entra ID > Réinitialisation de mot de passe, puis, sur la page Propriétés, choisissez l'étendue voulue sous « Réinitialisation de mot de passe en libre-service activée »."
+  "explanation": "Box 1 : Propriétés. Microsoft Entra ID permet d'activer SSPR pour aucun utilisateur, une sélection d'utilisateurs ou tous. Connectez-vous au centre d'administration Microsoft Entra avec au moins le rôle Authentication Policy Administrator, ouvrez Entra ID > Réinitialisation de mot de passe, puis, sur la page Propriétés, choisissez l'étendue voulue sous « Réinitialisation de mot de passe en libre-service activée ».",
+  "interactive": {
+   "prompt": "Faites glisser dans la zone de réponse les deux réglages à utiliser. Les intrus restent dans la liste.",
+   "items": {
+    "i1": "Propriétés",
+    "i2": "Méthodes d'authentification",
+    "i3": "Inscription",
+    "i4": "Notifications",
+    "i5": "Personnalisation",
+    "i6": "Intégration locale",
+    "i7": "Stratégie d'administrateur",
+    "i8": "Journaux d'audit",
+    "i9": "Utilisation et insights"
+   },
+   "targets": {
+    "answer": "Zone de réponse"
+   }
+  }
  },
  "130": {
   "text": [
@@ -1540,7 +1961,20 @@
   "text": [
    "Vous devez configurer les paramètres d'appareil pour répondre aux exigences techniques et aux exigences utilisateur. Quels deux paramètres devez-vous modifier ?"
   ],
-  "explanation": "Box 1 : Sélectionnés — seuls certains utilisateurs doivent pouvoir joindre des appareils. Box 2 : Oui — lorsque les utilisateurs joignent des appareils à Microsoft Entra ID, ils doivent vérifier leur identité au moyen d'un téléphone mobile."
+  "explanation": "Box 1 : Sélectionnés — seuls certains utilisateurs doivent pouvoir joindre des appareils. Box 2 : Oui — lorsque les utilisateurs joignent des appareils à Microsoft Entra ID, ils doivent vérifier leur identité au moyen d'un téléphone mobile.",
+  "interactive": {
+   "prompt": "Faites glisser dans la zone de réponse les deux réglages à modifier. Les intrus restent dans la liste.",
+   "items": {
+    "i1": "Les utilisateurs peuvent joindre des appareils à Microsoft Entra ID",
+    "i2": "Administrateurs locaux supplémentaires sur les appareils joints à Microsoft Entra",
+    "i3": "Les utilisateurs peuvent inscrire leurs appareils dans Microsoft Entra ID",
+    "i4": "Exiger l'authentification multifacteur pour joindre des appareils",
+    "i5": "Nombre maximal d'appareils par utilisateur"
+   },
+   "targets": {
+    "answer": "Zone de réponse"
+   }
+  }
  },
  "132": {
   "text": [
@@ -1558,7 +1992,29 @@
   "text": [
    "Vous devez faire en sorte que User1 puisse créer des définitions d'initiative et que User4 puisse attribuer des initiatives à RG2, tout en respectant les exigences techniques. Quel rôle devez-vous attribuer à chaque utilisateur ?",
    "REMARQUE : chaque sélection correcte vaut un point."
-  ]
+  ],
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "User1 :",
+     "options": [
+      "Contributeur sur RG1",
+      "Contributeur sur Sub1",
+      "Administrateur de sécurité sur RG1",
+      "Contributeur de stratégie de ressource sur Sub1"
+     ]
+    },
+    "f2": {
+     "label": "User4 :",
+     "options": [
+      "Contributeur sur RG2",
+      "Contributeur sur Sub1",
+      "Administrateur de sécurité sur Sub1",
+      "Contributeur de stratégie de ressource sur RG2"
+     ]
+    }
+   }
+  }
  },
  "134": {
   "text": [
@@ -1577,7 +2033,14 @@
    "Vous devez mettre en œuvre le changement prévu pour Attribute1. Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Non — Admin1 est administrateur général, or par défaut ce rôle, comme les autres rôles d'administration, n'a pas la permission de lire, définir ni attribuer des attributs de sécurité personnalisés. Il faut pour cela le rôle Attribute Assignment Administrator, seul habilité à attribuer et retirer les clés et valeurs d'attributs de sécurité personnalisés sur les objets Microsoft Entra pris en charge."
+  "explanation": "Box 1 : Non — Admin1 est administrateur général, or par défaut ce rôle, comme les autres rôles d'administration, n'a pas la permission de lire, définir ni attribuer des attributs de sécurité personnalisés. Il faut pour cela le rôle Attribute Assignment Administrator, seul habilité à attribuer et retirer les clés et valeurs d'attributs de sécurité personnalisés sur les objets Microsoft Entra pris en charge.",
+  "interactive": {
+   "statements": {
+    "s1": "Admin1 peut affecter Attribute1 à Group1.",
+    "s2": "Admin2 peut affecter Attribute1 à User1.",
+    "s3": "Admin3 peut affecter Attribute1 à Group2."
+   }
+  }
  },
  "136": {
   "text": [

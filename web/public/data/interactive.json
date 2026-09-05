@@ -67,6 +67,128 @@
    }
   ]
  },
+ "26": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "\"assignableScopes\": [",
+    "options": [
+     "\"/\"",
+     "\"/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e\"",
+     "\"/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e/resourceGroups\""
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "\"notActions\": [",
+    "options": [
+     "\"Microsoft.Authorization/*\"",
+     "\"Microsoft.Resources/*\"",
+     "\"Microsoft.Security/*\""
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "29": {
+  "kind": "dragdrop",
+  "prompt": "Drag the three settings you must configure into the answer area. Distractors stay in the list.",
+  "items": [
+   {
+    "id": "i1",
+    "label": "Users and groups"
+   },
+   {
+    "id": "i2",
+    "label": "Cloud apps"
+   },
+   {
+    "id": "i3",
+    "label": "Conditions"
+   },
+   {
+    "id": "i4",
+    "label": "Grant"
+   },
+   {
+    "id": "i5",
+    "label": "Session"
+   }
+  ],
+  "targets": [
+   {
+    "id": "answer",
+    "label": "Answer area",
+    "accepts": [
+     "i1",
+     "i2",
+     "i4"
+    ]
+   }
+  ]
+ },
+ "32": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "User1:",
+    "options": [
+     "Group1 only",
+     "Group2 only",
+     "Group3 only",
+     "Group1 and Group2 only",
+     "Group1 and Group3 only",
+     "Group2 and Group3 only",
+     "Group1, Group2, and Group3"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "User2:",
+    "options": [
+     "Group1 only",
+     "Group2 only",
+     "Group3 only",
+     "Group1 and Group2 only",
+     "Group1 and Group3 only",
+     "Group2 and Group3 only",
+     "Group1, Group2, and Group3"
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ "33": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "JobTitle:",
+    "options": [
+     "User1 only",
+     "User1 and User2 only",
+     "User1 and User3 only",
+     "User1, User2, and User3"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "UsageLocation:",
+    "options": [
+     "User1 only",
+     "User1 and User2 only",
+     "User1 and User3 only",
+     "User1, User2, and User3"
+    ],
+    "answer": 3
+   }
+  ]
+ },
  "38": {
   "kind": "yesno",
   "statements": [
@@ -160,6 +282,65 @@
    }
   ]
  },
+ "46": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Add a subnet to VNet1:",
+    "options": [
+     "User1 only",
+     "User3 only",
+     "User1 and User3 only",
+     "User2 and User3 only",
+     "User1, User2, and User3"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "Assign a user the Reader role to VNet1:",
+    "options": [
+     "User1 only",
+     "User2 only",
+     "User3 only",
+     "User1 and User2 only",
+     "User2 and User3 only",
+     "User1, User2, and User3"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "47": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Locks:",
+    "options": [
+     "RG1 and VM1 only",
+     "Sub1 and RG1 only",
+     "Sub1, RG1, and VM1 only",
+     "MG1, Sub1, RG1, and VM1 only",
+     "Tenant Root Group, MG1, Sub1, RG1, and VM1"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "Tags:",
+    "options": [
+     "RG1 and VM1 only",
+     "Sub1 and RG1 only",
+     "Sub1, RG1, and VM1 only",
+     "MG1, Sub1, RG1, and VM1 only",
+     "Tenant Root Group, MG1, Sub1, RG1, and VM1"
+    ],
+    "answer": 2
+   }
+  ]
+ },
  "49": {
   "kind": "yesno",
   "statements": [
@@ -233,6 +414,64 @@
      "assignableScopes"
     ],
     "answer": 5
+   }
+  ]
+ },
+ "58": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "You can assign Policy1 to:",
+    "options": [
+     "Subscription1 and RG1 only",
+     "ManagementGroup1 and Subscription1 only",
+     "Tenant Root Group, ManagementGroup1, and Subscription1 only",
+     "Tenant Root Group, ManagementGroup1, Subscription1, and RG1 only",
+     "Tenant Root Group, ManagementGroup1, Subscription1, RG1, and VM1"
+    ],
+    "answer": 4
+   },
+   {
+    "id": "f2",
+    "label": "You can exclude Policy1 from:",
+    "options": [
+     "VM1 only",
+     "RG1 and VM1 only",
+     "Subscription1, RG1, and VM1 only",
+     "ManagementGroup1, Subscription1, RG1, and VM1 only",
+     "Tenant Root Group, ManagementGroup1, Subscription1, RG1, and VM1"
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ "67": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Role3:",
+    "options": [
+     "Role1 only",
+     "Built-in Azure subscription roles only",
+     "Role1 and built-in Azure subscription roles only",
+     "Built-in Azure subscription roles and built-in Microsoft Entra roles only",
+     "Role1, Role2, built-in Azure subscription roles, built-in Microsoft Entra roles"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "Role4:",
+    "options": [
+     "Role2 only",
+     "Built-in Microsoft Entra roles only",
+     "Role2 and built-in Microsoft Entra roles only",
+     "Built-in Microsoft Entra roles and built-in Azure subscription roles only",
+     "Role1, Role2, built-in Microsoft Entra, built-in Azure subscription roles"
+    ],
+    "answer": 1
    }
   ]
  },
@@ -378,6 +617,183 @@
    }
   ]
  },
+ "82": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "JobTitle:",
+    "options": [
+     "User1 only",
+     "User1 and User2 only",
+     "User1 and User3 only",
+     "User1, User2, and User3"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "UsageLocation:",
+    "options": [
+     "User1 only",
+     "User1 and User2 only",
+     "User1 and User3 only",
+     "User1, User2, and User3"
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ "87": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Blob storage:",
+    "options": [
+     "Microsoft Entra ID only",
+     "Shared access signatures (SAS) only",
+     "Microsoft Entra ID and shared access signatures (SAS)"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "File storage:",
+    "options": [
+     "Microsoft Entra ID only",
+     "Shared access signatures (SAS) only",
+     "Microsoft Entra ID and shared access signatures (SAS)"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "88": {
+  "kind": "dragdrop",
+  "prompt": "Drag the two settings you must configure into the answer area. Distractors stay in the list.",
+  "items": [
+   {
+    "id": "i1",
+    "label": "Identities"
+   },
+   {
+    "id": "i2",
+    "label": "B2B collaboration — Reset redemption status"
+   },
+   {
+    "id": "i3",
+    "label": "Reset password"
+   },
+   {
+    "id": "i4",
+    "label": "Revoke sessions"
+   },
+   {
+    "id": "i5",
+    "label": "Assigned roles"
+   },
+   {
+    "id": "i6",
+    "label": "Authentication methods"
+   },
+   {
+    "id": "i7",
+    "label": "Account status"
+   }
+  ],
+  "targets": [
+   {
+    "id": "answer",
+    "label": "Answer area",
+    "accepts": [
+     "i1",
+     "i2"
+    ]
+   }
+  ]
+ },
+ "92": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "( [answer choice] -eq \"Marketing\")",
+    "options": [
+     "device.managementType",
+     "device.organizationalUnit",
+     "user.department",
+     "user.usageLocation"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "... -eq \"Marketing\") [answer choice] (user.country ...",
+    "options": [
+     "and",
+     "or",
+     "typeof"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f3",
+    "label": "(user.country [answer choice] \"France\")",
+    "options": [
+     "-and",
+     "-eq",
+     "-in",
+     "-match"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "93": {
+  "kind": "dragdrop",
+  "prompt": "Drag the two settings you must modify into the answer area. Distractors stay in the list.",
+  "items": [
+   {
+    "id": "i1",
+    "label": "Users can register applications"
+   },
+   {
+    "id": "i2",
+    "label": "Restrict non-admin users from creating tenants"
+   },
+   {
+    "id": "i3",
+    "label": "Users can create security groups"
+   },
+   {
+    "id": "i4",
+    "label": "Guest user access restrictions"
+   },
+   {
+    "id": "i5",
+    "label": "Restrict access to Azure AD administration portal"
+   },
+   {
+    "id": "i6",
+    "label": "Allow users to connect their work or school account with LinkedIn"
+   },
+   {
+    "id": "i7",
+    "label": "Show keep user signed in"
+   }
+  ],
+  "targets": [
+   {
+    "id": "answer",
+    "label": "Answer area",
+    "accepts": [
+     "i1",
+     "i5"
+    ]
+   }
+  ]
+ },
  "94": {
   "kind": "yesno",
   "statements": [
@@ -415,6 +831,33 @@
     "id": "s3",
     "text": "All the resource groups are created in the East US Azure region.",
     "answer": true
+   }
+  ]
+ },
+ "101": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Users:",
+    "options": [
+     "User4 only",
+     "User1 and User4 only",
+     "User2 and User4 only",
+     "User1, User2, User3, and User4"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "f2",
+    "label": "Groups:",
+    "options": [
+     "Group2 only",
+     "Group2 and Group3 only",
+     "Group2 and Group4 only",
+     "Group1, Group2, Group3, and Group4"
+    ],
+    "answer": 2
    }
   ]
  },
@@ -495,6 +938,60 @@
    }
   ]
  },
+ "109": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Users:",
+    "options": [
+     "User4 only",
+     "User3 and User4 only",
+     "User2 and User4 only",
+     "User1, User2, User3, and User4"
+    ],
+    "answer": 3
+   },
+   {
+    "id": "f2",
+    "label": "Groups:",
+    "options": [
+     "Group1 only",
+     "Group4 only",
+     "Group1 and Group3 only",
+     "Group1, Group2, Group3, and Group4"
+    ],
+    "answer": 2
+   }
+  ]
+ },
+ "110": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Create a:",
+    "options": [
+     "Managed identity",
+     "Private endpoint",
+     "Service principal",
+     "User account"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "Use the secret from:",
+    "options": [
+     "Vault1 only",
+     "Vault1 and Vault2 only",
+     "Vault1 and Vault3 only",
+     "Vault1, Vault2, or Vault3"
+    ],
+    "answer": 1
+   }
+  ]
+ },
  "116": {
   "kind": "dropdown",
   "fields": [
@@ -518,6 +1015,181 @@
      "unassign the license for User1 and unassign the license for Group1"
     ],
     "answer": 1
+   }
+  ]
+ },
+ "118": {
+  "kind": "dragdrop",
+  "prompt": "Drag the two blades you must configure into the answer area. Distractors stay in the list.",
+  "items": [
+   {
+    "id": "i1",
+    "label": "Users"
+   },
+   {
+    "id": "i2",
+    "label": "Groups"
+   },
+   {
+    "id": "i3",
+    "label": "External Identities"
+   },
+   {
+    "id": "i4",
+    "label": "Roles and administrators"
+   },
+   {
+    "id": "i5",
+    "label": "Administrative units"
+   },
+   {
+    "id": "i6",
+    "label": "Delegated admin partners"
+   },
+   {
+    "id": "i7",
+    "label": "Enterprise applications"
+   },
+   {
+    "id": "i8",
+    "label": "Devices"
+   },
+   {
+    "id": "i9",
+    "label": "App registrations"
+   },
+   {
+    "id": "i10",
+    "label": "Identity Governance"
+   },
+   {
+    "id": "i11",
+    "label": "Application proxy"
+   },
+   {
+    "id": "i12",
+    "label": "Custom security attributes"
+   },
+   {
+    "id": "i13",
+    "label": "Licenses"
+   },
+   {
+    "id": "i14",
+    "label": "Cross-tenant synchronization"
+   },
+   {
+    "id": "i15",
+    "label": "Microsoft Entra Connect"
+   },
+   {
+    "id": "i16",
+    "label": "Custom domain names"
+   },
+   {
+    "id": "i17",
+    "label": "Mobility (MDM and WIP)"
+   },
+   {
+    "id": "i18",
+    "label": "Password reset"
+   },
+   {
+    "id": "i19",
+    "label": "Company branding"
+   }
+  ],
+  "targets": [
+   {
+    "id": "answer",
+    "label": "Answer area",
+    "accepts": [
+     "i4",
+     "i12"
+    ]
+   }
+  ]
+ },
+ "119": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "[answer choice] -LockName LockGroup -LockLevel ...",
+    "options": [
+     "Lock-AzRmStorageContainerImmutabilityPolicy",
+     "New-AzResourceLock",
+     "Set-AzResource",
+     "Set-AzAppConfigurationLock"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "f2",
+    "label": "... -LockLevel [answer choice] -ResourceGroupName RG1",
+    "options": [
+     "CanNotDelete",
+     "False",
+     "DeleteResources",
+     "ReadOnly"
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ "120": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Users:",
+    "options": [
+     "Admin1 only",
+     "Admin2 only",
+     "Admin 3 only",
+     "Admin1 and Admin2 only",
+     "Admin2 and Admin3 only",
+     "Admin1, Admin2, and Admin3"
+    ],
+    "answer": 3
+   },
+   {
+    "id": "f2",
+    "label": "Group:",
+    "options": [
+     "Group1 only",
+     "Group2 only",
+     "Group1 or Group2 only",
+     "Group1 or Group3 only",
+     "Group1, Group2, or Group3"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "121": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "User1 is consuming [answer choice] for Microsoft Intune Suite.",
+    "options": [
+     "one license",
+     "two licenses",
+     "five licenses",
+     "eight licenses"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "To remove Microsoft Fabric (Free) from the license assignments of User1, you must [answer choice].",
+    "options": [
+     "unassign the license for User1 only",
+     "remove User1 from Group1 only",
+     "unassign the license for User1 and remove User1 from Group1"
+    ],
+    "answer": 2
    }
   ]
  },
@@ -577,6 +1249,141 @@
    {
     "id": "s3",
     "text": "User3 can skip SSPR registration for a maximum of 180 days.",
+    "answer": true
+   }
+  ]
+ },
+ "129": {
+  "kind": "dragdrop",
+  "prompt": "Drag the two settings you must use into the answer area. Distractors stay in the list.",
+  "items": [
+   {
+    "id": "i1",
+    "label": "Properties"
+   },
+   {
+    "id": "i2",
+    "label": "Authentication methods"
+   },
+   {
+    "id": "i3",
+    "label": "Registration"
+   },
+   {
+    "id": "i4",
+    "label": "Notifications"
+   },
+   {
+    "id": "i5",
+    "label": "Customization"
+   },
+   {
+    "id": "i6",
+    "label": "On-premises integration"
+   },
+   {
+    "id": "i7",
+    "label": "Administrator Policy"
+   },
+   {
+    "id": "i8",
+    "label": "Audit logs"
+   },
+   {
+    "id": "i9",
+    "label": "Usage & insights"
+   }
+  ],
+  "targets": [
+   {
+    "id": "answer",
+    "label": "Answer area",
+    "accepts": [
+     "i1",
+     "i2"
+    ]
+   }
+  ]
+ },
+ "131": {
+  "kind": "dragdrop",
+  "prompt": "Drag the two settings you must modify into the answer area. Distractors stay in the list.",
+  "items": [
+   {
+    "id": "i1",
+    "label": "Users may join devices to Microsoft Entra ID"
+   },
+   {
+    "id": "i2",
+    "label": "Additional local administrators on Microsoft Entra joined devices"
+   },
+   {
+    "id": "i3",
+    "label": "Users may register their devices with Microsoft Entra ID"
+   },
+   {
+    "id": "i4",
+    "label": "Require Multi-Factor Auth to join devices"
+   },
+   {
+    "id": "i5",
+    "label": "Maximum number of devices per user"
+   }
+  ],
+  "targets": [
+   {
+    "id": "answer",
+    "label": "Answer area",
+    "accepts": [
+     "i1",
+     "i4"
+    ]
+   }
+  ]
+ },
+ "133": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "User1:",
+    "options": [
+     "Contributor for RG1",
+     "Contributor for Sub1",
+     "Security Admin for RG1",
+     "Resource Policy Contributor for Sub1"
+    ],
+    "answer": 3
+   },
+   {
+    "id": "f2",
+    "label": "User4:",
+    "options": [
+     "Contributor for RG2",
+     "Contributor for Sub1",
+     "Security Admin for Sub1",
+     "Resource Policy Contributor for RG2"
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ "135": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "Admin1 can assign Attribute1 to Group1.",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "Admin2 can assign Attribute1 to User1.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "Admin3 can assign Attribute1 to Group2.",
     "answer": true
    }
   ]

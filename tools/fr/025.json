@@ -1,0 +1,96 @@
+{
+ "_note": "Libellés français du lot 2 de zones actives (93, 101, 109, 110, 118, 119, 120, 121, 129, 131, 133, 135). Les noms de lames du portail et les cmdlets PowerShell restent en anglais.",
+
+ "93": { "interactive": {
+  "prompt": "Faites glisser dans la zone de réponse les deux réglages à modifier. Les intrus restent dans la liste.",
+  "items": {
+   "i1": "Les utilisateurs peuvent inscrire des applications",
+   "i2": "Empêcher les utilisateurs non-administrateurs de créer des locataires",
+   "i3": "Les utilisateurs peuvent créer des groupes de sécurité",
+   "i4": "Restrictions d'accès des utilisateurs invités",
+   "i5": "Restreindre l'accès au portail d'administration Azure AD",
+   "i6": "Autoriser les utilisateurs à connecter leur compte professionnel ou scolaire à LinkedIn",
+   "i7": "Afficher « Rester connecté »"
+  },
+  "targets": { "answer": "Zone de réponse" }
+ } },
+
+ "101": { "interactive": { "fields": {
+  "f1": { "label": "Utilisateurs :", "options": ["User4 uniquement", "User1 et User4 uniquement", "User2 et User4 uniquement", "User1, User2, User3 et User4"] },
+  "f2": { "label": "Groupes :", "options": ["Group2 uniquement", "Group2 et Group3 uniquement", "Group2 et Group4 uniquement", "Group1, Group2, Group3 et Group4"] }
+ } } },
+
+ "109": { "interactive": { "fields": {
+  "f1": { "label": "Utilisateurs :", "options": ["User4 uniquement", "User3 et User4 uniquement", "User2 et User4 uniquement", "User1, User2, User3 et User4"] },
+  "f2": { "label": "Groupes :", "options": ["Group1 uniquement", "Group4 uniquement", "Group1 et Group3 uniquement", "Group1, Group2, Group3 et Group4"] }
+ } } },
+
+ "110": { "interactive": { "fields": {
+  "f1": { "label": "Créer :", "options": ["une identité managée", "un point de terminaison privé", "un principal de service", "un compte d'utilisateur"] },
+  "f2": { "label": "Utiliser le secret depuis :", "options": ["Vault1 uniquement", "Vault1 et Vault2 uniquement", "Vault1 et Vault3 uniquement", "Vault1, Vault2 ou Vault3"] }
+ } } },
+
+ "118": { "interactive": {
+  "prompt": "Faites glisser dans la zone de réponse les deux lames à configurer. Les intrus restent dans la liste.",
+  "items": {
+   "i1": "Utilisateurs", "i2": "Groupes", "i3": "Identités externes",
+   "i4": "Rôles et administrateurs",
+   "i5": "Unités administratives", "i6": "Partenaires d'administration déléguée",
+   "i7": "Applications d'entreprise", "i8": "Appareils", "i9": "Inscriptions d'applications",
+   "i10": "Gouvernance des identités", "i11": "Proxy d'application",
+   "i12": "Attributs de sécurité personnalisés",
+   "i13": "Licences", "i14": "Synchronisation inter-locataires",
+   "i15": "Microsoft Entra Connect", "i16": "Noms de domaine personnalisés",
+   "i17": "Mobilité (MDM et WIP)", "i18": "Réinitialisation de mot de passe", "i19": "Identité visuelle"
+  },
+  "targets": { "answer": "Zone de réponse" }
+ } },
+
+ "119": { "interactive": { "fields": {
+  "f1": { "label": "[choix] -LockName LockGroup -LockLevel …" },
+  "f2": { "label": "… -LockLevel [choix] -ResourceGroupName RG1" }
+ } } },
+
+ "120": { "interactive": { "fields": {
+  "f1": { "label": "Utilisateurs :", "options": ["Admin1 uniquement", "Admin2 uniquement", "Admin 3 uniquement", "Admin1 et Admin2 uniquement", "Admin2 et Admin3 uniquement", "Admin1, Admin2 et Admin3"] },
+  "f2": { "label": "Groupe :", "options": ["Group1 uniquement", "Group2 uniquement", "Group1 ou Group2 uniquement", "Group1 ou Group3 uniquement", "Group1, Group2 ou Group3"] }
+ } } },
+
+ "121": { "interactive": { "fields": {
+  "f1": { "label": "User1 consomme [choix] pour Microsoft Intune Suite.", "options": ["une licence", "deux licences", "cinq licences", "huit licences"] },
+  "f2": { "label": "Pour retirer Microsoft Fabric (Free) des licences attribuées à User1, vous devez [choix].", "options": ["retirer la licence de User1 uniquement", "retirer User1 de Group1 uniquement", "retirer la licence de User1 et retirer User1 de Group1"] }
+ } } },
+
+ "129": { "interactive": {
+  "prompt": "Faites glisser dans la zone de réponse les deux réglages à utiliser. Les intrus restent dans la liste.",
+  "items": {
+   "i1": "Propriétés", "i2": "Méthodes d'authentification", "i3": "Inscription",
+   "i4": "Notifications", "i5": "Personnalisation", "i6": "Intégration locale",
+   "i7": "Stratégie d'administrateur", "i8": "Journaux d'audit", "i9": "Utilisation et insights"
+  },
+  "targets": { "answer": "Zone de réponse" }
+ } },
+
+ "131": { "interactive": {
+  "prompt": "Faites glisser dans la zone de réponse les deux réglages à modifier. Les intrus restent dans la liste.",
+  "items": {
+   "i1": "Les utilisateurs peuvent joindre des appareils à Microsoft Entra ID",
+   "i2": "Administrateurs locaux supplémentaires sur les appareils joints à Microsoft Entra",
+   "i3": "Les utilisateurs peuvent inscrire leurs appareils dans Microsoft Entra ID",
+   "i4": "Exiger l'authentification multifacteur pour joindre des appareils",
+   "i5": "Nombre maximal d'appareils par utilisateur"
+  },
+  "targets": { "answer": "Zone de réponse" }
+ } },
+
+ "133": { "interactive": { "fields": {
+  "f1": { "label": "User1 :", "options": ["Contributeur sur RG1", "Contributeur sur Sub1", "Administrateur de sécurité sur RG1", "Contributeur de stratégie de ressource sur Sub1"] },
+  "f2": { "label": "User4 :", "options": ["Contributeur sur RG2", "Contributeur sur Sub1", "Administrateur de sécurité sur Sub1", "Contributeur de stratégie de ressource sur RG2"] }
+ } } },
+
+ "135": { "interactive": { "statements": {
+  "s1": "Admin1 peut affecter Attribute1 à Group1.",
+  "s2": "Admin2 peut affecter Attribute1 à User1.",
+  "s3": "Admin3 peut affecter Attribute1 à Group2."
+ } } }
+}

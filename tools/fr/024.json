@@ -1,0 +1,267 @@
+{
+ "26": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "\"assignableScopes\" : ["
+    },
+    "f2": {
+     "label": "\"notActions\" : ["
+    }
+   }
+  }
+ },
+ "29": {
+  "interactive": {
+   "prompt": "Faites glisser dans la zone de réponse les trois réglages à configurer. Les intrus restent dans la liste.",
+   "items": {
+    "i1": "Utilisateurs et groupes",
+    "i2": "Applications cloud",
+    "i3": "Conditions",
+    "i4": "Accorder (Grant)",
+    "i5": "Session"
+   },
+   "targets": {
+    "answer": "Zone de réponse"
+   }
+  }
+ },
+ "32": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "User1 :",
+     "options": [
+      "Groupe1 uniquement",
+      "Groupe2 uniquement",
+      "Groupe3 uniquement",
+      "Groupe1 et Groupe2 uniquement",
+      "Groupe1 et Groupe3 uniquement",
+      "Groupe2 et Groupe3 uniquement",
+      "Groupe1, Groupe2 et Groupe3"
+     ]
+    },
+    "f2": {
+     "label": "User2 :",
+     "options": [
+      "Groupe1 uniquement",
+      "Groupe2 uniquement",
+      "Groupe3 uniquement",
+      "Groupe1 et Groupe2 uniquement",
+      "Groupe1 et Groupe3 uniquement",
+      "Groupe2 et Groupe3 uniquement",
+      "Groupe1, Groupe2 et Groupe3"
+     ]
+    }
+   }
+  }
+ },
+ "33": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "JobTitle :",
+     "options": [
+      "User1 uniquement",
+      "User1 et User2 uniquement",
+      "User1 et User3 uniquement",
+      "User1, User2 et User3"
+     ]
+    },
+    "f2": {
+     "label": "UsageLocation :",
+     "options": [
+      "User1 uniquement",
+      "User1 et User2 uniquement",
+      "User1 et User3 uniquement",
+      "User1, User2 et User3"
+     ]
+    }
+   }
+  }
+ },
+ "46": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Ajouter un sous-réseau à VNet1 :",
+     "options": [
+      "User1 uniquement",
+      "User3 uniquement",
+      "User1 et User3 uniquement",
+      "User2 et User3 uniquement",
+      "User1, User2 et User3"
+     ]
+    },
+    "f2": {
+     "label": "Attribuer à un utilisateur le rôle Lecteur sur VNet1 :",
+     "options": [
+      "User1 uniquement",
+      "User2 uniquement",
+      "User3 uniquement",
+      "User1 et User2 uniquement",
+      "User2 et User3 uniquement",
+      "User1, User2 et User3"
+     ]
+    }
+   }
+  }
+ },
+ "47": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Verrous :",
+     "options": [
+      "RG1 et VM1 uniquement",
+      "Sub1 et RG1 uniquement",
+      "Sub1, RG1 et VM1 uniquement",
+      "MG1, Sub1, RG1 et VM1 uniquement",
+      "Groupe racine du locataire, MG1, Sub1, RG1 et VM1"
+     ]
+    },
+    "f2": {
+     "label": "Étiquettes (tags) :",
+     "options": [
+      "RG1 et VM1 uniquement",
+      "Sub1 et RG1 uniquement",
+      "Sub1, RG1 et VM1 uniquement",
+      "MG1, Sub1, RG1 et VM1 uniquement",
+      "Groupe racine du locataire, MG1, Sub1, RG1 et VM1"
+     ]
+    }
+   }
+  }
+ },
+ "58": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Vous pouvez affecter Policy1 à :",
+     "options": [
+      "Subscription1 et RG1 uniquement",
+      "ManagementGroup1 et Subscription1 uniquement",
+      "Groupe racine du locataire, ManagementGroup1 et Subscription1 uniquement",
+      "Groupe racine du locataire, ManagementGroup1, Subscription1 et RG1 uniquement",
+      "Groupe racine du locataire, ManagementGroup1, Subscription1, RG1 et VM1"
+     ]
+    },
+    "f2": {
+     "label": "Vous pouvez exclure Policy1 de :",
+     "options": [
+      "VM1 uniquement",
+      "RG1 et VM1 uniquement",
+      "Subscription1, RG1 et VM1 uniquement",
+      "ManagementGroup1, Subscription1, RG1 et VM1 uniquement",
+      "Groupe racine du locataire, ManagementGroup1, Subscription1, RG1 et VM1"
+     ]
+    }
+   }
+  }
+ },
+ "67": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Role3 :",
+     "options": [
+      "Role1 uniquement",
+      "Rôles intégrés d’abonnement Azure uniquement",
+      "Role1 et rôles intégrés d’abonnement Azure uniquement",
+      "Rôles intégrés d’abonnement Azure et rôles intégrés Microsoft Entra uniquement",
+      "Role1, Role2, rôles intégrés d’abonnement Azure, rôles intégrés Microsoft Entra"
+     ]
+    },
+    "f2": {
+     "label": "Role4 :",
+     "options": [
+      "Role2 uniquement",
+      "Rôles intégrés Microsoft Entra uniquement",
+      "Role2 et rôles intégrés Microsoft Entra uniquement",
+      "Rôles intégrés Microsoft Entra et rôles intégrés d’abonnement Azure uniquement",
+      "Role1, Role2, rôles intégrés Microsoft Entra, rôles intégrés d’abonnement Azure"
+     ]
+    }
+   }
+  }
+ },
+ "82": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "JobTitle :",
+     "options": [
+      "User1 uniquement",
+      "User1 et User2 uniquement",
+      "User1 et User3 uniquement",
+      "User1, User2 et User3"
+     ]
+    },
+    "f2": {
+     "label": "UsageLocation :",
+     "options": [
+      "User1 uniquement",
+      "User1 et User2 uniquement",
+      "User1 et User3 uniquement",
+      "User1, User2 et User3"
+     ]
+    }
+   }
+  }
+ },
+ "87": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Stockage Blob :",
+     "options": [
+      "Microsoft Entra ID uniquement",
+      "Signatures d’accès partagé (SAS) uniquement",
+      "Microsoft Entra ID et signatures d’accès partagé (SAS)"
+     ]
+    },
+    "f2": {
+     "label": "Stockage Fichier :",
+     "options": [
+      "Microsoft Entra ID uniquement",
+      "Signatures d’accès partagé (SAS) uniquement",
+      "Microsoft Entra ID et signatures d’accès partagé (SAS)"
+     ]
+    }
+   }
+  }
+ },
+ "88": {
+  "interactive": {
+   "prompt": "Faites glisser dans la zone de réponse les deux réglages à configurer. Les intrus restent dans la liste.",
+   "items": {
+    "i1": "Identités",
+    "i2": "Collaboration B2B — Réinitialiser l’état d’acceptation",
+    "i3": "Réinitialiser le mot de passe",
+    "i4": "Révoquer les sessions",
+    "i5": "Rôles attribués",
+    "i6": "Méthodes d’authentification",
+    "i7": "État du compte"
+   },
+   "targets": {
+    "answer": "Zone de réponse"
+   }
+  }
+ },
+ "92": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "( [choix] -eq \"Marketing\")"
+    },
+    "f2": {
+     "label": "… -eq \"Marketing\") [choix] (user.country …"
+    },
+    "f3": {
+     "label": "(user.country [choix] \"France\")"
+    }
+   }
+  }
+ },
+ "_note": "Libellés français du lot 1 de zones actives rendues jouables (26, 29, 32, 33, 46, 47, 58, 67, 82, 87, 88, 92). Les identifiants Azure (Group1, RG1, user.department…) ne se traduisent pas."
+}

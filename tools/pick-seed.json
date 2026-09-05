@@ -1,0 +1,241 @@
+{
+ "29": {
+  "prompt": "Drag the three settings you must configure into the answer area. Distractors stay in the list.",
+  "choices": [
+   [
+    "Users and groups",
+    true
+   ],
+   [
+    "Cloud apps",
+    true
+   ],
+   [
+    "Conditions",
+    false
+   ],
+   [
+    "Grant",
+    true
+   ],
+   [
+    "Session",
+    false
+   ]
+  ]
+ },
+ "88": {
+  "prompt": "Drag the two settings you must configure into the answer area. Distractors stay in the list.",
+  "choices": [
+   [
+    "Identities",
+    true
+   ],
+   [
+    "B2B collaboration — Reset redemption status",
+    true
+   ],
+   [
+    "Reset password",
+    false
+   ],
+   [
+    "Revoke sessions",
+    false
+   ],
+   [
+    "Assigned roles",
+    false
+   ],
+   [
+    "Authentication methods",
+    false
+   ],
+   [
+    "Account status",
+    false
+   ]
+  ]
+ },
+ "93": {
+  "prompt": "Drag the two settings you must modify into the answer area. Distractors stay in the list.",
+  "choices": [
+   [
+    "Users can register applications",
+    true
+   ],
+   [
+    "Restrict non-admin users from creating tenants",
+    false
+   ],
+   [
+    "Users can create security groups",
+    false
+   ],
+   [
+    "Guest user access restrictions",
+    false
+   ],
+   [
+    "Restrict access to Azure AD administration portal",
+    true
+   ],
+   [
+    "Allow users to connect their work or school account with LinkedIn",
+    false
+   ],
+   [
+    "Show keep user signed in",
+    false
+   ]
+  ]
+ },
+ "118": {
+  "prompt": "Drag the two blades you must configure into the answer area. Distractors stay in the list.",
+  "choices": [
+   [
+    "Users",
+    false
+   ],
+   [
+    "Groups",
+    false
+   ],
+   [
+    "External Identities",
+    false
+   ],
+   [
+    "Roles and administrators",
+    true
+   ],
+   [
+    "Administrative units",
+    false
+   ],
+   [
+    "Delegated admin partners",
+    false
+   ],
+   [
+    "Enterprise applications",
+    false
+   ],
+   [
+    "Devices",
+    false
+   ],
+   [
+    "App registrations",
+    false
+   ],
+   [
+    "Identity Governance",
+    false
+   ],
+   [
+    "Application proxy",
+    false
+   ],
+   [
+    "Custom security attributes",
+    true
+   ],
+   [
+    "Licenses",
+    false
+   ],
+   [
+    "Cross-tenant synchronization",
+    false
+   ],
+   [
+    "Microsoft Entra Connect",
+    false
+   ],
+   [
+    "Custom domain names",
+    false
+   ],
+   [
+    "Mobility (MDM and WIP)",
+    false
+   ],
+   [
+    "Password reset",
+    false
+   ],
+   [
+    "Company branding",
+    false
+   ]
+  ]
+ },
+ "129": {
+  "prompt": "Drag the two settings you must use into the answer area. Distractors stay in the list.",
+  "choices": [
+   [
+    "Properties",
+    true
+   ],
+   [
+    "Authentication methods",
+    true
+   ],
+   [
+    "Registration",
+    false
+   ],
+   [
+    "Notifications",
+    false
+   ],
+   [
+    "Customization",
+    false
+   ],
+   [
+    "On-premises integration",
+    false
+   ],
+   [
+    "Administrator Policy",
+    false
+   ],
+   [
+    "Audit logs",
+    false
+   ],
+   [
+    "Usage & insights",
+    false
+   ]
+  ]
+ },
+ "131": {
+  "prompt": "Drag the two settings you must modify into the answer area. Distractors stay in the list.",
+  "choices": [
+   [
+    "Users may join devices to Microsoft Entra ID",
+    true
+   ],
+   [
+    "Additional local administrators on Microsoft Entra joined devices",
+    false
+   ],
+   [
+    "Users may register their devices with Microsoft Entra ID",
+    false
+   ],
+   [
+    "Require Multi-Factor Auth to join devices",
+    true
+   ],
+   [
+    "Maximum number of devices per user",
+    false
+   ]
+  ]
+ },
+ "_readme": "Hot-area questions that ask for N settings out of a list rather than a value per row, transcribed by hand from each answer-key screenshot (the key highlights the settings that belong in the answer). One entry per question id: { prompt, choices: [[label, true|false], ...] }, true meaning the setting is part of the answer. Expanded into a one-target drag-and-drop board by tools/merge-interactive.mjs."
+}

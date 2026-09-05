@@ -1,47 +1,553 @@
 {
- "_readme": "Drop-down hot-area questions transcribed by hand from each answer-key screenshot (the key shows the menu expanded with the correct choice highlighted). One entry per question id: [label, [choices in order], index of the correct choice]. Expanded into web/public/data/interactive.json by tools/merge-interactive.mjs.",
-
  "21": [
-  ["To add a backend pool to LB1:",
-   ["Contributor on LB1", "Network Contributor on LB1", "Network Contributor on RG1", "Owner on LB1"], 1],
-  ["To add a health probe to LB2:",
-   ["Contributor on LB2", "Network Contributor on LB2", "Network Contributor on RG1", "Owner on LB2"], 1]
+  [
+   "To add a backend pool to LB1:",
+   [
+    "Contributor on LB1",
+    "Network Contributor on LB1",
+    "Network Contributor on RG1",
+    "Owner on LB1"
+   ],
+   1
+  ],
+  [
+   "To add a health probe to LB2:",
+   [
+    "Contributor on LB2",
+    "Network Contributor on LB2",
+    "Network Contributor on RG1",
+    "Owner on LB2"
+   ],
+   1
+  ]
  ],
-
+ "26": [
+  [
+   "\"assignableScopes\": [",
+   [
+    "\"/\"",
+    "\"/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e\"",
+    "\"/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e/resourceGroups\""
+   ],
+   2
+  ],
+  [
+   "\"notActions\": [",
+   [
+    "\"Microsoft.Authorization/*\"",
+    "\"Microsoft.Resources/*\"",
+    "\"Microsoft.Security/*\""
+   ],
+   0
+  ]
+ ],
+ "32": [
+  [
+   "User1:",
+   [
+    "Group1 only",
+    "Group2 only",
+    "Group3 only",
+    "Group1 and Group2 only",
+    "Group1 and Group3 only",
+    "Group2 and Group3 only",
+    "Group1, Group2, and Group3"
+   ],
+   0
+  ],
+  [
+   "User2:",
+   [
+    "Group1 only",
+    "Group2 only",
+    "Group3 only",
+    "Group1 and Group2 only",
+    "Group1 and Group3 only",
+    "Group2 and Group3 only",
+    "Group1, Group2, and Group3"
+   ],
+   3
+  ]
+ ],
+ "33": [
+  [
+   "JobTitle:",
+   [
+    "User1 only",
+    "User1 and User2 only",
+    "User1 and User3 only",
+    "User1, User2, and User3"
+   ],
+   2
+  ],
+  [
+   "UsageLocation:",
+   [
+    "User1 only",
+    "User1 and User2 only",
+    "User1 and User3 only",
+    "User1, User2, and User3"
+   ],
+   3
+  ]
+ ],
+ "46": [
+  [
+   "Add a subnet to VNet1:",
+   [
+    "User1 only",
+    "User3 only",
+    "User1 and User3 only",
+    "User2 and User3 only",
+    "User1, User2, and User3"
+   ],
+   2
+  ],
+  [
+   "Assign a user the Reader role to VNet1:",
+   [
+    "User1 only",
+    "User2 only",
+    "User3 only",
+    "User1 and User2 only",
+    "User2 and User3 only",
+    "User1, User2, and User3"
+   ],
+   0
+  ]
+ ],
+ "47": [
+  [
+   "Locks:",
+   [
+    "RG1 and VM1 only",
+    "Sub1 and RG1 only",
+    "Sub1, RG1, and VM1 only",
+    "MG1, Sub1, RG1, and VM1 only",
+    "Tenant Root Group, MG1, Sub1, RG1, and VM1"
+   ],
+   2
+  ],
+  [
+   "Tags:",
+   [
+    "RG1 and VM1 only",
+    "Sub1 and RG1 only",
+    "Sub1, RG1, and VM1 only",
+    "MG1, Sub1, RG1, and VM1 only",
+    "Tenant Root Group, MG1, Sub1, RG1, and VM1"
+   ],
+   2
+  ]
+ ],
  "53": [
-  ["User1 can [answer choice] LB1.",
-   ["delete", "create a NAT rule for", "assign access to other users for"], 2],
-  ["User1 can [answer choice] the resource group.",
-   ["delete a virtual machine from", "modify the load balancing rules in", "deploy an Azure Kubernetes Service (AKS) cluster to"], 0]
+  [
+   "User1 can [answer choice] LB1.",
+   [
+    "delete",
+    "create a NAT rule for",
+    "assign access to other users for"
+   ],
+   2
+  ],
+  [
+   "User1 can [answer choice] the resource group.",
+   [
+    "delete a virtual machine from",
+    "modify the load balancing rules in",
+    "deploy an Azure Kubernetes Service (AKS) cluster to"
+   ],
+   0
+  ]
  ],
-
  "55": [
-  ["To ensure that users can sign in to virtual machines that are assigned role1, modify the [answer choice] section.",
-   ["actions", "roletype", "notActions", "dataActions", "notDataActions", "assignableScopes"], 1],
-  ["To ensure that role1 can be assigned only to a resource group named RG1, modify the [answer choice] section.",
-   ["actions", "roletype", "notActions", "dataActions", "notDataActions", "assignableScopes"], 5]
+  [
+   "To ensure that users can sign in to virtual machines that are assigned role1, modify the [answer choice] section.",
+   [
+    "actions",
+    "roletype",
+    "notActions",
+    "dataActions",
+    "notDataActions",
+    "assignableScopes"
+   ],
+   1
+  ],
+  [
+   "To ensure that role1 can be assigned only to a resource group named RG1, modify the [answer choice] section.",
+   [
+    "actions",
+    "roletype",
+    "notActions",
+    "dataActions",
+    "notDataActions",
+    "assignableScopes"
+   ],
+   5
+  ]
  ],
-
+ "58": [
+  [
+   "You can assign Policy1 to:",
+   [
+    "Subscription1 and RG1 only",
+    "ManagementGroup1 and Subscription1 only",
+    "Tenant Root Group, ManagementGroup1, and Subscription1 only",
+    "Tenant Root Group, ManagementGroup1, Subscription1, and RG1 only",
+    "Tenant Root Group, ManagementGroup1, Subscription1, RG1, and VM1"
+   ],
+   4
+  ],
+  [
+   "You can exclude Policy1 from:",
+   [
+    "VM1 only",
+    "RG1 and VM1 only",
+    "Subscription1, RG1, and VM1 only",
+    "ManagementGroup1, Subscription1, RG1, and VM1 only",
+    "Tenant Root Group, ManagementGroup1, Subscription1, RG1, and VM1"
+   ],
+   3
+  ]
+ ],
+ "67": [
+  [
+   "Role3:",
+   [
+    "Role1 only",
+    "Built-in Azure subscription roles only",
+    "Role1 and built-in Azure subscription roles only",
+    "Built-in Azure subscription roles and built-in Microsoft Entra roles only",
+    "Role1, Role2, built-in Azure subscription roles, built-in Microsoft Entra roles"
+   ],
+   2
+  ],
+  [
+   "Role4:",
+   [
+    "Role2 only",
+    "Built-in Microsoft Entra roles only",
+    "Role2 and built-in Microsoft Entra roles only",
+    "Built-in Microsoft Entra roles and built-in Azure subscription roles only",
+    "Role1, Role2, built-in Microsoft Entra, built-in Azure subscription roles"
+   ],
+   1
+  ]
+ ],
+ "82": [
+  [
+   "JobTitle:",
+   [
+    "User1 only",
+    "User1 and User2 only",
+    "User1 and User3 only",
+    "User1, User2, and User3"
+   ],
+   2
+  ],
+  [
+   "UsageLocation:",
+   [
+    "User1 only",
+    "User1 and User2 only",
+    "User1 and User3 only",
+    "User1, User2, and User3"
+   ],
+   3
+  ]
+ ],
+ "87": [
+  [
+   "Blob storage:",
+   [
+    "Microsoft Entra ID only",
+    "Shared access signatures (SAS) only",
+    "Microsoft Entra ID and shared access signatures (SAS)"
+   ],
+   2
+  ],
+  [
+   "File storage:",
+   [
+    "Microsoft Entra ID only",
+    "Shared access signatures (SAS) only",
+    "Microsoft Entra ID and shared access signatures (SAS)"
+   ],
+   1
+  ]
+ ],
+ "92": [
+  [
+   "( [answer choice] -eq \"Marketing\")",
+   [
+    "device.managementType",
+    "device.organizationalUnit",
+    "user.department",
+    "user.usageLocation"
+   ],
+   2
+  ],
+  [
+   "... -eq \"Marketing\") [answer choice] (user.country ...",
+   [
+    "and",
+    "or",
+    "typeof"
+   ],
+   0
+  ],
+  [
+   "(user.country [answer choice] \"France\")",
+   [
+    "-and",
+    "-eq",
+    "-in",
+    "-match"
+   ],
+   1
+  ]
+ ],
+ "101": [
+  [
+   "Users:",
+   [
+    "User4 only",
+    "User1 and User4 only",
+    "User2 and User4 only",
+    "User1, User2, User3, and User4"
+   ],
+   1
+  ],
+  [
+   "Groups:",
+   [
+    "Group2 only",
+    "Group2 and Group3 only",
+    "Group2 and Group4 only",
+    "Group1, Group2, Group3, and Group4"
+   ],
+   2
+  ]
+ ],
+ "109": [
+  [
+   "Users:",
+   [
+    "User4 only",
+    "User3 and User4 only",
+    "User2 and User4 only",
+    "User1, User2, User3, and User4"
+   ],
+   3
+  ],
+  [
+   "Groups:",
+   [
+    "Group1 only",
+    "Group4 only",
+    "Group1 and Group3 only",
+    "Group1, Group2, Group3, and Group4"
+   ],
+   2
+  ]
+ ],
+ "110": [
+  [
+   "Create a:",
+   [
+    "Managed identity",
+    "Private endpoint",
+    "Service principal",
+    "User account"
+   ],
+   0
+  ],
+  [
+   "Use the secret from:",
+   [
+    "Vault1 only",
+    "Vault1 and Vault2 only",
+    "Vault1 and Vault3 only",
+    "Vault1, Vault2, or Vault3"
+   ],
+   1
+  ]
+ ],
  "116": [
-  ["User is consuming [answer choice] for Microsoft Intune Suite.",
-   ["one license", "two licenses", "five licenses", "eight licenses"], 2],
-  ["To remove Microsoft Fabric (Free) from the license assignments of User1, you must [answer choice].",
-   ["unassign the license for User1 only", "remove User1 from Group1 only", "unassign the license for User1 and unassign the license for Group1"], 1]
+  [
+   "User is consuming [answer choice] for Microsoft Intune Suite.",
+   [
+    "one license",
+    "two licenses",
+    "five licenses",
+    "eight licenses"
+   ],
+   2
+  ],
+  [
+   "To remove Microsoft Fabric (Free) from the license assignments of User1, you must [answer choice].",
+   [
+    "unassign the license for User1 only",
+    "remove User1 from Group1 only",
+    "unassign the license for User1 and unassign the license for Group1"
+   ],
+   1
+  ]
  ],
-
+ "119": [
+  [
+   "[answer choice] -LockName LockGroup -LockLevel ...",
+   [
+    "Lock-AzRmStorageContainerImmutabilityPolicy",
+    "New-AzResourceLock",
+    "Set-AzResource",
+    "Set-AzAppConfigurationLock"
+   ],
+   1
+  ],
+  [
+   "... -LockLevel [answer choice] -ResourceGroupName RG1",
+   [
+    "CanNotDelete",
+    "False",
+    "DeleteResources",
+    "ReadOnly"
+   ],
+   3
+  ]
+ ],
+ "120": [
+  [
+   "Users:",
+   [
+    "Admin1 only",
+    "Admin2 only",
+    "Admin 3 only",
+    "Admin1 and Admin2 only",
+    "Admin2 and Admin3 only",
+    "Admin1, Admin2, and Admin3"
+   ],
+   3
+  ],
+  [
+   "Group:",
+   [
+    "Group1 only",
+    "Group2 only",
+    "Group1 or Group2 only",
+    "Group1 or Group3 only",
+    "Group1, Group2, or Group3"
+   ],
+   0
+  ]
+ ],
+ "121": [
+  [
+   "User1 is consuming [answer choice] for Microsoft Intune Suite.",
+   [
+    "one license",
+    "two licenses",
+    "five licenses",
+    "eight licenses"
+   ],
+   0
+  ],
+  [
+   "To remove Microsoft Fabric (Free) from the license assignments of User1, you must [answer choice].",
+   [
+    "unassign the license for User1 only",
+    "remove User1 from Group1 only",
+    "unassign the license for User1 and remove User1 from Group1"
+   ],
+   2
+  ]
+ ],
+ "133": [
+  [
+   "User1:",
+   [
+    "Contributor for RG1",
+    "Contributor for Sub1",
+    "Security Admin for RG1",
+    "Resource Policy Contributor for Sub1"
+   ],
+   3
+  ],
+  [
+   "User4:",
+   [
+    "Contributor for RG2",
+    "Contributor for Sub1",
+    "Security Admin for Sub1",
+    "Resource Policy Contributor for RG2"
+   ],
+   3
+  ]
+ ],
  "146": [
-  ["You can create a premium file share in",
-   ["contoso101 only", "contoso104 only", "contoso101 or contoso104 only", "contoso101, contoso102, or contoso104 only", "contoso101, contoso102, contoso103, or contoso104"], 1],
-  ["You can use the Archive access tier in",
-   ["contoso101 only", "contoso101 or contoso103 only", "contoso101, contoso102, and contoso103 only", "contoso101, contoso102, and contoso104 only", "contoso101, contoso102, contoso103, and contoso104"], 2]
- ],
-
+  [
+   "You can create a premium file share in",
+   [
+    "contoso101 only",
+    "contoso104 only",
+    "contoso101 or contoso104 only",
+    "contoso101, contoso102, or contoso104 only",
+    "contoso101, contoso102, contoso103, or contoso104"
+   ],
+   1
+  ],
+  [
+   "You can use the Archive access tier in",
+   [
+    "contoso101 only",
+    "contoso101 or contoso103 only",
+    "contoso101, contoso102, and contoso103 only",
+    "contoso101, contoso102, and contoso104 only",
+    "contoso101, contoso102, contoso103, and contoso104"
+   ],
+   2
+  ]
+ ],
  "409": [
-  ["Direction:", ["Inbound", "Outbound"], 0],
-  ["Source:",
-   ["Any","10.1.0.10","10.1.0.11","10.1.0.10; 10.1.0.11","10.1.0.0/28"], 0],
-  ["Destination:",
-   ["Any","10.1.0.10","10.1.0.11","10.1.0.10; 10.1.0.11","10.1.0.0/28"], 0],
-  ["Priority:", ["110", "111", "112"], 0]
- ]
+  [
+   "Direction:",
+   [
+    "Inbound",
+    "Outbound"
+   ],
+   0
+  ],
+  [
+   "Source:",
+   [
+    "Any",
+    "10.1.0.10",
+    "10.1.0.11",
+    "10.1.0.10; 10.1.0.11",
+    "10.1.0.0/28"
+   ],
+   0
+  ],
+  [
+   "Destination:",
+   [
+    "Any",
+    "10.1.0.10",
+    "10.1.0.11",
+    "10.1.0.10; 10.1.0.11",
+    "10.1.0.0/28"
+   ],
+   0
+  ],
+  [
+   "Priority:",
+   [
+    "110",
+    "111",
+    "112"
+   ],
+   0
+  ]
+ ],
+ "_readme": "Drop-down hot-area questions transcribed by hand from each answer-key screenshot (the key shows the menu expanded with the correct choice highlighted). One entry per question id: [label, [choices in order], index of the correct choice]. Expanded into web/public/data/interactive.json by tools/merge-interactive.mjs."
 }

@@ -1,0 +1,12 @@
+import { createCanvas, loadImage } from '@napi-rs/canvas';
+import { writeFileSync } from 'node:fs';
+const [file, y0, y1, out] = process.argv.slice(2);
+const img = await loadImage(`../web/public/img/${file}`);
+const a = Math.round(img.height * Number(y0)), b = Math.round(img.height * Number(y1));
+const S = Math.min(4, Math.floor(2400 / img.width));
+const c = createCanvas(img.width * S, (b - a) * S);
+const ctx = c.getContext('2d');
+ctx.imageSmoothingEnabled = false;
+ctx.drawImage(img, 0, a, img.width, b - a, 0, 0, img.width * S, (b - a) * S);
+writeFileSync(`${process.env.SP}/${out}`, c.toBuffer('image/png'));
+console.log(`${file} ${a}-${b} of ${img.height} -> ${out} (x${S})`);
