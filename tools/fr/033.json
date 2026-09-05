@@ -1,0 +1,151 @@
+{
+ "392": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Adresses IP publiques :"
+    },
+    "f2": {
+     "label": "Passerelles de réseau virtuel :"
+    },
+    "f3": {
+     "label": "Passerelles de réseau local :"
+    }
+   }
+  }
+ },
+ "396": {
+  "interactive": {
+   "statements": {
+    "s1": "L’enregistrement A de VM5 sera inscrit automatiquement dans la zone adatum.com.",
+    "s2": "VM5 peut résoudre VM9.adatum.com.",
+    "s3": "VM6 peut résoudre VM9.adatum.com."
+   }
+  }
+ },
+ "397": {
+  "interactive": {
+   "statements": {
+    "s1": "Vous pouvez activer l’inscription automatique pour Link2.",
+    "s2": "Vous pouvez ajouter un lien de réseau virtuel de VNET1 vers Zone3.com.",
+    "s3": "Vous pouvez ajouter un lien de réseau virtuel de VNET2 vers Zone1.com et activer l’inscription automatique."
+   }
+  }
+ },
+ "398": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "\"subnets\" : [ { \"name\" : [choix]"
+    },
+    "f2": {
+     "label": "\"properties\" : { \"addressPrefix\" : [choix]"
+    }
+   }
+  }
+ },
+ "406": {
+  "interactive": {
+   "statements": {
+    "s1": "Server2 résout host2.contoso.com en 131.107.50.50.",
+    "s2": "Server2 résout host1.contoso.com en 131.107.10.15.",
+    "s3": "Server3 résout host2.contoso.com en 131.107.50.50."
+   }
+  }
+ },
+ "414": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Préfixe d’adresse"
+    },
+    "f2": {
+     "label": "Type de tronçon suivant",
+     "options": [
+      "Appliance virtuelle",
+      "Réseau virtuel",
+      "Passerelle de réseau virtuel"
+     ]
+    },
+    "f3": {
+     "label": "Affecté à",
+     "options": [
+      "GatewaySubnet",
+      "Subnet0",
+      "Subnet1 et Subnet2"
+     ]
+    }
+   }
+  }
+ },
+ "416": {
+  "interactive": {
+   "statements": {
+    "s1": "Depuis Internet, vous pouvez vous connecter à VM1 par Bureau à distance.",
+    "s2": "Depuis Internet, vous pouvez vous connecter à VM2 par Bureau à distance.",
+    "s3": "Depuis VM1, vous pouvez vous connecter à VM2 par Bureau à distance."
+   }
+  }
+ },
+ "419": {
+  "interactive": {
+   "statements": {
+    "s1": "L’enregistrement DNS A de vm1 est ajouté à contoso.com avec l’adresse IP 131.107.50.20.",
+    "s2": "L’enregistrement DNS A de vm1 est ajouté à fabrikam.com avec l’adresse IP 10.0.1.4.",
+    "s3": "L’enregistrement DNS A de vm2 est ajouté à fabrikam.com avec l’adresse IP 10.0.1.5."
+   }
+  }
+ },
+ "421": {
+  "interactive": {
+   "statements": {
+    "s1": "VM2 peut se connecter aux services du port TCP 1433 de VM1.",
+    "s2": "VM1 peut se connecter aux services du port TCP 1433 de VM2.",
+    "s3": "VM2 peut se connecter aux services du port TCP 1433 de VM3."
+   }
+  }
+ },
+ "422": {
+  "interactive": {
+   "statements": {
+    "s1": "VM3 peut établir une connexion réseau vers VM1.",
+    "s2": "Si VM3 est arrêtée, VM2 peut établir une connexion réseau vers VM1.",
+    "s3": "VM1 peut établir une connexion réseau vers VM2."
+   }
+  }
+ },
+ "427": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Adresse IP",
+     "options": [
+      "Obtenir une adresse IP automatiquement",
+      "Utiliser 10.0.1.3",
+      "Utiliser 10.0.2.1",
+      "Utiliser 192.168.2.1"
+     ]
+    },
+    "f2": {
+     "label": "Résolution de noms",
+     "options": [
+      "Configurer VNET1 pour utiliser un serveur DNS personnalisé",
+      "Configurer VNET1 pour utiliser le serveur DNS fourni par Azure par défaut",
+      "Créer une zone DNS privée Azure nommée contoso.com",
+      "Créer une zone DNS publique Azure nommée contoso.com"
+     ]
+    }
+   }
+  }
+ },
+ "431": {
+  "interactive": {
+   "statements": {
+    "s1": "LB1 sera connecté à un sous-réseau nommé VNET1/netname",
+    "s2": "LB1 ne peut être déployé que dans le groupe de ressources qui contient VNET1",
+    "s3": "La valeur de la variable sku peut être fournie en paramètre lorsque le modèle est déployé depuis une invite de commandes"
+   }
+  }
+ },
+ "_note": "Libellés français du lot 10 de zones actives (392, 396, 397, 398, 406, 414, 416, 419, 421, 422, 427, 431)."
+}

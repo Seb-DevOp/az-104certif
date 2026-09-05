@@ -1,0 +1,205 @@
+{
+ "351": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Ressource à créer :",
+     "options": [
+      "une instance Azure Event Grid",
+      "un espace de travail Azure Log Analytics",
+      "un compte de stockage Azure"
+     ]
+    },
+    "f2": {
+     "label": "Ressource sur laquelle activer les diagnostics :",
+     "options": [
+      "ILB1",
+      "NSG1",
+      "les machines virtuelles Azure"
+     ]
+    }
+   }
+  }
+ },
+ "353": {
+  "interactive": {
+   "statements": {
+    "s1": "Au démarrage de VM1, un enregistrement pour VM1 est ajouté à la zone DNS contoso.com.",
+    "s2": "Au démarrage de VM2, un enregistrement pour VM2 est ajouté à la zone DNS contoso.com.",
+    "s3": "Au démarrage de VM3, un enregistrement pour VM3 est ajouté à la zone DNS adatum.com."
+   }
+  }
+ },
+ "357": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Groupe de ressources :",
+     "options": [
+      "RG1 uniquement",
+      "RG2 uniquement",
+      "RG1 ou RG2 uniquement",
+      "RG1, RG2 ou RG3"
+     ]
+    },
+    "f2": {
+     "label": "Emplacement :",
+     "options": [
+      "West US uniquement",
+      "Central US uniquement",
+      "Central US ou West US uniquement",
+      "East US, Central US ou West US"
+     ]
+    }
+   }
+  }
+ },
+ "358": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Les paquets venant de VNET1 peuvent être routés vers :"
+    },
+    "f2": {
+     "label": "Les paquets venant de VNET2 peuvent être routés vers :"
+    }
+   }
+  }
+ },
+ "364": {
+  "interactive": {
+   "statements": {
+    "s1": "NSG1 limite le trafic de VM1",
+    "s2": "NSG1 s’applique à VM2",
+    "s3": "VM1 et VM2 sont connectées au même réseau virtuel"
+   }
+  }
+ },
+ "368": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Les hôtes de vNET6 peuvent communiquer avec les hôtes de [choix].",
+     "options": [
+      "vNET6 uniquement",
+      "vNET6 et vNET1 uniquement",
+      "vNET6, vNET1 et vNET2 uniquement",
+      "tous les réseaux virtuels de l’abonnement"
+     ]
+    },
+    "f2": {
+     "label": "Pour faire passer l’état de la connexion de peering vers vNET1 à Connected, vous devez d’abord [choix].",
+     "options": [
+      "ajouter un point de terminaison de service",
+      "ajouter un sous-réseau",
+      "supprimer peering1",
+      "modifier l’espace d’adressage"
+     ]
+    }
+   }
+  }
+ },
+ "370": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Avant de créer un pool principal sur slb1, vous devez :",
+     "options": [
+      "créer un NSG et l’affecter à VM1",
+      "retirer l’adresse IP publique de VM1",
+      "passer l’adresse IP privée de VM1 en statique"
+     ]
+    },
+    "f2": {
+     "label": "Avant de pouvoir vous connecter à VM1 depuis slb1, vous devez :",
+     "options": [
+      "créer et configurer un NSG",
+      "retirer l’adresse IP publique de VM1",
+      "passer l’adresse IP privée de VM1 en statique"
+     ]
+    }
+   }
+  }
+ },
+ "373": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Tâche 1 :"
+    },
+    "f2": {
+     "label": "Tâche 2 :"
+    }
+   }
+  }
+ },
+ "374": {
+  "interactive": {
+   "statements": {
+    "s1": "VM1 interroge 193.77.134.10 pour ses requêtes DNS.",
+    "s2": "VM2 interroge 193.77.134.10 pour ses requêtes DNS.",
+    "s3": "VM3 interroge 192.168.10.15 pour ses requêtes DNS."
+   }
+  }
+ },
+ "375": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Ressources que vous pouvez déplacer de RG1 vers RG2 :",
+     "options": [
+      "Aucune",
+      "IP1 uniquement",
+      "IP1 et storage1 uniquement",
+      "IP1 et VNET1 uniquement",
+      "IP1, VNET2 et storage1"
+     ]
+    },
+    "f2": {
+     "label": "Ressources que vous pouvez déplacer de RG2 vers RG1 :",
+     "options": [
+      "Aucune",
+      "IP2 uniquement",
+      "IP2 et storage2 uniquement",
+      "IP2 et VNET2 uniquement",
+      "IP2, VNET2 et storage2"
+     ]
+    }
+   }
+  }
+ },
+ "382": {
+  "interactive": {
+   "statements": {
+    "s1": "Une connexion site à site peut être établie entre VNET1 et VNET2.",
+    "s2": "VNET1 et VNET2 peuvent être appairés.",
+    "s3": "VNET1 et VNETA peuvent être appairés."
+   }
+  }
+ },
+ "391": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Les machines virtuelles équilibrées par LB1 doivent :",
+     "options": [
+      "être connectées au même réseau virtuel",
+      "être créées dans le même groupe de ressources",
+      "être créées dans le même groupe à haute disponibilité ou groupe identique de machines virtuelles",
+      "exécuter le même système d’exploitation"
+     ]
+    },
+    "f2": {
+     "label": "Les machines virtuelles équilibrées par LB2 doivent :",
+     "options": [
+      "être connectées au même réseau virtuel",
+      "être créées dans le même groupe de ressources",
+      "être créées dans le même groupe à haute disponibilité ou groupe identique de machines virtuelles",
+      "exécuter le même système d’exploitation"
+     ]
+    }
+   }
+  }
+ },
+ "_note": "Libellés français du lot 9 de zones actives (351, 353, 357, 358, 364, 368, 370, 373, 374, 375, 382, 391). Les noms d’outils Network Watcher restent en anglais."
+}

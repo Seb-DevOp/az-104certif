@@ -489,6 +489,34 @@
    false
   ]
  ],
+ "353": [
+  [
+   "When VM1 starts, a record for VM1 is added to the contoso.com DNS zone.",
+   true
+  ],
+  [
+   "When VM2 starts, a record for VM2 is added to the contoso.com DNS zone.",
+   true
+  ],
+  [
+   "When VM3 starts, a record for VM3 is added to the adatum.com DNS zone.",
+   false
+  ]
+ ],
+ "364": [
+  [
+   "NSG1 limits VM1 traffic",
+   false
+  ],
+  [
+   "NSG1 applies to VM2",
+   true
+  ],
+  [
+   "VM1 and VM2 connect to the same virtual network",
+   false
+  ]
+ ],
  "369": [
   [
    "VM1 is in the same availability set as VM2.",
@@ -500,6 +528,146 @@
   ],
   [
    "If you delete Rule1, LB1 will balance all the requests between VM1 and VM2 for all the ports.",
+   false
+  ]
+ ],
+ "374": [
+  [
+   "VM1 connects to 193.77.134.10 for DNS queries.",
+   true
+  ],
+  [
+   "VM2 connects to 193.77.134.10 for DNS queries.",
+   false
+  ],
+  [
+   "VM3 connects to 192.168.10.15 for DNS queries.",
+   true
+  ]
+ ],
+ "382": [
+  [
+   "A Site-to-Site connection can be established between VNET1 and VNET2.",
+   true
+  ],
+  [
+   "VNET1 and VNET2 can be peered.",
+   true
+  ],
+  [
+   "VNET1 and VNETA can be peered.",
+   false
+  ]
+ ],
+ "396": [
+  [
+   "The A record for VM5 will be registered automatically in the adatum.com zone.",
+   false
+  ],
+  [
+   "VM5 can resolve VM9.adatum.com.",
+   false
+  ],
+  [
+   "VM6 can resolve VM9.adatum.com.",
+   true
+  ]
+ ],
+ "397": [
+  [
+   "You can enable auto registration for Link2.",
+   false
+  ],
+  [
+   "You can add a virtual network link for VNET1 to Zone3.com.",
+   false
+  ],
+  [
+   "You can add a virtual network link for VNET2 to Zone1.com and enable auto registration.",
+   false
+  ]
+ ],
+ "406": [
+  [
+   "Server2 resolves host2.contoso.com to 131.107.50.50.",
+   true
+  ],
+  [
+   "Server2 resolves host1.contoso.com to 131.107.10.15.",
+   false
+  ],
+  [
+   "Server3 resolves host2.contoso.com to 131.107.50.50.",
+   true
+  ]
+ ],
+ "416": [
+  [
+   "From the Internet, you can connect to VM1 by using Remote Desktop.",
+   false
+  ],
+  [
+   "From the Internet, you can connect to VM2 by using Remote Desktop.",
+   true
+  ],
+  [
+   "From VM1, you can connect to VM2 by using Remote Desktop.",
+   true
+  ]
+ ],
+ "419": [
+  [
+   "The DNS A record for vm1 is added to contoso.com and has the IP address of 131.107.50.20.",
+   true
+  ],
+  [
+   "The DNS A record for vm1 is added to fabrikam.com and has the IP address of 10.0.1.4.",
+   true
+  ],
+  [
+   "The DNS A record for vm2 is added to fabrikam.com and has the IP address of 10.0.1.5.",
+   true
+  ]
+ ],
+ "421": [
+  [
+   "VM2 can connect to the TCP port 1433 services on VM1.",
+   true
+  ],
+  [
+   "VM1 can connect to the TCP port 1433 services on VM2.",
+   true
+  ],
+  [
+   "VM2 can connect to the TCP port 1433 services on VM3.",
+   true
+  ]
+ ],
+ "422": [
+  [
+   "VM3 can establish a network connection to VM1.",
+   true
+  ],
+  [
+   "If VM3 is turned off, VM2 can establish a network connection to VM1.",
+   false
+  ],
+  [
+   "VM1 can establish a network connection to VM2.",
+   true
+  ]
+ ],
+ "431": [
+  [
+   "LB1 will be connected to a subnet named VNET1/netname",
+   false
+  ],
+  [
+   "LB1 can be deployed only to the resource group that contains VNET1",
+   true
+  ],
+  [
+   "The value of the sku variable can be provided as a parameter when the template is deployed from a command prompt",
    false
   ]
  ],

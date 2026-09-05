@@ -1703,6 +1703,233 @@
    0
   ]
  ],
+ "351": [
+  [
+   "Resource to create:",
+   [
+    "An Azure Event Grid",
+    "An Azure Log Analytics workspace",
+    "An Azure Storage account"
+   ],
+   1
+  ],
+  [
+   "Resource on which to enable diagnostics:",
+   [
+    "ILB1",
+    "NSG1",
+    "The Azure virtual machines"
+   ],
+   0
+  ]
+ ],
+ "357": [
+  [
+   "Resource group:",
+   [
+    "RG1 only",
+    "RG2 only",
+    "RG1 or RG2 only",
+    "RG1, RG2, or RG3"
+   ],
+   3
+  ],
+  [
+   "Location:",
+   [
+    "West US only",
+    "Central US only",
+    "Central US or West US only",
+    "East US, Central US, or West US"
+   ],
+   0
+  ]
+ ],
+ "358": [
+  [
+   "Packets from VNET1 can be routed to:",
+   [
+    "VNET2 only",
+    "VNET3 only",
+    "VNET2 and VNET3"
+   ],
+   2
+  ],
+  [
+   "Packets from VNET2 can be routed to:",
+   [
+    "VNET1 only",
+    "VNET3 only",
+    "VNET1 and VNET3"
+   ],
+   0
+  ]
+ ],
+ "368": [
+  [
+   "Hosts on vNET6 can communicate with hosts on [answer choice].",
+   [
+    "vNET6 only",
+    "vNET6 and vNET1 only",
+    "vNET6, vNET1, and vNET2 only",
+    "all the virtual networks in the subscription"
+   ],
+   0
+  ],
+  [
+   "To change the status of the peering connection to vNET1 to Connected, you must first [answer choice].",
+   [
+    "add a service endpoint",
+    "add a subnet",
+    "delete peering1",
+    "modify the address space"
+   ],
+   2
+  ]
+ ],
+ "370": [
+  [
+   "Before you create a backend pool on slb1, you must:",
+   [
+    "Create and assign an NSG to VM1",
+    "Remove the public IP address from VM1",
+    "Change the private IP address of VM1 to static"
+   ],
+   1
+  ],
+  [
+   "Before you can connect to VM1 from slb1, you must:",
+   [
+    "Create and configure an NSG",
+    "Remove the public IP address from VM1",
+    "Change the private IP address of VM1 to static"
+   ],
+   0
+  ]
+ ],
+ "373": [
+  [
+   "Task1:",
+   [
+    "IP flow verify",
+    "Next hop",
+    "Packet capture",
+    "Security group view",
+    "Traffic Analytics"
+   ],
+   0
+  ],
+  [
+   "Task2:",
+   [
+    "Connection troubleshoot",
+    "IP flow verify",
+    "Next hop",
+    "NSG flow logs",
+    "Traffic Analytics"
+   ],
+   0
+  ]
+ ],
+ "375": [
+  [
+   "Resources that you can move from RG1 to RG2:",
+   [
+    "None",
+    "IP1 only",
+    "IP1 and storage1 only",
+    "IP1 and VNET1 only",
+    "IP1, VNET2, and storage1"
+   ],
+   2
+  ],
+  [
+   "Resources that you can move from RG2 to RG1:",
+   [
+    "None",
+    "IP2 only",
+    "IP2 and storage2 only",
+    "IP2 and VNET2 only",
+    "IP2, VNET2, and storage2"
+   ],
+   0
+  ]
+ ],
+ "391": [
+  [
+   "The virtual machines that will be load balanced by using LB1 must:",
+   [
+    "be connected to the same virtual network",
+    "be created in the same resource group",
+    "be created in the same availability set or virtual machine scale set",
+    "run the same operating system"
+   ],
+   2
+  ],
+  [
+   "The virtual machines that will be load balanced by using LB2 must:",
+   [
+    "be connected to the same virtual network",
+    "be created in the same resource group",
+    "be created in the same availability set or virtual machine scale set",
+    "run the same operating system"
+   ],
+   0
+  ]
+ ],
+ "392": [
+  [
+   "Public IP addresses:",
+   [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   3
+  ],
+  [
+   "Virtual network gateways:",
+   [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   1
+  ],
+  [
+   "Local network gateways:",
+   [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   1
+  ]
+ ],
+ "398": [
+  [
+   "\"subnets\": [ { \"name\": [answer choice]",
+   [
+    "AzureBastionSubnet",
+    "AzureFirewallSubnet",
+    "LAN01",
+    "RemoteAccessSubnet"
+   ],
+   0
+  ],
+  [
+   "\"properties\": { \"addressPrefix\": [answer choice]",
+   [
+    "10.10.10.0/27",
+    "10.10.10.0/29",
+    "10.10.10.0/30"
+   ],
+   0
+  ]
+ ],
  "409": [
   [
    "Direction:",
@@ -1742,6 +1969,57 @@
     "112"
    ],
    0
+  ]
+ ],
+ "414": [
+  [
+   "Address prefix",
+   [
+    "10.0.0.0/16",
+    "10.0.1.0/24",
+    "10.0.254.0/24"
+   ],
+   0
+  ],
+  [
+   "Next hop type",
+   [
+    "Virtual appliance",
+    "Virtual network",
+    "Virtual network gateway"
+   ],
+   0
+  ],
+  [
+   "Assigned to",
+   [
+    "GatewaySubnet",
+    "Subnet0",
+    "Subnet1 and Subnet2"
+   ],
+   0
+  ]
+ ],
+ "427": [
+  [
+   "IP address",
+   [
+    "Obtain an IP address automatically",
+    "Use 10.0.1.3",
+    "Use 10.0.2.1",
+    "Use 192.168.2.1"
+   ],
+   1
+  ],
+  [
+   "Name resolution",
+   [
+    "Configure VNET1 to use a custom DNS server",
+    "Configure VNET1 to use the default Azure-provided DNS server",
+    "Create an Azure Private DNS zone named contoso.com",
+    "Create an Azure public DNS zone named contoso.com"
+   ],
+   2
   ]
  ],
  "_readme": "Drop-down hot-area questions transcribed by hand from each answer-key screenshot (the key shows the menu expanded with the correct choice highlighted). One entry per question id: [label, [choices in order], index of the correct choice]. Expanded into web/public/data/interactive.json by tools/merge-interactive.mjs."
