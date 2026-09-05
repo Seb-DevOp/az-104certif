@@ -4488,7 +4488,27 @@
    "NSG1 est associé à un sous-réseau nommé Subnet1, qui contient les machines virtuelles présentées dans le tableau suivant.",
    "Vous devez ajouter une règle à NSG1 pour que VM1 puisse envoyer un ping à VM2, en appliquant le principe du privilège minimum. Comment devez-vous configurer cette règle ?",
    "REMARQUE : chaque sélection correcte vaut un point."
-  ]
+  ],
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Direction :",
+     "options": [
+      "Entrant (Inbound)",
+      "Sortant (Outbound)"
+     ]
+    },
+    "f2": {
+     "label": "Source :"
+    },
+    "f3": {
+     "label": "Destination :"
+    },
+    "f4": {
+     "label": "Priorité :"
+    }
+   }
+  }
  },
  "410": {
   "text": [

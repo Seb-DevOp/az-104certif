@@ -970,6 +970,54 @@
    }
   ]
  },
+ "409": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Direction:",
+    "options": [
+     "Inbound",
+     "Outbound"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "Source:",
+    "options": [
+     "Any",
+     "10.1.0.10",
+     "10.1.0.11",
+     "10.1.0.10; 10.1.0.11",
+     "10.1.0.0/28"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f3",
+    "label": "Destination:",
+    "options": [
+     "Any",
+     "10.1.0.10",
+     "10.1.0.11",
+     "10.1.0.10; 10.1.0.11",
+     "10.1.0.0/28"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f4",
+    "label": "Priority:",
+    "options": [
+     "110",
+     "111",
+     "112"
+    ],
+    "answer": 0
+   }
+  ]
+ },
  "440": {
   "kind": "dragdrop",
   "prompt": "Drag the three actions into the answer area, in the order they must be performed.",

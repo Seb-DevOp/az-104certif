@@ -1,0 +1,14 @@
+{
+  "_note": "Libellés français de la question 409, zone active transcrite en menus déroulants. Les adresses IP et les priorités ne se traduisent pas.",
+
+  "409": {
+    "interactive": {
+      "fields": {
+        "f1": { "label": "Direction :", "options": ["Entrant (Inbound)", "Sortant (Outbound)"] },
+        "f2": { "label": "Source :" },
+        "f3": { "label": "Destination :" },
+        "f4": { "label": "Priorité :" }
+      }
+    }
+  }
+}

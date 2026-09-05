@@ -17,7 +17,7 @@ extraites automatiquement de `AZ-104_dump.pdf`.
 | **Bilingue FR / EN** | Interface **et** 542 questions entièrement traduites — énoncés, options, explications. Bascule instantanée, les noms Azure restant en anglais (voir [Traduction](#traduction)). |
 | **Grilles Oui / Non** | Les questions « choisissez Oui si l'affirmation est vraie » sont de vraies grilles cliquables, corrigées ligne par ligne. |
 | **Glisser-déposer** | Vrai drag & drop (souris, tactile et clavier) sur **les 14 questions** de ce format ; correction automatique par zone. |
-| **Zones actives / Hot area** | Les 151 questions à zones actives non encore transcrites sont présentées avec leur capture d'énoncé, puis le corrigé et une auto-évaluation. |
+| **Zones actives / Hot area** | Les 150 questions à zones actives non encore transcrites sont présentées avec leur capture d'énoncé, puis le corrigé et une auto-évaluation. |
 | **Progression** | Statistiques par question et par domaine, révision des erreurs, questions mises de côté, historique des examens — le tout en `localStorage`, aucun compte ni serveur d'état. |
 | **Confort** | Thème clair / sombre, raccourcis clavier (`1`-`6`, `Entrée`), reprise de session, agrandissement des captures. |
 
@@ -285,9 +285,9 @@ coexistent donc :
   forme réellement jouable, relevée à la main sur les captures. Elle devient alors corrigée
   automatiquement, et la capture d'origine reste consultable comme corrigé.
 
-État actuel : **42 questions transcrites** — 23 grilles Oui/Non, 6 séries de menus
+État actuel : **43 questions transcrites** — 23 grilles Oui/Non, 7 séries de menus
 déroulants et 13 plateaux de glisser-déposer. **Les 14 questions de format glisser-déposer
-sont toutes jouables**, plus aucune n'est laissée en capture. Il reste 151 zones actives
+sont toutes jouables**, plus aucune n'est laissée en capture. Il reste 150 zones actives
 affichées en capture.
 
 Une remarque de modélisation : le plateau *déplace* les pions, il ne les copie pas, donc un

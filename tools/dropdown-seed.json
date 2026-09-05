@@ -34,5 +34,14 @@
    ["contoso101 only", "contoso104 only", "contoso101 or contoso104 only", "contoso101, contoso102, or contoso104 only", "contoso101, contoso102, contoso103, or contoso104"], 1],
   ["You can use the Archive access tier in",
    ["contoso101 only", "contoso101 or contoso103 only", "contoso101, contoso102, and contoso103 only", "contoso101, contoso102, and contoso104 only", "contoso101, contoso102, contoso103, and contoso104"], 2]
+ ],
+
+ "409": [
+  ["Direction:", ["Inbound", "Outbound"], 0],
+  ["Source:",
+   ["Any","10.1.0.10","10.1.0.11","10.1.0.10; 10.1.0.11","10.1.0.0/28"], 0],
+  ["Destination:",
+   ["Any","10.1.0.10","10.1.0.11","10.1.0.10; 10.1.0.11","10.1.0.0/28"], 0],
+  ["Priority:", ["110", "111", "112"], 0]
  ]
 }
