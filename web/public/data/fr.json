@@ -6747,7 +6747,31 @@
    "Vous devez recommander une solution réseau répondant aux exigences suivantes : répartir équitablement entre les machines virtuelles la communication entre les serveurs web et le niveau de logique métier, et protéger les serveurs web des attaques par injection SQL. Quelle ressource Azure devez-vous recommander pour chaque exigence ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : un équilibreur de charge interne. L'équilibreur de charge interne Azure assure la répartition de charge réseau entre des machines virtuelles situées dans un service cloud ou un réseau virtuel de portée régionale.\n\nBox 2 : une passerelle Application Gateway de niveau WAF. Le pare-feu d'applications web (WAF) d'Azure Application Gateway offre une protection centralisée de vos applications."
+  "explanation": "Box 1 : un équilibreur de charge interne. L'équilibreur de charge interne Azure assure la répartition de charge réseau entre des machines virtuelles situées dans un service cloud ou un réseau virtuel de portée régionale.\n\nBox 2 : une passerelle Application Gateway de niveau WAF. Le pare-feu d'applications web (WAF) d'Azure Application Gateway offre une protection centralisée de vos applications.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Faire en sorte que les communications entre les serveurs web et la couche logique métier se répartissent équitablement entre les machines virtuelles :",
+     "options": [
+      "une passerelle applicative de niveau Standard",
+      "une passerelle applicative de niveau WAF",
+      "un équilibreur de charge interne",
+      "un groupe de sécurité réseau (NSG)",
+      "un équilibreur de charge public"
+     ]
+    },
+    "f2": {
+     "label": "Protéger les serveurs web des attaques par injection SQL :",
+     "options": [
+      "une passerelle applicative de niveau Standard",
+      "une passerelle applicative de niveau WAF",
+      "un équilibreur de charge interne",
+      "un groupe de sécurité réseau (NSG)",
+      "un équilibreur de charge public"
+     ]
+    }
+   }
+  }
  },
  "445": {
   "text": [
@@ -6865,7 +6889,26 @@
    "Vous prévoyez de créer une application conteneurisée nommée contapp1 dans la région Azure East US. Vous devez créer un environnement d'applications conteneurisées nommé con-env1 répondant aux exigences suivantes : utiliser son propre réseau virtuel existant, utiliser son propre sous-réseau nouvellement créé, et être connecté au plus petit sous-réseau possible. À quels réseaux virtuels pouvez-vous connecter con-env1, et quel masque de sous-réseau devez-vous utiliser ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : VNet1, VNet2 ou VNet3 — tous trois disposent de sous-réseaux suffisamment grands, et les restrictions de plage d'adresses de sous-réseau ne s'appliquent pas.\n\nRemarque sur la configuration d'un réseau virtuel personnalisé : si vous souhaitez que votre application conteneurisée interdise tout accès extérieur, créez un environnement Container Apps interne."
+  "explanation": "Box 1 : VNet1, VNet2 ou VNet3 — tous trois disposent de sous-réseaux suffisamment grands, et les restrictions de plage d'adresses de sous-réseau ne s'appliquent pas.\n\nRemarque sur la configuration d'un réseau virtuel personnalisé : si vous souhaitez que votre application conteneurisée interdise tout accès extérieur, créez un environnement Container Apps interne.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Réseau virtuel :",
+     "options": [
+      "VNet1 uniquement",
+      "VNet2 uniquement",
+      "VNet3 uniquement",
+      "VNet1 ou VNet2 uniquement",
+      "VNet2 ou VNet3 uniquement",
+      "VNet1 ou VNet3 uniquement",
+      "VNet1, VNet2 ou VNet3"
+     ]
+    },
+    "f2": {
+     "label": "Masque de sous-réseau :"
+    }
+   }
+  }
  },
  "455": {
   "text": [
@@ -6881,7 +6924,14 @@
    "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Oui — VM1 et Bastion1 se trouvent dans le même réseau virtuel."
+  "explanation": "Box 1 : Oui — VM1 et Bastion1 se trouvent dans le même réseau virtuel.",
+  "interactive": {
+   "statements": {
+    "s1": "Le client Connexion Bureau à distance (mstsc.exe) peut servir à se connecter à VM1 via Bastion1.",
+    "s2": "Le portail Azure peut utiliser SSH pour se connecter à VM2 via Bastion1.",
+    "s3": "Le portail Azure peut servir à se connecter à VM3 via Bastion1."
+   }
+  }
  },
  "457": {
   "text": [
@@ -6891,7 +6941,14 @@
    "Vous créez dans la région Azure South Central US une stratégie de point de terminaison de service nommée Policy1, autorisant la connectivité vers tous les comptes de stockage de l'abonnement. Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Oui — Policy1 est une stratégie de point de terminaison de service dans la région South Central US ; Subnet3 appartient à VNET3, qui possède un point de terminaison Microsoft.Storage et se trouve dans cette même région.\n\nRemarque : les stratégies de point de terminaison de service pour Azure Storage permettent de filtrer le trafic sortant d'un réseau virtuel vers Azure Storage."
+  "explanation": "Box 1 : Oui — Policy1 est une stratégie de point de terminaison de service dans la région South Central US ; Subnet3 appartient à VNET3, qui possède un point de terminaison Microsoft.Storage et se trouve dans cette même région.\n\nRemarque : les stratégies de point de terminaison de service pour Azure Storage permettent de filtrer le trafic sortant d'un réseau virtuel vers Azure Storage.",
+  "interactive": {
+   "statements": {
+    "s1": "Policy1 peut être appliquée à Subnet3.",
+    "s2": "Seuls storage1 et storage2 sont accessibles depuis VNet2.",
+    "s3": "Seul storage2 est accessible depuis VNet3."
+   }
+  }
  },
  "458": {
   "text": [
@@ -6914,7 +6971,14 @@
    "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Oui — VM1 se trouve dans VNET1, où Server1 se résout en 131.107.3.3.\n\nBox 2 : Non — VM2 se trouve dans VNET2, qui utilise le serveur DNS personnalisé 192.168.0.5.\n\nBox 3 : Oui."
+  "explanation": "Box 1 : Oui — VM1 se trouve dans VNET1, où Server1 se résout en 131.107.3.3.\n\nBox 2 : Non — VM2 se trouve dans VNET2, qui utilise le serveur DNS personnalisé 192.168.0.5.\n\nBox 3 : Oui.",
+  "interactive": {
+   "statements": {
+    "s1": "Depuis VM1, server1.contoso.com est résolu en 131.107.3.3.",
+    "s2": "Depuis VM2, server1.contoso.com est résolu en 131.107.3.3.",
+    "s3": "Depuis VM3, server2.contoso.com est résolu en 131.107.2.4."
+   }
+  }
  },
  "460": {
   "text": [
@@ -6969,7 +7033,22 @@
    "Chaque réseau virtuel compte 50 machines virtuelles connectées. Vous devez mettre en place Azure Bastion en respectant les exigences suivantes : prendre en charge la mise à l'échelle des hôtes, permettre le téléversement et le téléchargement de fichiers, desservir les machines virtuelles de VNet1 comme de VNet2, et limiter le nombre d'adresses du sous-réseau Azure Bastion. Comment devez-vous configurer Azure Bastion ?",
    "REMARQUE : chaque bonne réponse vaut un point."
   ],
-  "explanation": "Box 1 : /26. Le sous-réseau Azure Bastion doit être créé dans le réseau virtuel où vous déployez Bastion, se nommer AzureBastionSubnet et faire au moins /26 (ou plus grand : /25, /24…). Un /26 au minimum est recommandé pour la mise à l'échelle des hôtes."
+  "explanation": "Box 1 : /26. Le sous-réseau Azure Bastion doit être créé dans le réseau virtuel où vous déployez Bastion, se nommer AzureBastionSubnet et faire au moins /26 (ou plus grand : /25, /24…). Un /26 au minimum est recommandé pour la mise à l'échelle des hôtes.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Taille du sous-réseau :"
+    },
+    "f2": {
+     "label": "IP publique :",
+     "options": [
+      "SKU Basic avec allocation dynamique",
+      "SKU Basic avec allocation statique",
+      "SKU Standard avec allocation statique"
+     ]
+    }
+   }
+  }
  },
  "464": {
   "text": [
@@ -7060,7 +7139,14 @@
    "Vous devez concevoir une stratégie de communication pour les ressources de ces réseaux virtuels. Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Non — l'appairage 1-2 est une configuration possible. Il relie VNet1 (East US, de type Azure Government) et VNet2 (West US 2, de type Public).\n\nRemarque : l'appairage de réseaux virtuels entre régions différentes s'appelle l'appairage global, disponible dans toutes les régions Azure."
+  "explanation": "Box 1 : Non — l'appairage 1-2 est une configuration possible. Il relie VNet1 (East US, de type Azure Government) et VNet2 (West US 2, de type Public).\n\nRemarque : l'appairage de réseaux virtuels entre régions différentes s'appelle l'appairage global, disponible dans toutes les régions Azure.",
+  "interactive": {
+   "statements": {
+    "s1": "Le peering 1-2 est une configuration possible.",
+    "s2": "Le peering 1-3 est une configuration possible.",
+    "s3": "Le peering 3-2 est une configuration possible."
+   }
+  }
  },
  "472": {
   "text": [
@@ -7087,7 +7173,14 @@
    "L'abonnement contient un compte de stockage nommé contoso2024, présenté dans la capture suivante.",
    "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non."
   ],
-  "explanation": "Box 1 : Oui — VM1 possède l'adresse IP publique 131.107.10.10 et est connectée à VNet1/Subnet1. Le réseau est autorisé pour VNet1 sur ce sous-réseau pour les adresses 131.107.10.10, 150.120.10.10 et 170.20.10.10.\n\nBox 2 : Non — VM2 se trouve sur VNet1/Subnet2."
+  "explanation": "Box 1 : Oui — VM1 possède l'adresse IP publique 131.107.10.10 et est connectée à VNet1/Subnet1. Le réseau est autorisé pour VNet1 sur ce sous-réseau pour les adresses 131.107.10.10, 150.120.10.10 et 170.20.10.10.\n\nBox 2 : Non — VM2 se trouve sur VNet1/Subnet2.",
+  "interactive": {
+   "statements": {
+    "s1": "VM1 peut se connecter à contoso2024 via 131.107.10.10.",
+    "s2": "VM2 peut se connecter à contoso2024 via 150.120.10.10.",
+    "s3": "VM3 doit utiliser son adresse IP privée pour se connecter à contoso2024."
+   }
+  }
  },
  "475": {
   "text": [
@@ -7119,7 +7212,14 @@
    "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Non — le nom du réseau virtuel est fixé à VNET1 ; c'est son emplacement, et non son nom, qui reprend celui du groupe de ressources.\n\nBox 2 : Oui — les deux objets de sous-réseau seront correctement approvisionnés."
+  "explanation": "Box 1 : Non — le nom du réseau virtuel est fixé à VNET1 ; c'est son emplacement, et non son nom, qui reprend celui du groupe de ressources.\n\nBox 2 : Oui — les deux objets de sous-réseau seront correctement approvisionnés.",
+  "interactive": {
+   "statements": {
+    "s1": "Le nom du réseau virtuel sera identique à l’emplacement du groupe de ressources.",
+    "s2": "Les deux objets de sous-réseau seront provisionnés correctement.",
+    "s3": "Déployer File1.bicep plusieurs fois provoquera un message d’erreur."
+   }
+  }
  },
  "478": {
   "text": [
@@ -7128,7 +7228,14 @@
    "Vous exécutez les commandes PowerShell suivantes : New-AzResourceGroupDeployment -ResourceGroupName RG1 -TemplateFile File1.bicep, puis New-AzResourceGroupDeployment -Whatif -ResourceGroupName RG1 -TemplateFile File2.bicep. Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Oui — l'étiquette CostCenter de VNet1 vaut 12345. Seul File1.bicep sert au déploiement effectif : File2.bicep est exécuté avec l'opération -Whatif, qui se contente de prévisualiser les changements sans les appliquer."
+  "explanation": "Box 1 : Oui — l'étiquette CostCenter de VNet1 vaut 12345. Seul File1.bicep sert au déploiement effectif : File2.bicep est exécuté avec l'opération -Whatif, qui se contente de prévisualiser les changements sans les appliquer.",
+  "interactive": {
+   "statements": {
+    "s1": "VNet1 possède une étiquette CostCenter dont la valeur est 12345.",
+    "s2": "VNet1 a un espace d’adressage 10.0.0.0/16.",
+    "s3": "VNet1 comporte deux sous-réseaux."
+   }
+  }
  },
  "479": {
   "text": [
@@ -7224,7 +7331,14 @@
    "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Oui — VM1 et VM2 peuvent se connecter à VNET1. On voit que VM1 dépend de VM1-NI et porte l'interface réseau VM2-NI.\n\nRemarque : dans un modèle ARM, la définition d'une machine virtuelle comporte généralement une propriété networkProfile, qui précise les interfaces réseau attachées à la machine."
+  "explanation": "Box 1 : Oui — VM1 et VM2 peuvent se connecter à VNET1. On voit que VM1 dépend de VM1-NI et porte l'interface réseau VM2-NI.\n\nRemarque : dans un modèle ARM, la définition d'une machine virtuelle comporte généralement une propriété networkProfile, qui précise les interfaces réseau attachées à la machine.",
+  "interactive": {
+   "statements": {
+    "s1": "VM1 et VM2 peuvent se connecter à VNET1.",
+    "s2": "Si un centre de données Azure devient indisponible, VM1 ou VM2 restera disponible.",
+    "s3": "Si la région East US 2 devient indisponible, VM1 ou VM2 restera disponible."
+   }
+  }
  },
  "486": {
   "text": [
@@ -7242,14 +7356,47 @@
    "Vous devez répondre aux exigences de connexion du bureau de New York. Que devez-vous faire ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : créer une passerelle de réseau virtuel et une passerelle de réseau local. Le service de passerelle VPN permet de relier le réseau virtuel au réseau local par l'intermédiaire d'un équipement VPN."
+  "explanation": "Box 1 : créer une passerelle de réseau virtuel et une passerelle de réseau local. Le service de passerelle VPN permet de relier le réseau virtuel au réseau local par l'intermédiaire d'un équipement VPN.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Depuis le portail Azure :",
+     "options": [
+      "Créer uniquement un circuit ExpressRoute.",
+      "Créer uniquement une passerelle de réseau virtuel.",
+      "Créer une passerelle de réseau virtuel et une passerelle de réseau local.",
+      "Créer un circuit ExpressRoute et une passerelle de données locale.",
+      "Créer une passerelle de réseau virtuel et une passerelle de données locale."
+     ]
+    },
+    "f2": {
+     "label": "Dans le bureau de New York :",
+     "options": [
+      "Déployer ExpressRoute.",
+      "Déployer un serveur DirectAccess.",
+      "Mettre en place un proxy d’application web.",
+      "Configurer une connexion VPN site à site."
+     ]
+    }
+   }
+  }
  },
  "488": {
   "text": [
    "Vous devez recommander une solution pour App1, répondant aux exigences techniques. Que devez-vous inclure dans la recommandation ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "L'architecture de référence correspondante montre comment déployer des machines virtuelles et un réseau virtuel configurés pour une application à N niveaux, avec SQL Server sous Windows pour le niveau de données.\n\nScénario : App1 est une application exposée publiquement, composée de trois niveaux — une base de données SQL, une interface web et un niveau intermédiaire de traitement."
+  "explanation": "L'architecture de référence correspondante montre comment déployer des machines virtuelles et un réseau virtuel configurés pour une application à N niveaux, avec SQL Server sous Windows pour le niveau de données.\n\nScénario : App1 est une application exposée publiquement, composée de trois niveaux — une base de données SQL, une interface web et un niveau intermédiaire de traitement.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Nombre de réseaux virtuels :"
+    },
+    "f2": {
+     "label": "Nombre de sous-réseaux par réseau virtuel :"
+    }
+   }
+  }
  },
  "489": {
   "text": [
@@ -7268,7 +7415,14 @@
    "Vous mettez en œuvre les changements prévus pour NSG1 et NSG2. Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Non — NSG2 bloque le RDP vers VM2. Box 2 : Oui — le protocole ICMP n'est pas bloqué. Box 3 : Non — NSG2 bloque le RDP depuis VM2."
+  "explanation": "Box 1 : Non — NSG2 bloque le RDP vers VM2. Box 2 : Oui — le protocole ICMP n'est pas bloqué. Box 3 : Non — NSG2 bloque le RDP depuis VM2.",
+  "interactive": {
+   "statements": {
+    "s1": "Depuis VM1, vous pouvez ouvrir une session Bureau à distance vers VM2.",
+    "s2": "Depuis VM2, vous pouvez envoyer un ping à VM3.",
+    "s3": "Depuis VM2, vous pouvez ouvrir une session Bureau à distance vers VM3."
+   }
+  }
  },
  "491": {
   "text": [
@@ -7298,7 +7452,31 @@
    "Vous devez mettre en œuvre les changements prévus pour User1. Quels rôles devez-vous lui attribuer, et sur quelles ressources ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Private DNS Zone Contributor. Ce rôle permet de gérer les ressources de zones DNS privées, mais pas les réseaux virtuels auxquels elles sont liées ; il autorise notamment l'action Microsoft.Network/virtualNetworks/join/action.\n\nRéponse incorrecte : DNS Zone Contributor permet de gérer les zones DNS et les jeux d'enregistrements d'Azure DNS, mais ne convient pas ici."
+  "explanation": "Box 1 : Private DNS Zone Contributor. Ce rôle permet de gérer les ressources de zones DNS privées, mais pas les réseaux virtuels auxquels elles sont liées ; il autorise notamment l'action Microsoft.Network/virtualNetworks/join/action.\n\nRéponse incorrecte : DNS Zone Contributor permet de gérer les zones DNS et les jeux d'enregistrements d'Azure DNS, mais ne convient pas ici.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Rôles :",
+     "options": [
+      "Contributeur uniquement",
+      "Contributeur réseau uniquement",
+      "Contributeur de zone DNS privée uniquement",
+      "Contributeur réseau et Contributeur de zone DNS privée uniquement"
+     ]
+    },
+    "f2": {
+     "label": "Ressources :",
+     "options": [
+      "RG2 uniquement",
+      "RG3 uniquement",
+      "VNet1 uniquement",
+      "zone1.com uniquement",
+      "RG2 et RG3 uniquement",
+      "VNet1 et zone1.com uniquement"
+     ]
+    }
+   }
+  }
  },
  "494": {
   "text": [
@@ -7306,7 +7484,29 @@
    "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : ne peut pas être modifié. Alert1 est fermée : son état n'est plus modifiable.\n\nBox 2 : peut passer à « Acquittée » ou « Fermée ». Alert2 est nouvelle, sa réponse peut donc encore évoluer."
+  "explanation": "Box 1 : ne peut pas être modifié. Alert1 est fermée : son état n'est plus modifiable.\n\nBox 2 : peut passer à « Acquittée » ou « Fermée ». Alert2 est nouvelle, sa réponse peut donc encore évoluer.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Pour Alert1, la réponse utilisateur [choix].",
+     "options": [
+      "ne peut pas être modifiée",
+      "peut passer à New uniquement",
+      "peut passer à Acknowledged uniquement",
+      "peut passer à New ou Acknowledged"
+     ]
+    },
+    "f2": {
+     "label": "Pour Alert2, la réponse utilisateur [choix].",
+     "options": [
+      "ne peut pas être modifiée",
+      "peut passer à Acknowledged uniquement",
+      "peut passer à Closed uniquement",
+      "peut passer à Acknowledged ou Closed"
+     ]
+    }
+   }
+  }
  },
  "495": {
   "text": [
@@ -7339,7 +7539,29 @@
    "Vous souscrivez un nouvel abonnement Azure nommé Subscription1 et y créez une machine virtuelle nommée VM1, qui n'est pas protégée par Azure Backup. Vous devez protéger VM1 au moyen d'Azure Backup : les sauvegardes doivent être créées à 01 h 00 et conservées 30 jours. Que devez-vous faire ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : un coffre Recovery Services. Vous pouvez créer un coffre Recovery Services et y configurer la sauvegarde de plusieurs machines virtuelles Azure.\n\nBox 2 : une stratégie de sauvegarde. Dans le choix de la stratégie, vous pouvez conserver la stratégie par défaut — qui sauvegarde la machine une fois par jour à l'heure indiquée et conserve les sauvegardes 30 jours — ou sélectionner une stratégie existante."
+  "explanation": "Box 1 : un coffre Recovery Services. Vous pouvez créer un coffre Recovery Services et y configurer la sauvegarde de plusieurs machines virtuelles Azure.\n\nBox 2 : une stratégie de sauvegarde. Dans le choix de la stratégie, vous pouvez conserver la stratégie par défaut — qui sauvegarde la machine une fois par jour à l'heure indiquée et conserve les sauvegardes 30 jours — ou sélectionner une stratégie existante.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Emplacement où stocker les sauvegardes :",
+     "options": [
+      "un conteneur d’objets blob",
+      "un partage de fichiers",
+      "un coffre Recovery Services",
+      "un compte de stockage"
+     ]
+    },
+    "f2": {
+     "label": "Objet à utiliser pour configurer la protection de VM1 :",
+     "options": [
+      "une stratégie de sauvegarde",
+      "un travail de traitement par lots",
+      "une planification de traitement par lots",
+      "un plan de récupération"
+     ]
+    }
+   }
+  }
  },
  "498": {
   "text": [
@@ -7370,14 +7592,60 @@
    "Vous prévoyez de créer une règle de collecte de données nommée DCR1 dans Azure Monitor. Quelles ressources pouvez-vous définir comme sources de données dans DCR1, et lesquelles comme destinations ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : VM1 uniquement. Une machine virtuelle peut être associée à plusieurs règles de collecte de données, et une règle peut concerner plusieurs machines. Dans l'onglet Ressources, ajoutez celles auxquelles la règle doit s'appliquer : machines virtuelles, groupes de machines identiques, serveurs Arc.\n\nBox 2 : Workspace1 uniquement, ajouté dans l'onglet Destination."
+  "explanation": "Box 1 : VM1 uniquement. Une machine virtuelle peut être associée à plusieurs règles de collecte de données, et une règle peut concerner plusieurs machines. Dans l'onglet Ressources, ajoutez celles auxquelles la règle doit s'appliquer : machines virtuelles, groupes de machines identiques, serveurs Arc.\n\nBox 2 : Workspace1 uniquement, ajouté dans l'onglet Destination.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Sources de données :",
+     "options": [
+      "VM1 uniquement",
+      "VM1 et storage1 uniquement",
+      "VM1, storage1 et DB1 uniquement",
+      "VM1, storage1, Workspace1 et DB1"
+     ]
+    },
+    "f2": {
+     "label": "Destinations :",
+     "options": [
+      "storage1 uniquement",
+      "Workspace1 uniquement",
+      "Workspace1 et storage1 uniquement",
+      "Workspace1, storage1 et DB1 uniquement"
+     ]
+    }
+   }
+  }
  },
  "501": {
   "text": [
    "Vous disposez du fichier d'attribution de rôle présenté dans la capture suivante.",
    "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
    "REMARQUE : chaque sélection correcte vaut un point."
-  ]
+  ],
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "[choix] le rôle Propriétaire sur VM1",
+     "options": [
+      "User3 s’est vu attribuer",
+      "User3 et User4 se sont vu attribuer",
+      "User1 et User3 se sont vu attribuer",
+      "User1, User3 et User4 se sont vu attribuer",
+      "User1, User2, User3 et User4 se sont vu attribuer"
+     ]
+    },
+    "f2": {
+     "label": "[choix] peuvent créer une machine virtuelle dans RG1",
+     "options": [
+      "User1 et User4",
+      "User1, User2 et User3",
+      "User1, User2 et User4",
+      "User1, User3 et User4",
+      "User1, User2, User3 et User4"
+     ]
+    }
+   }
+  }
  },
  "502": {
   "text": [
@@ -7399,7 +7667,14 @@
    "NSG1 est configuré comme dans la capture suivante.",
    "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
-  ]
+  ],
+  "interactive": {
+   "statements": {
+    "s1": "VM1 peut accéder à storage1.",
+    "s2": "VM2 peut accéder à VM1 via le protocole HTTPS.",
+    "s3": "Les règles de sécurité de NSG1 s’appliquent à toute machine virtuelle de VNET1."
+   }
+  }
  },
  "504": {
   "text": [
@@ -7419,7 +7694,14 @@
    "Vous attribuez des rôles aux utilisateurs comme indiqué dans le tableau suivant.",
    "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
-  ]
+  ],
+  "interactive": {
+   "statements": {
+    "s1": "User1 peut se connecter à VM1.",
+    "s2": "User2 peut gérer les disques et les instantanés de disque de VM1.",
+    "s3": "User2 peut gérer les disques et les instantanés de disque de VM3."
+   }
+  }
  },
  "506": {
   "text": [
@@ -7485,7 +7767,29 @@
    "Les utilisateurs effectuent les actions suivantes : User1 crée un nouveau disque virtuel et l'attache à VM1 ; User2 crée une nouvelle étiquette de ressource et l'affecte à RG1 et à VM1. Quelles règles d'alerte chaque utilisateur déclenche-t-il ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : seule Alert2 est déclenchée. User1 crée un disque virtuel et l'attache à VM1 ; Alert2 (toutes les opérations administratives sur VM1) se déclenche, sa portée étant VM1. Alert1 ne se déclenche pas, sa portée étant RG1.\n\nBox 2 : Alert1 et Alert2 sont déclenchées, puisque User2 affecte l'étiquette à la fois à RG1 et à VM1."
+  "explanation": "Box 1 : seule Alert2 est déclenchée. User1 crée un disque virtuel et l'attache à VM1 ; Alert2 (toutes les opérations administratives sur VM1) se déclenche, sa portée étant VM1. Alert1 ne se déclenche pas, sa portée étant RG1.\n\nBox 2 : Alert1 et Alert2 sont déclenchées, puisque User2 affecte l'étiquette à la fois à RG1 et à VM1.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "User1 :",
+     "options": [
+      "Aucune alerte n’est déclenchée",
+      "Seule Alert1 est déclenchée",
+      "Seule Alert2 est déclenchée",
+      "Alert1 et Alert2 sont déclenchées"
+     ]
+    },
+    "f2": {
+     "label": "User2 :",
+     "options": [
+      "Aucune alerte n’est déclenchée",
+      "Seule Alert1 est déclenchée",
+      "Seule Alert2 est déclenchée",
+      "Alert1 et Alert2 sont déclenchées"
+     ]
+    }
+   }
+  }
  },
  "513": {
   "text": [
@@ -7523,7 +7827,14 @@
    "Sub1 comporte la règle d'alerte suivante : nom Alert1 ; portée tous les groupes de ressources de Sub1, y compris les ressources futures ; condition toutes les opérations administratives ; actions Action1. Sub1 comporte également la règle de traitement d'alertes suivante : nom Rule1 ; portée Sub1 ; type de règle suppression des notifications ; application sur une période précise, du 10 août 2022 au 13 août 2022. Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Oui — la règle de traitement Rule1 supprime les notifications entre le 10 et le 13 août 2022.\n\nÀ noter toutefois : la suppression retire tous les groupes d'actions des alertes déclenchées concernées. Ces alertes n'invoqueront donc aucun groupe d'actions, pas même à l'issue de la fenêtre de maintenance, tout en restant enregistrées."
+  "explanation": "Box 1 : Oui — la règle de traitement Rule1 supprime les notifications entre le 10 et le 13 août 2022.\n\nÀ noter toutefois : la suppression retire tous les groupes d'actions des alertes déclenchées concernées. Ces alertes n'invoqueront donc aucun groupe d'actions, pas même à l'issue de la fenêtre de maintenance, tout en restant enregistrées.",
+  "interactive": {
+   "statements": {
+    "s1": "Si vous créez un groupe de ressources dans Sub1 le 11 août 2022, Alert1 apparaît dans le portail Azure.",
+    "s2": "Si vous créez un groupe de ressources dans Sub1 le 12 août 2022, un courriel est envoyé à admin1@contoso.com.",
+    "s3": "Si vous ajoutez une étiquette à RG1 le 15 août 2022, un courriel est envoyé à admin1@contoso.com."
+   }
+  }
  },
  "517": {
   "text": [
@@ -7565,7 +7876,29 @@
    "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : 10 ans. Le point de sauvegarde annuel intervient le 1er mars et sa durée de rétention est de 10 ans.\n\nBox 2 : 36 mois. Le point de sauvegarde mensuel intervient le premier de chaque mois et sa durée de rétention est de 36 mois."
+  "explanation": "Box 1 : 10 ans. Le point de sauvegarde annuel intervient le 1er mars et sa durée de rétention est de 10 ans.\n\nBox 2 : 36 mois. Le point de sauvegarde mensuel intervient le premier de chaque mois et sa durée de rétention est de 36 mois.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "La sauvegarde du dimanche 1er mars sera conservée pendant [choix].",
+     "options": [
+      "30 jours",
+      "10 semaines",
+      "36 mois",
+      "10 ans"
+     ]
+    },
+    "f2": {
+     "label": "La sauvegarde du dimanche 1er novembre sera conservée pendant [choix].",
+     "options": [
+      "30 jours",
+      "10 semaines",
+      "36 mois",
+      "10 ans"
+     ]
+    }
+   }
+  }
  },
  "521": {
   "text": [
@@ -7575,7 +7908,14 @@
    "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Oui — VM1 est sous Windows Server et utilise Azure Disk Encryption. La stratégie de sauvegarde Policy1 est de type Standard et réside dans le coffre Recovery1, qui est un coffre Recovery Services.\n\nRemarque : les machines virtuelles Azure chiffrées peuvent être sauvegardées et restaurées ; Azure Backup prend en charge celles dont les disques système et de données sont chiffrés avec Azure Disk Encryption."
+  "explanation": "Box 1 : Oui — VM1 est sous Windows Server et utilise Azure Disk Encryption. La stratégie de sauvegarde Policy1 est de type Standard et réside dans le coffre Recovery1, qui est un coffre Recovery Services.\n\nRemarque : les machines virtuelles Azure chiffrées peuvent être sauvegardées et restaurées ; Azure Backup prend en charge celles dont les disques système et de données sont chiffrés avec Azure Disk Encryption.",
+  "interactive": {
+   "statements": {
+    "s1": "VM1 peut être sauvegardée avec Policy1.",
+    "s2": "VM2 peut être sauvegardée avec Policy3.",
+    "s3": "VM2 peut être sauvegardée avec Policy2."
+   }
+  }
  },
  "522": {
   "text": [
@@ -7596,7 +7936,29 @@
    "Vers quel coffre pouvez-vous sauvegarder cont1 et share1 ?",
    "REMARQUE : chaque bonne réponse vaut un point."
   ],
-  "explanation": "Box 1 : Backup1 uniquement, cont1 étant un conteneur d'objets blob.\n\nRemarque : le coffre Backup est un produit plus léger que le coffre Recovery Services, avec un ensemble de charges de travail plus restreint. Il ne protège que certaines ressources Azure : disques de machines virtuelles Azure, stockage Blob Azure des comptes d'usage général, et Azure Database for PostgreSQL."
+  "explanation": "Box 1 : Backup1 uniquement, cont1 étant un conteneur d'objets blob.\n\nRemarque : le coffre Backup est un produit plus léger que le coffre Recovery Services, avec un ensemble de charges de travail plus restreint. Il ne protège que certaines ressources Azure : disques de machines virtuelles Azure, stockage Blob Azure des comptes d'usage général, et Azure Database for PostgreSQL.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "cont1 :",
+     "options": [
+      "Backup1 uniquement",
+      "Recovery1 uniquement",
+      "Backup1 ou Recovery1",
+      "Ne peut être sauvegardé ni vers Backup1 ni vers Recovery1"
+     ]
+    },
+    "f2": {
+     "label": "share1 :",
+     "options": [
+      "Backup1 uniquement",
+      "Recovery1 uniquement",
+      "Backup1 ou Recovery1",
+      "Ne peut être sauvegardé ni vers Backup1 ni vers Recovery1"
+     ]
+    }
+   }
+  }
  },
  "524": {
   "text": [
@@ -7705,7 +8067,17 @@
    "Vous prévoyez de sauvegarder ces ressources. Laquelle peut être sauvegardée vers Backup1, et laquelle vers Recovery1 ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Disk1 vers Backup1, le coffre Azure Backup. Box 2 : VM1 vers Recovery1, le coffre Recovery Services.\n\nRemarque : lors de la création d'un coffre dans Azure Backup Center, un écran présente les sources de données prises en charge par chaque type de coffre."
+  "explanation": "Box 1 : Disk1 vers Backup1, le coffre Azure Backup. Box 2 : VM1 vers Recovery1, le coffre Recovery Services.\n\nRemarque : lors de la création d'un coffre dans Azure Backup Center, un écran présente les sources de données prises en charge par chaque type de coffre.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Backup1 :"
+    },
+    "f2": {
+     "label": "Recovery1 :"
+    }
+   }
+  }
  },
  "533": {
   "text": [
@@ -7759,7 +8131,17 @@
   "text": [
    "Vous devez mettre en œuvre Role1. Quelle commande devez-vous exécuter avant de créer Role1 ?",
    "REMARQUE : chaque sélection correcte vaut un point."
-  ]
+  ],
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "[choix] -Name \"Reader\" | …"
+    },
+    "f2": {
+     "label": "… -Name \"Reader\" | [choix]"
+    }
+   }
+  }
  },
  "538": {
   "text": [
@@ -7778,7 +8160,17 @@
    "Vous devez configurer Azure Backup pour sauvegarder les partages de fichiers et les machines virtuelles. Quel est le nombre minimal de coffres Recovery Services et de stratégies de sauvegarde à créer ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : 3. Lorsque les sources de données se répartissent sur plusieurs régions, il faut un coffre Recovery Services par région ; les partages de fichiers et les machines virtuelles se trouvent ici dans trois régions : West US, East US et Central US.\n\nBox 2 : 6. Une stratégie de sauvegarde est propre à un coffre : pour chaque coffre, il faut une stratégie pour les partages de fichiers et une pour les machines virtuelles."
+  "explanation": "Box 1 : 3. Lorsque les sources de données se répartissent sur plusieurs régions, il faut un coffre Recovery Services par région ; les partages de fichiers et les machines virtuelles se trouvent ici dans trois régions : West US, East US et Central US.\n\nBox 2 : 6. Une stratégie de sauvegarde est propre à un coffre : pour chaque coffre, il faut une stratégie pour les partages de fichiers et une pour les machines virtuelles.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Coffres Recovery Services"
+    },
+    "f2": {
+     "label": "Stratégies de sauvegarde"
+    }
+   }
+  }
  },
  "540": {
   "text": [
@@ -7806,7 +8198,31 @@
    "Vous devez configurer Azure Backup pour répondre aux exigences techniques concernant cont1 et share1. Sur quelle fréquence devez-vous régler la sauvegarde de chaque ressource ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : toutes les 12 heures pour cont1.\n\nScénario : cont1 est un conteneur et share1 un partage de fichiers ; Azure Backup doit les sauvegarder aussi fréquemment que possible.\n\nRemarque sur la matrice de prise en charge d'Azure Backup : pour les machines Windows locales ou les machines virtuelles Azure utilisant l'agent MARS, la fréquence maximale de sauvegarde vers le coffre est de trois par jour."
+  "explanation": "Box 1 : toutes les 12 heures pour cont1.\n\nScénario : cont1 est un conteneur et share1 un partage de fichiers ; Azure Backup doit les sauvegarder aussi fréquemment que possible.\n\nRemarque sur la matrice de prise en charge d'Azure Backup : pour les machines Windows locales ou les machines virtuelles Azure utilisant l'agent MARS, la fréquence maximale de sauvegarde vers le coffre est de trois par jour.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "cont1 :",
+     "options": [
+      "Toutes les heures",
+      "Toutes les 4 heures",
+      "Toutes les 6 heures",
+      "Toutes les 12 heures",
+      "Quotidienne"
+     ]
+    },
+    "f2": {
+     "label": "share1 :",
+     "options": [
+      "Toutes les heures",
+      "Toutes les 4 heures",
+      "Toutes les 6 heures",
+      "Toutes les 12 heures",
+      "Quotidienne"
+     ]
+    }
+   }
+  }
  },
  "542": {
   "text": [

@@ -17,7 +17,7 @@ extraites automatiquement de `AZ-104_dump.pdf`.
 | **Bilingue FR / EN** | Interface **et** 542 questions entièrement traduites — énoncés, options, explications. Bascule instantanée, les noms Azure restant en anglais (voir [Traduction](#traduction)). |
 | **Grilles Oui / Non** | Les questions « choisissez Oui si l'affirmation est vraie » sont de vraies grilles cliquables, corrigées ligne par ligne. |
 | **Glisser-déposer** | Vrai drag & drop (souris, tactile et clavier) sur **les 14 questions** de ce format ; correction automatique par zone. |
-| **Zones actives / Hot area** | Les 150 questions à zones actives non encore transcrites sont présentées avec leur capture d'énoncé, puis le corrigé et une auto-évaluation. |
+| **Zones actives / Hot area** | Les 151 questions à zones actives sont jouables : grilles Oui/Non, menus déroulants ou sélection de réglages, corrigées automatiquement. |
 | **Progression** | Statistiques par question et par domaine, révision des erreurs, questions mises de côté, historique des examens — le tout en `localStorage`, aucun compte ni serveur d'état. |
 | **Confort** | Thème clair / sombre, raccourcis clavier (`1`-`6`, `Entrée`), reprise de session, agrandissement des captures. |
 
@@ -276,19 +276,17 @@ que la prose autour.
 ## Questions interactives
 
 Dans le PDF, le corrigé des questions *hot area* et *drag & drop* n'existe que sous forme
-d'image : rien n'y est directement exploitable pour rejouer l'interaction. Deux traitements
-coexistent donc :
+d'image : rien n'y est directement exploitable pour rejouer l'interaction. Chacune a donc été
+relevée à la main sur sa capture de corrigé et décrite dans `web/public/data/interactive.json`
+sous une forme réellement jouable. La capture d'origine reste affichée comme référence.
 
-* **Par défaut** — l'énoncé est affiché avec sa capture, un bouton révèle le corrigé, puis
-  l'apprenant s'auto-évalue. Le résultat compte dans le score et la progression.
-* **Questions transcrites** — `web/public/data/interactive.json` décrit la question sous une
-  forme réellement jouable, relevée à la main sur les captures. Elle devient alors corrigée
-  automatiquement, et la capture d'origine reste consultable comme corrigé.
+Le mode auto-évaluation subsiste dans le code — l'énoncé avec sa capture, un bouton qui
+révèle le corrigé, puis l'apprenant se note lui-même — mais plus aucune question du dump ne
+l'utilise. Il sert de filet si une future question arrive sans transcription.
 
-État actuel : **43 questions transcrites** — 23 grilles Oui/Non, 7 séries de menus
-déroulants et 13 plateaux de glisser-déposer. **Les 14 questions de format glisser-déposer
-sont toutes jouables**, plus aucune n'est laissée en capture. Il reste 150 zones actives
-affichées en capture.
+État actuel : **193 questions transcrites, soit la totalité** — 63 grilles Oui/Non,
+107 séries de menus déroulants et 23 plateaux de glisser-déposer. **Plus aucune question
+n'est laissée en capture avec auto-évaluation.**
 
 Une remarque de modélisation : le plateau *déplace* les pions, il ne les copie pas, donc un
 même élément ne peut pas occuper deux cibles à la fois. Les questions du dump qui autorisent
@@ -296,7 +294,10 @@ même élément ne peut pas occuper deux cibles à la fois. Les questions du dum
 transcrivent en menus déroulants — c'est le cas de la question 161. `check-interactive.mjs`
 refuse un plateau où un élément est réclamé par deux cibles.
 
-### Transcrire automatiquement (recommandé)
+### Transcrire automatiquement
+
+La banque actuelle est entièrement transcrite à la main, ce script n'a donc plus rien à
+faire dessus ; il reste utile si vous ajoutez un nouveau dump.
 
 La transcription n'a rien de manuel par nature : l'image de corrigé contient à la fois le
 libellé de chaque ligne **et** la réponse surlignée en vert. Un modèle multimodal peut donc
@@ -335,6 +336,25 @@ npm run data:interactive
 Le script vérifie que chaque identifiant existe bien dans la banque, que la question est
 bien de format `hotspot`, et refuse les lignes mal formées.
 
+### Ajouter une sélection de réglages
+
+Beaucoup de zones actives demandent « quels deux réglages devez-vous modifier ? » : une
+liste de réglages dont N font partie de la réponse. `tools/pick-seed.json` couvre ce cas et
+produit un plateau de glisser-déposer à une seule cible, les intrus restant dans le vivier :
+
+```jsonc
+"93": {
+  "prompt": "Drag the two settings you must modify into the answer area.",
+  "choices": [
+    ["Users can register applications", true],
+    ["Restrict non-admin users from creating tenants", false]
+  ]
+}
+```
+
+Le script refuse un lot où *tous* les choix font partie de la réponse : il n'y aurait alors
+rien à se tromper.
+
 ### Ajouter des menus déroulants à la main
 
 Même principe dans `tools/dropdown-seed.json`, au format
@@ -360,7 +380,8 @@ Directement dans `interactive.json` :
 
 Dans tous les cas, les libellés français se placent dans `fr.json` sous la clé `interactive`
 de la même question — `statements` pour une grille, `fields` pour des menus déroulants,
-`items` / `targets` pour un plateau. Aucune recompilation n'est nécessaire : les fichiers
+`items` / `targets` pour un plateau. Une liste de choix traduite doit garder la même
+longueur que la source : la réponse est un index, pas un libellé. Aucune recompilation n'est nécessaire : les fichiers
 sont chargés au démarrage de l'application.
 
 ---

@@ -4576,6 +4576,126 @@
    }
   ]
  },
+ "444": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Ensure that communication between the web servers and the business logic tier spreads equally across the virtual machines:",
+    "options": [
+     "an application gateway that uses the Standard tier",
+     "an application gateway that uses the WAF tier",
+     "an internal load balancer",
+     "a network security group (NSG)",
+     "a public load balancer"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "Protect the web servers from SQL injection attacks:",
+    "options": [
+     "an application gateway that uses the Standard tier",
+     "an application gateway that uses the WAF tier",
+     "an internal load balancer",
+     "a network security group (NSG)",
+     "a public load balancer"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "454": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Virtual network:",
+    "options": [
+     "VNet1 only",
+     "VNet2 only",
+     "VNet3 only",
+     "VNet1 or VNet2 only",
+     "VNet2 or VNet3 only",
+     "VNet1 or VNet3 only",
+     "VNet1, VNet2, or VNet3"
+    ],
+    "answer": 6
+   },
+   {
+    "id": "f2",
+    "label": "Subnet mask:",
+    "options": [
+     "/16",
+     "/23",
+     "/24",
+     "/26",
+     "/28"
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ "456": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "The Remote Desktop Connection client (mstsc.exe) can be used to connect to VM1 through Bastion1.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "The Azure portal can use SSH to connect to VM2 through Bastion1.",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "The Azure portal can be used to connect to VM3 through Bastion1.",
+    "answer": false
+   }
+  ]
+ },
+ "457": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "Policy1 can be applied to Subnet3.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "Only storage1 and storage2 can be accessed from VNet2.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "Only storage2 can be accessed from VNet3.",
+    "answer": true
+   }
+  ]
+ },
+ "459": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "From VM1, server1.contoso.com resolves to 131.107.3.3.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "From VM2, server1.contoso.com resolves to 131.107.3.3.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "From VM3, server2.contoso.com resolves to 131.107.2.4.",
+    "answer": true
+   }
+  ]
+ },
  "460": {
   "kind": "dragdrop",
   "prompt": "Drag the four resources into the answer area, in the order they must be declared so that each one exists before it is referenced.",
@@ -4625,6 +4745,112 @@
     "accepts": [
      "i2"
     ]
+   }
+  ]
+ },
+ "463": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Subnet size:",
+    "options": [
+     "/24",
+     "/26",
+     "/28",
+     "/29"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "f2",
+    "label": "Public IP:",
+    "options": [
+     "Basic SKU with a dynamic allocation",
+     "Basic SKU with a static allocation",
+     "Standard SKU with a static allocation"
+    ],
+    "answer": 2
+   }
+  ]
+ },
+ "471": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "Peering 1-2 is a possible configuration.",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "Peering 1-3 is a possible configuration.",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "Peering 3-2 is a possible configuration.",
+    "answer": false
+   }
+  ]
+ },
+ "474": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "VM1 can connect to contoso2024 by using 131.107.10.10.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "VM2 can connect to contoso2024 by using 150.120.10.10.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "VM3 must use its private IP address to connect to contoso2024.",
+    "answer": false
+   }
+  ]
+ },
+ "477": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "The name of the virtual network will be the same as the location of the resource group.",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "Both subnet objects will be provisioned successfully.",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "Deploying File1.bicep more than once will cause an error message.",
+    "answer": false
+   }
+  ]
+ },
+ "478": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "VNet1 has a CostCenter tag that has a value of 12345.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "VNet1 has an IP address space of 10.0.0.0/16.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "VNet1 has two subnets.",
+    "answer": false
    }
   ]
  },
@@ -4681,6 +4907,238 @@
    }
   ]
  },
+ "485": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "VM1 and VM2 can connect to VNET1.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "If an Azure datacenter becomes unavailable, VM1 or VM2 will be available.",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "If the East US 2 region becomes unavailable, VM1 or VM2 will be available.",
+    "answer": false
+   }
+  ]
+ },
+ "487": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "From the Azure portal:",
+    "options": [
+     "Create an ExpressRoute circuit only.",
+     "Create a virtual network gateway only.",
+     "Create a virtual network gateway and a local network gateway.",
+     "Create an ExpressRoute circuit and an on-premises data gateway.",
+     "Create a virtual network gateway and an on-premises data gateway."
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "In the New York office:",
+    "options": [
+     "Deploy ExpressRoute.",
+     "Deploy a DirectAccess server.",
+     "Implement a Web Application Proxy.",
+     "Configure a site-to-site VPN connection."
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ "488": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Number of virtual networks:",
+    "options": [
+     "1",
+     "2",
+     "3"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "Number of subnets per virtual network:",
+    "options": [
+     "1",
+     "2",
+     "3"
+    ],
+    "answer": 2
+   }
+  ]
+ },
+ "490": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "From VM1, you can establish a Remote Desktop session to VM2.",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "From VM2, you can ping VM3.",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "From VM2, you can establish a Remote Desktop session to VM3.",
+    "answer": false
+   }
+  ]
+ },
+ "493": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Roles:",
+    "options": [
+     "Contributor only",
+     "Network Contributor only",
+     "Private DNS Zone Contributor only",
+     "Network Contributor and Private DNS Zone Contributor only"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "Resources:",
+    "options": [
+     "RG2 only",
+     "RG3 only",
+     "VNet1 only",
+     "zone1.com only",
+     "RG2 and RG3 only",
+     "VNet1 and zone1.com only"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "494": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "For Alert1, User response [answer choice].",
+    "options": [
+     "cannot be changed",
+     "can be changed to New only",
+     "can be changed to Acknowledged only",
+     "can be changed to New or Acknowledged"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "For Alert2, User response [answer choice].",
+    "options": [
+     "cannot be changed",
+     "can be changed to Acknowledged only",
+     "can be changed to Closed only",
+     "can be changed to Acknowledged or Closed"
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ "497": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Location in which to store the backups:",
+    "options": [
+     "A blob container",
+     "A file share",
+     "A Recovery Services vault",
+     "A storage account"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "Object to use to configure the protection for VM1:",
+    "options": [
+     "A backup policy",
+     "A batch job",
+     "A batch schedule",
+     "A recovery plan"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "500": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Data sources:",
+    "options": [
+     "VM1 only",
+     "VM1 and storage1 only",
+     "VM1, storage1, and DB1 only",
+     "VM1, storage1, Workspace1, and DB1"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "Destinations:",
+    "options": [
+     "storage1 only",
+     "Workspace1 only",
+     "Workspace1 and storage1 only",
+     "Workspace1, storage1, and DB1 only"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "501": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "[answer choice] assigned the Owner role for VM1",
+    "options": [
+     "User3 is",
+     "User3 and User4 are",
+     "User1 and User3 are",
+     "User1, User3, and User4 are",
+     "User1, User2, User3, and User4"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "[answer choice] can create a virtual machine in RG1",
+    "options": [
+     "User1 and User4",
+     "User1, User2, and User3",
+     "User1, User2, and User4",
+     "User1, User3, and User4",
+     "User1, User2, User3, and User4"
+    ],
+    "answer": 0
+   }
+  ]
+ },
  "502": {
   "kind": "yesno",
   "statements": [
@@ -4698,6 +5156,46 @@
     "id": "s3",
     "text": "Users that are assigned Role1 can set a static IP address on a virtual machine.",
     "answer": true
+   }
+  ]
+ },
+ "503": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "VM1 can access storage1.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "VM2 can access VM1 by using the HTTPS protocol.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "The security rules for NSG1 apply to any virtual machine on VNET1.",
+    "answer": false
+   }
+  ]
+ },
+ "505": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "User1 can sign in to VM1.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "User2 can manage disks and disk snapshots of VM1.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "User2 can manage disks and disk snapshots of VM3.",
+    "answer": false
    }
   ]
  },
@@ -4750,6 +5248,127 @@
    }
   ]
  },
+ "512": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "User1:",
+    "options": [
+     "No alert is triggered",
+     "Only Alert1 is triggered",
+     "Only Alert2 is triggered",
+     "Alert1 and Alert2 are triggered"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "User2:",
+    "options": [
+     "No alert is triggered",
+     "Only Alert1 is triggered",
+     "Only Alert2 is triggered",
+     "Alert1 and Alert2 are triggered"
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ "516": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "If you create a resource group in Sub1 on August 11, 2022, Alert1 is listed in the Azure portal.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "If you create a resource group in Sub1 on August 12, 2022, an email message is sent to admin1@contoso.com.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "If you add a tag to RG1 on August 15, 2022, an email message is sent to admin1@contoso.com.",
+    "answer": true
+   }
+  ]
+ },
+ "520": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "The backup that occurs on Sunday, March 1, will be retained for [answer choice].",
+    "options": [
+     "30 days",
+     "10 weeks",
+     "36 months",
+     "10 years"
+    ],
+    "answer": 3
+   },
+   {
+    "id": "f2",
+    "label": "The backup that occurs on Sunday, November 1, will be retained for [answer choice].",
+    "options": [
+     "30 days",
+     "10 weeks",
+     "36 months",
+     "10 years"
+    ],
+    "answer": 2
+   }
+  ]
+ },
+ "521": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "VM1 can be backed up by using Policy1.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "VM2 can be backed up by using Policy3.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "VM2 can be backed up by using Policy2.",
+    "answer": true
+   }
+  ]
+ },
+ "523": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "cont1:",
+    "options": [
+     "Backup1 only",
+     "Recovery1 only",
+     "Backup1 or Recovery1",
+     "Cannot be backed up to Backup1 or Recovery1"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "share1:",
+    "options": [
+     "Backup1 only",
+     "Recovery1 only",
+     "Backup1 or Recovery1",
+     "Cannot be backed up to Backup1 or Recovery1"
+    ],
+    "answer": 1
+   }
+  ]
+ },
  "529": {
   "kind": "yesno",
   "statements": [
@@ -4767,6 +5386,90 @@
     "id": "s3",
     "text": "VM2 uses a private IP address to access Microsoft Entra ID.",
     "answer": false
+   }
+  ]
+ },
+ "532": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Backup1:",
+    "options": [
+     "App1",
+     "DB1",
+     "Disk1",
+     "VM1"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "Recovery1:",
+    "options": [
+     "App1",
+     "DB1",
+     "Disk1",
+     "VM1"
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ "537": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "[answer choice] -Name \"Reader\" | ...",
+    "options": [
+     "Find-RoleCapability",
+     "Get-AzureADDirectoryRole",
+     "Get-AzRoleDefinition",
+     "Get-AzResourceProvider"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "... -Name \"Reader\" | [answer choice]",
+    "options": [
+     "ConvertFrom-Json",
+     "ConvertFrom-String",
+     "ConvertTo-Json",
+     "ConvertTo-Xml"
+    ],
+    "answer": 2
+   }
+  ]
+ },
+ "539": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Recovery Services vaults",
+    "options": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "7"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "Backup policies",
+    "options": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "answer": 5
    }
   ]
  },
@@ -4816,6 +5519,35 @@
     "accepts": [
      "alert-rule"
     ]
+   }
+  ]
+ },
+ "541": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "cont1:",
+    "options": [
+     "Every hour",
+     "Every 4 hours",
+     "Every 6 hours",
+     "Every 12 hours",
+     "Daily"
+    ],
+    "answer": 3
+   },
+   {
+    "id": "f2",
+    "label": "share1:",
+    "options": [
+     "Every hour",
+     "Every 4 hours",
+     "Every 6 hours",
+     "Every 12 hours",
+     "Daily"
+    ],
+    "answer": 4
    }
   ]
  }

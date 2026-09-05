@@ -1,0 +1,318 @@
+{
+ "488": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Nombre de réseaux virtuels :"
+    },
+    "f2": {
+     "label": "Nombre de sous-réseaux par réseau virtuel :"
+    }
+   }
+  }
+ },
+ "490": {
+  "interactive": {
+   "statements": {
+    "s1": "Depuis VM1, vous pouvez ouvrir une session Bureau à distance vers VM2.",
+    "s2": "Depuis VM2, vous pouvez envoyer un ping à VM3.",
+    "s3": "Depuis VM2, vous pouvez ouvrir une session Bureau à distance vers VM3."
+   }
+  }
+ },
+ "493": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Rôles :",
+     "options": [
+      "Contributeur uniquement",
+      "Contributeur réseau uniquement",
+      "Contributeur de zone DNS privée uniquement",
+      "Contributeur réseau et Contributeur de zone DNS privée uniquement"
+     ]
+    },
+    "f2": {
+     "label": "Ressources :",
+     "options": [
+      "RG2 uniquement",
+      "RG3 uniquement",
+      "VNet1 uniquement",
+      "zone1.com uniquement",
+      "RG2 et RG3 uniquement",
+      "VNet1 et zone1.com uniquement"
+     ]
+    }
+   }
+  }
+ },
+ "494": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Pour Alert1, la réponse utilisateur [choix].",
+     "options": [
+      "ne peut pas être modifiée",
+      "peut passer à New uniquement",
+      "peut passer à Acknowledged uniquement",
+      "peut passer à New ou Acknowledged"
+     ]
+    },
+    "f2": {
+     "label": "Pour Alert2, la réponse utilisateur [choix].",
+     "options": [
+      "ne peut pas être modifiée",
+      "peut passer à Acknowledged uniquement",
+      "peut passer à Closed uniquement",
+      "peut passer à Acknowledged ou Closed"
+     ]
+    }
+   }
+  }
+ },
+ "497": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Emplacement où stocker les sauvegardes :",
+     "options": [
+      "un conteneur d’objets blob",
+      "un partage de fichiers",
+      "un coffre Recovery Services",
+      "un compte de stockage"
+     ]
+    },
+    "f2": {
+     "label": "Objet à utiliser pour configurer la protection de VM1 :",
+     "options": [
+      "une stratégie de sauvegarde",
+      "un travail de traitement par lots",
+      "une planification de traitement par lots",
+      "un plan de récupération"
+     ]
+    }
+   }
+  }
+ },
+ "500": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Sources de données :",
+     "options": [
+      "VM1 uniquement",
+      "VM1 et storage1 uniquement",
+      "VM1, storage1 et DB1 uniquement",
+      "VM1, storage1, Workspace1 et DB1"
+     ]
+    },
+    "f2": {
+     "label": "Destinations :",
+     "options": [
+      "storage1 uniquement",
+      "Workspace1 uniquement",
+      "Workspace1 et storage1 uniquement",
+      "Workspace1, storage1 et DB1 uniquement"
+     ]
+    }
+   }
+  }
+ },
+ "501": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "[choix] le rôle Propriétaire sur VM1",
+     "options": [
+      "User3 s’est vu attribuer",
+      "User3 et User4 se sont vu attribuer",
+      "User1 et User3 se sont vu attribuer",
+      "User1, User3 et User4 se sont vu attribuer",
+      "User1, User2, User3 et User4 se sont vu attribuer"
+     ]
+    },
+    "f2": {
+     "label": "[choix] peuvent créer une machine virtuelle dans RG1",
+     "options": [
+      "User1 et User4",
+      "User1, User2 et User3",
+      "User1, User2 et User4",
+      "User1, User3 et User4",
+      "User1, User2, User3 et User4"
+     ]
+    }
+   }
+  }
+ },
+ "503": {
+  "interactive": {
+   "statements": {
+    "s1": "VM1 peut accéder à storage1.",
+    "s2": "VM2 peut accéder à VM1 via le protocole HTTPS.",
+    "s3": "Les règles de sécurité de NSG1 s’appliquent à toute machine virtuelle de VNET1."
+   }
+  }
+ },
+ "505": {
+  "interactive": {
+   "statements": {
+    "s1": "User1 peut se connecter à VM1.",
+    "s2": "User2 peut gérer les disques et les instantanés de disque de VM1.",
+    "s3": "User2 peut gérer les disques et les instantanés de disque de VM3."
+   }
+  }
+ },
+ "512": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "User1 :",
+     "options": [
+      "Aucune alerte n’est déclenchée",
+      "Seule Alert1 est déclenchée",
+      "Seule Alert2 est déclenchée",
+      "Alert1 et Alert2 sont déclenchées"
+     ]
+    },
+    "f2": {
+     "label": "User2 :",
+     "options": [
+      "Aucune alerte n’est déclenchée",
+      "Seule Alert1 est déclenchée",
+      "Seule Alert2 est déclenchée",
+      "Alert1 et Alert2 sont déclenchées"
+     ]
+    }
+   }
+  }
+ },
+ "516": {
+  "interactive": {
+   "statements": {
+    "s1": "Si vous créez un groupe de ressources dans Sub1 le 11 août 2022, Alert1 apparaît dans le portail Azure.",
+    "s2": "Si vous créez un groupe de ressources dans Sub1 le 12 août 2022, un courriel est envoyé à admin1@contoso.com.",
+    "s3": "Si vous ajoutez une étiquette à RG1 le 15 août 2022, un courriel est envoyé à admin1@contoso.com."
+   }
+  }
+ },
+ "520": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "La sauvegarde du dimanche 1er mars sera conservée pendant [choix].",
+     "options": [
+      "30 jours",
+      "10 semaines",
+      "36 mois",
+      "10 ans"
+     ]
+    },
+    "f2": {
+     "label": "La sauvegarde du dimanche 1er novembre sera conservée pendant [choix].",
+     "options": [
+      "30 jours",
+      "10 semaines",
+      "36 mois",
+      "10 ans"
+     ]
+    }
+   }
+  }
+ },
+ "521": {
+  "interactive": {
+   "statements": {
+    "s1": "VM1 peut être sauvegardée avec Policy1.",
+    "s2": "VM2 peut être sauvegardée avec Policy3.",
+    "s3": "VM2 peut être sauvegardée avec Policy2."
+   }
+  }
+ },
+ "523": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "cont1 :",
+     "options": [
+      "Backup1 uniquement",
+      "Recovery1 uniquement",
+      "Backup1 ou Recovery1",
+      "Ne peut être sauvegardé ni vers Backup1 ni vers Recovery1"
+     ]
+    },
+    "f2": {
+     "label": "share1 :",
+     "options": [
+      "Backup1 uniquement",
+      "Recovery1 uniquement",
+      "Backup1 ou Recovery1",
+      "Ne peut être sauvegardé ni vers Backup1 ni vers Recovery1"
+     ]
+    }
+   }
+  }
+ },
+ "532": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Backup1 :"
+    },
+    "f2": {
+     "label": "Recovery1 :"
+    }
+   }
+  }
+ },
+ "537": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "[choix] -Name \"Reader\" | …"
+    },
+    "f2": {
+     "label": "… -Name \"Reader\" | [choix]"
+    }
+   }
+  }
+ },
+ "539": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Coffres Recovery Services"
+    },
+    "f2": {
+     "label": "Stratégies de sauvegarde"
+    }
+   }
+  }
+ },
+ "541": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "cont1 :",
+     "options": [
+      "Toutes les heures",
+      "Toutes les 4 heures",
+      "Toutes les 6 heures",
+      "Toutes les 12 heures",
+      "Quotidienne"
+     ]
+    },
+    "f2": {
+     "label": "share1 :",
+     "options": [
+      "Toutes les heures",
+      "Toutes les 4 heures",
+      "Toutes les 6 heures",
+      "Toutes les 12 heures",
+      "Quotidienne"
+     ]
+    }
+   }
+  }
+ },
+ "_note": "Libellés français des deux derniers lots de zones actives (488, 490, 493, 494, 497, 500, 501, 503, 505, 512, 516, 520, 521, 523, 532, 537, 539, 541). Après ce lot, plus aucune question du dump n’est laissée en capture."
+}

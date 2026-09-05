@@ -2022,5 +2022,392 @@
    2
   ]
  ],
+ "444": [
+  [
+   "Ensure that communication between the web servers and the business logic tier spreads equally across the virtual machines:",
+   [
+    "an application gateway that uses the Standard tier",
+    "an application gateway that uses the WAF tier",
+    "an internal load balancer",
+    "a network security group (NSG)",
+    "a public load balancer"
+   ],
+   2
+  ],
+  [
+   "Protect the web servers from SQL injection attacks:",
+   [
+    "an application gateway that uses the Standard tier",
+    "an application gateway that uses the WAF tier",
+    "an internal load balancer",
+    "a network security group (NSG)",
+    "a public load balancer"
+   ],
+   1
+  ]
+ ],
+ "454": [
+  [
+   "Virtual network:",
+   [
+    "VNet1 only",
+    "VNet2 only",
+    "VNet3 only",
+    "VNet1 or VNet2 only",
+    "VNet2 or VNet3 only",
+    "VNet1 or VNet3 only",
+    "VNet1, VNet2, or VNet3"
+   ],
+   6
+  ],
+  [
+   "Subnet mask:",
+   [
+    "/16",
+    "/23",
+    "/24",
+    "/26",
+    "/28"
+   ],
+   3
+  ]
+ ],
+ "463": [
+  [
+   "Subnet size:",
+   [
+    "/24",
+    "/26",
+    "/28",
+    "/29"
+   ],
+   1
+  ],
+  [
+   "Public IP:",
+   [
+    "Basic SKU with a dynamic allocation",
+    "Basic SKU with a static allocation",
+    "Standard SKU with a static allocation"
+   ],
+   2
+  ]
+ ],
+ "487": [
+  [
+   "From the Azure portal:",
+   [
+    "Create an ExpressRoute circuit only.",
+    "Create a virtual network gateway only.",
+    "Create a virtual network gateway and a local network gateway.",
+    "Create an ExpressRoute circuit and an on-premises data gateway.",
+    "Create a virtual network gateway and an on-premises data gateway."
+   ],
+   2
+  ],
+  [
+   "In the New York office:",
+   [
+    "Deploy ExpressRoute.",
+    "Deploy a DirectAccess server.",
+    "Implement a Web Application Proxy.",
+    "Configure a site-to-site VPN connection."
+   ],
+   3
+  ]
+ ],
+ "488": [
+  [
+   "Number of virtual networks:",
+   [
+    "1",
+    "2",
+    "3"
+   ],
+   0
+  ],
+  [
+   "Number of subnets per virtual network:",
+   [
+    "1",
+    "2",
+    "3"
+   ],
+   2
+  ]
+ ],
+ "493": [
+  [
+   "Roles:",
+   [
+    "Contributor only",
+    "Network Contributor only",
+    "Private DNS Zone Contributor only",
+    "Network Contributor and Private DNS Zone Contributor only"
+   ],
+   2
+  ],
+  [
+   "Resources:",
+   [
+    "RG2 only",
+    "RG3 only",
+    "VNet1 only",
+    "zone1.com only",
+    "RG2 and RG3 only",
+    "VNet1 and zone1.com only"
+   ],
+   1
+  ]
+ ],
+ "494": [
+  [
+   "For Alert1, User response [answer choice].",
+   [
+    "cannot be changed",
+    "can be changed to New only",
+    "can be changed to Acknowledged only",
+    "can be changed to New or Acknowledged"
+   ],
+   0
+  ],
+  [
+   "For Alert2, User response [answer choice].",
+   [
+    "cannot be changed",
+    "can be changed to Acknowledged only",
+    "can be changed to Closed only",
+    "can be changed to Acknowledged or Closed"
+   ],
+   3
+  ]
+ ],
+ "497": [
+  [
+   "Location in which to store the backups:",
+   [
+    "A blob container",
+    "A file share",
+    "A Recovery Services vault",
+    "A storage account"
+   ],
+   2
+  ],
+  [
+   "Object to use to configure the protection for VM1:",
+   [
+    "A backup policy",
+    "A batch job",
+    "A batch schedule",
+    "A recovery plan"
+   ],
+   0
+  ]
+ ],
+ "500": [
+  [
+   "Data sources:",
+   [
+    "VM1 only",
+    "VM1 and storage1 only",
+    "VM1, storage1, and DB1 only",
+    "VM1, storage1, Workspace1, and DB1"
+   ],
+   0
+  ],
+  [
+   "Destinations:",
+   [
+    "storage1 only",
+    "Workspace1 only",
+    "Workspace1 and storage1 only",
+    "Workspace1, storage1, and DB1 only"
+   ],
+   1
+  ]
+ ],
+ "501": [
+  [
+   "[answer choice] assigned the Owner role for VM1",
+   [
+    "User3 is",
+    "User3 and User4 are",
+    "User1 and User3 are",
+    "User1, User3, and User4 are",
+    "User1, User2, User3, and User4"
+   ],
+   2
+  ],
+  [
+   "[answer choice] can create a virtual machine in RG1",
+   [
+    "User1 and User4",
+    "User1, User2, and User3",
+    "User1, User2, and User4",
+    "User1, User3, and User4",
+    "User1, User2, User3, and User4"
+   ],
+   0
+  ]
+ ],
+ "512": [
+  [
+   "User1:",
+   [
+    "No alert is triggered",
+    "Only Alert1 is triggered",
+    "Only Alert2 is triggered",
+    "Alert1 and Alert2 are triggered"
+   ],
+   2
+  ],
+  [
+   "User2:",
+   [
+    "No alert is triggered",
+    "Only Alert1 is triggered",
+    "Only Alert2 is triggered",
+    "Alert1 and Alert2 are triggered"
+   ],
+   3
+  ]
+ ],
+ "520": [
+  [
+   "The backup that occurs on Sunday, March 1, will be retained for [answer choice].",
+   [
+    "30 days",
+    "10 weeks",
+    "36 months",
+    "10 years"
+   ],
+   3
+  ],
+  [
+   "The backup that occurs on Sunday, November 1, will be retained for [answer choice].",
+   [
+    "30 days",
+    "10 weeks",
+    "36 months",
+    "10 years"
+   ],
+   2
+  ]
+ ],
+ "523": [
+  [
+   "cont1:",
+   [
+    "Backup1 only",
+    "Recovery1 only",
+    "Backup1 or Recovery1",
+    "Cannot be backed up to Backup1 or Recovery1"
+   ],
+   0
+  ],
+  [
+   "share1:",
+   [
+    "Backup1 only",
+    "Recovery1 only",
+    "Backup1 or Recovery1",
+    "Cannot be backed up to Backup1 or Recovery1"
+   ],
+   1
+  ]
+ ],
+ "532": [
+  [
+   "Backup1:",
+   [
+    "App1",
+    "DB1",
+    "Disk1",
+    "VM1"
+   ],
+   2
+  ],
+  [
+   "Recovery1:",
+   [
+    "App1",
+    "DB1",
+    "Disk1",
+    "VM1"
+   ],
+   3
+  ]
+ ],
+ "537": [
+  [
+   "[answer choice] -Name \"Reader\" | ...",
+   [
+    "Find-RoleCapability",
+    "Get-AzureADDirectoryRole",
+    "Get-AzRoleDefinition",
+    "Get-AzResourceProvider"
+   ],
+   2
+  ],
+  [
+   "... -Name \"Reader\" | [answer choice]",
+   [
+    "ConvertFrom-Json",
+    "ConvertFrom-String",
+    "ConvertTo-Json",
+    "ConvertTo-Xml"
+   ],
+   2
+  ]
+ ],
+ "539": [
+  [
+   "Recovery Services vaults",
+   [
+    "1",
+    "2",
+    "3",
+    "4",
+    "7"
+   ],
+   2
+  ],
+  [
+   "Backup policies",
+   [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+   ],
+   5
+  ]
+ ],
+ "541": [
+  [
+   "cont1:",
+   [
+    "Every hour",
+    "Every 4 hours",
+    "Every 6 hours",
+    "Every 12 hours",
+    "Daily"
+   ],
+   3
+  ],
+  [
+   "share1:",
+   [
+    "Every hour",
+    "Every 4 hours",
+    "Every 6 hours",
+    "Every 12 hours",
+    "Daily"
+   ],
+   4
+  ]
+ ],
  "_readme": "Drop-down hot-area questions transcribed by hand from each answer-key screenshot (the key shows the menu expanded with the correct choice highlighted). One entry per question id: [label, [choices in order], index of the correct choice]. Expanded into web/public/data/interactive.json by tools/merge-interactive.mjs."
 }
