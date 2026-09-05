@@ -1,0 +1,177 @@
+{
+ "204": {
+  "interactive": {
+   "statements": {
+    "s1": "Le 6 juin, File1 sera stocké dans le niveau d’accès Cool.",
+    "s2": "Le 7 juin, File2 sera stocké dans le niveau d’accès Cool.",
+    "s3": "Le 16 juin, File2 sera stocké dans le niveau d’accès Archive."
+   }
+  }
+ },
+ "205": {
+  "interactive": {
+   "statements": {
+    "s1": "User1 peut lire File1.",
+    "s2": "User2 peut lire File2.",
+    "s3": "User3 peut lire File1 et File2."
+   }
+  }
+ },
+ "206": {
+  "interactive": {
+   "statements": {
+    "s1": "User1 peut accéder au contenu de share1.",
+    "s2": "User2 peut accéder au contenu de share2.",
+    "s3": "User2 peut accéder au contenu de share3."
+   }
+  }
+ },
+ "207": {
+  "interactive": {
+   "statements": {
+    "s1": "User1 peut accéder au contenu de share1.",
+    "s2": "User2 peut accéder au contenu de share1.",
+    "s3": "User3 peut accéder au contenu de share1."
+   }
+  }
+ },
+ "215": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Le nombre minimal de copies du compte de stockage sera [choix]."
+    },
+    "f2": {
+     "label": "Pour réduire le coût des données rarement consultées dans le compte de stockage, vous devez modifier le réglage [choix].",
+     "options": [
+      "Niveau d’accès (par défaut)",
+      "Performance",
+      "Type de compte",
+      "Réplication"
+     ]
+    }
+   }
+  }
+ },
+ "217": {
+  "interactive": {
+   "statements": {
+    "s1": "Une pénalité de suppression anticipée vous est facturée pour File1.",
+    "s2": "Une pénalité de suppression anticipée vous est facturée pour File2.",
+    "s3": "Une pénalité de suppression anticipée vous est facturée pour File3."
+   }
+  }
+ },
+ "219": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Si, le 2 janvier 2025, vous lancez Microsoft Azure Storage Explorer sur un ordinateur dont l’adresse IP est 193.77.134.1 et que vous utilisez SAS1 pour vous connecter au compte de stockage, vous [choix].",
+     "options": [
+      "serez invité à saisir des identifiants",
+      "n’aurez aucun accès",
+      "aurez un accès en lecture, écriture et liste",
+      "aurez un accès en lecture seule"
+     ]
+    },
+    "f2": {
+     "label": "Si, le 10 janvier 2025, vous exécutez la commande net use sur un ordinateur dont l’adresse IP est 193.77.134.50 et que vous utilisez SAS1 comme mot de passe pour vous connecter à share1, vous [choix].",
+     "options": [
+      "serez invité à saisir des identifiants",
+      "n’aurez aucun accès",
+      "aurez un accès en lecture, écriture et liste",
+      "aurez un accès en lecture seule"
+     ]
+    }
+   }
+  }
+ },
+ "220": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Pour VM1 :",
+     "options": [
+      "un coffre Azure Backup",
+      "Microsoft System Center Data Protection Manager (DPM)",
+      "un coffre Recovery Services"
+     ]
+    },
+    "f2": {
+     "label": "Pour blob1 :",
+     "options": [
+      "un coffre Azure Backup",
+      "Microsoft System Center Data Protection Manager (DPM)",
+      "un coffre Recovery Services"
+     ]
+    }
+   }
+  }
+ },
+ "224": {
+  "interactive": {
+   "statements": {
+    "s1": "Contoso a besoin d’un compte de stockage prenant en charge Blob storage.",
+    "s2": "Contoso a besoin d’un compte de stockage prenant en charge Azure Table storage.",
+    "s3": "Contoso a besoin d’un compte de stockage prenant en charge Azure File Storage."
+   }
+  }
+ },
+ "225": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "container1 :",
+     "options": [
+      "storage2 uniquement",
+      "storage2 et storage3 uniquement",
+      "storage1, storage2 et storage3 uniquement",
+      "storage2, storage3 et storage4 uniquement",
+      "storage1, storage2, storage3 et storage4"
+     ]
+    },
+    "f2": {
+     "label": "share1 :",
+     "options": [
+      "storage2 uniquement",
+      "storage4 uniquement",
+      "storage2 et storage4 uniquement",
+      "storage1, storage2 et storage4 uniquement",
+      "storage1, storage2, storage3 et storage4"
+     ]
+    }
+   }
+  }
+ },
+ "226": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Type de compte :",
+     "options": [
+      "BlobStorage",
+      "BlockBlobStorage",
+      "Storage (usage général v1)",
+      "StorageV2 (usage général v2)"
+     ]
+    },
+    "f2": {
+     "label": "Destination :"
+    }
+   }
+  }
+ },
+ "228": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Stratégies d’accès stockées :"
+    },
+    "f2": {
+     "label": "Stratégies de stockage de blobs immuables :"
+    }
+   }
+  }
+ },
+ "_note": "Libellés français du lot 5 de zones actives (204, 205, 206, 207, 215, 217, 219, 220, 224, 225, 226, 228)."
+}

@@ -1,0 +1,190 @@
+{
+ "233": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Lorsque Microsoft effectue une maintenance planifiée dans East US 2, le nombre maximal de machines virtuelles indisponibles sera [choix]."
+    },
+    "f2": {
+     "label": "Si la baie de serveurs du centre de données Azure qui héberge WEBPROD-AS-USE2 subit une panne de courant, le nombre maximal de machines virtuelles indisponibles sera [choix]."
+    }
+   }
+  }
+ },
+ "236": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Les utilisateurs Internet [choix].",
+     "options": [
+      "peuvent se connecter au conteneur depuis n’importe quel appareil",
+      "ne peuvent pas se connecter au conteneur",
+      "ne peuvent se connecter au conteneur que depuis des appareils sous Windows"
+     ]
+    },
+    "f2": {
+     "label": "Si Internet Information Services (IIS) tombe en panne dans le conteneur, [choix].",
+     "options": [
+      "le conteneur redémarrera automatiquement",
+      "le conteneur ne redémarrera que manuellement",
+      "le conteneur devra être redéployé"
+     ]
+    }
+   }
+  }
+ },
+ "242": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Lorsque le montant maximal de Budget1 est atteint, [choix].",
+     "options": [
+      "VM1 et VM2 sont arrêtées",
+      "VM1 et VM2 continuent de fonctionner",
+      "VM1 est arrêtée et VM2 continue de fonctionner"
+     ]
+    },
+    "f2": {
+     "label": "Compte tenu des coûts d’utilisation actuels des machines virtuelles, [choix].",
+     "options": [
+      "aucune notification par e-mail ne sera envoyée chaque mois",
+      "une notification par e-mail sera envoyée chaque mois",
+      "deux notifications par e-mail seront envoyées chaque mois",
+      "trois notifications par e-mail seront envoyées chaque mois"
+     ]
+    }
+   }
+  }
+ },
+ "246": {
+  "interactive": {
+   "statements": {
+    "s1": "App1 peut être déplacée vers RG2",
+    "s2": "App1 peut être déplacée vers RG3",
+    "s3": "App1 peut être déplacée vers RG4"
+   }
+  }
+ },
+ "247": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Étiquettes affectées à RG1 :"
+    },
+    "f2": {
+     "label": "Étiquettes affectées à storage1 :"
+    }
+   }
+  }
+ },
+ "248": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Le nombre de courriels qu’Alert1 enverra en une heure est"
+    },
+    "f2": {
+     "label": "Le nombre de SMS qu’Alert2 enverra en une heure est"
+    }
+   }
+  }
+ },
+ "257": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Les utilisateurs Internet [choix].",
+     "options": [
+      "peuvent se connecter uniquement au serveur DNS de VM1",
+      "peuvent se connecter uniquement au serveur web de VM1",
+      "peuvent se connecter au serveur web et au serveur DNS de VM1",
+      "ne peuvent se connecter ni au serveur web ni au serveur DNS de VM1"
+     ]
+    },
+    "f2": {
+     "label": "Si vous supprimez Rule2, les utilisateurs Internet [choix].",
+     "options": [
+      "peuvent se connecter uniquement au serveur DNS de VM1",
+      "peuvent se connecter uniquement au serveur web de VM1",
+      "peuvent se connecter au serveur web et au serveur DNS de VM1",
+      "ne peuvent se connecter ni au serveur web ni au serveur DNS de VM1"
+     ]
+    }
+   }
+  }
+ },
+ "262": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Les conteneurs recevront une adresse IP du sous-réseau [choix]."
+    },
+    "f2": {
+     "label": "Les services du cluster AKS recevront une adresse IP du sous-réseau [choix]."
+    }
+   }
+  }
+ },
+ "263": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Si, après le déploiement, l’utilisation du processeur est de 70 % pendant une heure puis atteint 90 % pendant cinq minutes, le nombre total d’instances sera alors [choix]."
+    },
+    "f2": {
+     "label": "Si, après le déploiement, le processeur reste à 90 % pendant une heure, puis que l’utilisation moyenne passe sous 25 % pendant neuf minutes, le nombre d’instances sera alors [choix]."
+    }
+   }
+  }
+ },
+ "266": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Lorsqu’un administrateur change la taille des machines virtuelles, la taille sera modifiée sur [choix] machines virtuelles au maximum simultanément."
+    },
+    "f2": {
+     "label": "Lorsqu’une nouvelle version de l’image Windows Server 2016 sort, elle sera déployée sur [choix] machines virtuelles au maximum simultanément."
+    }
+   }
+  }
+ },
+ "269": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Vous pouvez effectuer une récupération de fichiers de VM1 vers :",
+     "options": [
+      "VM1 uniquement",
+      "VM1 ou une nouvelle machine virtuelle Azure uniquement",
+      "VM1 et VM2 uniquement",
+      "une nouvelle machine virtuelle Azure uniquement",
+      "tout ordinateur Windows disposant d’une connexion Internet"
+     ]
+    },
+    "f2": {
+     "label": "Vous pouvez restaurer VM1 vers :",
+     "options": [
+      "VM1 uniquement",
+      "VM1 ou une nouvelle machine virtuelle Azure uniquement",
+      "VM1 et VM2 uniquement",
+      "tout ordinateur Windows disposant d’une connexion Internet"
+     ]
+    }
+   }
+  }
+ },
+ "272": {
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "\"platformFaultDomainCount\" :"
+    },
+    "f2": {
+     "label": "\"platformUpdateDomainCount\" :"
+    }
+   }
+  }
+ },
+ "_note": "Libellés français du lot 6 de zones actives (233, 236, 242, 246, 247, 248, 257, 262, 263, 266, 269, 272). Les listes purement numériques et les clés JSON restent telles quelles."
+}

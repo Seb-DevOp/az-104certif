@@ -2418,6 +2418,292 @@
    }
   ]
  },
+ "204": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "On June 6, File1 will be stored in the Cool access tier.",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "On June 7, File2 will be stored in the Cool access tier.",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "On June 16, File2 will be stored in the Archive access tier.",
+    "answer": false
+   }
+  ]
+ },
+ "205": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "User1 can read File1.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "User2 can read File2.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "User3 can read File1 and File2.",
+    "answer": false
+   }
+  ]
+ },
+ "206": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "User1 can access the content in share1.",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "User2 can access the content in share2.",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "User2 can access the content in share3.",
+    "answer": false
+   }
+  ]
+ },
+ "207": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "User1 can access content in share1.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "User2 can access content in share1.",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "User3 can access content in share1.",
+    "answer": false
+   }
+  ]
+ },
+ "215": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "The minimum number of copies of the storage account will be [answer choice].",
+    "options": [
+     "1",
+     "2",
+     "3",
+     "4"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "To reduce the cost of infrequently accessed data in the storage account, you must modify the [answer choice] setting.",
+    "options": [
+     "Access tier (default)",
+     "Performance",
+     "Account kind",
+     "Replication"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "217": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "You are charged an early deletion penalty for File1.",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "You are charged an early deletion penalty for File2.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "You are charged an early deletion penalty for File3.",
+    "answer": true
+   }
+  ]
+ },
+ "219": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "If on January 2, 2025, you run Microsoft Azure Storage Explorer on a computer that has an IP address of 193.77.134.1, and you use SAS1 to connect to the storage account, you [answer choice].",
+    "options": [
+     "will be prompted for credentials",
+     "will have no access",
+     "will have read, write, and list access",
+     "will have read-only access"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "If on January 10, 2025, you run the net use command on a computer that has an IP address of 193.77.134.50, and you use SAS1 as the password to connect to share1, you [answer choice].",
+    "options": [
+     "will be prompted for credentials",
+     "will have no access",
+     "will have read, write, and list access",
+     "will have read-only access"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "220": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "For VM1:",
+    "options": [
+     "An Azure Backup vault",
+     "Microsoft System Center Data Protection Manager (DPM)",
+     "A Recovery Services vault"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "f2",
+    "label": "For blob1:",
+    "options": [
+     "An Azure Backup vault",
+     "Microsoft System Center Data Protection Manager (DPM)",
+     "A Recovery Services vault"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "224": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "Contoso requires a storage account that supports Blob storage.",
+    "answer": true
+   },
+   {
+    "id": "s2",
+    "text": "Contoso requires a storage account that supports Azure Table storage.",
+    "answer": false
+   },
+   {
+    "id": "s3",
+    "text": "Contoso requires a storage account that supports Azure File Storage.",
+    "answer": false
+   }
+  ]
+ },
+ "225": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "container1:",
+    "options": [
+     "storage2 only",
+     "storage2 and storage3 only",
+     "storage1, storage2, and storage3 only",
+     "storage2, storage3, and storage4 only",
+     "storage1, storage2, storage3, and storage4"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "f2",
+    "label": "share1:",
+    "options": [
+     "storage2 only",
+     "storage4 only",
+     "storage2 and storage4 only",
+     "storage1, storage2, and storage4 only",
+     "storage1, storage2, storage3, and storage4"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "226": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Account kind:",
+    "options": [
+     "BlobStorage",
+     "BlockBlobStorage",
+     "Storage (general purpose v1)",
+     "StorageV2 (general purpose v2)"
+    ],
+    "answer": 3
+   },
+   {
+    "id": "f2",
+    "label": "Destination:",
+    "options": [
+     "Storage1",
+     "Storage2",
+     "Storage3",
+     "Storage4"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "228": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Stored access policies:",
+    "options": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "Immutable blob storage policies:",
+    "options": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "answer": 0
+   }
+  ]
+ },
  "232": {
   "kind": "yesno",
   "statements": [
@@ -2435,6 +2721,325 @@
     "id": "s3",
     "text": "You can deploy VM5 to West US.",
     "answer": false
+   }
+  ]
+ },
+ "233": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "When Microsoft performs planned maintenance in East US 2, the maximum number of unavailable virtual machines will be [answer choice].",
+    "options": [
+     "2",
+     "7",
+     "10",
+     "14"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "If the server rack in the Azure datacenter that hosts WEBPROD-AS-USE2 experiences a power failure, the maximum number of unavailable virtual machines will be [answer choice].",
+    "options": [
+     "2",
+     "7",
+     "10",
+     "14"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "236": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Internet users [answer choice].",
+    "options": [
+     "can connect to the container from any device",
+     "cannot connect to the container",
+     "can only connect to the container from devices that run Windows"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "If Internet Information Services (IIS) in the container fail, [answer choice].",
+    "options": [
+     "the container will restart automatically",
+     "the container will only restart manually",
+     "the container must be redeployed"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "242": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "When the maximum amount in Budget1 is reached, [answer choice].",
+    "options": [
+     "VM1 and VM2 are turned off",
+     "VM1 and VM2 continue to run",
+     "VM1 is turned off, and VM2 continues to run"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "f2",
+    "label": "Based on the current usage costs of the virtual machines, [answer choice].",
+    "options": [
+     "no email notifications will be sent each month",
+     "one email notification will be sent each month",
+     "two email notifications will be sent each month",
+     "three email notifications will be sent each month"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "246": {
+  "kind": "yesno",
+  "statements": [
+   {
+    "id": "s1",
+    "text": "App1 can be moved to RG2",
+    "answer": false
+   },
+   {
+    "id": "s2",
+    "text": "App1 can be moved to RG3",
+    "answer": true
+   },
+   {
+    "id": "s3",
+    "text": "App1 can be moved to RG4",
+    "answer": true
+   }
+  ]
+ },
+ "247": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Tags assigned to RG1:",
+    "options": [
+     "\"tag1\": \"value1\" only",
+     "\"tag2\": \"value2\" only",
+     "\"tag1\": \"value1\" and \"tag2\": \"value2\""
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "Tags assigned to storage1:",
+    "options": [
+     "\"tag3\": \"value3\" only",
+     "\"tag1\": \"value1\" and \"tag3\": \"value3\" only",
+     "\"tag2\": \"value2\" and \"tag3\": \"value3\" only",
+     "\"tag1\": \"value1\", \"tag2\": \"value2\", and \"tag3\": \"value3\""
+    ],
+    "answer": 2
+   }
+  ]
+ },
+ "248": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "The number of email messages that Alert1 will send in an hour is",
+    "options": [
+     "0",
+     "4",
+     "6",
+     "12",
+     "60"
+    ],
+    "answer": 4
+   },
+   {
+    "id": "f2",
+    "label": "The number of SMS messages that Alert2 will send in an hour is",
+    "options": [
+     "0",
+     "4",
+     "6",
+     "12",
+     "60"
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ "257": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Internet users [answer choice].",
+    "options": [
+     "can connect to only the DNS server on VM1",
+     "can connect to only the web server on VM1",
+     "can connect to the web server and the DNS server on VM1",
+     "cannot connect to the web server and the DNS server on VM1"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "f2",
+    "label": "If you delete Rule2, Internet users [answer choice].",
+    "options": [
+     "can connect to only the DNS server on VM1",
+     "can connect to only the web server on VM1",
+     "can connect to the web server and the DNS server on VM1",
+     "cannot connect to the web server and the DNS server on VM1"
+    ],
+    "answer": 2
+   }
+  ]
+ },
+ "262": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "Containers will be assigned an IP address in the [answer choice] subnet.",
+    "options": [
+     "10.244.0.0/16",
+     "10.0.0.0/16",
+     "172.17.0.1/16"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "Services in the AKS cluster will be assigned an IP address in the [answer choice] subnet.",
+    "options": [
+     "10.244.0.0/16",
+     "10.0.0.0/16",
+     "172.17.0.1/16"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "263": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "If after deployment CPU usage is 70 percent for one hour and then reaches 90 percent for five minutes, at that time the total number of instances will be [answer choice].",
+    "options": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "answer": 4
+   },
+   {
+    "id": "f2",
+    "label": "If after deployment the CPU maintains constant usage of 90 percent for one hour, and then the average CPU usage is below 25 percent for nine minutes, at that point the number of instances will be [answer choice].",
+    "options": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "answer": 2
+   }
+  ]
+ },
+ "266": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "When an administrator changes the virtual machine size, the size will be changed on up to [answer choice] virtual machines simultaneously.",
+    "options": [
+     "0",
+     "1",
+     "2",
+     "4"
+    ],
+    "answer": 0
+   },
+   {
+    "id": "f2",
+    "label": "When a new build of the Windows Server 2016 image is released, the new build will be deployed to up to [answer choice] virtual machines simultaneously.",
+    "options": [
+     "0",
+     "1",
+     "2",
+     "4"
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ "269": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "You can perform a file recovery of VM1 to:",
+    "options": [
+     "VM1 only",
+     "VM1 or a new Azure virtual machine only",
+     "VM1 and VM2 only",
+     "A new Azure virtual machine only",
+     "Any Windows computer that has Internet connectivity"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "f2",
+    "label": "You can restore VM1 to:",
+    "options": [
+     "VM1 only",
+     "VM1 or a new Azure virtual machine only",
+     "VM1 and VM2 only",
+     "Any Windows computer that has Internet connectivity"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "272": {
+  "kind": "dropdown",
+  "fields": [
+   {
+    "id": "f1",
+    "label": "\"platformFaultDomainCount\":",
+    "options": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "f2",
+    "label": "\"platformUpdateDomainCount\":",
+    "options": [
+     "10",
+     "20",
+     "25",
+     "30",
+     "40",
+     "50"
+    ],
+    "answer": 1
    }
   ]
  },

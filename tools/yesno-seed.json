@@ -293,6 +293,90 @@
    false
   ]
  ],
+ "204": [
+  [
+   "On June 6, File1 will be stored in the Cool access tier.",
+   false
+  ],
+  [
+   "On June 7, File2 will be stored in the Cool access tier.",
+   true
+  ],
+  [
+   "On June 16, File2 will be stored in the Archive access tier.",
+   false
+  ]
+ ],
+ "205": [
+  [
+   "User1 can read File1.",
+   true
+  ],
+  [
+   "User2 can read File2.",
+   false
+  ],
+  [
+   "User3 can read File1 and File2.",
+   false
+  ]
+ ],
+ "206": [
+  [
+   "User1 can access the content in share1.",
+   false
+  ],
+  [
+   "User2 can access the content in share2.",
+   true
+  ],
+  [
+   "User2 can access the content in share3.",
+   false
+  ]
+ ],
+ "207": [
+  [
+   "User1 can access content in share1.",
+   true
+  ],
+  [
+   "User2 can access content in share1.",
+   true
+  ],
+  [
+   "User3 can access content in share1.",
+   false
+  ]
+ ],
+ "217": [
+  [
+   "You are charged an early deletion penalty for File1.",
+   false
+  ],
+  [
+   "You are charged an early deletion penalty for File2.",
+   false
+  ],
+  [
+   "You are charged an early deletion penalty for File3.",
+   true
+  ]
+ ],
+ "224": [
+  [
+   "Contoso requires a storage account that supports Blob storage.",
+   true
+  ],
+  [
+   "Contoso requires a storage account that supports Azure Table storage.",
+   false
+  ],
+  [
+   "Contoso requires a storage account that supports Azure File Storage.",
+   false
+  ]
+ ],
  "232": [
   [
    "You can deploy VM3 to West US.",
@@ -305,6 +389,20 @@
   [
    "You can deploy VM5 to West US.",
    false
+  ]
+ ],
+ "246": [
+  [
+   "App1 can be moved to RG2",
+   false
+  ],
+  [
+   "App1 can be moved to RG3",
+   true
+  ],
+  [
+   "App1 can be moved to RG4",
+   true
   ]
  ],
  "293": [

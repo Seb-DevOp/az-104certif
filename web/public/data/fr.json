@@ -3189,7 +3189,14 @@
    "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Non — le 4 juin, Rule1 s'applique et File1 passe au stockage Archive. Le 6 juin, Rule2 (passage au stockage Cool) ne s'applique pas, File1 étant déjà en Archive.\n\nRemarque : lorsque plusieurs actions portent sur le même objet blob, la gestion du cycle de vie applique la moins coûteuse. Ainsi delete est moins coûteux que tierToArchive, lui-même moins coûteux que tierToCool.\n\nBox 2 : Oui — le 1er juin, File2 se trouve dans container2."
+  "explanation": "Box 1 : Non — le 4 juin, Rule1 s'applique et File1 passe au stockage Archive. Le 6 juin, Rule2 (passage au stockage Cool) ne s'applique pas, File1 étant déjà en Archive.\n\nRemarque : lorsque plusieurs actions portent sur le même objet blob, la gestion du cycle de vie applique la moins coûteuse. Ainsi delete est moins coûteux que tierToArchive, lui-même moins coûteux que tierToCool.\n\nBox 2 : Oui — le 1er juin, File2 se trouve dans container2.",
+  "interactive": {
+   "statements": {
+    "s1": "Le 6 juin, File1 sera stocké dans le niveau d’accès Cool.",
+    "s2": "Le 7 juin, File2 sera stocké dans le niveau d’accès Cool.",
+    "s3": "Le 16 juin, File2 sera stocké dans le niveau d’accès Archive."
+   }
+  }
  },
  "205": {
   "text": [
@@ -3199,7 +3206,14 @@
    "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Oui — User1 a le rôle Reader. Ce rôle Azure Resource Manager autorise la consultation des ressources du compte de stockage sans permettre de les modifier ; il ne donne pas accès aux données elles-mêmes, seulement aux ressources de gestion du compte, mais il est nécessaire pour naviguer jusqu'aux conteneurs d'objets blob dans le portail Azure.\n\nBox 2 : Non — User2 a le rôle Storage Account Contributor sur contoso2024, qui ne donne pas d'accès direct en lecture aux données."
+  "explanation": "Box 1 : Oui — User1 a le rôle Reader. Ce rôle Azure Resource Manager autorise la consultation des ressources du compte de stockage sans permettre de les modifier ; il ne donne pas accès aux données elles-mêmes, seulement aux ressources de gestion du compte, mais il est nécessaire pour naviguer jusqu'aux conteneurs d'objets blob dans le portail Azure.\n\nBox 2 : Non — User2 a le rôle Storage Account Contributor sur contoso2024, qui ne donne pas d'accès direct en lecture aux données.",
+  "interactive": {
+   "statements": {
+    "s1": "User1 peut lire File1.",
+    "s2": "User2 peut lire File2.",
+    "s3": "User3 peut lire File1 et File2."
+   }
+  }
  },
  "206": {
   "text": [
@@ -3209,7 +3223,14 @@
    "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Non — la synchronisation locale n'est pas activée pour User1, qui ne peut donc pas accéder au contenu de share1.\n\nBox 2 : Oui — la synchronisation locale est activée pour User2, share2 est défini dans contoso2024, et contoso2024 est activé comme source Active Directory.\n\nBox 3 : Non — share3 est défini dans contoso2025, qui n'est pas activé comme source Active Directory."
+  "explanation": "Box 1 : Non — la synchronisation locale n'est pas activée pour User1, qui ne peut donc pas accéder au contenu de share1.\n\nBox 2 : Oui — la synchronisation locale est activée pour User2, share2 est défini dans contoso2024, et contoso2024 est activé comme source Active Directory.\n\nBox 3 : Non — share3 est défini dans contoso2025, qui n'est pas activé comme source Active Directory.",
+  "interactive": {
+   "statements": {
+    "s1": "User1 peut accéder au contenu de share1.",
+    "s2": "User2 peut accéder au contenu de share2.",
+    "s3": "User2 peut accéder au contenu de share3."
+   }
+  }
  },
  "207": {
   "text": [
@@ -3219,7 +3240,14 @@
    "Vous disposez d'un locataire Microsoft Entra contenant un utilisateur uniquement cloud nommé User3. Vous utilisez Microsoft Entra Connect pour synchroniser OU1 du domaine AD DS vers le locataire Microsoft Entra. Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Oui — User1 se trouve dans OU2, qui n'est pas synchronisée, mais il est membre de Group1, lui-même dans OU1 qui l'est. User1 est donc bien synchronisé et peut accéder au contenu de share1.\n\nBox 2 : Oui — User2 est également synchronisé depuis OU1."
+  "explanation": "Box 1 : Oui — User1 se trouve dans OU2, qui n'est pas synchronisée, mais il est membre de Group1, lui-même dans OU1 qui l'est. User1 est donc bien synchronisé et peut accéder au contenu de share1.\n\nBox 2 : Oui — User2 est également synchronisé depuis OU1.",
+  "interactive": {
+   "statements": {
+    "s1": "User1 peut accéder au contenu de share1.",
+    "s2": "User2 peut accéder au contenu de share1.",
+    "s3": "User3 peut accéder au contenu de share1."
+   }
+  }
  },
  "208": {
   "text": [
@@ -3308,7 +3336,23 @@
    "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : 3. La capture indique une réplication en stockage localement redondant (LRS), qui copie le compte trois fois au sein d'un même centre de données de la région primaire.\n\nBox 2 : le niveau d'accès (par défaut). Pour réduire le coût des données peu consultées, c'est ce paramètre qu'il faut modifier — la capture montre qu'il est réglé sur Hot."
+  "explanation": "Box 1 : 3. La capture indique une réplication en stockage localement redondant (LRS), qui copie le compte trois fois au sein d'un même centre de données de la région primaire.\n\nBox 2 : le niveau d'accès (par défaut). Pour réduire le coût des données peu consultées, c'est ce paramètre qu'il faut modifier — la capture montre qu'il est réglé sur Hot.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Le nombre minimal de copies du compte de stockage sera [choix]."
+    },
+    "f2": {
+     "label": "Pour réduire le coût des données rarement consultées dans le compte de stockage, vous devez modifier le réglage [choix].",
+     "options": [
+      "Niveau d’accès (par défaut)",
+      "Performance",
+      "Type de compte",
+      "Réplication"
+     ]
+    }
+   }
+  }
  },
  "216": {
   "text": [
@@ -3331,7 +3375,14 @@
    "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Non — aucune pénalité de suppression anticipée n'est facturée pour File1. La suppression réversible (45 jours) est activée et File1 se trouve au niveau Hot ; il n'a que 5 jours lorsqu'il est supprimé de façon réversible.\n\nPoint important : dans un compte où la suppression réversible est activée, un objet blob n'est considéré comme supprimé qu'une fois la période de rétention expirée. Jusque-là, il n'est que supprimé de façon réversible et n'est pas soumis à la pénalité de suppression anticipée."
+  "explanation": "Box 1 : Non — aucune pénalité de suppression anticipée n'est facturée pour File1. La suppression réversible (45 jours) est activée et File1 se trouve au niveau Hot ; il n'a que 5 jours lorsqu'il est supprimé de façon réversible.\n\nPoint important : dans un compte où la suppression réversible est activée, un objet blob n'est considéré comme supprimé qu'une fois la période de rétention expirée. Jusque-là, il n'est que supprimé de façon réversible et n'est pas soumis à la pénalité de suppression anticipée.",
+  "interactive": {
+   "statements": {
+    "s1": "Une pénalité de suppression anticipée vous est facturée pour File1.",
+    "s2": "Une pénalité de suppression anticipée vous est facturée pour File2.",
+    "s3": "Une pénalité de suppression anticipée vous est facturée pour File3."
+   }
+  }
  },
  "218": {
   "text": [
@@ -3351,14 +3402,56 @@
    "Répondez en sélectionnant les options appropriées dans la zone de réponse.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : les identifiants seront demandés. La capture indique : services autorisés « Blob » ; types de ressources autorisés : vide, donc aucun type — ni service, ni conteneur, ni objet ; adresses IP autorisées : vide, ce qui autorise toutes les adresses."
+  "explanation": "Box 1 : les identifiants seront demandés. La capture indique : services autorisés « Blob » ; types de ressources autorisés : vide, donc aucun type — ni service, ni conteneur, ni objet ; adresses IP autorisées : vide, ce qui autorise toutes les adresses.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Si, le 2 janvier 2025, vous lancez Microsoft Azure Storage Explorer sur un ordinateur dont l’adresse IP est 193.77.134.1 et que vous utilisez SAS1 pour vous connecter au compte de stockage, vous [choix].",
+     "options": [
+      "serez invité à saisir des identifiants",
+      "n’aurez aucun accès",
+      "aurez un accès en lecture, écriture et liste",
+      "aurez un accès en lecture seule"
+     ]
+    },
+    "f2": {
+     "label": "Si, le 10 janvier 2025, vous exécutez la commande net use sur un ordinateur dont l’adresse IP est 193.77.134.50 et que vous utilisez SAS1 comme mot de passe pour vous connecter à share1, vous [choix].",
+     "options": [
+      "serez invité à saisir des identifiants",
+      "n’aurez aucun accès",
+      "aurez un accès en lecture, écriture et liste",
+      "aurez un accès en lecture seule"
+     ]
+    }
+   }
+  }
  },
  "220": {
   "text": [
    "Vous disposez d'un abonnement Azure contenant une machine virtuelle nommée VM1 et un compte de stockage Azure Blob nommé account1. Account1 contient un conteneur nommé blob1, et VM1 héberge une application qui accède à blob1. Vous devez recommander une solution de sauvegarde pour VM1 et blob1, en limitant les coûts. Que devez-vous inclure dans la recommandation ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Microsoft System Center Data Protection Manager (DPM) pour VM1. DPM assure une sauvegarde et une récupération centralisées des charges de travail d'entreprise en environnement Microsoft Windows. Il soutient la stratégie de continuité d'activité et de reprise après sinistre en sauvegardant et restaurant les données, tout en garantissant la cohérence applicative."
+  "explanation": "Box 1 : Microsoft System Center Data Protection Manager (DPM) pour VM1. DPM assure une sauvegarde et une récupération centralisées des charges de travail d'entreprise en environnement Microsoft Windows. Il soutient la stratégie de continuité d'activité et de reprise après sinistre en sauvegardant et restaurant les données, tout en garantissant la cohérence applicative.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Pour VM1 :",
+     "options": [
+      "un coffre Azure Backup",
+      "Microsoft System Center Data Protection Manager (DPM)",
+      "un coffre Recovery Services"
+     ]
+    },
+    "f2": {
+     "label": "Pour blob1 :",
+     "options": [
+      "un coffre Azure Backup",
+      "Microsoft System Center Data Protection Manager (DPM)",
+      "un coffre Recovery Services"
+     ]
+    }
+   }
+  }
  },
  "221": {
   "text": [
@@ -3403,19 +3496,66 @@
    "Vous devez identifier les besoins de stockage de Contoso. Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Oui — Contoso déplace les fichiers de plans produit existants vers le stockage Blob Azure et utilise du stockage standard non managé pour les disques durs des machines virtuelles, ce qui correspond à des objets blob de pages. Box 2 : Non. Box 3 : Non."
+  "explanation": "Box 1 : Oui — Contoso déplace les fichiers de plans produit existants vers le stockage Blob Azure et utilise du stockage standard non managé pour les disques durs des machines virtuelles, ce qui correspond à des objets blob de pages. Box 2 : Non. Box 3 : Non.",
+  "interactive": {
+   "statements": {
+    "s1": "Contoso a besoin d’un compte de stockage prenant en charge Blob storage.",
+    "s2": "Contoso a besoin d’un compte de stockage prenant en charge Azure Table storage.",
+    "s3": "Contoso a besoin d’un compte de stockage prenant en charge Azure File Storage."
+   }
+  }
  },
  "225": {
   "text": [
    "Vous devez créer container1 et share1. Quels comptes de stockage devez-vous utiliser pour chaque ressource ?",
    "REMARQUE : chaque sélection correcte vaut un point."
-  ]
+  ],
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "container1 :",
+     "options": [
+      "storage2 uniquement",
+      "storage2 et storage3 uniquement",
+      "storage1, storage2 et storage3 uniquement",
+      "storage2, storage3 et storage4 uniquement",
+      "storage1, storage2, storage3 et storage4"
+     ]
+    },
+    "f2": {
+     "label": "share1 :",
+     "options": [
+      "storage2 uniquement",
+      "storage4 uniquement",
+      "storage2 et storage4 uniquement",
+      "storage1, storage2 et storage4 uniquement",
+      "storage1, storage2, storage3 et storage4"
+     ]
+    }
+   }
+  }
  },
  "226": {
   "text": [
    "Vous devez créer storage5, la solution devant prendre en charge les changements prévus. Quel type de compte de stockage devez-vous utiliser, et quel compte devez-vous configurer comme compte de destination ?",
    "REMARQUE : chaque sélection correcte vaut un point."
-  ]
+  ],
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Type de compte :",
+     "options": [
+      "BlobStorage",
+      "BlockBlobStorage",
+      "Storage (usage général v1)",
+      "StorageV2 (usage général v2)"
+     ]
+    },
+    "f2": {
+     "label": "Destination :"
+    }
+   }
+  }
  },
  "227": {
   "text": [
@@ -3427,7 +3567,17 @@
    "Vous mettez en œuvre les changements prévus pour cont2. Quel est le nombre maximal de stratégies d'accès supplémentaires que vous pouvez créer pour cont2 ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : 2. Le scénario prévoit pour cont2 trois stratégies d'accès stockées nommées Stored1, Stored2 et Stored3, ainsi qu'une conservation légale pour le stockage d'objets blob immuables. Or un conteneur, une table, une file d'attente ou un partage n'accepte pas plus de cinq stratégies d'accès simultanées : il en reste donc deux possibles.\n\nBox 2 : 0."
+  "explanation": "Box 1 : 2. Le scénario prévoit pour cont2 trois stratégies d'accès stockées nommées Stored1, Stored2 et Stored3, ainsi qu'une conservation légale pour le stockage d'objets blob immuables. Or un conteneur, une table, une file d'attente ou un partage n'accepte pas plus de cinq stratégies d'accès simultanées : il en reste donc deux possibles.\n\nBox 2 : 0.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Stratégies d’accès stockées :"
+    },
+    "f2": {
+     "label": "Stratégies de stockage de blobs immuables :"
+    }
+   }
+  }
  },
  "229": {
   "text": [
@@ -3488,7 +3638,17 @@
    "Vous ajoutez 14 machines virtuelles à WEBPROD-AS-USE2. Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : 2. Le groupe compte 10 domaines de mise à jour. Les 14 machines s'y répartissent : quatre domaines en contiennent deux et six n'en contiennent qu'une. Un seul domaine de mise à jour redémarre à la fois, donc au maximum deux machines sont hors ligne simultanément.\n\nBox 2 : 7. Le groupe compte 2 domaines d'erreur, soit 7 machines chacun. La défaillance d'un rack affecte un domaine d'erreur, donc 7 machines."
+  "explanation": "Box 1 : 2. Le groupe compte 10 domaines de mise à jour. Les 14 machines s'y répartissent : quatre domaines en contiennent deux et six n'en contiennent qu'une. Un seul domaine de mise à jour redémarre à la fois, donc au maximum deux machines sont hors ligne simultanément.\n\nBox 2 : 7. Le groupe compte 2 domaines d'erreur, soit 7 machines chacun. La défaillance d'un rack affecte un domaine d'erreur, donc 7 machines.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Lorsque Microsoft effectue une maintenance planifiée dans East US 2, le nombre maximal de machines virtuelles indisponibles sera [choix]."
+    },
+    "f2": {
+     "label": "Si la baie de serveurs du centre de données Azure qui héberge WEBPROD-AS-USE2 subit une panne de courant, le nombre maximal de machines virtuelles indisponibles sera [choix]."
+    }
+   }
+  }
  },
  "234": {
   "text": [
@@ -3514,7 +3674,27 @@
    "Vous prévoyez de déployer une instance de conteneur Azure au moyen du modèle Azure Resource Manager suivant.",
    "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le modèle.",
    "REMARQUE : chaque sélection correcte vaut un point."
-  ]
+  ],
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Les utilisateurs Internet [choix].",
+     "options": [
+      "peuvent se connecter au conteneur depuis n’importe quel appareil",
+      "ne peuvent pas se connecter au conteneur",
+      "ne peuvent se connecter au conteneur que depuis des appareils sous Windows"
+     ]
+    },
+    "f2": {
+     "label": "Si Internet Information Services (IIS) tombe en panne dans le conteneur, [choix].",
+     "options": [
+      "le conteneur redémarrera automatiquement",
+      "le conteneur ne redémarrera que manuellement",
+      "le conteneur devra être redéployé"
+     ]
+    }
+   }
+  }
  },
  "237": {
   "text": [
@@ -3580,7 +3760,28 @@
    "Vous créez le budget présenté dans la capture suivante.",
    "Le groupe d'actions AG1 ne contient qu'un utilisateur, admin@contoso.com. Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique."
   ],
-  "explanation": "Box 1 : VM1 et VM2 continuent de fonctionner. Les alertes de budget portent sur le groupe de ressources RG1, qui contient VM1 mais pas VM2. Surtout, le dépassement d'un seuil de budget ne déclenche que des notifications : aucune ressource n'est affectée et la consommation n'est pas interrompue.\n\nBox 2 : une notification par e-mail sera envoyée chaque mois."
+  "explanation": "Box 1 : VM1 et VM2 continuent de fonctionner. Les alertes de budget portent sur le groupe de ressources RG1, qui contient VM1 mais pas VM2. Surtout, le dépassement d'un seuil de budget ne déclenche que des notifications : aucune ressource n'est affectée et la consommation n'est pas interrompue.\n\nBox 2 : une notification par e-mail sera envoyée chaque mois.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Lorsque le montant maximal de Budget1 est atteint, [choix].",
+     "options": [
+      "VM1 et VM2 sont arrêtées",
+      "VM1 et VM2 continuent de fonctionner",
+      "VM1 est arrêtée et VM2 continue de fonctionner"
+     ]
+    },
+    "f2": {
+     "label": "Compte tenu des coûts d’utilisation actuels des machines virtuelles, [choix].",
+     "options": [
+      "aucune notification par e-mail ne sera envoyée chaque mois",
+      "une notification par e-mail sera envoyée chaque mois",
+      "deux notifications par e-mail seront envoyées chaque mois",
+      "trois notifications par e-mail seront envoyées chaque mois"
+     ]
+    }
+   }
+  }
  },
  "243": {
   "text": [
@@ -3628,14 +3829,31 @@
    "Pour chacune des affirmations suivantes, choisissez Oui si elle est vraie, sinon Non.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Non — RG2 est en lecture seule. Le verrou ReadOnly autorise les utilisateurs habilités à lire une ressource, mais pas à la supprimer ni à la modifier.\n\nBox 2 : Oui. Box 3 : Oui.\n\nRemarque : les ressources App Service sont propres à une région et ne peuvent pas être déplacées directement d'une région à l'autre. Il faut créer une copie de la ressource dans la région cible, y transférer le contenu, puis supprimer l'originale."
+  "explanation": "Box 1 : Non — RG2 est en lecture seule. Le verrou ReadOnly autorise les utilisateurs habilités à lire une ressource, mais pas à la supprimer ni à la modifier.\n\nBox 2 : Oui. Box 3 : Oui.\n\nRemarque : les ressources App Service sont propres à une région et ne peuvent pas être déplacées directement d'une région à l'autre. Il faut créer une copie de la ressource dans la région cible, y transférer le contenu, puis supprimer l'originale.",
+  "interactive": {
+   "statements": {
+    "s1": "App1 peut être déplacée vers RG2",
+    "s2": "App1 peut être déplacée vers RG3",
+    "s3": "App1 peut être déplacée vers RG4"
+   }
+  }
  },
  "247": {
   "text": [
    "Vous disposez d'un abonnement Azure nommé Subscription1 contenant le groupe de ressources suivant : nom RG1 ; région West US ; étiquette « tag1 » : « value1 ». Vous attribuez à Subscription1 une stratégie Azure nommée Policy1 avec la configuration suivante : aucune exclusion ; définition « Append a tag and its value to resources » ; nom d'attribution Policy1 ; paramètres — nom d'étiquette tag2, valeur value2. Après l'attribution de Policy1, vous créez un compte de stockage ainsi configuré : nom storage1 ; emplacement West US ; groupe de ressources RG1 ; étiquettes « tag3 » : « value3 ». Vous devez déterminer quelles étiquettes sont affectées à chaque ressource. Que devez-vous retenir ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : « tag1 » : « value1 » uniquement. Box 2 : « tag2 » : « value2 » et « tag3 » : « value3 » uniquement. Les étiquettes appliquées à un groupe de ressources ne sont pas héritées par les ressources qu'il contient."
+  "explanation": "Box 1 : « tag1 » : « value1 » uniquement. Box 2 : « tag2 » : « value2 » et « tag3 » : « value3 » uniquement. Les étiquettes appliquées à un groupe de ressources ne sont pas héritées par les ressources qu'il contient.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Étiquettes affectées à RG1 :"
+    },
+    "f2": {
+     "label": "Étiquettes affectées à storage1 :"
+    }
+   }
+  }
  },
  "248": {
   "text": [
@@ -3643,7 +3861,17 @@
    "Les critères d'Alert1 se déclenchent chaque minute. Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : 60. Une alerte par minute déclenche un e-mail par minute.\n\nBox 2 : 12. Il ne peut être envoyé plus d'un SMS toutes les 5 minutes, soit 12 par heure.\n\nRemarque : la limitation de débit suspend les notifications lorsqu'un même numéro, une même adresse e-mail ou un même appareil en reçoit trop. Elle garantit que les alertes restent exploitables. Le seuil pour les SMS est d'un message toutes les 5 minutes."
+  "explanation": "Box 1 : 60. Une alerte par minute déclenche un e-mail par minute.\n\nBox 2 : 12. Il ne peut être envoyé plus d'un SMS toutes les 5 minutes, soit 12 par heure.\n\nRemarque : la limitation de débit suspend les notifications lorsqu'un même numéro, une même adresse e-mail ou un même appareil en reçoit trop. Elle garantit que les alertes restent exploitables. Le seuil pour les SMS est d'un message toutes les 5 minutes.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Le nombre de courriels qu’Alert1 enverra en une heure est"
+    },
+    "f2": {
+     "label": "Le nombre de SMS qu’Alert2 enverra en une heure est"
+    }
+   }
+  }
  },
  "249": {
   "text": [
@@ -3746,7 +3974,29 @@
    "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : Rule2 bloque les ports 50 à 60, dont le port 53 utilisé par le DNS. Les internautes peuvent en revanche joindre le serveur web, qui utilise le port 80.\n\nBox 2 : si Rule2 est supprimée, les internautes peuvent également joindre le serveur DNS.\n\nRemarque : les règles sont traitées par ordre de priorité, les numéros les plus bas étant prioritaires. Dès qu'un trafic correspond à une règle, le traitement s'arrête."
+  "explanation": "Box 1 : Rule2 bloque les ports 50 à 60, dont le port 53 utilisé par le DNS. Les internautes peuvent en revanche joindre le serveur web, qui utilise le port 80.\n\nBox 2 : si Rule2 est supprimée, les internautes peuvent également joindre le serveur DNS.\n\nRemarque : les règles sont traitées par ordre de priorité, les numéros les plus bas étant prioritaires. Dès qu'un trafic correspond à une règle, le traitement s'arrête.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Les utilisateurs Internet [choix].",
+     "options": [
+      "peuvent se connecter uniquement au serveur DNS de VM1",
+      "peuvent se connecter uniquement au serveur web de VM1",
+      "peuvent se connecter au serveur web et au serveur DNS de VM1",
+      "ne peuvent se connecter ni au serveur web ni au serveur DNS de VM1"
+     ]
+    },
+    "f2": {
+     "label": "Si vous supprimez Rule2, les utilisateurs Internet [choix].",
+     "options": [
+      "peuvent se connecter uniquement au serveur DNS de VM1",
+      "peuvent se connecter uniquement au serveur web de VM1",
+      "peuvent se connecter au serveur web et au serveur DNS de VM1",
+      "ne peuvent se connecter ni au serveur web ni au serveur DNS de VM1"
+     ]
+    }
+   }
+  }
  },
  "258": {
   "text": [
@@ -3801,7 +4051,17 @@
    "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : 10.244.0.0/16, la plage CIDR des pods.\n\nRemarque : le paramètre --pod-cidr doit désigner un large espace d'adressage inutilisé ailleurs dans votre environnement réseau, y compris vos plages locales si vous connectez — ou prévoyez de connecter — vos réseaux virtuels Azure via ExpressRoute ou un VPN de site à site. Cette plage doit être assez grande pour absorber le nombre de nœuds que vous comptez atteindre."
+  "explanation": "Box 1 : 10.244.0.0/16, la plage CIDR des pods.\n\nRemarque : le paramètre --pod-cidr doit désigner un large espace d'adressage inutilisé ailleurs dans votre environnement réseau, y compris vos plages locales si vous connectez — ou prévoyez de connecter — vos réseaux virtuels Azure via ExpressRoute ou un VPN de site à site. Cette plage doit être assez grande pour absorber le nombre de nœuds que vous comptez atteindre.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Les conteneurs recevront une adresse IP du sous-réseau [choix]."
+    },
+    "f2": {
+     "label": "Les services du cluster AKS recevront une adresse IP du sous-réseau [choix]."
+    }
+   }
+  }
  },
  "263": {
   "text": [
@@ -3810,7 +4070,17 @@
    "La règle d'augmentation d'échelle utilise la même durée et le même délai de récupération que la règle de réduction. Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : 5. Le maximum de 5 instances est conservé tant que l'utilisation du processeur reste supérieure ou égale à 30 %.\n\nBox 2 : 3. Dès que l'utilisation moyenne du processeur passe sous 30 %, le nombre d'instances diminue de 1 ; après les 5 minutes du délai de récupération, il diminue encore de 1, pour atteindre 3."
+  "explanation": "Box 1 : 5. Le maximum de 5 instances est conservé tant que l'utilisation du processeur reste supérieure ou égale à 30 %.\n\nBox 2 : 3. Dès que l'utilisation moyenne du processeur passe sous 30 %, le nombre d'instances diminue de 1 ; après les 5 minutes du délai de récupération, il diminue encore de 1, pour atteindre 3.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Si, après le déploiement, l’utilisation du processeur est de 70 % pendant une heure puis atteint 90 % pendant cinq minutes, le nombre total d’instances sera alors [choix]."
+    },
+    "f2": {
+     "label": "Si, après le déploiement, le processeur reste à 90 % pendant une heure, puis que l’utilisation moyenne passe sous 25 % pendant neuf minutes, le nombre d’instances sera alors [choix]."
+    }
+   }
+  }
  },
  "264": {
   "text": [
@@ -3843,7 +4113,17 @@
    "Utilisez les menus déroulants pour choisir la réponse qui complète chaque énoncé à partir des informations présentées dans le graphique.",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "La cmdlet Get-AzVmssVM renvoie la vue de modèle et la vue d'instance d'une machine virtuelle d'un groupe identique.\n\nBox 1 : 0. Le paramètre enableAutomaticUpdates est réglé sur false : pour mettre à jour les machines existantes, il faut procéder manuellement, machine par machine.\n\nBox 2 : 4. Activer la mise à niveau automatique des images du système d'exploitation facilite la gestion des mises à jour en actualisant sûrement et automatiquement le disque système de toutes les instances du groupe."
+  "explanation": "La cmdlet Get-AzVmssVM renvoie la vue de modèle et la vue d'instance d'une machine virtuelle d'un groupe identique.\n\nBox 1 : 0. Le paramètre enableAutomaticUpdates est réglé sur false : pour mettre à jour les machines existantes, il faut procéder manuellement, machine par machine.\n\nBox 2 : 4. Activer la mise à niveau automatique des images du système d'exploitation facilite la gestion des mises à jour en actualisant sûrement et automatiquement le disque système de toutes les instances du groupe.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Lorsqu’un administrateur change la taille des machines virtuelles, la taille sera modifiée sur [choix] machines virtuelles au maximum simultanément."
+    },
+    "f2": {
+     "label": "Lorsqu’une nouvelle version de l’image Windows Server 2016 sort, elle sera déployée sur [choix] machines virtuelles au maximum simultanément."
+    }
+   }
+  }
  },
  "267": {
   "text": [
@@ -3870,7 +4150,30 @@
    "Vous disposez d'un abonnement Azure nommé Subscription1 contenant deux machines virtuelles Azure, VM1 et VM2, sous Windows Server. VM1 est sauvegardée quotidiennement par Azure Backup, sans l'agent Azure Backup. VM1 est touchée par un rançongiciel qui chiffre les données et vous devez restaurer sa dernière sauvegarde. Vers quel emplacement pouvez-vous la restaurer ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Remarque : la nouvelle machine virtuelle doit se trouver dans la même région."
+  "explanation": "Remarque : la nouvelle machine virtuelle doit se trouver dans la même région.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "Vous pouvez effectuer une récupération de fichiers de VM1 vers :",
+     "options": [
+      "VM1 uniquement",
+      "VM1 ou une nouvelle machine virtuelle Azure uniquement",
+      "VM1 et VM2 uniquement",
+      "une nouvelle machine virtuelle Azure uniquement",
+      "tout ordinateur Windows disposant d’une connexion Internet"
+     ]
+    },
+    "f2": {
+     "label": "Vous pouvez restaurer VM1 vers :",
+     "options": [
+      "VM1 uniquement",
+      "VM1 ou une nouvelle machine virtuelle Azure uniquement",
+      "VM1 et VM2 uniquement",
+      "tout ordinateur Windows disposant d’une connexion Internet"
+     ]
+    }
+   }
+  }
  },
  "270": {
   "text": [
@@ -3900,7 +4203,17 @@
    "Vous disposez d'un abonnement Azure. Vous prévoyez d'utiliser des modèles Azure Resource Manager pour déployer 50 machines virtuelles Azure appartenant au même groupe à haute disponibilité. Vous devez faire en sorte que le plus grand nombre possible de machines restent disponibles en cas de défaillance de l'infrastructure ou pendant la maintenance. Comment devez-vous configurer le modèle ?",
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
-  "explanation": "Box 1 : 2. Utilisez deux domaines d'erreur — le maximum est de 2 ou 3 selon la région.\n\nBox 2 : 20. Utilisez 20 pour platformUpdateDomainCount. Augmenter le nombre de domaines de mise à jour aide à planifier capacité et disponibilité lorsque la plateforme redémarre des nœuds : plus ce nombre est élevé (20 au maximum), moins il y a de nœuds redémarrés simultanément dans un même groupe à haute disponibilité."
+  "explanation": "Box 1 : 2. Utilisez deux domaines d'erreur — le maximum est de 2 ou 3 selon la région.\n\nBox 2 : 20. Utilisez 20 pour platformUpdateDomainCount. Augmenter le nombre de domaines de mise à jour aide à planifier capacité et disponibilité lorsque la plateforme redémarre des nœuds : plus ce nombre est élevé (20 au maximum), moins il y a de nœuds redémarrés simultanément dans un même groupe à haute disponibilité.",
+  "interactive": {
+   "fields": {
+    "f1": {
+     "label": "\"platformFaultDomainCount\" :"
+    },
+    "f2": {
+     "label": "\"platformUpdateDomainCount\" :"
+    }
+   }
+  }
  },
  "273": {
   "text": [
