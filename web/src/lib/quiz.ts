@@ -152,6 +152,16 @@ export function gradeYesNo(spec: YesNoSpec, picks: Record<string, boolean>): boo
   return spec.statements.every((s) => picks[s.id] === s.answer);
 }
 
+/** Every slot of every target filled — Check stays disabled until then. */
+export const placementAnswered = (
+  spec: DragDropSpec,
+  placed: Record<string, readonly string[]>,
+) =>
+  spec.targets.every((t) => {
+    const items = placed[t.id] ?? [];
+    return items.length === t.accepts.length && items.every(Boolean);
+  });
+
 export const yesNoAnswered = (spec: YesNoSpec, picks: Record<string, boolean>) =>
   spec.statements.every((s) => picks[s.id] !== undefined);
 

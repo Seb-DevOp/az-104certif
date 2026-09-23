@@ -4,11 +4,12 @@ import { localise } from '../lib/data';
 import { makeT, topicLabel } from '../lib/i18n';
 import {
   decodeDragAnswer, decodeDropdown, decodeYesNo, dropdownAnswered, encodeDragAnswer,
-  encodeDropdown, encodeYesNo, gradeDragDrop, gradeDropdown, gradeYesNo, shuffle,
+  encodeDropdown, encodeYesNo, gradeDragDrop, gradeDropdown, gradeYesNo, placementAnswered,
+  shuffle,
   yesNoAnswered,
 } from '../lib/quiz';
 import { Badge, Exhibit, Explanation } from './ui';
-import { DragDrop } from './DragDrop';
+import { Placement } from './Placement';
 import { YesNo } from './YesNo';
 import { Dropdown } from './Dropdown';
 
@@ -43,9 +44,8 @@ export function QuestionCard(props: QuestionCardProps) {
   const [yesNoPicks, setYesNoPicks] = useState<Record<string, boolean>>(() => decodeYesNo(selected));
   const [dropdownPicks, setDropdownPicks] = useState<Record<string, number>>(() => decodeDropdown(selected));
 
-  // Reset the interactive answers during render, not in an effect: <DragDrop> is remounted
-  // by its key and seeds itself from `initialPlaced`, so an effect running after the render
-  // would hand the new question the previous one's board.
+  // Reset the interactive answers during render, not in an effect, for the same reason
+  // Quiz swaps its draft there: an effect lands after the new question has already painted.
   const [shownId, setShownId] = useState(q.id);
   if (shownId !== q.id) {
     setShownId(q.id);
@@ -180,12 +180,11 @@ export function QuestionCard(props: QuestionCardProps) {
         </>
       ) : dragSpec ? (
         <div className="mt-5">
-          <DragDrop
-            key={q.id}
+          <Placement
             spec={dragSpec}
             lang={lang}
             revealed={Boolean(locked)}
-            initialPlaced={dragPlacement}
+            value={dragPlacement}
             perTarget={dragResult?.perTarget}
             onChange={(placed) => {
               setDragPlacement(placed);
@@ -197,6 +196,7 @@ export function QuestionCard(props: QuestionCardProps) {
             <button
               type="button"
               className="btn-primary mt-4"
+              disabled={!placementAnswered(dragSpec, dragPlacement)}
               onClick={() => onCheck(gradeDragDrop(dragSpec, dragPlacement).correct)}
             >
               {t('validate')}

@@ -126,7 +126,7 @@
  },
  "331": {
   "interactive": {
-   "prompt": "Faites glisser dans la zone de réponse les deux réglages à configurer. Les intrus restent dans la liste.",
+   "prompt": "Choisissez les deux réglages à configurer. Les intrus restent dans la liste.",
    "items": {
     "i1": "Vue d’ensemble",
     "i2": "Journal d’activité",

@@ -16,7 +16,7 @@ extraites automatiquement de `AZ-104_dump.pdf`.
 | **Mode examen** | 25 / 50 / 100 questions chronométrées (75 min pour 50), aucune correction avant la fin, navigation libre, palette de questions, marquage pour relecture. |
 | **Bilingue FR / EN** | Interface **et** 542 questions entièrement traduites — énoncés, options, explications. Bascule instantanée, les noms Azure restant en anglais (voir [Traduction](#traduction)). |
 | **Grilles Oui / Non** | Les questions « choisissez Oui si l'affirmation est vraie » sont de vraies grilles cliquables, corrigées ligne par ligne. |
-| **Glisser-déposer** | Vrai drag & drop (souris, tactile et clavier) sur **les 14 questions** de ce format ; correction automatique par zone. |
+| **Glisser-déposer** | Les 14 questions de ce format se répondent au menu déroulant, un par emplacement — utilisable au doigt, contrairement à un plateau à faire glisser. Correction automatique par zone. |
 | **Zones actives / Hot area** | Les 151 questions à zones actives sont jouables : grilles Oui/Non, menus déroulants ou sélection de réglages, corrigées automatiquement. |
 | **Progression** | Statistiques par question et par domaine, révision des erreurs, questions mises de côté, historique des examens — le tout en `localStorage`, aucun compte ni serveur d'état. |
 | **Confort** | Thème clair / sombre, raccourcis clavier (`1`-`6`, `Entrée`), reprise de session, agrandissement des captures. |
@@ -285,14 +285,27 @@ révèle le corrigé, puis l'apprenant se note lui-même — mais plus aucune qu
 l'utilise. Il sert de filet si une future question arrive sans transcription.
 
 État actuel : **193 questions transcrites, soit la totalité** — 63 grilles Oui/Non,
-107 séries de menus déroulants et 23 plateaux de glisser-déposer. **Plus aucune question
-n'est laissée en capture avec auto-évaluation.**
+107 séries de menus déroulants et 23 questions à placement. **Plus aucune question n'est
+laissée en capture avec auto-évaluation.**
 
-Une remarque de modélisation : le plateau *déplace* les pions, il ne les copie pas, donc un
-même élément ne peut pas occuper deux cibles à la fois. Les questions du dump qui autorisent
-« once, more than once, or not at all » et réutilisent effectivement la même réponse se
-transcrivent en menus déroulants — c'est le cas de la question 161. `check-interactive.mjs`
-refuse un plateau où un élément est réclamé par deux cibles.
+**Le placement se répond au menu, pas en faisant glisser.** Le glisser-déposer demande un
+pointeur suivi à la trace d'un bout à l'autre de la page, ce qu'un écran tactile ne donne
+pas de façon fiable : sur téléphone le plateau était inutilisable. `Placement.tsx` rend donc
+un `<select>` par emplacement — natif partout, accessible au clavier sans rien écrire. Les
+données n'ont pas changé : le `kind` reste `dragdrop` parce que c'est bien la forme de la
+question à l'examen, et la correction compare toujours le contenu de chaque cible comme un
+ensemble.
+
+Une cible qui ne reçoit qu'un élément est étiquetée par la cible elle-même (« Étape 2 »,
+« User1 ») ; une cible qui en reçoit plusieurs est découpée en autant de menus numérotés,
+puisque la réponse est un ensemble de réglages et non une liste ordonnée — l'ordre des choix
+n'y compte donc pas. Un élément déjà choisi ailleurs est grisé dans les autres menus, ce qui
+reproduit le fait qu'un pion ne pouvait être posé qu'à un seul endroit.
+
+Corollaire de ce déplacement : un même élément ne peut pas occuper deux cibles. Les questions
+du dump qui autorisent « once, more than once, or not at all » et réutilisent effectivement la
+même réponse se transcrivent en menus déroulants ordinaires — c'est le cas de la question 161.
+`check-interactive.mjs` refuse un placement où un élément est réclamé par deux cibles.
 
 ### Transcrire automatiquement
 
@@ -340,11 +353,12 @@ bien de format `hotspot`, et refuse les lignes mal formées.
 
 Beaucoup de zones actives demandent « quels deux réglages devez-vous modifier ? » : une
 liste de réglages dont N font partie de la réponse. `tools/pick-seed.json` couvre ce cas et
-produit un plateau de glisser-déposer à une seule cible, les intrus restant dans le vivier :
+produit un placement à une seule cible, découpé en N menus, les intrus restant dans les
+listes :
 
 ```jsonc
 "93": {
-  "prompt": "Drag the two settings you must modify into the answer area.",
+  "prompt": "Select the two settings you must modify.",
   "choices": [
     ["Users can register applications", true],
     ["Restrict non-admin users from creating tenants", false]
@@ -365,14 +379,14 @@ Même principe dans `tools/dropdown-seed.json`, au format
          ["contoso101 only", "contoso104 only"], 1]]
 ```
 
-### Ajouter un glisser-déposer
+### Ajouter un placement
 
 Directement dans `interactive.json` :
 
 ```jsonc
 "167": {
   "kind": "dragdrop",
-  "prompt": "Drag the three actions into the answer area, in the order they must be performed.",
+  "prompt": "Select the three actions, in the order they must be performed.",
   "items":   [{ "id": "i1", "label": "Create a Recovery Services vault." }],
   "targets": [{ "id": "step1", "label": "Step 1", "accepts": ["i1"] }]
 }
@@ -380,7 +394,7 @@ Directement dans `interactive.json` :
 
 Dans tous les cas, les libellés français se placent dans `fr.json` sous la clé `interactive`
 de la même question — `statements` pour une grille, `fields` pour des menus déroulants,
-`items` / `targets` pour un plateau. Une liste de choix traduite doit garder la même
+`items` / `targets` pour un placement. Une liste de choix traduite doit garder la même
 longueur que la source : la réponse est un index, pas un libellé. Aucune recompilation n'est nécessaire : les fichiers
 sont chargés au démarrage de l'application.
 

@@ -1,6 +1,6 @@
 {
  "29": {
-  "prompt": "Drag the three settings you must configure into the answer area. Distractors stay in the list.",
+  "prompt": "Select the three settings you must configure. Distractors stay in the list.",
   "choices": [
    [
     "Users and groups",
@@ -25,7 +25,7 @@
   ]
  },
  "88": {
-  "prompt": "Drag the two settings you must configure into the answer area. Distractors stay in the list.",
+  "prompt": "Select the two settings you must configure. Distractors stay in the list.",
   "choices": [
    [
     "Identities",
@@ -58,7 +58,7 @@
   ]
  },
  "93": {
-  "prompt": "Drag the two settings you must modify into the answer area. Distractors stay in the list.",
+  "prompt": "Select the two settings you must modify. Distractors stay in the list.",
   "choices": [
    [
     "Users can register applications",
@@ -91,7 +91,7 @@
   ]
  },
  "118": {
-  "prompt": "Drag the two blades you must configure into the answer area. Distractors stay in the list.",
+  "prompt": "Select the two blades you must configure. Distractors stay in the list.",
   "choices": [
    [
     "Users",
@@ -172,7 +172,7 @@
   ]
  },
  "129": {
-  "prompt": "Drag the two settings you must use into the answer area. Distractors stay in the list.",
+  "prompt": "Select the two settings you must use. Distractors stay in the list.",
   "choices": [
    [
     "Properties",
@@ -213,7 +213,7 @@
   ]
  },
  "131": {
-  "prompt": "Drag the two settings you must modify into the answer area. Distractors stay in the list.",
+  "prompt": "Select the two settings you must modify. Distractors stay in the list.",
   "choices": [
    [
     "Users may join devices to Microsoft Entra ID",
@@ -238,7 +238,7 @@
   ]
  },
  "173": {
-  "prompt": "Drag the two blades you must configure into the answer area. Distractors stay in the list.",
+  "prompt": "Select the two blades you must configure. Distractors stay in the list.",
   "choices": [
    [
     "Diagnose and solve problems",
@@ -315,7 +315,7 @@
   ]
  },
  "196": {
-  "prompt": "Drag the two settings you must configure into the answer area. Distractors stay in the list.",
+  "prompt": "Select the two settings you must configure. Distractors stay in the list.",
   "choices": [
    [
     "Allowed services: Blob",
@@ -400,7 +400,7 @@
   ]
  },
  "203": {
-  "prompt": "Drag the three settings you must enable into the answer area. Distractors stay in the list.",
+  "prompt": "Select the three settings you must enable. Distractors stay in the list.",
   "choices": [
    [
     "Allowed services: Blob",
@@ -485,7 +485,7 @@
   ]
  },
  "331": {
-  "prompt": "Drag the two settings you must configure into the answer area. Distractors stay in the list.",
+  "prompt": "Select the two settings you must configure. Distractors stay in the list.",
   "choices": [
    [
     "Overview",

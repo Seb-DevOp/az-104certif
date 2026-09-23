@@ -23,7 +23,7 @@
    "Votre entreprise dispose d'un abonnement Azure qui contient plusieurs machines virtuelles Azure, toutes rattachées au même réseau virtuel. Elle possède également un serveur Hyper-V local qui héberge une machine virtuelle nommée VM1, laquelle doit être répliquée vers Azure. Quels objets devez-vous créer pour atteindre cet objectif ? Répondez en faisant glisser les bonnes options de la liste vers la zone de réponse."
   ],
   "interactive": {
-   "prompt": "Faites glisser vers la zone de réponse chaque objet qui doit être créé. Les intrus restent dans la liste.",
+   "prompt": "Choisissez chaque objet qui doit être créé. Les intrus restent dans la liste.",
    "items": {
     "hyperv-site": "Hyper-V site",
     "storage-account": "Storage account",
@@ -315,7 +315,7 @@
    "REMARQUE : chaque sélection correcte vaut un point."
   ],
   "interactive": {
-   "prompt": "Faites glisser dans la zone de réponse les trois réglages à configurer. Les intrus restent dans la liste.",
+   "prompt": "Choisissez les trois réglages à configurer. Les intrus restent dans la liste.",
    "items": {
     "i1": "Utilisateurs et groupes",
     "i2": "Applications cloud",
@@ -515,7 +515,7 @@
   ],
   "explanation": "1. Ajouter le nom de domaine personnalisé à votre annuaire. 2. Ajouter une entrée DNS pour ce nom de domaine chez le bureau d'enregistrement. 3. Vérifier le nom de domaine personnalisé dans Microsoft Entra ID.",
   "interactive": {
-   "prompt": "Faites glisser les trois actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+   "prompt": "Choisissez les trois actions, dans l'ordre où elles doivent être effectuées.",
    "items": {
     "i1": "Ajouter un enregistrement à la zone DNS publique contoso.com",
     "i2": "Ajouter un locataire Microsoft Entra",
@@ -927,7 +927,7 @@
   ],
   "explanation": "Box 1 : Reader and Data Access — User1 doit pouvoir consulter les données de n'importe quel compte de stockage. Le rôle Reader and Data Access permet de tout consulter, mais pas de supprimer ni de créer un compte de stockage ou une ressource qu'il contient. Il donne également un accès en lecture/écriture à toutes les données du compte de stockage, via l'accès aux clés du compte.\n\nBox 2 : Owner — User2 doit pouvoir attribuer aux utilisateurs le rôle Contributor sur les comptes de stockage. Owner accorde un accès complet à la gestion de toutes les ressources, y compris la capacité d'attribuer des rôles dans Azure RBAC.\n\nRéponses incorrectes : Contributor accorde un accès complet à la gestion des ressources, mais ne permet pas d'attribuer des rôles Azure RBAC, de gérer des affectations dans Azure Blueprints, ni de partager des galeries d'images. Storage Account Contributor permet la gestion des comptes de stockage et donne accès à la clé du compte, utilisable pour accéder aux données via l'autorisation par clé partagée.",
   "interactive": {
-   "prompt": "Faites glisser sur chaque utilisateur le rôle RBAC le moins privilégié qui convient.",
+   "prompt": "Choisissez pour chaque utilisateur le rôle RBAC le moins privilégié qui convient.",
    "targets": {
     "user1": "User1",
     "user2": "User2"
@@ -1224,7 +1224,7 @@
   ],
   "explanation": "Box 1 : Identities. Cette propriété indique le fournisseur d'identité principal de l'utilisateur. Un utilisateur peut en avoir plusieurs, consultables via le lien Identities de son profil ou en interrogeant la propriété identities avec l'API Microsoft Graph.\n\nBox 2 : B2B collaboration. La collaboration B2B de Microsoft Entra, qui fait partie d'External Identities, permet d'inviter des utilisateurs invités à collaborer avec votre organisation et de partager en toute sécurité les applications et services de l'entreprise.",
   "interactive": {
-   "prompt": "Faites glisser dans la zone de réponse les deux réglages à configurer. Les intrus restent dans la liste.",
+   "prompt": "Choisissez les deux réglages à configurer. Les intrus restent dans la liste.",
    "items": {
     "i1": "Identités",
     "i2": "Collaboration B2B — Réinitialiser l’état d’acceptation",
@@ -1299,7 +1299,7 @@
   ],
   "explanation": "Box 1 : « Users can register applications ». Pour empêcher les utilisateurs standard de créer des principaux de service, passez cette option à « Non » dans le volet des paramètres utilisateur du centre d'administration Microsoft Entra. Les utilisateurs non privilégiés ne pourront plus créer d'applications ni de principaux de service dans le locataire, tandis que les utilisateurs privilégiés le pourront toujours.",
   "interactive": {
-   "prompt": "Faites glisser dans la zone de réponse les deux réglages à modifier. Les intrus restent dans la liste.",
+   "prompt": "Choisissez les deux réglages à modifier. Les intrus restent dans la liste.",
    "items": {
     "i1": "Les utilisateurs peuvent inscrire des applications",
     "i2": "Empêcher les utilisateurs non-administrateurs de créer des locataires",
@@ -1525,7 +1525,7 @@
   ],
   "explanation": "Étape 1 : créer une stratégie de nommage de groupe. Pour imposer des conventions de nommage cohérentes aux groupes Microsoft 365 créés ou modifiés par vos utilisateurs, définissez une stratégie de nommage dans Microsoft Entra ID : connectez-vous au centre d'administration avec au moins le rôle Group Administrator, ouvrez Microsoft Entra ID, puis Tous les groupes > Groupes > Stratégie de nommage.\n\nÉtape 2 : définir le préfixe sur Attribut, dans la stratégie de nommage préfixe-suffixe.",
   "interactive": {
-   "prompt": "Faites glisser les trois actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+   "prompt": "Choisissez les trois actions, dans l'ordre où elles doivent être effectuées.",
    "items": {
     "i1": "Définir Ajouter un suffixe sur Attribut.",
     "i2": "Créer une stratégie de nommage de groupes.",
@@ -1709,7 +1709,7 @@
   ],
   "explanation": "Box 1 : Custom security attributes (attributs de sécurité personnalisés), pour créer l'attribut Property1. Dans le centre d'administration Microsoft Entra, connectez-vous avec le rôle Attribute Definition Administrator, ouvrez Protection > Attributs de sécurité personnalisés, puis ajoutez un ensemble d'attributs.\n\nBox 2 : Rôles et administrateurs, pour qu'Admin1 puisse attribuer Property1 à User1.",
   "interactive": {
-   "prompt": "Faites glisser dans la zone de réponse les deux lames à configurer. Les intrus restent dans la liste.",
+   "prompt": "Choisissez les deux lames à configurer. Les intrus restent dans la liste.",
    "items": {
     "i1": "Utilisateurs",
     "i2": "Groupes",
@@ -1928,7 +1928,7 @@
   ],
   "explanation": "Box 1 : Propriétés. Microsoft Entra ID permet d'activer SSPR pour aucun utilisateur, une sélection d'utilisateurs ou tous. Connectez-vous au centre d'administration Microsoft Entra avec au moins le rôle Authentication Policy Administrator, ouvrez Entra ID > Réinitialisation de mot de passe, puis, sur la page Propriétés, choisissez l'étendue voulue sous « Réinitialisation de mot de passe en libre-service activée ».",
   "interactive": {
-   "prompt": "Faites glisser dans la zone de réponse les deux réglages à utiliser. Les intrus restent dans la liste.",
+   "prompt": "Choisissez les deux réglages à utiliser. Les intrus restent dans la liste.",
    "items": {
     "i1": "Propriétés",
     "i2": "Méthodes d'authentification",
@@ -1963,7 +1963,7 @@
   ],
   "explanation": "Box 1 : Sélectionnés — seuls certains utilisateurs doivent pouvoir joindre des appareils. Box 2 : Oui — lorsque les utilisateurs joignent des appareils à Microsoft Entra ID, ils doivent vérifier leur identité au moyen d'un téléphone mobile.",
   "interactive": {
-   "prompt": "Faites glisser dans la zone de réponse les deux réglages à modifier. Les intrus restent dans la liste.",
+   "prompt": "Choisissez les deux réglages à modifier. Les intrus restent dans la liste.",
    "items": {
     "i1": "Les utilisateurs peuvent joindre des appareils à Microsoft Entra ID",
     "i2": "Administrateurs locaux supplémentaires sur les appareils joints à Microsoft Entra",
@@ -2172,7 +2172,7 @@
   ],
   "explanation": "Première action : Create a Storage Sync Service — le déploiement d'Azure File Sync commence par le placement d'une ressource Storage Sync Service dans un groupe de ressources de l'abonnement choisi.\n\nDeuxième action : Install the Azure File Sync agent — l'agent Azure File Sync est un package téléchargeable qui permet à Windows Server d'être synchronisé avec un partage de fichiers Azure.",
   "interactive": {
-   "prompt": "Faites glisser dans l'ordre les deux actions à effectuer vers la zone de réponse.",
+   "prompt": "Choisissez, dans l'ordre, les deux actions à effectuer.",
    "targets": {
     "first": "Première action",
     "second": "Deuxième action"
@@ -2533,7 +2533,7 @@
   ],
   "explanation": "Étape 1 : créer un coffre Recovery Services, qui stockera les sauvegardes et les points de récupération. Azure Backup gère automatiquement le stockage du coffre, mais vous devez préciser son mode de réplication.\n\nÉtape 2 : régler la réplication sur le stockage redondant interzone (ZRS). Pensez à modifier le type de réplication du stockage avant la première sauvegarde.",
   "interactive": {
-   "prompt": "Faites glisser les trois actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+   "prompt": "Choisissez les trois actions, dans l'ordre où elles doivent être effectuées.",
    "items": {
     "i1": "Configurer une stratégie de réplication.",
     "i2": "Définir Réplication sur stockage redondant interzone (ZRS).",
@@ -2626,7 +2626,7 @@
   ],
   "explanation": "Box 1 : Contrôle d'accès (IAM), pour que User1 puisse écrire des données d'objets blob dans contoso2023. Connectez-vous au portail Azure, recherchez la portée à laquelle accorder l'accès (groupe d'administration, abonnement, groupe de ressources ou ressource précise), ouvrez-la, puis attribuez un rôle Azure d'accès aux données d'objets blob.",
   "interactive": {
-   "prompt": "Faites glisser dans la zone de réponse les deux lames à configurer. Les intrus restent dans la liste.",
+   "prompt": "Choisissez les deux lames à configurer. Les intrus restent dans la liste.",
    "items": {
     "i1": "Diagnostiquer et résoudre les problèmes",
     "i2": "Contrôle d'accès (IAM)",
@@ -3041,7 +3041,7 @@
    "REMARQUE : chaque bonne réponse vaut un point."
   ],
   "interactive": {
-   "prompt": "Faites glisser dans la zone de réponse les deux réglages à configurer. Les intrus restent dans la liste.",
+   "prompt": "Choisissez les deux réglages à configurer. Les intrus restent dans la liste.",
    "items": {
     "i1": "Services autorisés : Blob",
     "i2": "Services autorisés : File",
@@ -3154,7 +3154,7 @@
   ],
   "explanation": "Box 1 : type de ressource autorisé « Container ». Box 2 : type de ressource autorisé « Object ». Box 3 : permission autorisée « Read » — valable pour tous les types de ressources signés (Service, Container et Object), elle accorde la lecture sur le type de ressource indiqué.",
   "interactive": {
-   "prompt": "Faites glisser dans la zone de réponse les trois réglages à activer. Les intrus restent dans la liste.",
+   "prompt": "Choisissez les trois réglages à activer. Les intrus restent dans la liste.",
    "items": {
     "i1": "Services autorisés : Blob",
     "i2": "Services autorisés : File",
@@ -5071,7 +5071,7 @@
   ],
   "explanation": "La capture indique un plan tarifaire Standard, or les points de terminaison de données dédiés sont une fonctionnalité des registres Premium.\n\nLe niveau de service d'un registre se modifie depuis Azure CLI ou le portail Azure ; le passage d'un niveau à l'autre est libre tant que le niveau visé offre la capacité de stockage maximale requise.",
   "interactive": {
-   "prompt": "Faites glisser dans la zone de réponse les deux réglages à configurer. Les intrus restent dans la liste.",
+   "prompt": "Choisissez les deux réglages à configurer. Les intrus restent dans la liste.",
    "items": {
     "i1": "Vue d’ensemble",
     "i2": "Journal d’activité",
@@ -6159,7 +6159,7 @@
    "Vous devez répartir les connexions HTTPS entre vm1 et vm2 au moyen de lb1. Quelles trois actions devez-vous effectuer, et dans quel ordre ? Pour répondre, déplacez les actions appropriées de la liste vers la zone de réponse et classez-les dans le bon ordre."
   ],
   "interactive": {
-   "prompt": "Faites glisser les trois actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+   "prompt": "Choisissez les trois actions, dans l'ordre où elles doivent être effectuées.",
    "items": {
     "i1": "Supprimer nsg1.",
     "i2": "Supprimer les adresses IP publiques de vm1 et vm2.",
@@ -6200,7 +6200,7 @@
    "Vous disposez d'un abonnement Azure et de deux sites locaux nommés site1 et site2. Vous devez les relier au moyen d'un Azure Virtual WAN. Quelles quatre actions devez-vous effectuer, et dans quel ordre ? Pour répondre, déplacez les actions appropriées de la liste vers la zone de réponse et classez-les dans le bon ordre."
   ],
   "interactive": {
-   "prompt": "Faites glisser les quatre actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+   "prompt": "Choisissez les quatre actions, dans l'ordre où elles doivent être effectuées.",
    "items": {
     "i1": "Créer un hub virtuel.",
     "i2": "Créer des sites VPN.",
@@ -6693,7 +6693,7 @@
   ],
   "explanation": "Étape 1 : faire évoluer Bastion1 vers la référence Standard. Pour établir une connexion RDP vers une machine virtuelle Windows au moyen d'Azure Bastion en configurant des ports personnalisés, la référence Standard est indispensable.\n\nÉtape 2 : depuis Bastion1, activer la prise en charge du client natif.",
   "interactive": {
-   "prompt": "Faites glisser les trois actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+   "prompt": "Choisissez les trois actions, dans l'ordre où elles doivent être effectuées.",
    "items": {
     "i1": "Depuis Azure CLI sur Device1, exécuter az network bastion rdp.",
     "i2": "Depuis Bastion1, activer l'authentification Kerberos.",
@@ -6986,7 +6986,7 @@
   ],
   "explanation": "Étape 1 : le réseau virtuel.\n\nÉtape 2 : l'interface réseau (Microsoft.Network/networkInterfaces), qui dépend de deux autres ressources : Microsoft.Network/publicIPAddresses et Microsoft.Network/virtualNetworks.",
   "interactive": {
-   "prompt": "Faites glisser les quatre ressources dans la zone de réponse, dans l'ordre où elles doivent être déclarées pour que chacune existe avant d'être référencée.",
+   "prompt": "Choisissez les quatre ressources, dans l'ordre où elles doivent être déclarées pour que chacune existe avant d'être référencée.",
    "items": {
     "i1": "machine virtuelle",
     "i2": "extension Azure Monitor",
@@ -7243,7 +7243,7 @@
   ],
   "explanation": "Une connexion de passerelle VPN de point à site permet d'établir une connexion sécurisée vers votre réseau virtuel depuis un poste client isolé ; elle est initiée depuis ce poste.\n\nÉtape 1 : créer un nouveau sous-réseau dans VNet1. Un sous-réseau de passerelle est indispensable : il contient les adresses IP utilisées par la passerelle de réseau virtuel.",
   "interactive": {
-   "prompt": "Faites glisser les trois actions dans la zone de réponse, dans l'ordre où elles doivent être effectuées.",
+   "prompt": "Choisissez les trois actions, dans l'ordre où elles doivent être effectuées.",
    "items": {
     "i1": "Créer un nouveau sous-réseau dans VNet1.",
     "i2": "Ajouter une adresse IP publique à chaque machine virtuelle.",
@@ -7719,7 +7719,7 @@
    "Vous disposez d'un abonnement Azure qui contient une machine virtuelle nommée VM1. VM1 possède un disque de système d'exploitation nommé Disk1 et un disque de données nommé Disk2. Vous devez sauvegarder Disk2 à l'aide d'Azure Backup. Quelles trois actions devez-vous effectuer, et dans quel ordre ? Pour répondre, déplacez les actions appropriées de la liste vers la zone de réponse et classez-les dans le bon ordre."
   ],
   "interactive": {
-   "prompt": "Faites glisser les trois actions vers la zone de réponse, dans le bon ordre.",
+   "prompt": "Choisissez les trois actions dans le bon ordre.",
    "targets": {
     "step1": "Étape 1",
     "step2": "Étape 2",
@@ -8178,7 +8178,7 @@
   ],
   "explanation": "Scénario, exigences techniques : déclencher une alerte si VM1 ou VM2 dispose de moins de 20 Go d'espace libre sur le volume C.\n\nÉtape 1 : créer un espace de travail Log Analytics.\n\nÉtape 2 : collecter les compteurs de performance Windows depuis les agents Log Analytics. Configurez les compteurs de performance depuis le menu de gestion des agents hérités de l'espace de travail Log Analytics. Lors de la première configuration des compteurs Windows ou Linux pour un nouvel espace de travail, plusieurs compteurs courants vous sont proposés ; cochez ceux à créer puis validez.\n\nÉtape 3 : créer une règle d'alerte.\n\nRemarque : les compteurs de performance Windows et Linux renseignent sur les performances des composants matériels, des systèmes d'exploitation et des applications. Azure Monitor peut les collecter à intervalles rapprochés pour une analyse quasi en temps réel, et les agréger pour l'analyse et le reporting sur le long terme.",
   "interactive": {
-   "prompt": "Faites glisser les trois actions vers la zone de réponse, dans le bon ordre.",
+   "prompt": "Choisissez les trois actions dans le bon ordre.",
    "items": {
     "workspace": "Create a Log Analytics workspace.",
     "diagnostic": "Configure the Diagnostic settings.",

@@ -13,7 +13,7 @@
  },
  "29": {
   "interactive": {
-   "prompt": "Faites glisser dans la zone de réponse les trois réglages à configurer. Les intrus restent dans la liste.",
+   "prompt": "Choisissez les trois réglages à configurer. Les intrus restent dans la liste.",
    "items": {
     "i1": "Utilisateurs et groupes",
     "i2": "Applications cloud",
@@ -233,7 +233,7 @@
  },
  "88": {
   "interactive": {
-   "prompt": "Faites glisser dans la zone de réponse les deux réglages à configurer. Les intrus restent dans la liste.",
+   "prompt": "Choisissez les deux réglages à configurer. Les intrus restent dans la liste.",
    "items": {
     "i1": "Identités",
     "i2": "Collaboration B2B — Réinitialiser l’état d’acceptation",

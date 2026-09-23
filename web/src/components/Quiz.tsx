@@ -32,9 +32,9 @@ export function Quiz({
   const [revealed, setRevealed] = useState(false);
   const [showPalette, setShowPalette] = useState(false);
 
-  // Swap the draft during render, not in an effect. <DragDrop> seeds its board from the
-  // draft the first time it mounts for a question, and an effect only runs after that
-  // mount — which handed each drag-and-drop question the previous one's chips.
+  // Swap the draft during render, not in an effect: an effect runs after the render that
+  // switched questions, so the new question would paint once carrying the previous one's
+  // answer, and a check fired before the effect landed would grade that stale answer.
   const [shownId, setShownId] = useState(id);
   if (shownId !== id) {
     setShownId(id);

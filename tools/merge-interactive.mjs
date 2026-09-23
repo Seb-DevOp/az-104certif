@@ -80,7 +80,7 @@ mergeSeed('pick-seed.json', (id, rows, file, seed) => {
   }
   return {
     kind: 'dragdrop',
-    prompt: seed?.prompt || 'Drag every setting that belongs in the answer. Distractors stay in the list.',
+    prompt: seed?.prompt || 'Select every setting that belongs in the answer. Distractors stay in the list.',
     items,
     targets: [{ id: 'answer', label: 'Answer area', accepts }],
   };

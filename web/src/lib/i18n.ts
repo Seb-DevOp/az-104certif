@@ -88,14 +88,12 @@ const DICT = {
   iWasRight: { fr: "J'avais juste", en: 'I was right' },
   iWasWrong: { fr: "J'avais faux", en: 'I was wrong' },
 
-  // Drag and drop
-  dragHint: {
-    fr: 'Glissez chaque élément vers la bonne cible.',
-    en: 'Drag each item onto the right target.',
+  // Placement (the exam's drag-and-drop questions, answered with menus)
+  placementHint: {
+    fr: 'Choisissez le bon élément pour chaque emplacement.',
+    en: 'Pick the right item for each slot.',
   },
-  dragPool: { fr: 'Éléments', en: 'Items' },
-  dragTargets: { fr: 'Zone de réponse', en: 'Answer area' },
-  dropHere: { fr: 'Déposer ici', en: 'Drop here' },
+  choiceN: { fr: 'Choix', en: 'Choice' },
 
   // Yes / No statement grid
   yesNoHint: {

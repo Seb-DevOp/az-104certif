@@ -1,7 +1,7 @@
 {
  "3": {
   "kind": "dragdrop",
-  "prompt": "Drag every object that must be created onto the answer area. Distractors stay in the list.",
+  "prompt": "Select every object that must be created. Distractors stay in the list.",
   "items": [
    {
     "id": "hyperv-site",
@@ -94,7 +94,7 @@
  },
  "29": {
   "kind": "dragdrop",
-  "prompt": "Drag the three settings you must configure into the answer area. Distractors stay in the list.",
+  "prompt": "Select the three settings you must configure. Distractors stay in the list.",
   "items": [
    {
     "id": "i1",
@@ -211,7 +211,7 @@
  },
  "42": {
   "kind": "dragdrop",
-  "prompt": "Drag the three actions into the answer area, in the order they must be performed.",
+  "prompt": "Select the three actions, in the order they must be performed.",
   "items": [
    {
     "id": "i1",
@@ -477,7 +477,7 @@
  },
  "68": {
   "kind": "dragdrop",
-  "prompt": "Drag the least-privileged RBAC role onto each user.",
+  "prompt": "Select the least-privileged RBAC role for each user.",
   "items": [
    {
     "id": "owner",
@@ -671,7 +671,7 @@
  },
  "88": {
   "kind": "dragdrop",
-  "prompt": "Drag the two settings you must configure into the answer area. Distractors stay in the list.",
+  "prompt": "Select the two settings you must configure. Distractors stay in the list.",
   "items": [
    {
     "id": "i1",
@@ -752,7 +752,7 @@
  },
  "93": {
   "kind": "dragdrop",
-  "prompt": "Drag the two settings you must modify into the answer area. Distractors stay in the list.",
+  "prompt": "Select the two settings you must modify. Distractors stay in the list.",
   "items": [
    {
     "id": "i1",
@@ -883,7 +883,7 @@
  },
  "108": {
   "kind": "dragdrop",
-  "prompt": "Drag the three actions into the answer area, in the order they must be performed.",
+  "prompt": "Select the three actions, in the order they must be performed.",
   "items": [
    {
     "id": "i1",
@@ -1020,7 +1020,7 @@
  },
  "118": {
   "kind": "dragdrop",
-  "prompt": "Drag the two blades you must configure into the answer area. Distractors stay in the list.",
+  "prompt": "Select the two blades you must configure. Distractors stay in the list.",
   "items": [
    {
     "id": "i1",
@@ -1255,7 +1255,7 @@
  },
  "129": {
   "kind": "dragdrop",
-  "prompt": "Drag the two settings you must use into the answer area. Distractors stay in the list.",
+  "prompt": "Select the two settings you must use. Distractors stay in the list.",
   "items": [
    {
     "id": "i1",
@@ -1307,7 +1307,7 @@
  },
  "131": {
   "kind": "dragdrop",
-  "prompt": "Drag the two settings you must modify into the answer area. Distractors stay in the list.",
+  "prompt": "Select the two settings you must modify. Distractors stay in the list.",
   "items": [
    {
     "id": "i1",
@@ -1472,7 +1472,7 @@
  },
  "143": {
   "kind": "dragdrop",
-  "prompt": "Drag the two actions to perform, in order, onto the answer area.",
+  "prompt": "Select the two actions to perform, in order.",
   "items": [
    {
     "id": "sync-service",
@@ -1773,7 +1773,7 @@
  },
  "167": {
   "kind": "dragdrop",
-  "prompt": "Drag the three actions into the answer area, in the order they must be performed.",
+  "prompt": "Select the three actions, in the order they must be performed.",
   "items": [
    {
     "id": "i1",
@@ -1850,7 +1850,7 @@
  },
  "173": {
   "kind": "dragdrop",
-  "prompt": "Drag the two blades you must configure into the answer area. Distractors stay in the list.",
+  "prompt": "Select the two blades you must configure. Distractors stay in the list.",
   "items": [
    {
     "id": "i1",
@@ -2182,7 +2182,7 @@
  },
  "196": {
   "kind": "dragdrop",
-  "prompt": "Drag the two settings you must configure into the answer area. Distractors stay in the list.",
+  "prompt": "Select the two settings you must configure. Distractors stay in the list.",
   "items": [
    {
     "id": "i1",
@@ -2323,7 +2323,7 @@
  },
  "203": {
   "kind": "dragdrop",
-  "prompt": "Drag the three settings you must enable into the answer area. Distractors stay in the list.",
+  "prompt": "Select the three settings you must enable. Distractors stay in the list.",
   "items": [
    {
     "id": "i1",
@@ -3595,7 +3595,7 @@
  },
  "331": {
   "kind": "dragdrop",
-  "prompt": "Drag the two settings you must configure into the answer area. Distractors stay in the list.",
+  "prompt": "Select the two settings you must configure. Distractors stay in the list.",
   "items": [
    {
     "id": "i1",
@@ -4190,7 +4190,7 @@
  },
  "402": {
   "kind": "dragdrop",
-  "prompt": "Drag the three actions into the answer area, in the order they must be performed.",
+  "prompt": "Select the three actions, in the order they must be performed.",
   "items": [
    {
     "id": "i1",
@@ -4239,7 +4239,7 @@
  },
  "405": {
   "kind": "dragdrop",
-  "prompt": "Drag the four actions into the answer area, in the order they must be performed.",
+  "prompt": "Select the four actions, in the order they must be performed.",
   "items": [
    {
     "id": "i1",
@@ -4525,7 +4525,7 @@
  },
  "440": {
   "kind": "dragdrop",
-  "prompt": "Drag the three actions into the answer area, in the order they must be performed.",
+  "prompt": "Select the three actions, in the order they must be performed.",
   "items": [
    {
     "id": "i1",
@@ -4698,7 +4698,7 @@
  },
  "460": {
   "kind": "dragdrop",
-  "prompt": "Drag the four resources into the answer area, in the order they must be declared so that each one exists before it is referenced.",
+  "prompt": "Select the four resources, in the order they must be declared so that each one exists before it is referenced.",
   "items": [
    {
     "id": "i1",
@@ -4856,7 +4856,7 @@
  },
  "479": {
   "kind": "dragdrop",
-  "prompt": "Drag the three actions into the answer area, in the order they must be performed.",
+  "prompt": "Select the three actions, in the order they must be performed.",
   "items": [
    {
     "id": "i1",
@@ -5201,7 +5201,7 @@
  },
  "507": {
   "kind": "dragdrop",
-  "prompt": "Drag the three actions onto the answer area in the correct order.",
+  "prompt": "Select the three actions in the correct order.",
   "items": [
    {
     "id": "managed-identity",
@@ -5475,7 +5475,7 @@
  },
  "540": {
   "kind": "dragdrop",
-  "prompt": "Drag the three actions onto the answer area in the correct order.",
+  "prompt": "Select the three actions in the correct order.",
   "items": [
    {
     "id": "workspace",
